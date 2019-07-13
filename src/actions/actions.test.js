@@ -1,7 +1,7 @@
 import * as actions from './';
 
 describe('actions', () => {
-  
+
   describe('setAllResources', () => {
     it('should return a type of setAll with a projects array', () => {
       const resources = [
@@ -28,6 +28,20 @@ describe('actions', () => {
       }
 
       const result = actions.setLoading(bool);
+
+      expect(result).toEqual(expected);
+    });
+  });
+
+  describe('setError', () => {
+    it('should return a type of setError with an error message', () => {
+      const error = 'Something went wrong';
+      const expected = {
+        type: 'SET_ERROR',
+        error
+      };
+
+      const result = actions.setError(error);
 
       expect(result).toEqual(expected);
     });
