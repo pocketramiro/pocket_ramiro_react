@@ -7,4 +7,4 @@ export const rootReducer = combineReducers({
   resources: resourcesReducer,
   isLoading: isLoadingReducer,
   error: errorReducer
-})
+});
