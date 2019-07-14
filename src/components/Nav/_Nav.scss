@@ -1,0 +1,52 @@
+.nav-wrapper {
+  display: flex;
+  justify-content: left;
+
+  .nav-toggle {
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 71%;
+    left: 50%;
+  }
+
+}
+
+input[type=checkbox] + label {
+  .bar {
+    background-color: #000;
+    display: block;
+    height: 4px;
+    transition: all 0.1s;
+    margin: 4px;
+    width: 24px;
+  }
+  .nav-top {
+    transform: rotate(0);
+  }
+  .nav-middle {
+    opacity: 1;
+  }
+}
+
+input[type=checkbox]:checked + label {
+  .bar {
+    cursor: pointer;
+  }
+  .nav-top {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+  .nav-middle {
+    opacity: 0;
+  }
+  .nav-bottom {
+    transform: rotate(-45deg);
+    transform-origin: 20% 100%;
+  }
+}
+
+label {
+  padding: 12px;
+}
+
