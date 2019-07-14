@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Error = () => {
+const Error = () => {
   
   return (
     <section>
@@ -8,3 +8,4 @@ export const Error = () => {
     </section>
   )
 }
+export default Error
