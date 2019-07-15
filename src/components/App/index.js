@@ -3,17 +3,22 @@ import { Switch, Route } from 'react-router-dom';
 import TicketDashboard from '../../container/TicketDashboard/index'
 import CreateTask from '../CreateTask/index';
 import Error from '../Error/index';
+import Header from '../Header/index';
 
 class App extends Component {
 
   render() {
 
     return (
+      //Header
+      <Header>
       <Switch>
         <Route exact path='/' component={TicketDashboard}/>
+        {/* <Route path='/Assets' component */}
         <Route path='/task' component={CreateTask}/>
         <Route component={Error}/>
       </Switch>
+      </Header>
     )
   }
 }

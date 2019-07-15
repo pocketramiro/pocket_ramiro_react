@@ -41,7 +41,7 @@ return (
         <section>
           {isSelected && mainNavigation}
         </section>
-        </div>
+      </div>
     )
   }
 };

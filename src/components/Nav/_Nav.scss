@@ -5,6 +5,7 @@
   .nav-toggle {
     cursor: pointer;
     transform: translate(-50%, -50%);
+    visibility: hidden;
   }
 }
 
@@ -23,7 +24,7 @@ input[type=checkbox] + label {
   }
   .nav-top {
     transform: rotate(0);
-    transform-origin: 10% 0%;
+    transform-origin: 18% 0%;
   }
   .nav-middle {
     opacity: 1;
@@ -40,7 +41,7 @@ input[type=checkbox]:checked + label {
   }
   .nav-top {
     transform: rotate(45deg);
-    transform-origin: 10% 0%;
+    transform-origin: 18% 0%;
   }
   .nav-middle {
     opacity: 0;
