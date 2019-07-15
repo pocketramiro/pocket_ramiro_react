@@ -16,6 +16,10 @@ input[type=checkbox] + label {
     transition: all 0.3s;
     margin: 3px;
     width: 36px;
+    
+    &:hover {
+      cursor: pointer;
+    }
   }
   .nav-top {
     transform: rotate(0);

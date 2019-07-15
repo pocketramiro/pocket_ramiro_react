@@ -3,9 +3,12 @@ import { shallow } from 'enzyme';
 import Nav from './';
 
 describe('Nav', () => {
-  let wrapper 
+  let wrapper
+  const mock_HandleSelected = jest.fn()
   beforeEach(() => {
-    wrapper = shallow(<Nav/>)
+    wrapper = shallow(<Nav
+      handleSelected={mock_HandleSelected}
+    />)
   });
 
   it('should match the snapshot', () => {
@@ -17,6 +20,13 @@ describe('Nav', () => {
     wrapper.setState({isSelected})
     wrapper.update()
     expect(wrapper).toMatchSnapshot()
+  });
+
+  it('should have a default state', () => {
+    const defaultState = {
+      isSelected: false
+    }
+    expect(wrapper.state()).toEqual(defaultState)
   })
 
 });
