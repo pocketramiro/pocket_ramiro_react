@@ -1,0 +1,65 @@
+.nav-wrapper {
+  display: flex;
+  justify-content: left;
+
+  .nav-toggle {
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+  }
+}
+
+input[type=checkbox] + label {
+  .bar {
+    background-color: #000;
+    display: block;
+    height: 4px;
+    transition: all 0.3s;
+    margin: 3px;
+    width: 36px;
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .nav-top {
+    transform: rotate(0);
+    transform-origin: 10% 0%;
+  }
+  .nav-middle {
+    opacity: 1;
+  }
+  .nav-bottom{
+    transform: rotate(0);
+    transform-origin: 20% 129%;
+  }
+}
+
+input[type=checkbox]:checked + label {
+  .bar {
+    cursor: pointer;
+  }
+  .nav-top {
+    transform: rotate(45deg);
+    transform-origin: 10% 0%;
+  }
+  .nav-middle {
+    opacity: 0;
+  }
+  .nav-bottom {
+    transform: rotate(-45deg);
+    transform-origin: 20% 129%;
+  }
+}
+
+label {
+  padding: 12px;
+}
+
+#menu {
+  background-color: rgb(197, 237, 247);
+  width: 30%;
+  height: 25vh;
+  ul {
+    list-style-type: none;
+  }
+}
