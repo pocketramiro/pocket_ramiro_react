@@ -1,9 +1,9 @@
-import { setActiveTickets, setLoading, setError } from '../actions/index';
+import { setActiveTickets, setLoading, setError } from '../../actions';
 
 export const getActiveTickets = () => {
   return async (dispatch) => {
-    const base = "https://color-me-newton-api.herokuapp.com";
-    const url = `${base}/api/v1/palettes`;
+    const base = "https://fathomless-shore-89603.herokuapp.com";
+    const url = `${base}/api/v1/tickets`;
 
     try {
       dispatch(setLoading(true));
