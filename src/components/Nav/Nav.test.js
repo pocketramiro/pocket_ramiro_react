@@ -11,6 +11,10 @@ describe('Nav', () => {
     />)
   });
 
+  afterEach(() => {
+
+  })
+
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot()
   });
@@ -27,6 +31,11 @@ describe('Nav', () => {
       isSelected: false
     }
     expect(wrapper.state()).toEqual(defaultState)
-  })
+  });
 
+  it('should change isSelected in state to true when clicked', () => {
+    wrapper.find('input').simulate('change', { target: { checked: true}})
+    expect(wrapper.state('isSelected')).toBe(true)  
+  });
+ 
 });

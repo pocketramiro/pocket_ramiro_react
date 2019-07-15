@@ -6,9 +6,10 @@ exports[`Nav should match the snapshot 1`] = `
     className="nav-wrapper"
   >
     <input
+      checked={false}
       className="nav-toggle"
       id="hamburger"
-      onClick={[Function]}
+      onChange={[Function]}
       type="checkbox"
     />
     <label
@@ -35,9 +36,16 @@ exports[`Nav should render a Nav component if isSelected is true 1`] = `
     className="nav-wrapper"
   >
     <input
+      checked={
+        Object {
+          "isSelected": Object {
+            "isSelected": true,
+          },
+        }
+      }
       className="nav-toggle"
       id="hamburger"
-      onClick={[Function]}
+      onChange={[Function]}
       type="checkbox"
     />
     <label
