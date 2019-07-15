@@ -11,9 +11,6 @@ describe('Nav', () => {
     />)
   });
 
-  afterEach(() => {
-
-  })
 
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot()
@@ -37,5 +34,12 @@ describe('Nav', () => {
     wrapper.find('input').simulate('change', { target: { checked: true}})
     expect(wrapper.state('isSelected')).toBe(true)  
   });
- 
+
+  it('should isSelected in state to false when clicked', () => {
+    wrapper.find('input').simulate('change', { target: { checked: true}})
+    expect(wrapper.state('isSelected')).toBe(true) 
+    wrapper.find('input').simulate('change', { target: { checked: false}})
+    expect(wrapper.state('isSelected')).toBe(false) 
+  });
+  
 });
