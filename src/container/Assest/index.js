@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Assests = () => {
+class Assets extends Component {
+  constructor() {
+    super()
+  }
 
+
+render() {
 
   return (
     <section>
@@ -9,4 +14,5 @@ const Assests = () => {
     </section>
   )
 }
-export default Assests
+}
+export default Assets

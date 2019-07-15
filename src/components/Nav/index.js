@@ -20,7 +20,7 @@ class Nav extends Component {
     let mainNavigation = 
       <section id='menu'>
         <ul>
-          <li><NavLink to='/Assest' activeClassName='selected'>Assets</NavLink></li>
+          <li><NavLink to='/Assets' activeClassName='selected'>Assets</NavLink></li>
           <li>Parts and Inventory</li>
           <li>History</li>
         </ul>
@@ -39,7 +39,7 @@ return (
             <div className='bar nav-bottom'></div>
           </label>
         </section>
-        <section>
+        <section className="mobile-menu">
           {isSelected && mainNavigation}
         </section>
       </div>
