@@ -19,6 +19,23 @@ describe('actions', () => {
     });
   });
 
+  describe('setActiveTickets', () => {
+    it('should return a type of setActiveTickets with a tickets array', () => {
+      const tickets = [
+        {
+          name:'Test Resource',
+          id: 1
+        }
+      ];
+      
+      const expected = {type: 'SET_ACTIVE_TICKETS', tickets};
+
+      const result = actions.setActiveTickets(tickets);
+
+      expect(result).toEqual(expected);
+    });
+  });
+
   describe('setLoading', () => {
     it('should return a type of setLoading with a boolean', () => {
       const bool = true;
