@@ -4,6 +4,7 @@ import TicketDashboard from '../../container/TicketDashboard/index'
 import CreateTask from '../CreateTask/index';
 import Error from '../Error/index';
 import Header from '../Header/index';
+import Assets from '../../container/Assest/index'
 
 class App extends Component {
 
@@ -14,7 +15,7 @@ class App extends Component {
       <Header>
       <Switch>
         <Route exact path='/' component={TicketDashboard}/>
-        {/* <Route path='/Assets' component */}
+        <Route path='/Assets' component={Assets}/>
         <Route path='/task' component={CreateTask}/>
         <Route component={Error}/>
       </Switch>

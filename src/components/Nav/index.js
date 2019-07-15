@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 class Nav extends Component {
   constructor() {
@@ -19,7 +20,7 @@ class Nav extends Component {
     let mainNavigation = 
       <section id='menu'>
         <ul>
-          <li>Assets</li>
+          <li><NavLink to='/Assest' activeClassName='selected'>Assets</NavLink></li>
           <li>Parts and Inventory</li>
           <li>History</li>
         </ul>
