@@ -55,7 +55,7 @@ label {
   padding: 12px;
   
 }
-// links
+
 #menu {
   @include displayFlex(null, null, null, column);
   background: $nav-background-color;
