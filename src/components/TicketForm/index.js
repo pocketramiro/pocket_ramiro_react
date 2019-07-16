@@ -22,7 +22,7 @@ class TicketForm extends Component {
           onChange={e => this.handleChange(e)} 
           placeholder="Ticket Description">
         </textarea>
-        <section className="priority-btns">
+        <section onChange={e => this.handleChange(e)} className="priority-btns">
           <input type="radio" id="low" name="priority" value="low" defaultChecked />
           <label htmlFor="low">Low</label>
           <input type="radio" id="medium" name="priority" value="medium" />
