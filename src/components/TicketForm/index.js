@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { postTicket } from '../../thunks/postTicket';
 
 class TicketForm extends Component {
   constructor() {
@@ -48,5 +49,9 @@ class TicketForm extends Component {
     )
   }
 }
+
+export const mapDispatchToProps = (dispatch) => ({
+  postTicket: () => dispatch(postTicket())
+});
 
 export default connect(null, mapDispatchToProps)(TicketForm);
