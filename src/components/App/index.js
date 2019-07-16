@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import TicketDashboard from '../../container/TicketDashboard/index'
-import CreateTask from '../CreateTask/index';
 import NotFound from '../NotFound/index';
 import Nav from '../Nav/index';
 import Assets from '../../container/Assets/index'
+import TicketDashboard from '../../container/TicketDashboard'
+import CreateTask from '../CreateTask';
 
 class App extends Component {
 
