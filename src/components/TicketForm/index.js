@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class TicketForm extends Component {
   constructor() {
@@ -26,7 +27,7 @@ class TicketForm extends Component {
 
   render() {
     return (
-      <form className="ticket-form" onSubmit={this.handleSubmit} onChange={e => this.handleChange(e)} >
+      <form className="ticket-form" onSubmit={this.handleSubmit} onChange={this.handleChange} >
         <textarea name="notes" placeholder="Ticket Description"></textarea>
         <section className="priority-btns">
           <input type="radio" id="low" name="priority" value="low" defaultChecked />
@@ -48,4 +49,4 @@ class TicketForm extends Component {
   }
 }
 
-export default TicketForm;
+export default connect(null, mapDispatchToProps)(TicketForm);
