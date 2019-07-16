@@ -5,6 +5,7 @@ import Nav from '../Nav';
 import Assets from '../../container/Assets'
 import TicketDashboard from '../../container/TicketDashboard'
 import CreateTask from '../CreateTask';
+import TicketForm from '../TicketForm';
 
 class App extends Component {
 
@@ -18,6 +19,7 @@ class App extends Component {
           <Route path='/task' component={CreateTask}/>
           <Route component={NotFound}/>
         </Switch>
+        <TicketForm/>
       </main>
     )
   }
