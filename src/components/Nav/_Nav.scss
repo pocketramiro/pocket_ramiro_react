@@ -1,10 +1,8 @@
 .nav-wrapper {
-  display: flex;
-  justify-content: left;
-  align-items: center;
+  @include displayFlex(left, null, center, null);
 
   .nav-toggle {
-    cursor: pointer;
+    cursor: $nav-cursor;
     transform: translate(-50%, -50%);
     visibility: hidden;
   }
@@ -20,7 +18,7 @@ input[type=checkbox] + label {
     width: 36px;
     
     &:hover {
-      cursor: pointer;
+      cursor: $nav-cursor;
     }
   }
   .nav-top {
@@ -38,7 +36,7 @@ input[type=checkbox] + label {
 
 input[type=checkbox]:checked + label {
   .bar {
-    cursor: pointer;
+    cursor: $nav-cursor;
   }
   .nav-top {
     transform: rotate(45deg);
@@ -59,16 +57,14 @@ label {
 }
 // links
 #menu {
-  display: flex;
-  flex-direction: column;
-  background: rgba(35, 31, 32, 0.78);
+  @include displayFlex(null, null, null, column);
+  background: $nav-background-color;
   font-size: 20px;
   height: 100vh;
   padding: 15px;
   width: 40vw;
   a {
-    display: flex;
-    align-items: center;
+    @include displayFlex(null, null, center, null);
     text-decoration: none;
     color: white;
     border-bottom: 2px solid white;
