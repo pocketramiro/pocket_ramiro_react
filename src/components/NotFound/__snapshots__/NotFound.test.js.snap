@@ -2,10 +2,19 @@
 
 exports[`NotFound should match the snapshot 1`] = `
 <section
-  className="notFound-wrapper"
+  className="not-found-wrapper"
 >
-  <h1>
-    404 Page Not Found
-  </h1>
+  <div
+    id="not-found-shade"
+  >
+    <p
+      id="not-found-text"
+    >
+      <span>
+        404
+      </span>
+      We are sorry but the page is not found
+    </p>
+  </div>
 </section>
 `;
