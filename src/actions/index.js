@@ -3,6 +3,11 @@ export const setActiveTickets = (tickets) => ({
   tickets
 });
 
+export const addTicket = (ticket) => ({
+  type: 'ADD_TICKET',
+  ticket
+});
+
 export const setAllResources = (resources) => ({
   type: 'SET_ALL_RESOURCES',
   resources
