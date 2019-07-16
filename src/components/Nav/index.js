@@ -22,17 +22,21 @@ class Nav extends Component {
 
   render() {
     const {isSelected, title} = this.state
-    let mainNavigation = 
-      <section id='menu'>
-          <NavLink to='/Assets' name='Assets' onClick={this.handleChange}>
-            <i class="material-icons"> business </i>
-              Assets
-          </NavLink>
-          <NavLink><i class="material-icons">
-business_center
-</i>Parts and Inventory</NavLink>
-          <NavLink>History</NavLink>
-        </section>
+
+    const mainNavigation = 
+                        <section id='menu'>
+                            <NavLink to='/Assets' name='Assets' onClick={this.handleChange}>
+                              <i class="material-icons"> business </i>
+                                Assets
+                            </NavLink>
+                            <NavLink to='/Parts_and_Inventory'name='Parts' onClick={this.handleChange}> 
+                              <i class="material-icons"> business_center</i>
+                                Parts
+                            </NavLink>
+                            <NavLink to='/Archive' name='Archive' onClick={this.handleChange}>
+                              Archive
+                            </NavLink>
+                          </section>
 
 return (
       <div>
