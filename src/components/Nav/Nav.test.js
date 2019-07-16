@@ -4,10 +4,12 @@ import Nav from './';
 
 describe('Nav', () => {
   let wrapper
-  const mock_HandleSelected = jest.fn()
+  let mock_HandleSelected = jest.fn()
+  let mock_HandleChange = jest.fn()
   beforeEach(() => {
     wrapper = shallow(<Nav
       handleSelected={mock_HandleSelected}
+      handleChange={mock_HandleChange}
     />)
   });
 
@@ -31,16 +33,24 @@ describe('Nav', () => {
     expect(wrapper.state()).toEqual(defaultState)
   });
 
+
   it('should change isSelected in state to true when clicked', () => {
     wrapper.find('input').simulate('change', { target: { checked: true}})
     expect(wrapper.state('isSelected')).toBe(true)  
   });
 
-  it('should isSelected in state to false when clicked', () => {
+  it('should update isSelected in state to false when clicked', () => {
     wrapper.find('input').simulate('change', { target: { checked: true}})
     expect(wrapper.state('isSelected')).toBe(true) 
     wrapper.find('input').simulate('change', { target: { checked: false}})
     expect(wrapper.state('isSelected')).toBe(false) 
+  });
+
+  it('should update title with Assets in state when Assets are clicked', () => {
+    wrapper.setState({isSelected: true})
+    wrapper.update()
+    wrapper.find('NavLink').at(0).simulate('click', { target: { name: 'Assets'}})
+    expect(wrapper.state('title')).toBe('Assets')
   });
   
 });
