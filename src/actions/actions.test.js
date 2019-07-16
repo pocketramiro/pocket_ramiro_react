@@ -20,10 +20,10 @@ describe('actions', () => {
   });
 
   describe('setActiveTickets', () => {
-    it('should return a type of setActiveTickets with a tickets array', () => {
+    it('should return a type of SET_ACTIVE_TICKETS with a tickets array', () => {
       const tickets = [
         {
-          name:'Test Resource',
+          name:'Test Ticket',
           id: 1
         }
       ];
@@ -31,6 +31,18 @@ describe('actions', () => {
       const expected = {type: 'SET_ACTIVE_TICKETS', tickets};
 
       const result = actions.setActiveTickets(tickets);
+
+      expect(result).toEqual(expected);
+    });
+  });
+
+  describe('addTicket', () => {
+    it('should return a type of ADD_TICKET with a ticket object', () => {
+      const ticket = {name:'Test Ticket', id: 1};
+      
+      const expected = {type: 'ADD_TICKET', ticket};
+
+      const result = actions.addTicket(ticket);
 
       expect(result).toEqual(expected);
     });

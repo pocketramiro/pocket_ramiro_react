@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getActiveTickets } from '../../thunks/getActiveTickets'
+import { getActiveTickets } from '../../thunks/getActiveTickets';
 
 export class TicketDashboard extends Component {
 
