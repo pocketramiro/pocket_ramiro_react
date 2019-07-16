@@ -3,7 +3,7 @@ import Nav from '../../components/Nav/index';
 import { connect } from 'react-redux';
 import { getActiveTickets } from '../../thunks/getActiveTickets'
 
-class TicketDashboard extends Component {
+export class TicketDashboard extends Component {
 
   componentDidMount() {
     this.props.getActiveTickets();
