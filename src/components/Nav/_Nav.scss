@@ -59,23 +59,25 @@ label {
 }
 // links
 #menu {
-  background: rgba(35, 31, 32, 0.48);
-  width: 35vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  background: rgba(35, 31, 32, 0.78);
   font-size: 20px;
+  height: 100vh;
+  padding: 15px;
+  width: 40vw;
   a {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     color: white;
-
-    &:hover {
-      cursor: pointer;
-    }
-
+    border-bottom: 2px solid white;
+    padding-bottom: 20px;
+    padding-top: 15px; 
   }
-
+  .menu-icons {
+    padding-right: 5px;
+  }
 }
 
 .mobile-menu {
