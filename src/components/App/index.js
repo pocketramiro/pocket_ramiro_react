@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import NotFound from '../NotFound';
+import Nav from '../Nav';
+import Assets from '../../container/Assets'
 import TicketDashboard from '../../container/TicketDashboard'
 import CreateTask from '../CreateTask';
-import Error from '../Error';
 
 class App extends Component {
 
   render() {
-
     return (
-      <Switch>
-        <Route exact path='/' component={TicketDashboard}/>
-        <Route path='/task' component={CreateTask}/>
-        <Route component={Error}/>
-      </Switch>
+      <main>
+        <Nav/>
+        <Switch>
+          <Route exact path='/' component={TicketDashboard}/>
+          <Route path='/Assets' component={Assets}/>
+          <Route path='/task' component={CreateTask}/>
+          <Route component={NotFound}/>
+        </Switch>
+      </main>
     )
   }
 }

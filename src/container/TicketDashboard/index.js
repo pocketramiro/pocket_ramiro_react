@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Nav from '../../components/Nav/index';
 import { connect } from 'react-redux';
 import { getActiveTickets } from '../../thunks/getActiveTickets'
 
@@ -13,9 +12,6 @@ export class TicketDashboard extends Component {
 
     return (
       <main>
-        <header>
-          <Nav/>
-        </header>
       </main>
     )
   }

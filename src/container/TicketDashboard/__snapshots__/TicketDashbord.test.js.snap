@@ -1,9 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TicketDashboard should match the snapshot 1`] = `
-<main>
-  <header>
-    <Nav />
-  </header>
-</main>
-`;
+exports[`TicketDashboard should match the snapshot 1`] = `<main />`;

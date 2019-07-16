@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme'
-import Error from './';
+import NotFound from '.';
 
-describe('Error', () => {
+describe('NotFound', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(<Error/>)
+    wrapper = shallow(<NotFound/>)
   })
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot()
