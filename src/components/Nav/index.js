@@ -5,7 +5,8 @@ class Nav extends Component {
   constructor() {
     super()
     this.state = {
-      isSelected: false
+      isSelected: false,
+      title: ''
     }
   }
 
@@ -14,17 +15,24 @@ class Nav extends Component {
     this.setState({isSelected: checked})
   }
 
+  handleChange = (event) => {
+    const { name } = event.target
+    this.setState({title: name })
+  }
 
   render() {
-    const {isSelected} = this.state
+    const {isSelected, title} = this.state
     let mainNavigation = 
       <section id='menu'>
-        <ul>
-          <li><NavLink to='/Assets' activeClassName='selected'>Assets</NavLink></li>
-          <li>Parts and Inventory</li>
-          <li>History</li>
-        </ul>
-      </section>
+          <NavLink to='/Assets' name='Assets' onClick={this.handleChange}>
+            <i class="material-icons"> business </i>
+              Assets
+          </NavLink>
+          <NavLink><i class="material-icons">
+business_center
+</i>Parts and Inventory</NavLink>
+          <NavLink>History</NavLink>
+        </section>
 
 return (
       <div>
@@ -38,6 +46,7 @@ return (
             <div className='bar nav-middle'></div>
             <div className='bar nav-bottom'></div>
           </label>
+        {title.length === 0 ? <h3>Work Task</h3> : <h3>{title}</h3>}
         </section>
         <section className="mobile-menu">
           {isSelected && mainNavigation}
