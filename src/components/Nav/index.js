@@ -25,16 +25,16 @@ class Nav extends Component {
 
     const mainNavigation = 
                         <section id='menu'>
-                            <NavLink to='/Assets' name='Assets' onClick={this.handleChange}>
-                            <i className="material-icons menu-icons"> insert_chart</i>
+                            <NavLink to='/Assets' name='Assets' onClick={this.handleChange} className='link1'>
+                            <i class="material-icons menu-icons"> insert_chart</i>
                                 Assets
                             </NavLink>
                             <NavLink to='/Parts_and_Inventory'name='Parts' onClick={this.handleChange}> 
-                              <i className="material-icons menu-icons"> business_center</i>
+                              <i class="material-icons menu-icons"> business_center</i>
                                 Parts
                             </NavLink>
                             <NavLink to='/Companies' name='Companies' onClick={this.handleChange}>
-                              <i className="material-icons menu-icons"> business </i>
+                              <i class="material-icons menu-icons"> business </i>
                               Companies
                             </NavLink>
                           </section>
