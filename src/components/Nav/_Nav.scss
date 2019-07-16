@@ -1,6 +1,7 @@
 .nav-wrapper {
   display: flex;
   justify-content: left;
+  align-items: center;
 
   .nav-toggle {
     cursor: pointer;
@@ -54,19 +55,27 @@ input[type=checkbox]:checked + label {
 
 label {
   padding: 12px;
+  
 }
-
+// links
 #menu {
   background: rgba(35, 31, 32, 0.48);
-  width: 65%;
-  height: 36vh;
+  width: 35vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   padding: 15px;
   font-size: 20px;
   a {
     text-decoration: none;
+    color: white;
+
+    &:hover {
+      cursor: pointer;
+    }
+
   }
+
 }
 
 .mobile-menu {

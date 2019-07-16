@@ -17,7 +17,7 @@ class Nav extends Component {
 
   handleChange = (event) => {
     const { name } = event.target
-    this.setState({title: name })
+    this.setState({title: name , isSelected: false })
   }
 
   render() {
