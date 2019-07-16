@@ -15,13 +15,13 @@ export class TicketDashboard extends Component {
       </main>
     )
   }
-}
+};
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   tickets: state.tickets
 });
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   getActiveTickets: () => dispatch(getActiveTickets())
 });
 
