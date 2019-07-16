@@ -1,12 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App should match the snapshot 1`] = `
-<<<<<<< HEAD
 <main>
   <Nav />
   <Switch>
     <Route
-      component={[Function]}
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(TicketDashboard)",
+          "type": [Function],
+        }
+      }
       exact={true}
       path="/"
     />
@@ -23,28 +30,4 @@ exports[`App should match the snapshot 1`] = `
     />
   </Switch>
 </main>
-=======
-<Switch>
-  <Route
-    component={
-      Object {
-        "$$typeof": Symbol(react.memo),
-        "WrappedComponent": [Function],
-        "compare": null,
-        "displayName": "Connect(TicketDashboard)",
-        "type": [Function],
-      }
-    }
-    exact={true}
-    path="/"
-  />
-  <Route
-    component={[Function]}
-    path="/task"
-  />
-  <Route
-    component={[Function]}
-  />
-</Switch>
->>>>>>> tickets-thunk
 `;
