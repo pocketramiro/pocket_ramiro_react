@@ -25,8 +25,13 @@ exports[`Nav should match the snapshot 1`] = `
         className="bar nav-bottom"
       />
     </label>
+    <h3>
+      Work Task
+    </h3>
   </section>
-  <section />
+  <section
+    className="mobile-menu"
+  />
 </div>
 `;
 
@@ -61,22 +66,52 @@ exports[`Nav should render a Nav component if isSelected is true 1`] = `
         className="bar nav-bottom"
       />
     </label>
+    <h3>
+      Work Task
+    </h3>
   </section>
-  <section>
+  <section
+    className="mobile-menu"
+  >
     <section
       id="menu"
     >
-      <ul>
-        <li>
-          Assets
-        </li>
-        <li>
-          Parts and Inventory
-        </li>
-        <li>
-          History
-        </li>
-      </ul>
+      <NavLink
+        name="Assets"
+        onClick={[Function]}
+        to="/Assets"
+      >
+        <i
+          class="material-icons menu-icons"
+        >
+           insert_chart
+        </i>
+        Assets
+      </NavLink>
+      <NavLink
+        name="Parts"
+        onClick={[Function]}
+        to="/Parts_and_Inventory"
+      >
+        <i
+          class="material-icons menu-icons"
+        >
+           business_center
+        </i>
+        Parts
+      </NavLink>
+      <NavLink
+        name="Companies"
+        onClick={[Function]}
+        to="/Companies"
+      >
+        <i
+          class="material-icons menu-icons"
+        >
+           business 
+        </i>
+        Companies
+      </NavLink>
     </section>
   </section>
 </div>

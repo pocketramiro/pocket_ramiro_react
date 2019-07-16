@@ -25,7 +25,8 @@ describe('Nav', () => {
 
   it('should have a default state', () => {
     const defaultState = {
-      isSelected: false
+      isSelected: false,
+      title: ''
     }
     expect(wrapper.state()).toEqual(defaultState)
   });
