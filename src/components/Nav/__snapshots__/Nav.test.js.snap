@@ -83,7 +83,7 @@ exports[`Nav should render a Nav component if isSelected is true 1`] = `
         to="/Assets"
       >
         <i
-          class="material-icons menu-icons"
+          className="material-icons menu-icons"
         >
            insert_chart
         </i>
@@ -95,7 +95,7 @@ exports[`Nav should render a Nav component if isSelected is true 1`] = `
         to="/Parts_and_Inventory"
       >
         <i
-          class="material-icons menu-icons"
+          className="material-icons menu-icons"
         >
            business_center
         </i>
@@ -107,7 +107,7 @@ exports[`Nav should render a Nav component if isSelected is true 1`] = `
         to="/Companies"
       >
         <i
-          class="material-icons menu-icons"
+          className="material-icons menu-icons"
         >
            business 
         </i>
