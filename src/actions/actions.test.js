@@ -60,6 +60,28 @@ describe('actions', () => {
     });
   });
 
+  describe('setUser', () => {
+    it('should return a type of SET_USER with a user object', () => {
+      const user = {name:'Carrie', id: 1};
+      
+      const expected = {type: 'SET_USER', user};
+
+      const result = actions.setUser(user);
+
+      expect(result).toEqual(expected);
+    });
+  });
+
+  describe('clearUser', () => {
+    it('should return a type of CLEAR_USER', () => {
+      const expected = {type: 'CLEAR_USER'};
+
+      const result = actions.clearUser();
+
+      expect(result).toEqual(expected);
+    });
+  });
+
   describe('setLoading', () => {
     it('should return a type of setLoading with a boolean', () => {
       const bool = true;
