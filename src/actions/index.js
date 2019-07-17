@@ -13,6 +13,15 @@ export const addResource = (resource) => ({
   resource
 });
 
+export const setUser = (user) => ({
+  type: 'SET_USER',
+  user
+});
+
+export const clearUser = () => ({
+  type: 'CLEAR_USER'
+});
+
 export const setResources = (resources) => ({
   type: 'SET_RESOURCES',
   resources
