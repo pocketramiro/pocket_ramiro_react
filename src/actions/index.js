@@ -13,8 +13,8 @@ export const addResource = (resource) => ({
   resource
 });
 
-export const setAllResources = (resources) => ({
-  type: 'SET_ALL_RESOURCES',
+export const setResources = (resources) => ({
+  type: 'SET_RESOURCES',
   resources
 });
 
