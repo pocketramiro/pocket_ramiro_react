@@ -48,6 +48,18 @@ describe('actions', () => {
     });
   });
 
+  describe('addResource', () => {
+    it('should return a type of ADD_RESOURCE with a resource object', () => {
+      const resource = {name:'Test Resource', id: 1};
+      
+      const expected = {type: 'ADD_RESOURCE', resource};
+
+      const result = actions.addResource(resource);
+
+      expect(result).toEqual(expected);
+    });
+  });
+
   describe('setLoading', () => {
     it('should return a type of setLoading with a boolean', () => {
       const bool = true;
