@@ -1,0 +1,5 @@
+.card-container {
+  @include displayFlex(null, null, null, column)
+  width: 90%;
+  margin: auto;
+}

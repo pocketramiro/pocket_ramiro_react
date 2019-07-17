@@ -10,12 +10,13 @@ export class CardContainer extends Component {
   }
 
   render () {
-    // Needs to be refactored so different items can be accepted
-    const displayCards = this.props.tickets.map(data => {
-      return <Card key={data.id} data={data}/>
+    const { tickets } = this.props;
+    //Needs to be refactored so different items can be accepted
+    const displayCards = tickets.length && tickets.map(ticket => {
+      return <Card key={ticket.id} ticket={ticket}/>
     })
     return (
-      <section>
+      <section className='card-container'>
         {displayCards}
       </section>
     )

@@ -1,0 +1,45 @@
+.header-icon-container {
+  @include displayFlex(null, null, center, null);
+  border-bottom: 1px #00000026 solid;
+  padding-bottom: 10px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.header-icon {
+  margin-right: 5px;
+}
+
+.low {
+  color: yellow;
+}
+.medium {
+  color: orange;
+}
+.high {
+  color: red;
+}
+.urgent {
+  color: purple;
+}
+.safety {
+  color: teal;
+}
+
+.card {
+  border: 2px solid red;
+  border-radius: 25px;
+  margin: 0 0 20px 0;
+  min-height: 150px;
+  background-color: #e8eee799;
+  box-shadow: 0px 5px 7px #2d2b2dc4;
+  padding: 10px 35px;
+
+  header {
+    @include displayFlex(space-around, null, null, null)
+  }
+}
+
