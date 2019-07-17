@@ -1,4 +1,30 @@
 .low {
-  color: red;
-  
+  color: yellow;
 }
+.medium {
+  color: orange;
+}
+.high {
+  color: red;
+}
+.urgent {
+  color: purple;
+}
+.safety {
+  color: teal;
+}
+
+.card {
+  border: 2px solid red;
+  border-radius: 25px;
+  margin: 0 0 20px 0;
+  min-height: 150px;
+  background-color: #e8eee799;
+  box-shadow: 0px 5px 7px #2d2b2dc4;
+  padding: 10px 35px;
+
+  header {
+    @include displayFlex(space-around, null, null, null)
+  }
+}
+

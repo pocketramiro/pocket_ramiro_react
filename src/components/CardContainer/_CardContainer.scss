@@ -1,4 +1,5 @@
 .card-container {
-  display: flex;
-  flex-direction: column;
+  @include displayFlex(null, null, null, column)
+  width: 90%;
+  margin: auto;
 }

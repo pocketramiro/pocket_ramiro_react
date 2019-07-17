@@ -6,10 +6,12 @@ export const Card = (props) => {
   const days = calcDaysSinceCreation(Math.abs(new Date() - new Date(created_at)))
 
   return (
-    <section>
-      <p className={priority}>Priority: {priority}</p>
-      <p>Opened: {created_at.substr(0, 10)}</p>
-      <p>{`${days} days since ticket opened`}</p>
+    <section className="card">
+      <header>
+        <p className={priority}>Priority: {priority}</p>
+        <p>Opened: {created_at.substr(0, 10)}</p>
+        <p>{`${days} days since ticket opened`}</p>
+      </header>
       <p>Notes: {notes}</p>
     </section>
   )
