@@ -21,4 +21,4 @@ export const mapDispatchToProps = dispatch => ({
   getTickets: () => dispatch(getTickets())
 })
 
-export default connect(null, mapDispatchToProps)(CreateTask);
+export default connect(null, mapDispatchToProps)(CardContainer);

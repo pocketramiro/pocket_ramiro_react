@@ -7,5 +7,6 @@ const CreateTask = () => {
       <button>Create Task</button>
     </section>
   )
-} 
+}
+ 
 export default CreateTask;

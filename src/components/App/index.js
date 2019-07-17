@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import NotFound from '../NotFound';
 import Nav from '../Nav';
-import Assets from '../../container/Assets'
-import TicketDashboard from '../../container/TicketDashboard'
+import Assets from '../../containers/Assets'
+import TicketDashboard from '../TicketDashboard'
 import CreateTask from '../CreateTask';
 import TicketForm from '../TicketForm';
 

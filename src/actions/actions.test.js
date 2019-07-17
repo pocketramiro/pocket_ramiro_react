@@ -19,8 +19,8 @@ describe('actions', () => {
     });
   });
 
-  describe('setActiveTickets', () => {
-    it('should return a type of SET_ACTIVE_TICKETS with a tickets array', () => {
+  describe('setTickets', () => {
+    it('should return a type of SET_TICKETS with a tickets array', () => {
       const tickets = [
         {
           name:'Test Ticket',
@@ -28,9 +28,9 @@ describe('actions', () => {
         }
       ];
       
-      const expected = {type: 'SET_ACTIVE_TICKETS', tickets};
+      const expected = {type: 'SET_TICKETS', tickets};
 
-      const result = actions.setActiveTickets(tickets);
+      const result = actions.setTickets(tickets);
 
       expect(result).toEqual(expected);
     });

@@ -5,15 +5,7 @@ exports[`App should match the snapshot 1`] = `
   <Nav />
   <Switch>
     <Route
-      component={
-        Object {
-          "$$typeof": Symbol(react.memo),
-          "WrappedComponent": [Function],
-          "compare": null,
-          "displayName": "Connect(TicketDashboard)",
-          "type": [Function],
-        }
-      }
+      component={[Function]}
       exact={true}
       path="/"
     />
