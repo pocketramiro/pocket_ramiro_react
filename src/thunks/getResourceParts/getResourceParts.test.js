@@ -39,4 +39,10 @@ describe('getResouceParts', () => {
     expect(mockDispatch).toHaveBeenCalledWith(actions.setError(MD.mockError));
   });
 
-})
+  it('should dispatch setLoading(false)', async () => {
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(actions.setLoading(false));
+  });
+
+});
