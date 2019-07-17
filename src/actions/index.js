@@ -36,3 +36,8 @@ export const setError = (error) => ({
   type: 'SET_ERROR',
   error
 });
+
+export const setResourceParts = (parts) => ({
+  type: 'SET_RESOURCE_PARTS',
+  parts 
+})

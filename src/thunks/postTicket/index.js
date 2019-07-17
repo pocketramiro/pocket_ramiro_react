@@ -18,7 +18,7 @@ export const postTicket = (ticket) => {
       if (!response.ok) {
         throw Error(response.statusText);
       }
-
+      
       ticket = await response.json();
 
       dispatch(setLoading(false));
