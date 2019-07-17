@@ -18,6 +18,10 @@ export const setUser = (user) => ({
   user
 });
 
+export const clearUser = () => ({
+  type: 'CLEAR_USER'
+});
+
 export const setResources = (resources) => ({
   type: 'SET_RESOURCES',
   resources
