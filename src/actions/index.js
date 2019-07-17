@@ -22,3 +22,8 @@ export const setError = (error) => ({
   type: 'SET_ERROR',
   error
 });
+
+export const setParts = (parts) => ({
+  type: 'SET_ALL_PARTS',
+  parts 
+})
