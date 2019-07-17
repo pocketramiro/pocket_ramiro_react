@@ -2,8 +2,8 @@ import * as actions from './';
 
 describe('actions', () => {
 
-  describe('setAllResources', () => {
-    it('should return a type of setAll with a projects array', () => {
+  describe('setResources', () => {
+    it('should return a type of SET_RESOURCES with a resources array', () => {
       const resources = [
         {
           name:'Test Resource',
@@ -11,9 +11,9 @@ describe('actions', () => {
         }
       ];
       
-      const expected = {type: 'SET_ALL_RESOURCES', resources};
+      const expected = {type: 'SET_RESOURCES', resources};
 
-      const result = actions.setAllResources(resources);
+      const result = actions.setResources(resources);
 
       expect(result).toEqual(expected);
     });
@@ -43,6 +43,18 @@ describe('actions', () => {
       const expected = {type: 'ADD_TICKET', ticket};
 
       const result = actions.addTicket(ticket);
+
+      expect(result).toEqual(expected);
+    });
+  });
+
+  describe('addResource', () => {
+    it('should return a type of ADD_RESOURCE with a resource object', () => {
+      const resource = {name:'Test Resource', id: 1};
+      
+      const expected = {type: 'ADD_RESOURCE', resource};
+
+      const result = actions.addResource(resource);
 
       expect(result).toEqual(expected);
     });

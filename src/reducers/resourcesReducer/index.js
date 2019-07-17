@@ -2,7 +2,7 @@ export const resourcesReducer = (state = [], action) => {
   switch (action.type) {
     case 'ADD_RESOURCE':
       return [...state, action.resource];
-    case 'SET_ALL_RESOURCES':
+    case 'SET_RESOURCES':
       return action.resources;
     case 'UPDATE_RESOURCE':
       return state.map(resource => {
