@@ -13,7 +13,7 @@ describe('postResource', () => {
       body: JSON.stringify(mockResource)
     };
 
-    thunk = postResource(mockTicket);
+    thunk = postResource(mockResource);
     mockDispatch = jest.fn();
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
