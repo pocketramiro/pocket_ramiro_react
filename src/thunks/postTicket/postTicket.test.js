@@ -6,7 +6,7 @@ describe('postTicket', () => {
 
   beforeEach(() => {
     mockTicket = {'name': 'test ticket'};
-    url = 'https://fathomless-shore-89603.herokuapp.com/api/v1/tickets';
+    url = `${process.env.REACT_APP_BASEURL}/api/v1/tickets`;
     options = {
       method: 'POST',
       headers: { 'Content-type': 'application/json' },
