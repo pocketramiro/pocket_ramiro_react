@@ -51,4 +51,10 @@ describe('getResouceParts', () => {
     expect(window.fetch).toHaveBeenCalledWith(url)
   });
 
+  it('should dispatch ResouceParts with the correct params', async () => {
+    await thunk(mockDispatch)
+
+    expect(mockDispatch).toHaveBeenCalledWith(actions.setResourceParts(mockParts))
+  })
+
 });
