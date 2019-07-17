@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getTickets } from '../../thunks/getTickets';
+import { Card } from '../Card';
 
 export class CardContainer extends Component {
 
@@ -9,16 +10,24 @@ export class CardContainer extends Component {
   }
 
   render () {
+    // Needs to be refactored so different items can be accepted
+    const displayCards = this.props.tickets.map(data => {
+      return <Card key={data.id} data={data}/>
+    })
     return (
       <section>
-        <button>Create Task</button>
+        {displayCards}
       </section>
     )
   }
-} 
+}
+
+export const mapStateToProps = state => ({
+  tickets: state.tickets
+})
 
 export const mapDispatchToProps = dispatch => ({
   getTickets: () => dispatch(getTickets())
 })
 
-export default connect(null, mapDispatchToProps)(CardContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(CardContainer);
