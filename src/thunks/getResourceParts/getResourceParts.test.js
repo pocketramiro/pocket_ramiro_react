@@ -45,4 +45,10 @@ describe('getResouceParts', () => {
     expect(mockDispatch).toHaveBeenCalledWith(actions.setLoading(false));
   });
 
+  it('should call fetch with the correc params', async () => {
+    await thunk(mockDispatch);
+    
+    expect(window.fetch).toHaveBeenCalledWith(url)
+  });
+
 });
