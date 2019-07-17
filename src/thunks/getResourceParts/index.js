@@ -1,9 +1,9 @@
-import { setParts, setLoading, setError} from '../../actions';
+import { setResourceParts, setLoading, setError} from '../../actions';
 
-export const getParts = (partsId) => {
+export const getResourceParts = (resourceId) => {
   return async (dispatch) => {
     const base = 'http://fathomless-shore-89603.herokuapp.com'
-    const url = `${base}/api/v1/${partsId}/parts`
+    const url = `${base}/api/v1/${resourceId}/parts`
 
     try {
       const response = await fetch(url);
@@ -12,9 +12,9 @@ export const getParts = (partsId) => {
         throw Error(response.statusText)
       }
 
-      const part = await response.json()
+      const parts = await response.json()
       dispatch(setLoading(false))
-      dispatch(setParts(part))
+      dispatch(setResourceParts(parts))
     } catch(error) {
       dispatch(setError(error.message))
     }

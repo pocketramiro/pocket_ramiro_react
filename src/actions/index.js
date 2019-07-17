@@ -23,7 +23,7 @@ export const setError = (error) => ({
   error
 });
 
-export const setParts = (parts) => ({
-  type: 'SET_ALL_PARTS',
+export const setResourceParts = (parts) => ({
+  type: 'SET_RESOURCE_PARTS',
   parts 
 })
