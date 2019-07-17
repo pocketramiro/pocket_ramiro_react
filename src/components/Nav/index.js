@@ -25,7 +25,7 @@ class Nav extends Component {
 
     const mainNavigation = 
                         <section id='menu'>
-                            <NavLink to='/Assets' name='Assets' onClick={this.handleChange}>
+                            <NavLink to='/Assets' name='Assets' onClick={this.handleChange} className='link1'>
                             <i className="material-icons menu-icons"> insert_chart</i>
                                 Assets
                             </NavLink>

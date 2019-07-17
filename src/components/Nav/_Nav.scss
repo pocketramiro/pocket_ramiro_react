@@ -55,7 +55,7 @@ label {
   padding: 12px;
   
 }
-// links
+
 #menu {
   @include displayFlex(null, null, null, column);
   background: $nav-background-color;
@@ -63,18 +63,25 @@ label {
   height: 100vh;
   padding: 15px;
   width: 40vw;
-  a {
-    @include displayFlex(null, null, center, null);
-    text-decoration: none;
-    color: white;
-    border-bottom: 2px solid white;
-    padding-bottom: 20px;
-    padding-top: 15px; 
+
+  .link1:hover {
+    color: yellow;
   }
-  .menu-icons {
-    padding-right: 5px;
+    a {
+      @include displayFlex(null, null, center, null);
+      text-decoration: none;
+      color: white;
+      border-bottom: 2px solid white;
+      padding-bottom: 20px;
+      padding-top: 15px; 
+      font-size: 36px;
+      
+    }
+    .menu-icons {
+      padding-right: 19px;
+      font-size: 40px;
+    }
   }
-}
 
 .mobile-menu {
   position: absolute;
