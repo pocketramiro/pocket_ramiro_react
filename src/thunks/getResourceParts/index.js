@@ -6,6 +6,7 @@ export const getResourceParts = (resourceId) => {
     const url = `${base}/api/v1/${resourceId}/parts`
 
     try {
+      dispatch(setLoading(true))
       const response = await fetch(url);
 
       if(!response.ok) {

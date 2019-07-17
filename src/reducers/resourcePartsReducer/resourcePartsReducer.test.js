@@ -15,7 +15,7 @@ describe('resoucePartsReducer', () => {
     const expected = MD.mockPartsResouce
     const action = setResourceParts(expected);
     const result = resourcePartsReducer([], action);
-    
+
     expect(result).toEqual(expected);
   });
 

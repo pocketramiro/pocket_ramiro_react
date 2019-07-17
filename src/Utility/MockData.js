@@ -16,3 +16,5 @@ export const mockPartsResouce = [
       "updated_at": "2019-07-16T13:18:09.048Z"
   }
 ]
+
+export const mockError = 'Oops Something Went Wrong'
