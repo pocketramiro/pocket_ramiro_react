@@ -2,8 +2,7 @@ import { setUser, setLoading, setError } from '../../actions';
 
 export const postLoginUser = (user) => {
   return async (dispatch) => {
-    const base = "https://fathomless-shore-89603.herokuapp.com";
-    const url = `${base}/api/v1/users`;
+    const url = `${process.env.REACT_APP_BASEURL}/api/v1/users`;
     const options = {
       method: "POST",
       headers: { 'Content-type': 'application/json' },

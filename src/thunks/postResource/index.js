@@ -1,9 +1,9 @@
 import { addResource, setLoading, setError } from '../../actions';
 
+
 export const postResource = (resource) => {
   return async (dispatch) => {
-    const base = "https://fathomless-shore-89603.herokuapp.com";
-    const url = `${base}/api/v1/resources`;
+    const url = `${process.env.REACT_APP_BASEURL}/api/v1/resources`;
     const options = {
       method: "POST",
       headers: { 'Content-type': 'application/json' },

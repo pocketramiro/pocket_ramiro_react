@@ -2,8 +2,7 @@ import { setActiveTickets, setLoading, setError } from '../../actions';
 
 export const getActiveTickets = () => {
   return async (dispatch) => {
-    const base = "https://fathomless-shore-89603.herokuapp.com";
-    const url = `${base}/api/v1/tickets`;
+    const url = `${process.env.REACT_APP_BASEURL}/api/v1/tickets`;
 
     try {
       dispatch(setLoading(true));
