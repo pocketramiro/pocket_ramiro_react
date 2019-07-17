@@ -1,3 +1,18 @@
+.header-icon-container {
+  @include displayFlex(null, null, center, null);
+  border-bottom: 1px #00000026 solid;
+  padding-bottom: 10px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.header-icon {
+  margin-right: 5px;
+}
+
 .low {
   color: yellow;
 }

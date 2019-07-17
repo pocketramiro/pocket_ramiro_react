@@ -8,9 +8,21 @@ export const Card = (props) => {
   return (
     <section className="card">
       <header>
-        <p className={priority}>Priority: {priority}</p>
-        <p>Opened: {created_at.substr(0, 10)}</p>
-        <p>{`${days} days since ticket opened`}</p>
+        <p className="header-icon-container">
+          <i className={`material-icons header-icon ${priority}`}>
+            flag
+          </i>Priority: {priority}
+        </p>
+        <p className="header-icon-container">
+          <i className={`material-icons header-icon`}>
+            drafts
+          </i>Opened: {created_at.substr(0, 10)}
+        </p>
+        <p className="header-icon-container">
+          <i className={`material-icons header-icon`}>
+            access_time
+          </i>{`${days} days since ticket opened`}
+        </p>
       </header>
       <p>Notes: {notes}</p>
     </section>
