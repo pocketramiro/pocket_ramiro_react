@@ -1,5 +1,5 @@
-export const setActiveTickets = (tickets) => ({
-  type: 'SET_ACTIVE_TICKETS',
+export const setTickets = (tickets) => ({
+  type: 'SET_TICKETS',
   tickets
 });
 

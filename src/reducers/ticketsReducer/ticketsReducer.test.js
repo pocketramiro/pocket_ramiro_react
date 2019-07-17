@@ -1,5 +1,5 @@
 import { ticketsReducer } from './';
-import { setActiveTickets, addTicket } from '../../actions';
+import { setTickets, addTicket } from '../../actions';
 
 describe('ticketsReducer', () => {
   it('should return default state', () => {
@@ -9,9 +9,9 @@ describe('ticketsReducer', () => {
     expect(result).toEqual(expected);
   });
 
-  it('should is load all the tickets into state when the case is SET_ACTIVE_TICKETS', () => {
+  it('should is load all the tickets into state when the case is SET_TICKETS', () => {
     const expected = ['ticket1', 'ticket2'];
-    const action = setActiveTickets(expected);
+    const action = setTickets(expected);
     const result = ticketsReducer([], action);
 
     expect(result).toEqual(expected);

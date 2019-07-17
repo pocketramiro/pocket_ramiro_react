@@ -1,13 +1,13 @@
-import { getActiveTickets } from './';
+import { getTickets } from './';
 import * as actions from '../../actions';
 
-describe('getActiveTickets', () => {
+describe('getTickets', () => {
   let url, mockDispatch, thunk, mockTickets;
 
   beforeEach(() => {
     url = `${process.env.REACT_APP_BASEURL}/api/v1/tickets`;
     mockDispatch = jest.fn();
-    thunk = getActiveTickets();
+    thunk = getTickets();
     mockTickets = ['ticket1', 'ticket2']
 
     window.fetch = jest.fn().mockImplementation(()=> {
@@ -49,9 +49,9 @@ describe('getActiveTickets', () => {
     expect(mockDispatch).toHaveBeenCalledWith(actions.setLoading(false));
   });
 
-  it('should dispatch setActiveTickets with the correct params', async () => {
+  it('should dispatch setTickets with the correct params', async () => {
     await thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(actions.setActiveTickets(mockTickets));
+    expect(mockDispatch).toHaveBeenCalledWith(actions.setTickets(mockTickets));
   });
 });
