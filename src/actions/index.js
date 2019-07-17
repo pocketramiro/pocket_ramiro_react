@@ -8,6 +8,11 @@ export const addTicket = (ticket) => ({
   ticket
 });
 
+export const addResource = (resource) => ({
+  type: 'ADD_RESOURCE',
+  resource
+});
+
 export const setAllResources = (resources) => ({
   type: 'SET_ALL_RESOURCES',
   resources
