@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { getTickets } from '../../thunks/getTickets';
 
 export class CardContainer extends Component {
 
