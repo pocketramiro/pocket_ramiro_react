@@ -7,7 +7,7 @@ describe('getResouceParts', () => {
 
   beforeEach(() => {
     resourceId = 1
-    url = `https://fathomless-shore-89603.herokuapp.com/api/v1/${resourceId}/parts`
+    url = `${process.env.REACT_APP_BASEURL}/api/v1/${resourceId}/parts`
     mockDispatch = jest.fn();
     thunk = getResourceParts(resourceId);
     mockParts = MD.mockPartsResouce;

@@ -5,7 +5,7 @@ describe('getActiveTickets', () => {
   let url, mockDispatch, thunk, mockTickets;
 
   beforeEach(() => {
-    url = 'https://fathomless-shore-89603.herokuapp.com/api/v1/tickets';
+    url = `${process.env.REACT_APP_BASEURL}/api/v1/tickets`;
     mockDispatch = jest.fn();
     thunk = getActiveTickets();
     mockTickets = ['ticket1', 'ticket2']

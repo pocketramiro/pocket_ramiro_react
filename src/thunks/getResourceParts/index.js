@@ -2,8 +2,7 @@ import { setResourceParts, setLoading, setError} from '../../actions';
 
 export const getResourceParts = (resourceId) => {
   return async (dispatch) => {
-    const base = 'https://fathomless-shore-89603.herokuapp.com'
-    const url = `${base}/api/v1/${resourceId}/parts`
+    const url = `${process.env.REACT_APP_BASEURL}/api/v1/${resourceId}/parts`
 
     try {
       dispatch(setLoading(true))
