@@ -2,16 +2,13 @@ import React, { Component } from 'react';
 import CardContainer from '../CardContainer';
 
 
-export class TicketDashboard extends Component {
+export const Dashboard = () => {
   
-  
-  render() {
-    return (
-      <main>
+  return (
+    <main>
       <CardContainer/>
     </main>
   )
-};
 }
 
-export default TicketDashboard;
+export default Dashboard;
