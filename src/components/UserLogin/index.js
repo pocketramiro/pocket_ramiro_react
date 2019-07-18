@@ -40,7 +40,7 @@ export default class UserSignIn extends Component {
               value={email}/>
           </label>
           <label htmlFor='password' className='login-label'>
-            <i class="material-icons">
+            <i className="material-icons">
               lock
             </i>
             <input 
