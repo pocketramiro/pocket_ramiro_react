@@ -6,6 +6,7 @@ import Assets from '../../containers/Assets'
 import TicketDashboard from '../TicketDashboard'
 import CreateTask from '../CreateTask';
 import TicketForm from '../TicketForm';
+import UserLogin from '../UserLogin/';
 
 class App extends Component {
 
@@ -13,13 +14,14 @@ class App extends Component {
     return (
       <main>
         <Nav/>
-        <Switch>
+        <UserLogin/>
+        {/* <Switch>
           <Route exact path='/' component={TicketDashboard}/>
           <Route path='/Assets' component={Assets}/>
           <Route path='/task' component={CreateTask}/>
           <Route component={NotFound}/>
-        </Switch>
-        <TicketForm/>
+        </Switch> */}
+        {/* <TicketForm/> */}
       </main>
     )
   }

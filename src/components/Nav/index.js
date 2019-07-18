@@ -41,18 +41,23 @@ class Nav extends Component {
 
 return (
       <div>
+        <div className='nav'>
         <section className='nav-wrapper'>
           <input type='checkbox' className='nav-toggle' id='hamburger'
                 onChange={this.handleSelected}
                 checked={isSelected}
-          />
+                />
           <label htmlFor='hamburger'>
             <div className='bar nav-top'></div>
             <div className='bar nav-middle'></div>
             <div className='bar nav-bottom'></div>
           </label>
-        {title.length === 0 ? <h3>Work Task</h3> : <h3>{title}</h3>}
         </section>
+        {title.length === 0 ? <h3> <span>Pocket</span> Ramiro</h3> : <h3>{title}</h3>}
+        <NavLink to="/login" className="nav-login">
+          Log in
+        </NavLink>
+        </div>
         <section className="mobile-menu">
           {isSelected && mainNavigation}
         </section>

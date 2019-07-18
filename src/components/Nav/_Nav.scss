@@ -1,3 +1,8 @@
+.nav {
+  @include displayFlex(space-between, center, center, row);
+  border-bottom: 1px #00000026 solid;
+}
+
 .nav-wrapper {
   @include displayFlex(left, null, center, null);
 
@@ -50,11 +55,14 @@ input[type=checkbox]:checked + label {
     transform-origin: 20% 129%;
   }
 }
-
 label {
-  padding: 12px;
-  
+  transition: all 0.3s;
 }
+
+label:hover {
+  transform: scale(1.1);
+}
+
 
 #menu {
   @include displayFlex(null, null, null, column);
@@ -82,7 +90,14 @@ label {
       font-size: 40px;
     }
   }
+h3 span {
+  font-weight: 400;
+}
 
+.nav-login {
+    font-size: 18px;
+    margin: 12px; 
+  }
 .mobile-menu {
   position: absolute;
 }
