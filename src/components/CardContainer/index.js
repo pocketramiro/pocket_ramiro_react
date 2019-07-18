@@ -6,7 +6,21 @@ import { Card } from '../Card';
 export class CardContainer extends Component {
 
   componentDidMount() {
-    this.props.getTickets()
+    // this.props.getTickets()
+ 
+    this.selectOption()
+  }
+
+  selectOption = () => {
+    const { history } = this.props
+    switch(history){
+      case undefined:
+        this.props.getTickets()
+      case '/Assets'
+        this.props.
+      default:
+        break
+    }
   }
 
   render () {
@@ -28,7 +42,8 @@ export const mapStateToProps = state => ({
 })
 
 export const mapDispatchToProps = dispatch => ({
-  getTickets: () => dispatch(getTickets())
+  getTickets: () => dispatch(getTickets()),
+  getResources: () => dispatch(get)
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardContainer);

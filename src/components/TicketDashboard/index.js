@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import CardContainer from '../CardContainer';
 
 
-export const TicketDashboard = () => {
-  return (
-    <main>
+export class TicketDashboard extends Component {
+  
+  
+  render() {
+    return (
+      <main>
       <CardContainer/>
     </main>
   )
 };
+}
 
 export default TicketDashboard;

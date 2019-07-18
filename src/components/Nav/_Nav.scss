@@ -80,9 +80,11 @@ label {
     .menu-icons {
       padding-right: 19px;
       font-size: 40px;
+      // z-index: -1;
     }
   }
 
 .mobile-menu {
   position: absolute;
+  z-index: 1;
 }
