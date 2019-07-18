@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-class Nav extends Component {
+export class Nav extends Component {
   constructor() {
     super()
     this.state = {
@@ -10,13 +10,13 @@ class Nav extends Component {
     }
   }
 
-  handleSelected = (event) => {
-    const { checked } = event.target
+  handleSelected = (e) => {
+    const { checked } = e.target
     this.setState({isSelected: checked})
   }
 
-  handleChange = (event) => {
-    const { name } = event.target
+  handleChange = (e) => {
+    const { name } = e.target.closest('.nav-link');
     if(!name) return;
     this.setState({title: name , isSelected: false })
   }
@@ -26,19 +26,19 @@ class Nav extends Component {
 
     const mainNavigation = (
       <section id='menu' onClick={this.handleChange}>
-        <NavLink to='/tickets' name='Tickets' className='link1'>
+        <NavLink to='/tickets' name='Tickets' className='nav-link'>
           <i className="material-icons menu-icons"> insert_chart</i>
             Tickets
         </NavLink>
-        <NavLink to='/assets' name='Assets' className='link1'>
+        <NavLink to='/assets' name='Assets' className='nav-link'>
           <i className="material-icons menu-icons"> insert_chart</i>
             Assets
         </NavLink>
-        <NavLink to='/parts' name='Parts'> 
+        <NavLink to='/parts' name='Parts' className='nav-link'> 
           <i className="material-icons menu-icons"> business_center</i>
             Parts
         </NavLink>
-        <NavLink to='/companies' name='Companies'>
+        <NavLink to='/companies' name='Companies' className='nav-link'>
           <i className="material-icons menu-icons"> business </i>
           Companies
         </NavLink>
