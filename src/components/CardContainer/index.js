@@ -5,22 +5,20 @@ import { getResources } from '../../thunks/getResources';
 import { Card } from '../Card';
 
 export class CardContainer extends Component {
-
-  componentDidMount() {
-    if(this.props.history === undefined){
-      this.props.getTickets()
-    } else {
-      this.selectOption()
+  componentDidUpdate(prevProps) {
+    if(prevProps.path !== this.props.path) {
+      this.selectOption(this.props.path)
     }
   }
 
-  selectOption = () => {
-    const { pathname } = this.props.history
-    switch(pathname){
-      case '/Assets':
+  selectOption = (path) => {
+    if(!path) return;
+    switch(path){
+      case 'assets':
         this.props.getResources()
         break
       default:
+        this.props.getTickets()
         break
     }
   }
@@ -40,7 +38,8 @@ export class CardContainer extends Component {
 }
 
 export const mapStateToProps = state => ({
-  tickets: state.tickets
+  tickets: state.tickets,
+  path: state.path
 })
 
 export const mapDispatchToProps = dispatch => ({
