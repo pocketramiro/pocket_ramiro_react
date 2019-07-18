@@ -80,6 +80,7 @@ input[type=checkbox]:checked + label {
     .menu-icons {
       padding-right: 19px;
       font-size: 40px;
+      // z-index: -1;
     }
   }
 h3 span {
@@ -92,4 +93,9 @@ h3 span {
   }
 .mobile-menu {
   position: absolute;
+<<<<<<< HEAD
 }
+=======
+  z-index: 1;
+}
+>>>>>>> dynamic-card

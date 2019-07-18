@@ -4,6 +4,7 @@ import Nav from './';
 
 describe('Nav', () => {
   let wrapper;
+
   beforeEach(() => {
     wrapper = shallow(<Nav/>);
   });
@@ -27,24 +28,21 @@ describe('Nav', () => {
     expect(wrapper.state()).toEqual(defaultState);
   });
 
-
   it('should change isSelected in state to true when clicked', () => {
     wrapper.find('input').simulate('change', { target: { checked: true}});
-    expect(wrapper.state('isSelected')).toBe(true);  
+    expect(wrapper.state('isSelected')).toBe(true);
   });
 
   it('should update isSelected in state to false when clicked', () => {
     wrapper.find('input').simulate('change', { target: { checked: true}});
-    expect(wrapper.state('isSelected')).toBe(true); 
+    expect(wrapper.state('isSelected')).toBe(true);
     wrapper.find('input').simulate('change', { target: { checked: false}});
     expect(wrapper.state('isSelected')).toBe(false);
   });
 
   it.skip('should update title with Assets in state when Assets are clicked', () => {
     wrapper.setState({isSelected: true, title: ''});
-    // wrapper.setProps({name: undefined});
     wrapper.update();
     wrapper.find('.nav-link').at(0).simulate('click');
-    expect(wrapper.state('title')).toBe('Assets');
   });
 });

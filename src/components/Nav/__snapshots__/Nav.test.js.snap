@@ -107,8 +107,20 @@ exports[`Nav should render a Nav component if isSelected is true 1`] = `
     >
       <NavLink
         className="nav-link"
+        name="Tickets"
+        to="/tickets"
+      >
+        <i
+          className="material-icons menu-icons"
+        >
+           insert_chart
+        </i>
+        Tickets
+      </NavLink>
+      <NavLink
+        className="nav-link"
         name="Assets"
-        to="/Assets"
+        to="/assets"
       >
         <i
           className="material-icons menu-icons"
@@ -120,7 +132,7 @@ exports[`Nav should render a Nav component if isSelected is true 1`] = `
       <NavLink
         className="nav-link"
         name="Parts"
-        to="/Parts_and_Inventory"
+        to="/parts"
       >
         <i
           className="material-icons menu-icons"
@@ -132,7 +144,7 @@ exports[`Nav should render a Nav component if isSelected is true 1`] = `
       <NavLink
         className="nav-link"
         name="Companies"
-        to="/Companies"
+        to="/companies"
       >
         <i
           className="material-icons menu-icons"

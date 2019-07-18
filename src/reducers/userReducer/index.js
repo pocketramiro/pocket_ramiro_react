@@ -1,9 +1,9 @@
-export const userReducer = (state = {}, action) => {
+export const userReducer = (state = 0, action) => {
   switch (action.type) {
     case 'SET_USER':
-      return action.user;
+      return action.user_id;
     case 'CLEAR_USER':
-      return {};
+      return 0;
     default:
       return state;
   }

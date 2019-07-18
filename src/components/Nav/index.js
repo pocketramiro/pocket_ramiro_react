@@ -10,8 +10,8 @@ class Nav extends Component {
     }
   }
 
-  handleSelected = (event) => {
-    const { checked } = event.target
+  handleSelected = (e) => {
+    const { checked } = e.target
     this.setState({isSelected: checked})
   }
 
@@ -24,30 +24,38 @@ class Nav extends Component {
   render() {
     const {isSelected, title} = this.state
 
-    const hamburgerNav = 
+    const hamburgerNav = (
       <section id='menu' onClick={this.handleClick}>
-        <NavLink to='/Assets' name='Assets' className='nav-link'>
+        <NavLink to='/tickets' name='Tickets' className='nav-link'>
+          <i className="material-icons menu-icons"> insert_chart</i>
+            Tickets
+        </NavLink>
+        <NavLink to='/assets' name='Assets' className='nav-link'>
           <i className="material-icons menu-icons"> insert_chart</i>
             Assets
         </NavLink>
-        <NavLink to='/Parts_and_Inventory'name='Parts' className='nav-link'> 
+        <NavLink to='/parts' name='Parts' className='nav-link'> 
           <i className="material-icons menu-icons"> business_center</i>
             Parts
         </NavLink>
-        <NavLink to='/Companies' name='Companies' className='nav-link'>
+        <NavLink to='/companies' name='Companies' className='nav-link'>
           <i className="material-icons menu-icons"> business </i>
           Companies
         </NavLink>
       </section>
+    );
 
-return  this.props.name === undefined ? (
+    return (
       <div>
         <div className='nav'>
         <section className='nav-wrapper'>
-          <input type='checkbox' className='nav-toggle' id='hamburger'
-                onChange={this.handleSelected}
-                checked={isSelected}
-                />
+          <input
+            id='hamburger'
+            type='checkbox' 
+            className='nav-toggle'
+            onChange={this.handleSelected}
+            checked={isSelected}
+          />
           <label htmlFor='hamburger'>
             <div className='bar nav-top'></div>
             <div className='bar nav-middle'></div>
@@ -63,29 +71,6 @@ return  this.props.name === undefined ? (
           {isSelected && hamburgerNav}
         </section>
       </div> 
-    ) : (
-      <div>
-      <div className='nav'>
-      <section className='nav-wrapper'>
-        <input type='checkbox' className='nav-toggle' id='hamburger'
-              onChange={this.handleSelected}
-              checked={isSelected}
-              />
-        <label htmlFor='hamburger'>
-          <div className='bar nav-top'></div>
-          <div className='bar nav-middle'></div>
-          <div className='bar nav-bottom'></div>
-        </label>
-      </section>
-      {title.length === 0 ? <h3> <span>Pocket</span> Ramiro</h3> : <h3>{title}</h3>}
-      <NavLink to="" className="nav-login">
-        signout
-      </NavLink>
-      </div>
-      <section className="mobile-menu">
-        {isSelected && hamburgerNav}
-      </section>
-    </div>
     )
   }
 };
