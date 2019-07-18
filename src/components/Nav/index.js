@@ -10,53 +10,67 @@ class Nav extends Component {
     }
   }
 
-  handleSelected = (event) => {
-    const { checked } = event.target
+  handleSelected = (e) => {
+    const { checked } = e.target
     this.setState({isSelected: checked})
   }
 
-  handleChange = (event) => {
-    const { name } = event.target
+  handleClick = (event) => {
+    if (!event.target.closest('.nav-link')) return;
+    const { name } = event.target.closest('.nav-link')
     this.setState({title: name , isSelected: false })
   }
 
   render() {
     const {isSelected, title} = this.state
 
-    const mainNavigation = 
-                        <section id='menu'>
-                            <NavLink to='/Assets' name='Assets' onClick={this.handleChange} className='link1'>
-                            <i className="material-icons menu-icons"> insert_chart</i>
-                                Assets
-                            </NavLink>
-                            <NavLink to='/Parts_and_Inventory'name='Parts' onClick={this.handleChange}> 
-                              <i className="material-icons menu-icons"> business_center</i>
-                                Parts
-                            </NavLink>
-                            <NavLink to='/Companies' name='Companies' onClick={this.handleChange}>
-                              <i className="material-icons menu-icons"> business </i>
-                              Companies
-                            </NavLink>
-                          </section>
+    const hamburgerNav = (
+      <section id='menu' onClick={this.handleClick}>
+        <NavLink to='/tickets' name='Tickets' className='nav-link'>
+          <i className="material-icons menu-icons"> insert_chart</i>
+            Tickets
+        </NavLink>
+        <NavLink to='/assets' name='Assets' className='nav-link'>
+          <i className="material-icons menu-icons"> insert_chart</i>
+            Assets
+        </NavLink>
+        <NavLink to='/parts' name='Parts' className='nav-link'> 
+          <i className="material-icons menu-icons"> business_center</i>
+            Parts
+        </NavLink>
+        <NavLink to='/companies' name='Companies' className='nav-link'>
+          <i className="material-icons menu-icons"> business </i>
+          Companies
+        </NavLink>
+      </section>
+    );
 
-return (
+    return (
       <div>
+        <div className='nav'>
         <section className='nav-wrapper'>
-          <input type='checkbox' className='nav-toggle' id='hamburger'
-                onChange={this.handleSelected}
-                checked={isSelected}
+          <input
+            id='hamburger'
+            type='checkbox' 
+            className='nav-toggle'
+            onChange={this.handleSelected}
+            checked={isSelected}
           />
           <label htmlFor='hamburger'>
             <div className='bar nav-top'></div>
             <div className='bar nav-middle'></div>
             <div className='bar nav-bottom'></div>
           </label>
-        {title.length === 0 ? <h3>Work Task</h3> : <h3>{title}</h3>}
         </section>
+        {title.length === 0 ? <h3> <span>Pocket</span> Ramiro</h3> : <h3>{title}</h3>}
+        <NavLink to="/login" className="nav-login">
+          Log in
+        </NavLink>
+        </div>
         <section className="mobile-menu">
-          {isSelected && mainNavigation}
+          {isSelected && hamburgerNav}
         </section>
-      </div>
+      </div> 
     )
   }
 };

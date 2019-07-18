@@ -18,3 +18,26 @@ export const mockPartsResouce = [
 ]
 
 export const mockError = 'Oops Something Went Wrong'
+
+export const mockResources = [
+  {
+      id:1,
+      machine_type_id: 1,
+      user_id: 1,
+      name: 'Bright Tank 1',
+      cost: 5000,
+      active: true,
+      created_at: '2019-07-16T21:52:00.823Z',
+      updated_at: '2019-07-16T21:52:00.823Z'
+  },
+  {
+      id:2,
+      machine_type_id: 1,
+      user_id: 1,
+      name: 'Bright Tank 2',
+      cost: 5091,
+      active: true,
+      created_at: '2019-07-16T21:52:00.823Z',
+      updated_at: '2019-07-16T21:52:00.823Z'
+  }
+]

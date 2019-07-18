@@ -1,3 +1,8 @@
+export const setPath = (path) => ({
+  type: 'SET_PATH',
+  path
+});
+
 export const setTickets = (tickets) => ({
   type: 'SET_TICKETS',
   tickets
@@ -13,9 +18,9 @@ export const addResource = (resource) => ({
   resource
 });
 
-export const setUser = (user) => ({
+export const setUser = (user_id) => ({
   type: 'SET_USER',
-  user
+  user_id
 });
 
 export const clearUser = () => ({

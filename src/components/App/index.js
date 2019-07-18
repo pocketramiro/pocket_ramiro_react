@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import NotFound from '../NotFound';
 import Nav from '../Nav';
-import Assets from '../../containers/Assets'
-import TicketDashboard from '../TicketDashboard'
+import Dashboard from '../Dashboard'
 import CreateTask from '../CreateTask';
 import TicketForm from '../TicketForm';
+import UserLogin from '../UserLogin/';
 
 class App extends Component {
 
+
   render() {
+    let user = undefined;
     return (
       <main>
-        <Nav/>
-        <Switch>
-          <Route exact path='/' component={TicketDashboard}/>
-          <Route path='/Assets' component={Assets}/>
-          <Route path='/task' component={CreateTask}/>
+        <Nav name={user}/>
+         <Switch>
+          <Route exact path='/' render={() => <Redirect to="/tickets"/>} />
+          <Route path='/tickets' component={Dashboard}/>
+          <Route path='/assets' component={Dashboard}/>
+          <Route path='/task' component={CreateTask} />
+          <Route path='/login' component={UserLogin} />
           <Route component={NotFound}/>
         </Switch>
         <TicketForm/>

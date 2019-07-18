@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getTickets } from '../../thunks/getTickets';
+import { getResources } from '../../thunks/getResources';
 import { Card } from '../Card';
+import startCase from 'lodash/startCase'
 
 export class CardContainer extends Component {
+  componentDidUpdate(prevProps) {
+    if(prevProps.path !== this.props.path) {
+      this.selectOption(this.props.path)
+    }
+  }
 
   componentDidMount() {
-    this.props.getTickets()
+    const { dataKey } = this.props
+    const actionName = `get${startCase(dataKey)}`
+    
+    this.props[actionName] && this.props[actionName]()
   }
 
   render () {
@@ -23,12 +33,17 @@ export class CardContainer extends Component {
   }
 }
 
-export const mapStateToProps = state => ({
-  tickets: state.tickets
-})
+export const mapStateToProps = (state, otherProps) => {
+  const { dataKey } = otherProps
+  
+  return {
+    [dataKey]: state[dataKey]  
+  }
+}
 
 export const mapDispatchToProps = dispatch => ({
-  getTickets: () => dispatch(getTickets())
+  getTickets: () => dispatch(getTickets()),
+  getResources: () => dispatch(getResources())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardContainer);
