@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import NotFound from '../NotFound';
 import Nav from '../Nav';
 import Assets from '../../containers/Assets'
@@ -11,18 +11,18 @@ import UserLogin from '../UserLogin/';
 class App extends Component {
 
   render() {
-    let user = undefined
+    let user = undefined;
     return (
       <main>
         <Nav name={user}/>
-
          <Switch>
-          <Route exact path='/' component={TicketDashboard}/>
-          <Route path='/Assets' component={Assets}/>
-          <Route path='/task' component={CreateTask}/>
-          <Route path='/login' component={UserLogin}/>
+          <Route exact path='/' render={() => <Redirect to="/tickets"/>} />
+          <Route exact path='/tickets' component={TicketDashboard} />
+          <Route path='/assets' component={TicketDashboard} />
+          <Route path='/task' component={CreateTask} />
+          <Route path='/login' component={UserLogin} />
           <Route component={NotFound}/>
-        </Switch> */
+        </Switch>
         <TicketForm/>
       </main>
     )

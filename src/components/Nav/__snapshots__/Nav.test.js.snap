@@ -103,11 +103,11 @@ exports[`Nav should render a Nav component if isSelected is true 1`] = `
   >
     <section
       id="menu"
+      onClick={[Function]}
     >
       <NavLink
-        className="link1"
+        className="nav-link"
         name="Assets"
-        onClick={[Function]}
         to="/Assets"
       >
         <i
@@ -118,8 +118,8 @@ exports[`Nav should render a Nav component if isSelected is true 1`] = `
         Assets
       </NavLink>
       <NavLink
+        className="nav-link"
         name="Parts"
-        onClick={[Function]}
         to="/Parts_and_Inventory"
       >
         <i
@@ -130,8 +130,8 @@ exports[`Nav should render a Nav component if isSelected is true 1`] = `
         Parts
       </NavLink>
       <NavLink
+        className="nav-link"
         name="Companies"
-        onClick={[Function]}
         to="/Companies"
       >
         <i

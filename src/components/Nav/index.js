@@ -10,14 +10,14 @@ class Nav extends Component {
     }
   }
 
-
   handleSelected = (event) => {
     const { checked } = event.target
     this.setState({isSelected: checked})
   }
 
-  handleChange = (event) => {
-    const { name } = event.target
+  handleClick = (event) => {
+    if (!event.target.closest('.nav-link')) return;
+    const { name } = event.target.closest('.nav-link')
     this.setState({title: name , isSelected: false })
   }
 
@@ -25,20 +25,20 @@ class Nav extends Component {
     const {isSelected, title} = this.state
 
     const hamburgerNav = 
-                        <section id='menu'>
-                            <NavLink to='/Assets' name='Assets' onClick={this.handleChange} className='link1'>
-                            <i className="material-icons menu-icons"> insert_chart</i>
-                                Assets
-                            </NavLink>
-                            <NavLink to='/Parts_and_Inventory'name='Parts' onClick={this.handleChange}> 
-                              <i className="material-icons menu-icons"> business_center</i>
-                                Parts
-                            </NavLink>
-                            <NavLink to='/Companies' name='Companies' onClick={this.handleChange}>
-                              <i className="material-icons menu-icons"> business </i>
-                              Companies
-                            </NavLink>
-                          </section>
+      <section id='menu' onClick={this.handleClick}>
+        <NavLink to='/Assets' name='Assets' className='nav-link'>
+          <i className="material-icons menu-icons"> insert_chart</i>
+            Assets
+        </NavLink>
+        <NavLink to='/Parts_and_Inventory'name='Parts' className='nav-link'> 
+          <i className="material-icons menu-icons"> business_center</i>
+            Parts
+        </NavLink>
+        <NavLink to='/Companies' name='Companies' className='nav-link'>
+          <i className="material-icons menu-icons"> business </i>
+          Companies
+        </NavLink>
+      </section>
 
 return  this.props.name === undefined ? (
       <div>
