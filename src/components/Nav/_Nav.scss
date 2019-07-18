@@ -64,38 +64,33 @@ input[type=checkbox]:checked + label {
   padding: 15px;
   width: 40vw;
 
-  .link1:hover {
-    color: yellow;
+  a {
+    @include displayFlex(null, null, center, null);
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid white;
+    padding-bottom: 20px;
+    padding-top: 15px; 
+    font-size: 36px;
+    
   }
-    a {
-      @include displayFlex(null, null, center, null);
-      text-decoration: none;
-      color: white;
-      border-bottom: 2px solid white;
-      padding-bottom: 20px;
-      padding-top: 15px; 
-      font-size: 36px;
-      
-    }
-    .menu-icons {
-      padding-right: 19px;
-      font-size: 40px;
-      // z-index: -1;
-    }
+
+  .menu-icons {
+    padding-right: 19px;
+    font-size: 40px;
   }
+}
+
 h3 span {
   font-weight: 400;
 }
 
 .nav-login {
-    font-size: 18px;
-    margin: 12px; 
-  }
+  font-size: 18px;
+  margin: 12px; 
+}
+
 .mobile-menu {
   position: absolute;
-<<<<<<< HEAD
 }
-=======
-  z-index: 1;
-}
->>>>>>> dynamic-card
+

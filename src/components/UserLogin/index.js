@@ -22,8 +22,8 @@ export default class UserSignIn extends Component {
   }
 
   render() {
-    const { email, password } = this.state
-    (true)
+    const { email, password } = this.state;
+    
     return (
       <div className='user-login-container'>
         <form onSubmit={this.handleSubmit}>
