@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import NotFound from '../NotFound';
 import Nav from '../Nav';
-import Assets from '../../containers/Assets'
 import TicketDashboard from '../TicketDashboard'
 import CreateTask from '../CreateTask';
 import TicketForm from '../TicketForm';
@@ -14,8 +13,8 @@ class App extends Component {
       <main>
         <Nav/>
         <Switch>
-          <Route exact path='/' component={TicketDashboard}/>
-          <Route path='/Assets' component={Assets}/>
+          <Route path='/tickets' component={TicketDashboard}/>
+          <Route path='/assets' component={TicketDashboard}/>
           <Route path='/task' component={CreateTask}/>
           <Route component={NotFound}/>
         </Switch>
