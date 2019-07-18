@@ -8,15 +8,14 @@ export const getResources = () => {
       dispatch(setLoading(true));
 
       const response = await fetch(url);
-
       if (!response.ok) {
         throw Error(response.statusText);
       }
 
-      const activeTickets = await response.json();
+      const resources = await response.json();
 
       dispatch(setLoading(false));
-      dispatch(setResources(activeTickets));
+      dispatch(setResources(resources));
     } catch (error) {
       dispatch(setError(error.message))
     }

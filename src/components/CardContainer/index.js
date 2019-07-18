@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getTickets } from '../../thunks/getTickets';
+import { getResources } from '../../thunks/getResources';
 import { Card } from '../Card';
 
 export class CardContainer extends Component {
 
   componentDidMount() {
-    // this.props.getTickets()
- 
-    this.selectOption()
+    if(this.props.history === undefined){
+      this.props.getTickets()
+    } else {
+      this.selectOption()
+    }
   }
 
   selectOption = () => {
-    const { history } = this.props
-    switch(history){
-      case undefined:
-        this.props.getTickets()
-      case '/Assets'
-        this.props.
+    const { pathname } = this.props.history
+    switch(pathname){
+      case '/Assets':
+        this.props.getResources()
+        break
       default:
         break
     }
@@ -43,7 +45,7 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   getTickets: () => dispatch(getTickets()),
-  getResources: () => dispatch(get)
+  getResources: () => dispatch(getResources())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardContainer);
