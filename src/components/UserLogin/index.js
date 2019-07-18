@@ -1,11 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 export default class UserSignIn extends Component {
   constructor() {
     super()
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      name: ''
     }
   }
 
@@ -21,28 +23,38 @@ export default class UserSignIn extends Component {
 
   render() {
     const { email, password } = this.state
+    (true)
     return (
-      <div>
+      <div className='user-login-container'>
         <form onSubmit={this.handleSubmit}>
-          <label>
-            Email
-              <input 
+      <h1>Login</h1>
+          <label htmlFor='email' className='login-label'>
+            <i class="material-icons">
+              account_circle
+            </i>
+            <input 
+              id='email'
               type='text' 
               name='email' 
+              placeholder='Enter Username'
               onChange={this.handleChange}
-              value={email}
-              />
+              value={email}/>
           </label>
-          <label>
-            Password
+          <label htmlFor='password' className='login-label'>
+            <i class="material-icons">
+              lock
+            </i>
             <input 
-            type='password' 
-            name='password'
-            onChange={this.handleChange}
-            value={password}
-            />
+              id='password'
+              type='password' 
+              name='password'
+              placeholder='Password'
+              pattern=".{8,}"
+              required title="8 characters minimum"
+              onChange={this.handleChange}
+              value={password}/>
           </label>
-          <button>Submit</button>
+          <input type='submit'/>
         </form>
       </div>
     )

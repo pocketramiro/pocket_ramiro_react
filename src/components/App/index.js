@@ -11,17 +11,19 @@ import UserLogin from '../UserLogin/';
 class App extends Component {
 
   render() {
+    let user = undefined
     return (
       <main>
-        <Nav/>
-        <UserLogin/>
-        {/* <Switch>
+        <Nav name={user}/>
+
+         <Switch>
           <Route exact path='/' component={TicketDashboard}/>
           <Route path='/Assets' component={Assets}/>
           <Route path='/task' component={CreateTask}/>
+          <Route path='/login' component={UserLogin}/>
           <Route component={NotFound}/>
-        </Switch> */}
-        {/* <TicketForm/> */}
+        </Switch> */
+        <TicketForm/>
       </main>
     )
   }

@@ -2,33 +2,47 @@
 
 exports[`Nav should match the snapshot 1`] = `
 <div>
-  <section
-    className="nav-wrapper"
+  <div
+    className="nav"
   >
-    <input
-      checked={false}
-      className="nav-toggle"
-      id="hamburger"
-      onChange={[Function]}
-      type="checkbox"
-    />
-    <label
-      htmlFor="hamburger"
+    <section
+      className="nav-wrapper"
     >
-      <div
-        className="bar nav-top"
+      <input
+        checked={false}
+        className="nav-toggle"
+        id="hamburger"
+        onChange={[Function]}
+        type="checkbox"
       />
-      <div
-        className="bar nav-middle"
-      />
-      <div
-        className="bar nav-bottom"
-      />
-    </label>
+      <label
+        htmlFor="hamburger"
+      >
+        <div
+          className="bar nav-top"
+        />
+        <div
+          className="bar nav-middle"
+        />
+        <div
+          className="bar nav-bottom"
+        />
+      </label>
+    </section>
     <h3>
-      Work Task
+       
+      <span>
+        Pocket
+      </span>
+       Ramiro
     </h3>
-  </section>
+    <NavLink
+      className="nav-login"
+      to="/login"
+    >
+      Log in
+    </NavLink>
+  </div>
   <section
     className="mobile-menu"
   />
@@ -37,39 +51,53 @@ exports[`Nav should match the snapshot 1`] = `
 
 exports[`Nav should render a Nav component if isSelected is true 1`] = `
 <div>
-  <section
-    className="nav-wrapper"
+  <div
+    className="nav"
   >
-    <input
-      checked={
-        Object {
-          "isSelected": Object {
-            "isSelected": true,
-          },
-        }
-      }
-      className="nav-toggle"
-      id="hamburger"
-      onChange={[Function]}
-      type="checkbox"
-    />
-    <label
-      htmlFor="hamburger"
+    <section
+      className="nav-wrapper"
     >
-      <div
-        className="bar nav-top"
+      <input
+        checked={
+          Object {
+            "isSelected": Object {
+              "isSelected": true,
+            },
+          }
+        }
+        className="nav-toggle"
+        id="hamburger"
+        onChange={[Function]}
+        type="checkbox"
       />
-      <div
-        className="bar nav-middle"
-      />
-      <div
-        className="bar nav-bottom"
-      />
-    </label>
+      <label
+        htmlFor="hamburger"
+      >
+        <div
+          className="bar nav-top"
+        />
+        <div
+          className="bar nav-middle"
+        />
+        <div
+          className="bar nav-bottom"
+        />
+      </label>
+    </section>
     <h3>
-      Work Task
+       
+      <span>
+        Pocket
+      </span>
+       Ramiro
     </h3>
-  </section>
+    <NavLink
+      className="nav-login"
+      to="/login"
+    >
+      Log in
+    </NavLink>
+  </div>
   <section
     className="mobile-menu"
   >

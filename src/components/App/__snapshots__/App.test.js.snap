@@ -19,8 +19,13 @@ exports[`App should match the snapshot 1`] = `
     />
     <Route
       component={[Function]}
+      path="/login"
+    />
+    <Route
+      component={[Function]}
     />
   </Switch>
+   */
   <Connect(TicketForm) />
 </main>
 `;
