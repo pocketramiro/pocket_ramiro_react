@@ -4,13 +4,21 @@ import { TicketDashboard, mapDispatchToProps } from './';
 
 describe('TicketDashboard', () => {
   let wrapper;
+  let mockLocation;
 
   beforeEach(() => {
-    wrapper = shallow(<TicketDashboard getActiveTickets={jest.fn()}/>)
+    mockLocation = {pathname: 'tickets'}
+    wrapper = shallow(<TicketDashboard location={mockLocation}/>)
   });
 
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot()
+  });
+
+  it('should match the snapshot if location is assets', () => {
+    mockLocation.pathname = 'assets';
+    wrapper = shallow(<TicketDashboard location={mockLocation}/>);
+    expect(wrapper).toMatchSnapshot();
   });
 });
 

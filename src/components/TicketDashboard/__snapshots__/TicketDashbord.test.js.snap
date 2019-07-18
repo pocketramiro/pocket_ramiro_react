@@ -2,6 +2,16 @@
 
 exports[`TicketDashboard should match the snapshot 1`] = `
 <main>
-  <Connect(CardContainer) />
+  <Connect(CardContainer)
+    dataKey="tickets"
+  />
+</main>
+`;
+
+exports[`TicketDashboard should match the snapshot if location is assets 1`] = `
+<main>
+  <Connect(CardContainer)
+    dataKey="assets"
+  />
 </main>
 `;
