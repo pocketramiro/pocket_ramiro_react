@@ -11,25 +11,24 @@ export default class UserSignIn extends Component {
     }
   }
 
-  handleChange = event => {
-    const { name, value } = event.target;
+  handleChange = e => {
+    const { name, value } = e.target;
     this.setState({[name]: value})
   }
 
-  handleSubmit = event => {
-    event.preventDefault()
-
+  handleSubmit = e => {
+    e.preventDefault()
   }
 
   render() {
     const { email, password } = this.state;
-    
+
     return (
       <div className='user-login-container'>
         <form onSubmit={this.handleSubmit}>
-      <h1>Login</h1>
+          <h1>Login</h1>
           <label htmlFor='email' className='login-label'>
-            <i class="material-icons">
+            <i className="material-icons">
               account_circle
             </i>
             <input 
