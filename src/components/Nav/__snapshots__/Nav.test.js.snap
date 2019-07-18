@@ -1,39 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Nav should match the snapshot 1`] = `
-<div>
-  <section
-    className="nav-wrapper"
-  >
-    <input
-      checked={false}
-      className="nav-toggle"
-      id="hamburger"
-      onChange={[Function]}
-      type="checkbox"
-    />
-    <label
-      htmlFor="hamburger"
-    >
-      <div
-        className="bar nav-top"
-      />
-      <div
-        className="bar nav-middle"
-      />
-      <div
-        className="bar nav-bottom"
-      />
-    </label>
-    <h3>
-      Work Task
-    </h3>
-  </section>
-  <section
-    className="mobile-menu"
-  />
-</div>
-`;
+exports[`Nav should match the snapshot 1`] = `undefined`;
 
 exports[`Nav should render a Nav component if isSelected is true 1`] = `
 <div>

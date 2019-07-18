@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Nav from './';
+import { Nav } from './';
 
 describe('Nav', () => {
   let wrapper;
@@ -28,7 +28,6 @@ describe('Nav', () => {
     };
     expect(wrapper.state()).toEqual(defaultState);
   });
-
 
   it('should change isSelected in state to true when clicked', () => {
     wrapper.find('input').simulate('change', { target: { checked: true}});

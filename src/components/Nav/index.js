@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { setPath } from '../../actions';
 
 export class Nav extends Component {
   constructor() {
@@ -7,6 +9,20 @@ export class Nav extends Component {
     this.state = {
       isSelected: false,
       title: ''
+    }
+  }
+
+  componentDidMount() {
+    const splitHref = window.location.href.split('/')
+    const path = splitHref[splitHref.length - 1];
+    this.props.setPath(path)
+  }
+
+  componentDidUpdate() {
+    const splitHref = window.location.href.split('/')
+    const path = splitHref[splitHref.length - 1];
+    if(path !== this.props.path) {
+      this.props.setPath(path)
     }
   }
 
@@ -70,4 +86,12 @@ return (
   }
 };
 
-export default Nav;
+export const mapStateToProps = state => ({
+  path: state.path
+})
+
+export const mapDispatchToProps = dispatch => ({
+  setPath: (path) => dispatch(setPath(path))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);
