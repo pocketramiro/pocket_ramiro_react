@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default class UserSignIn extends Component {
   constructor() {
@@ -55,6 +55,7 @@ export default class UserSignIn extends Component {
           </label>
           <input type='submit'/>
         </form>
+        <p>Don't have an account? <Link to="/create-user"> Create a new account</Link></p>
       </div>
     )
   }
