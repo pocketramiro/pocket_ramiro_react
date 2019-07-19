@@ -54,8 +54,8 @@ export default class UserSignIn extends Component {
               value={password}/>
           </label>
           <input type='submit'/>
+          <p>Don't have an account? <Link to="/create-user">Create a new account</Link></p>
         </form>
-        <p>Don't have an account? <Link to="/create-user"> Create a new account</Link></p>
       </div>
     )
   }
