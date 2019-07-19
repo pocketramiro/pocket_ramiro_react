@@ -41,3 +41,18 @@ export const mockResources = [
       updated_at: '2019-07-16T21:52:00.823Z'
   }
 ]
+
+export const mockTicket = {
+  active: true,
+  created_at: "2019-06-16T08:25:55.000Z",
+  frequency_unit: "6",
+  frequency_value: 0,
+  id: 11,
+  notes: "Ut enim",
+  priority: "medium",
+  status: null,
+  table_key: 15,
+  table_name: "Resources",
+  updated_at: "2019-06-26T08:25:55.000Z",
+  user_id: 1
+}

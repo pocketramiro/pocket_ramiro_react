@@ -40,7 +40,7 @@ describe('Nav', () => {
     expect(wrapper.state('isSelected')).toBe(false);
   });
 
-  it.skip('should update title with Assets in state when Assets are clicked', () => {
+  it.skip('should update title with resources in state when resources are clicked', () => {
     wrapper.setState({isSelected: true, title: ''});
     wrapper.update();
     wrapper.find('.nav-link').at(0).simulate('click');

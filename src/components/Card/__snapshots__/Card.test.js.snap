@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match the snapshot 1`] = `
+<section
+  className="card"
+>
+  <header>
+    <p
+      className="header-icon-container"
+    >
+      <i
+        className="material-icons header-icon medium"
+      >
+        flag
+      </i>
+      Priority: 
+      medium
+    </p>
+    <p
+      className="header-icon-container"
+    >
+      <i
+        className="material-icons header-icon"
+      >
+        drafts
+      </i>
+      Opened: 
+      2019-06-16
+    </p>
+    <p
+      className="header-icon-container"
+    >
+      <i
+        className="material-icons header-icon"
+      >
+        access_time
+      </i>
+      32 days since ticket opened
+    </p>
+  </header>
+  <p>
+    Notes: 
+    Ut enim
+  </p>
+</section>
+`;
