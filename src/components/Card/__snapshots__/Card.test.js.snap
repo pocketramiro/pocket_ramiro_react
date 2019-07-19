@@ -44,3 +44,44 @@ exports[`Card should match the snapshot 1`] = `
   </p>
 </section>
 `;
+
+exports[`Card should match the snapshot if a resouce is passed as props 1`] = `
+<section
+  className="card"
+>
+  <header>
+    <p
+      className="header-icon-container"
+    >
+      <i
+        className="material-icons header-icon Bright Tank 1"
+      >
+        business
+      </i>
+      Cost: 
+      5000
+    </p>
+    <p
+      className="header-icon-container"
+    >
+      <i
+        className="material-icons header-icon"
+      >
+        drafts
+      </i>
+      Opened: 
+      2019-07-16
+    </p>
+    <p
+      className="header-icon-container"
+    >
+      <i
+        className="material-icons header-icon"
+      >
+        access_time
+      </i>
+      2 days since ticket opened
+    </p>
+  </header>
+</section>
+`;

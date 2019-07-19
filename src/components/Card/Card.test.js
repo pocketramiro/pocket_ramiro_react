@@ -13,10 +13,13 @@ describe('Card', () => {
     />)
   });
 
-  it('should match the snapshot', () => {
-    
-    wrapper.setProps({created_at: MD.mockResources[0].created_at})
+  it('should match the snapshot', () => {   
     expect(wrapper).toMatchSnapshot()
+  });
+
+  it('should match the snapshot if a resouce is passed as props', () => {
+    wrapper.setProps({ticket: MD.mockResources[0]})
+    expect(wrapper).toMatchSnapshot();
   });
 
 });
