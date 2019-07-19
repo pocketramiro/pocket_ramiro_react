@@ -10,23 +10,29 @@ export const Card = (props) => {
   return (
     <section className='card' >
       <header>
-        { priority && <p className="header-icon-container">
-          <i className={`material-icons header-icon ${priority}`}>
+        { 
+          priority && <p className="header-icon-container">
+            <i className={`material-icons header-icon ${priority}`}>
             flag
-          </i>Priority: {priority}
-        </p> } 
+            </i>Priority: {priority}
+          </p> 
+        } 
 
-        { resource_type_id && <p className="header-icon-container">
-          <i className={`material-icons header-icon ${name}`}>
+        { 
+          resource_type_id && <p className="header-icon-container">
+            <i className={`material-icons header-icon ${name}`}>
             business
-          </i>Name: {name}
-        </p> }
+            </i>Name: {name}
+          </p> 
+        }
         
-        { cost && <p className="header-icon-container">
-          <i className={`material-icons header-icon ${name}`}>
+        { 
+          cost && <p className="header-icon-container">
+            <i className={`material-icons header-icon ${name}`}>
             business
-          </i>Cost: {cost}
-        </p> }
+            </i>Cost: {cost}
+          </p> 
+        }
 
         <p className="header-icon-container">
           <i className={`material-icons header-icon`}>
@@ -39,7 +45,9 @@ export const Card = (props) => {
             access_time
           </i>{`${days} days since ticket opened`}
         </p>
-        { resource_type_id &&
+
+        { 
+          resource_type_id &&
           <i className="material-icons">
           more_horiz
           </i>
