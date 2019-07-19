@@ -19,31 +19,31 @@ export class CardContainer extends Component {
     const { dataKey } = this.props;
 
     //Needs to be refactored so different items can be accepted
-      return dataKey.length && this.props[dataKey].map(ticket => {
-        return <Card key={ticket.id} ticket={ticket}/>
-      })
-    }
+    return dataKey.length && this.props[dataKey].map(ticket => {
+      return <Card key={ticket.id} ticket={ticket}/>;
+    });
+  }
 
   render () {
     return (
       <section className='card-container'>
         {this.makeDynamicCard()}
       </section>
-    )
+    );
   }
 }
 
 export const mapStateToProps = (state, otherProps) => {
-  const { dataKey } = otherProps
+  const { dataKey } = otherProps;
   
   return {
     [dataKey]: state[dataKey]  
-  }
-}
+  };
+};
 
 export const mapDispatchToProps = dispatch => ({
   getTickets: () => dispatch(getTickets()),
   getResources: () => dispatch(getResources())
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardContainer);
