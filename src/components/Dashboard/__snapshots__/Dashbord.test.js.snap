@@ -5,6 +5,7 @@ exports[`Dashboard should match the snapshot 1`] = `
   <Connect(CardContainer)
     dataKey="tickets"
   />
+  <CreateItem />
 </main>
 `;
 
@@ -13,5 +14,6 @@ exports[`Dashboard should match the snapshot if location is resources 1`] = `
   <Connect(CardContainer)
     dataKey="resources"
   />
+  <CreateItem />
 </main>
 `;

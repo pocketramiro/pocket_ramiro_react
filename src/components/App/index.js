@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import NotFound from '../NotFound';
 import Nav from '../Nav';
-import Dashboard from '../Dashboard';
-import CreateTask from '../CreateTask';
+import Dashboard from '../Dashboard'
 import TicketForm from '../TicketForm';
 import UserLogin from '../UserLogin/';
+import CreateUser from '../CreateUser';
 import Item from '../Item';
 
 class App extends Component {
@@ -20,12 +20,12 @@ class App extends Component {
           <Route exact path='/' render={() => <Redirect to="/tickets"/>} />
           <Route path='/tickets' component={Dashboard}/>
           <Route path='/resources' component={Dashboard}/>
-          <Route path='/task' component={CreateTask} />
           <Route path='/login' component={UserLogin} />
+          <Route path='/create-user' component={CreateUser}/>
+          <Route path='/create-ticket' component={TicketForm} />
           <Route path='resource/part' component={Item} />
           <Route component={NotFound}/>
         </Switch>
-        <TicketForm/>
       </main>
     );
   }

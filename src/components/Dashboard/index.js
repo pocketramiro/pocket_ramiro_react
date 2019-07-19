@@ -1,5 +1,6 @@
 import React from 'react';
 import CardContainer from '../CardContainer';
+import CreateItem from '../CreateItem';
 import { withRouter } from 'react-router';
 
 export const Dashboard = ({ location }) => {
@@ -9,6 +10,7 @@ export const Dashboard = ({ location }) => {
     <main>
       { dataKey === 'tickets' && <CardContainer dataKey={dataKey} /> }
       { dataKey === 'resources' && <CardContainer dataKey={dataKey} /> }
+      <CreateItem/>
     </main>
   );
 };

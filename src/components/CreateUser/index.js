@@ -1,32 +1,31 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
-export default class UserSignIn extends Component {
+export class CreateUser extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       email: '',
       password: '',
       name: ''
-    };
+    }
   }
 
   handleChange = e => {
     const { name, value } = e.target;
-    this.setState({[name]: value});
+    this.setState({[name]: value})
   }
 
   handleSubmit = e => {
-    e.preventDefault();
+    e.preventDefault()
   }
 
   render() {
     const { email, password } = this.state;
 
     return (
-      <div className='user-login-container'>
+      <div className='create-user-container'>
         <form onSubmit={this.handleSubmit}>
-          <h1>Login</h1>
+          <h1>Create New User Account</h1>
           <label htmlFor='email' className='login-label'>
             <i className="material-icons">
               account_circle
@@ -54,9 +53,10 @@ export default class UserSignIn extends Component {
               value={password}/>
           </label>
           <input type='submit'/>
-          <p>Don't have an account? <Link to="/create-user">Create a new account</Link></p>
         </form>
       </div>
-    );
+    )
   }
 }
+
+export default CreateUser;
