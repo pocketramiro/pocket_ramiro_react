@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { postLoginUser } from '../../thunks/postLoginUser';
-import { setError } from '../../thunks/setError';
+import { setError } from '../../actions';
 
 export class CreateUser extends Component {
-  constructor() {
-    super()
-    this.state = {
-      error: ''
-    }
-  }
 
   passwordsMatch = (pass1, pass2) => {
     return pass1 === pass2 ? true : false;

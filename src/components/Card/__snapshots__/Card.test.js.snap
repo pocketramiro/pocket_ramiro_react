@@ -80,7 +80,7 @@ exports[`Card should match the snapshot if a resouce is passed as props 1`] = `
       >
         access_time
       </i>
-      2 days since ticket opened
+      3 days since ticket opened
     </p>
   </header>
 </section>
