@@ -6,26 +6,28 @@ import Dashboard from '../Dashboard'
 import TicketForm from '../TicketForm';
 import UserLogin from '../UserLogin/';
 import CreateUser from '../CreateUser';
+import Item from '../Item';
 
 class App extends Component {
 
 
   render() {
-    let user = undefined;
+  
     return (
-      <main>
-        <Nav name={user}/>
-         <Switch>
+      <main className="route-main">
+        <Nav />
+        <Switch>
           <Route exact path='/' render={() => <Redirect to="/tickets"/>} />
           <Route path='/tickets' component={Dashboard}/>
           <Route path='/resources' component={Dashboard}/>
           <Route path='/login' component={UserLogin} />
           <Route path='/create-user' component={CreateUser}/>
           <Route path='/create-ticket' component={TicketForm} />
+          <Route path='resource/part' component={Item} />
           <Route component={NotFound}/>
         </Switch>
       </main>
-    )
+    );
   }
 }
 

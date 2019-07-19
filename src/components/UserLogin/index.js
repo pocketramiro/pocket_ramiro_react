@@ -3,21 +3,21 @@ import { Link } from 'react-router-dom';
 
 export default class UserSignIn extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       email: '',
       password: '',
       name: ''
-    }
+    };
   }
 
   handleChange = e => {
     const { name, value } = e.target;
-    this.setState({[name]: value})
+    this.setState({[name]: value});
   }
 
   handleSubmit = e => {
-    e.preventDefault()
+    e.preventDefault();
   }
 
   render() {
@@ -57,6 +57,6 @@ export default class UserSignIn extends Component {
           <p>Don't have an account? <Link to="/create-user">Create a new account</Link></p>
         </form>
       </div>
-    )
+    );
   }
 }

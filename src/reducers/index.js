@@ -13,6 +13,6 @@ export const rootReducer = combineReducers({
   tickets: ticketsReducer,
   isLoading: isLoadingReducer,
   error: errorReducer,
-  resourceParts: resourcePartsReducer,
+  parts: resourcePartsReducer,
   path: pathReducer
 });
