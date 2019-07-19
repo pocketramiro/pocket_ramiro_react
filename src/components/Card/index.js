@@ -1,5 +1,6 @@
 import React from 'react';
 import Item from '../../components/Item';
+import { Link } from 'react-router-dom';
 
 
 export const Card = (props) => {
@@ -48,9 +49,16 @@ export const Card = (props) => {
 
         { 
           resource_type_id &&
-          <i className="material-icons">
-          more_horiz
-          </i>
+            <Link to={{
+              pathname: '/resources/parts',
+              state: {
+                resourceId: resource_type_id
+              }
+            }}>
+              <i className="material-icons">
+                more_horiz
+              </i>
+            </Link>
         }
 
       </header>

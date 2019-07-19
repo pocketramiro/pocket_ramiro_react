@@ -34,7 +34,7 @@
   position: relative;
   overflow: hidden;
   z-index: 10;
-  max-width: 14rem;
+  max-width: 18rem;
 
   header {
     @include displayFlex(space-around, null, null, null)
