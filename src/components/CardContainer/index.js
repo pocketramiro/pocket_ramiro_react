@@ -20,8 +20,8 @@ export class CardContainer extends Component {
   makeDynamicCard = () => {
     const { dataKey } = this.props;
     //Needs to be refactored so different items can be accepted
-    return dataKey.length && this.props[dataKey].map(ticket => {
-      return <Card key={ticket.id} ticket={ticket}/>;
+    return dataKey.length && this.props[dataKey].map(item => {
+      return <Card key={item.id} item={item}/>;
     });
   }
 
