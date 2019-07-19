@@ -1,4 +1,4 @@
-import { getResourceParts } from './';
+import { getParts } from '.';
 import * as actions from '../../actions';
 import * as MD from '../../Utility/MockData';
 
@@ -9,7 +9,7 @@ describe('getResouceParts', () => {
     resourceId = 1
     url = `${process.env.REACT_APP_BASEURL}/api/v1/${resourceId}/parts`
     mockDispatch = jest.fn();
-    thunk = getResourceParts(resourceId);
+    thunk = getParts(resourceId);
     mockParts = MD.mockPartsResouce;
 
     window.fetch = jest.fn().mockImplementation(()=> {

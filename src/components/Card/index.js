@@ -1,4 +1,6 @@
 import React from 'react';
+import Item from '../../components/Item';
+
 
 export const Card = (props) => {
   const {notes, priority, created_at, resource_type_id, name, cost} = props.ticket;
@@ -6,7 +8,7 @@ export const Card = (props) => {
   const days = calcDaysSinceCreation(Math.abs(new Date() - new Date(created_at)));
 
   return (
-    <section className='card'>
+    <section className='card' >
       <header>
         { priority && <p className="header-icon-container">
           <i className={`material-icons header-icon ${priority}`}>
@@ -37,6 +39,11 @@ export const Card = (props) => {
             access_time
           </i>{`${days} days since ticket opened`}
         </p>
+        { resource_type_id &&
+          <i className="material-icons">
+          more_horiz
+          </i>
+        }
 
       </header>
       { notes && <p>Notes: {notes}</p>}
