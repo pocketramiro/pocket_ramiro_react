@@ -23,7 +23,9 @@ describe('Card', () => {
   });
 
   it('should have render a link if the card has a resource_type_id prop', () => {
-    wrapper.setProps({item: })
-  })
+    wrapper.setProps({item: MD.mockResources[0]});
+    expect(wrapper.exists('Link')).toBe(true);
+  }); 
+  
 });
  

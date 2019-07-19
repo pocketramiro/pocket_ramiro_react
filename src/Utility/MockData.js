@@ -27,6 +27,7 @@ export const mockResources = [
     name: 'Bright Tank 1',
     cost: 5000,
     active: true,
+    resource_type_id: 1,
     created_at: '2019-07-16T21:52:00.823Z',
     updated_at: '2019-07-16T21:52:00.823Z'
   },
