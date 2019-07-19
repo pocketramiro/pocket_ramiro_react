@@ -26,6 +26,11 @@ describe('Card', () => {
     wrapper.setProps({item: MD.mockResources[0]});
     expect(wrapper.exists('Link')).toBe(true);
   }); 
+
+  it('should not have notes if the prop is mock resources', () => {
+    wrapper.setProps({item: MD.mockResources[0]});
+    expect(wrapper.exists('.card-notes')).toBe(false);
+  });
   
 });
  

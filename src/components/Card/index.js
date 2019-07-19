@@ -62,7 +62,7 @@ export const Card = (props) => {
         }
 
       </header>
-      { notes && <p>Notes: {notes}</p>}
+      { notes && <p className='card-notes' >Notes: {notes}</p>}
     </section>
   );
 };
