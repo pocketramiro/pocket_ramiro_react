@@ -18,7 +18,7 @@ class App extends Component {
          <Switch>
           <Route exact path='/' render={() => <Redirect to="/tickets"/>} />
           <Route path='/tickets' component={Dashboard}/>
-          <Route path='/assets' component={Dashboard}/>
+          <Route path='/resources' component={Dashboard}/>
           <Route path='/task' component={CreateTask} />
           <Route path='/login' component={UserLogin} />
           <Route component={NotFound}/>

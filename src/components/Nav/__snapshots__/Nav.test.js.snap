@@ -119,8 +119,8 @@ exports[`Nav should render a Nav component if isSelected is true 1`] = `
       </NavLink>
       <NavLink
         className="nav-link"
-        name="Assets"
-        to="/assets"
+        name="resources"
+        to="/resources"
       >
         <i
           className="material-icons menu-icons"

@@ -15,8 +15,8 @@ describe('Dashboard', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should match the snapshot if location is assets', () => {
-    mockLocation.pathname = 'assets';
+  it('should match the snapshot if location is resources', () => {
+    mockLocation.pathname = 'resources';
     wrapper = shallow(<Dashboard location={mockLocation}/>);
     expect(wrapper).toMatchSnapshot();
   });

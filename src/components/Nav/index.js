@@ -30,7 +30,7 @@ class Nav extends Component {
           <i className="material-icons menu-icons"> insert_chart</i>
             Tickets
         </NavLink>
-        <NavLink to='/assets' name='Assets' className='nav-link'>
+        <NavLink to='/resources' name='resources' className='nav-link'>
           <i className="material-icons menu-icons"> insert_chart</i>
             Assets
         </NavLink>
