@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App should match the snapshot 1`] = `
-<main>
+<main
+  className="route-main"
+>
   <Nav />
   <Switch>
     <Route
@@ -24,6 +26,10 @@ exports[`App should match the snapshot 1`] = `
     <Route
       component={[Function]}
       path="/login"
+    />
+    <Route
+      component={[Function]}
+      path="resource/part"
     />
     <Route
       component={[Function]}

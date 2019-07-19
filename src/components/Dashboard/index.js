@@ -1,16 +1,16 @@
 import React from 'react';
 import CardContainer from '../CardContainer';
-import { withRouter } from 'react-router'
+import { withRouter } from 'react-router';
 
 export const Dashboard = ({ location }) => {
   const dataKey = location.pathname.split('/').slice(-1)[0] || 'tickets';
   
   return (
     <main>
-      { dataKey === 'tickets'&& <CardContainer dataKey={dataKey} /> }
+      { dataKey === 'tickets' && <CardContainer dataKey={dataKey} /> }
       { dataKey === 'resources' && <CardContainer dataKey={dataKey} /> }
     </main>
-  )
-}
+  );
+};
 
 export default withRouter(Dashboard);
