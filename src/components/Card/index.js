@@ -1,12 +1,12 @@
 import React from 'react';
 
 export const Card = (props) => {
-  const {notes, priority, created_at, resource_type_id, name, cost} = props.ticket
+  const {notes, priority, created_at, resource_type_id, name, cost} = props.ticket;
   const calcDaysSinceCreation = (t) => Math.floor(t / (24 * 60 * 60 * 1000));
-  const days = calcDaysSinceCreation(Math.abs(new Date() - new Date(created_at)))
+  const days = calcDaysSinceCreation(Math.abs(new Date() - new Date(created_at)));
 
   return (
-    <section className="card">
+    <section className='card'>
       <header>
         { priority && <p className="header-icon-container">
           <i className={`material-icons header-icon ${priority}`}>
@@ -41,7 +41,7 @@ export const Card = (props) => {
       </header>
       { notes && <p>Notes: {notes}</p>}
     </section>
-  )
-}
+  );
+};
 
 export default Card;

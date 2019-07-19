@@ -7,7 +7,7 @@ export const Dashboard = ({ location }) => {
   
   return (
     <main>
-      { dataKey === 'tickets'&& <CardContainer dataKey={dataKey} /> }
+      { dataKey === 'tickets' && <CardContainer dataKey={dataKey} /> }
       { dataKey === 'resources' && <CardContainer dataKey={dataKey} /> }
     </main>
   )

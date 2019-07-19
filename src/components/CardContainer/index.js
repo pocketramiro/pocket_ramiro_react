@@ -4,6 +4,7 @@ import { getTickets } from '../../thunks/getTickets';
 import { getResources } from '../../thunks/getResources';
 import { Card } from '../Card';
 import startCase from 'lodash/startCase';
+import resources from '../../assets/resources.jpg';
 
 
 export class CardContainer extends Component {
@@ -25,8 +26,13 @@ export class CardContainer extends Component {
   }
 
   render () {
+    const { dataKey } = this.props;
+
     return (
-      <section className='card-container'>
+      <section className='card-container' >
+        <div className='image-container'>
+        { dataKey === 'resources' && <img src={resources} alt='wheels' className='wheel'/>}
+        </div>
         {this.makeDynamicCard()}
       </section>
     );

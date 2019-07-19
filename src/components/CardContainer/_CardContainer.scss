@@ -3,3 +3,18 @@
   width: 90%;
   margin: auto;
 }
+.image-container {
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: cover;
+}
+
+.wheel {
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  max-height: 100%;
+  margin: auto;
+  display: block;
+}
