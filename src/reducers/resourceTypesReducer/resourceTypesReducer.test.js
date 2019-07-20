@@ -10,7 +10,7 @@ describe('resourceTypesReducer', () => {
     expect(result).toEqual(expected);
   });
 
-  it('should put all resouce types into state', () => {
+  it('should put all resource types into state', () => {
     const expected = MD.mockPartsResource;
     const action = setResourceTypes(expected);
     const result = resourceTypesReducer([], action);

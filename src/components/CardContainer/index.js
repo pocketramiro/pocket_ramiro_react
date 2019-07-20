@@ -32,7 +32,8 @@ export class CardContainer extends Component {
       <div>
         <div className='image-container'>
          {/* <h1 className={`{${(this.props.dataKey === 'resources') '.res' || null}`} >{this.props.dataKey}</h1> */}
-         {dataKey === 'resources' && <h1 className='res'>Resources</h1> }
+         { dataKey === 'resources' && <h1 className='res'>Resources</h1> }
+        { dataKey === 'tickets' && <h1 className='tickets'>Tickets</h1> }
         </div>
         <section className='card-container' >
           {this.makeDynamicCard()}

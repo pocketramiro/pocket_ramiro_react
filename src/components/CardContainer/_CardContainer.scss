@@ -4,13 +4,8 @@
 }
 
 .res {
-    position: relative;
-    height: 400px;
-    color: #fff;
-    text-align: center;
+  @include displaySection(relative, 400px, #fff, center, cover, -1);
     background: url('https://images.pexels.com/photos/159298/gears-cogs-machine-machinery-159298.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center;
-    background-size: cover;
-    z-index: -1;
 
     &:after {
       position: absolute;
@@ -22,7 +17,10 @@
       background: rgba(#111, 0.5);
       z-index: -1;
     }
-  
+}
+
+.tickets {
+  background: url('https://images.pexels.com/photos/38293/workers-construction-site-hardhats-38293.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
 }
 .card-container {
   display: grid;
