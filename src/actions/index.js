@@ -51,3 +51,8 @@ export const addPart = (partId) => ({
   type: 'ADD_TICKET',
   partId
 });
+
+export const setResourceTypes = (resourceTypes) => ({
+  type: 'SET_RESOURCES_TYPES',
+  resourceTypes
+});
