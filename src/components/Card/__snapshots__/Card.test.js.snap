@@ -2,11 +2,11 @@
 
 exports[`Card should match the snapshot 1`] = `
 <section
-  className=""
+  className="card"
 >
   <header>
     <p>
-       #
+      Card #:
       11
     </p>
     <p
@@ -41,29 +41,30 @@ exports[`Card should match the snapshot 1`] = `
       </i>
       34 days since ticket opened
     </p>
-  </header>
-  <p
-    className="card-notes"
-  >
-    <i
-      className="material-icons header-icon"
+    <p
+      className="card-notes"
     >
-      notes
-    </i>
-    Notes: 
-    Ut enim
-     
-  </p>
+      <i
+        className="material-icons header-icon"
+        id="single-note"
+      >
+        notes
+      </i>
+      Notes: 
+      Ut enim
+       
+    </p>
+  </header>
 </section>
 `;
 
 exports[`Card should match the snapshot if a resource is passed as props 1`] = `
 <section
-  className=""
+  className="card"
 >
   <header>
     <p>
-       #
+      Card #:
       1
     </p>
     <p
