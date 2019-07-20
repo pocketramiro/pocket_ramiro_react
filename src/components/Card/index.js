@@ -8,10 +8,10 @@ export const Card = (props) => {
   const days = calcDaysSinceCreation(Math.abs(new Date() - new Date(created_at)));
 
   return (
-    <section className='' >
+    <section className='card' >
       <header>
         {
-          <p> #{id}</p>
+          <p>Card #:{id}</p>
         }
 
         { 
@@ -21,7 +21,7 @@ export const Card = (props) => {
             </i>Priority: {priority}
           </p> 
         } 
-
+ 
         { 
           resource_type_id && <p className="header-icon-container">
             <i className={`material-icons header-icon ${name}`}>
@@ -64,12 +64,12 @@ export const Card = (props) => {
             </Link>
         }
 
-      </header>
-      { notes && <p className='card-notes' >
-        <i className="material-icons header-icon">
+        { notes && <p className='card-notes' >
+          <i id='single-note' className="material-icons header-icon">
           notes
-        </i>
+          </i>
         Notes: {notes} </p>}
+      </header>
     </section>
   );
 };

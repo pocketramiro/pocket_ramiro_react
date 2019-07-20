@@ -21,7 +21,7 @@
 
   &:after {
     @include afterDisplaySection(absolute, '', 0, 0, 100%, 100%, -1);
-      }
+  }
 }
 
 .card-container {
