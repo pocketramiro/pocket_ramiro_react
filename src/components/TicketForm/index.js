@@ -4,12 +4,12 @@ import { postTicket } from '../../thunks/postTicket';
 
 class TicketForm extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       notes: "",
       priority: "low",
       due: ""
-    }
+    };
   }
 
   getTodaysDate = () => {
@@ -19,7 +19,7 @@ class TicketForm extends Component {
 
   handleChange = (e) => {
     const {name, value} = e.target;
-    this.setState({[name]: value})
+    this.setState({[name]: value});
   }
 
   handleSubmit = (e) => {
@@ -46,7 +46,7 @@ class TicketForm extends Component {
         <input type="date" id="due-date" name="due" min={this.getTodaysDate()}/>
         <input type="submit" value="Create New Ticket"/>
       </form>
-    )
+    );
   }
 }
 

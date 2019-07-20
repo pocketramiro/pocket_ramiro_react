@@ -7,7 +7,7 @@ export const postTicket = (ticket) => {
       method: "POST",
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(ticket)
-    }
+    };
 
     try {
       dispatch(setLoading(true));
@@ -23,7 +23,7 @@ export const postTicket = (ticket) => {
       dispatch(setLoading(false));
       dispatch(addTicket(ticket));
     } catch (error) {
-      dispatch(setError(error.message))
+      dispatch(setError(error.message));
     }
-  }
-}
+  };
+};

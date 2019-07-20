@@ -102,7 +102,7 @@ export class CreateUser extends Component {
           <input type='submit'/>
         </form>
       </div>
-    )
+    );
   }
 }
 

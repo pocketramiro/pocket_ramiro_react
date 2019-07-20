@@ -43,7 +43,14 @@
   p {
     font-family: 'Nunito', sans-serif;
   }
+
 }
 
+.card-notes {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 

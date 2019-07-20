@@ -1,8 +1,8 @@
-import { setTickets, setLoading, setError } from '../../actions';
+import { setResourceTypes, setLoading, setError } from '../../actions';
 
 export const getTickets = () => {
   return async (dispatch) => {
-    const url = `${process.env.REACT_APP_BASEURL}/api/v1/tickets`;
+    const url = `${process.env.REACT_APP_BASEURL}/api/v1/resource_types`;
     
     try {
       dispatch(setLoading(true));
@@ -13,10 +13,10 @@ export const getTickets = () => {
         throw Error(response.statusText);
       }
 
-      const activeTickets = await response.json();
+      const resourceTypes = await response.json();
 
       dispatch(setLoading(false));
-      dispatch(setTickets(activeTickets));
+      dispatch(setResourceTypes(resourceTypes));
     } catch (error) {
       dispatch(setError(error.message));
     }

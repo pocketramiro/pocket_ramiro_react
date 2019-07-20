@@ -9,8 +9,8 @@ class Assets extends Component {
         <h1>Machines</h1>
         <CardContainer history={this.props.location}/>
       </section>
-    )
+    );
   }
 }
 
-export default Assets
+export default Assets;

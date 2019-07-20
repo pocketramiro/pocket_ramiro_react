@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import NotFound from '../NotFound';
 import Nav from '../Nav';
-import Dashboard from '../Dashboard'
+import Dashboard from '../Dashboard';
 import TicketForm from '../TicketForm';
 import UserLogin from '../UserLogin/';
 import CreateUser from '../CreateUser';

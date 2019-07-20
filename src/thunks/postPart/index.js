@@ -7,7 +7,7 @@ export const postPart = (part, resourceId) => {
       method: "POST",
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(part)
-    }
+    };
 
     try {
       dispatch(setLoading(true));
@@ -23,9 +23,9 @@ export const postPart = (part, resourceId) => {
       dispatch(setLoading(false));
       dispatch(addPart(partId));
     } catch (error) {
-      dispatch(setError(error.message))
+      dispatch(setError(error.message));
     }
-  }
-}
+  };
+};
 
 //partid
