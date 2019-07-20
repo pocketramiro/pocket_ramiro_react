@@ -80,3 +80,17 @@ export const mockResourceTypes = [
     updated_at: '2019-07-16T21:52:00.823Z'
   }
 ];
+
+export const mockPart = {
+  name: 'Tank patch',
+  inventory: 51,
+};
+
+export const mockPostPartResponse = {
+  id: 2,
+  name: 'Tank patch',
+  inventory: 1,
+  active: true,
+  created_at: '2019-07-16T13:18:09.048Z',
+  updated_at: '2019-07-16T13:18:09.048Z'
+};
