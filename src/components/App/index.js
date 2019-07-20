@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import NotFound from '../NotFound';
 import Nav from '../Nav';
 import Dashboard from '../Dashboard';
-import TicketForm from '../TicketForm';
+import Form from '../Form';
 import UserLogin from '../UserLogin/';
 import CreateUser from '../CreateUser';
 
@@ -21,7 +21,8 @@ class App extends Component {
           <Route path='/resources' component={Dashboard}/>
           <Route path='/login' component={UserLogin} />
           <Route path='/create-user' component={CreateUser}/>
-          <Route path='/create-ticket' component={TicketForm} />
+          <Route path='/create-tickets' component={Form} />
+          {/* <Route path='./tickets/:id'render */}
           <Route component={NotFound}/>
         </Switch>
       </main>

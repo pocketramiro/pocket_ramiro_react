@@ -9,6 +9,8 @@ export const Card = (props) => {
 
   return (
     <section className='card' >
+      <Link to={`/tickets/${id}`} >more
+      </Link>
       <header>
         {
           <p>Card #:{id}</p>

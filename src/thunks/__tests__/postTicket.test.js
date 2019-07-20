@@ -2,18 +2,19 @@ import { postTicket } from '../postTicket';
 import * as actions from '../../actions';
 
 describe('postTicket', () => {
-  let mockTicket, url, options, thunk, mockDispatch;
+  let mockTicket, url, options, thunk, mockDispatch, mockId;
 
   beforeEach(() => {
     mockTicket = {'name': 'test ticket'};
-    url = `${process.env.REACT_APP_BASEURL}/api/v1/tickets`;
+    mockId = 1;
+    url = `${process.env.REACT_APP_BASEURL}/api/v1/resources/${mockId}/tickets`;
     options = {
       method: 'POST',
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(mockTicket)
     };
 
-    thunk = postTicket(mockTicket);
+    thunk = postTicket(mockTicket, mockId);
     mockDispatch = jest.fn();
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({

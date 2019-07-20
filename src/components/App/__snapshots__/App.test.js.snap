@@ -41,11 +41,11 @@ exports[`App should match the snapshot 1`] = `
           "$$typeof": Symbol(react.memo),
           "WrappedComponent": [Function],
           "compare": null,
-          "displayName": "Connect(TicketForm)",
+          "displayName": "Connect(Form)",
           "type": [Function],
         }
       }
-      path="/create-ticket"
+      path="/create-tickets"
     />
     <Route
       component={[Function]}
