@@ -58,7 +58,7 @@ export const mockTicket = {
   user_id: 1
 };
 
-export const mockResouceTypes = [
+export const mockResourceTypes = [
   {
     id: 1,
     category: 'Bright Tank',
