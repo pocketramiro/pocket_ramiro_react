@@ -1,11 +1,13 @@
 import { postResource } from '../postResource';
 import * as actions from '../../actions';
+import * as MD from '../../Utility/MockData';
+
 
 describe('postResource', () => {
   let mockResource, url, options, thunk, mockDispatch;
 
   beforeEach(() => {
-    mockResource = {'name': 'test resource'};
+    mockResource = {'name': 'Big ole Tank'};
     url = `${process.env.REACT_APP_BASEURL}/api/v1/resources`;
     options = {
       method: 'POST',
@@ -39,13 +41,13 @@ describe('postResource', () => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         ok: false,
-        statusText: 'Something went wrong'
+        statusText: MD.mockError
       });
     });
 
     await thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(actions.setError('Something went wrong'));
+    expect(mockDispatch).toHaveBeenCalledWith(actions.setError(MD.mockError));
   });
 
   it('should dispatch setLoading(false) if response is ok', async () => {
@@ -54,7 +56,7 @@ describe('postResource', () => {
     expect(mockDispatch).toHaveBeenCalledWith(actions.setLoading(false));
   });
 
-  it('should dispatch Palette with the correct params', async () => {
+  it('should dispatch addResource with the correct params', async () => {
     mockDispatch.mockImplementation(() => mockResource);
 
     await thunk(mockDispatch);

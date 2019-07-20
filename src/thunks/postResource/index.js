@@ -19,7 +19,7 @@ export const postResource = (resource) => {
         throw Error(response.statusText);
       }
 
-      resource = await response.json();
+      const resource = await response.json();
 
       dispatch(setLoading(false));
       dispatch(addResource(resource));
