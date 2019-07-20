@@ -10,6 +10,7 @@ export const Dashboard = ({ location }) => {
     <main>
       { dataKey === 'tickets' && <CardContainer dataKey={dataKey} /> }
       { dataKey === 'resources' && <CardContainer dataKey={dataKey} /> }
+      { dataKey === 'parts' && <CardContainer dataKey={dataKey} id={location.state.resourceId}/> }
       <CreateItem/>
     </main>
   );

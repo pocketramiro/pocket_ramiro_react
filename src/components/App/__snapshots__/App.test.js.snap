@@ -41,10 +41,6 @@ exports[`App should match the snapshot 1`] = `
     />
     <Route
       component={[Function]}
-      path="resource/part"
-    />
-    <Route
-      component={[Function]}
     />
   </Switch>
 </main>

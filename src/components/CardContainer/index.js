@@ -11,27 +11,34 @@ import resources from '../../assets/resources.jpg';
 export class CardContainer extends Component {
 
   componentDidMount() {
-    const { dataKey } = this.props;
+    const { dataKey, id } = this.props;
     const actionName = `get${startCase(dataKey)}`;
-    this.props[actionName] && this.props[actionName]();
+    
+    this.props.id ? this.props[actionName](id) : this.props[actionName] && this.props[actionName]();
   }
 
   makeDynamicCard = () => {
     const { dataKey } = this.props;
     //Needs to be refactored so different items can be accepted
-    return dataKey.length && this.props[dataKey].map(ticket => {
-      return <Card key={ticket.id} ticket={ticket}/>;
+    return dataKey.length && this.props[dataKey].map(item => {
+      return <Card key={item.id} item={item}/>;
     });
   }
 
   render () {
+    const { dataKey } = this.props
 
     return (
-      <section className='card-container' >
+      <div>
         <div className='image-container'>
+         {/* <h1 className={`{${(this.props.dataKey === 'resources') '.res' || null}`} >{this.props.dataKey}</h1> */}
+         {dataKey === 'resources' && <h1 className='res'>Resources</h1> }
         </div>
-        {this.makeDynamicCard()}
-      </section>
+        <section className='card-container' >
+          {this.makeDynamicCard()}
+        </section>
+      </div>
+        
     );
   }
 }
@@ -47,7 +54,7 @@ export const mapStateToProps = (state, otherProps) => {
 export const mapDispatchToProps = dispatch => ({
   getTickets: () => dispatch(getTickets()),
   getResources: () => dispatch(getResources()),
-  getParts: () => dispatch(getParts())
+  getParts: (id) => dispatch(getParts(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardContainer);

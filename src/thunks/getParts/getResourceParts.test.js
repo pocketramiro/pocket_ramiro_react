@@ -6,8 +6,8 @@ describe('getResouceParts', () => {
   let url, mockDispatch, thunk, resourceId, mockParts;
 
   beforeEach(() => {
-    resourceId = 1
-    url = `${process.env.REACT_APP_BASEURL}/api/v1/${resourceId}/parts`
+    resourceId = 1;
+    url = `${process.env.REACT_APP_BASEURL}/api/v1/resources/${resourceId}/parts`;
     mockDispatch = jest.fn();
     thunk = getParts(resourceId);
     mockParts = MD.mockPartsResouce;
@@ -48,13 +48,13 @@ describe('getResouceParts', () => {
   it('should call fetch with the correc params', async () => {
     await thunk(mockDispatch);
     
-    expect(window.fetch).toHaveBeenCalledWith(url)
+    expect(window.fetch).toHaveBeenCalledWith(url);
   });
 
   it('should dispatch ResouceParts with the correct params', async () => {
-    await thunk(mockDispatch)
+    await thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(actions.setResourceParts(mockParts))
-  })
+    expect(mockDispatch).toHaveBeenCalledWith(actions.setResourceParts(mockParts));
+  });
 
 });
