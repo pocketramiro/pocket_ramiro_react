@@ -48,7 +48,7 @@ export const setResourceParts = (parts) => ({
 })
 
 export const addPart = (partId) => ({
-  type: 'ADD_TICKET',
+  type: 'ADD_PART',
   partId
 });
 
