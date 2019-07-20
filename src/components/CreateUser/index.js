@@ -17,7 +17,7 @@ export class CreateUser extends Component {
     let error = '';
 
     if (!this.passwordsMatch(pass1, pass2)) {
-      error = 'The passwords do not match'
+      error = 'The passwords do not match';
     }
 
     if (!this.arePasswordsLongEnough(pass1, pass2)) {
@@ -36,11 +36,11 @@ export class CreateUser extends Component {
     const values = Array.from(inputs).map(input => input.value);
     
     const user = {
-     name: values[0],
-     email: values[1],
-     password_digest: values[2],
-     "role": "admin"
-    }
+      name: values[0],
+      email: values[1],
+      password_digest: values[2],
+      "role": "admin"
+    };
 
     this.checkPasswords(values[2], values[3]) && this.props.postLoginUser(user);
   }
@@ -108,11 +108,11 @@ export class CreateUser extends Component {
 
 const mapStateToProps = state => ({
   error: state.error
-})
+});
 
 const mapDispatchToProps = dispatch => ({
   postLoginUser: (user) => dispatch(postLoginUser(user)),
   setError: (error) => dispatch(setError(error))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateUser);
