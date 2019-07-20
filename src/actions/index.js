@@ -1,8 +1,3 @@
-export const setPath = (path) => ({
-  type: 'SET_PATH',
-  path
-});
-
 export const setTickets = (tickets) => ({
   type: 'SET_TICKETS',
   tickets
