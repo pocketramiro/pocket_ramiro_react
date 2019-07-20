@@ -15,7 +15,7 @@ describe('postPart', () => {
       body: JSON.stringify(mockPart)
     };
     mockDispatch = jest.fn();
-    thunk = postPart(mockId, mockPart);
+    thunk = postPart(mockPart, mockId);
 
     window.fetch = jest.fn().mockImplementation(()=> {
       return Promise.resolve({
@@ -31,5 +31,34 @@ describe('postPart', () => {
     expect(mockDispatch).toHaveBeenCalledWith(actions.setLoading(true));
   });
 
-  
+  it('should call fetch with the correct params', async () => {
+    await thunk(mockDispatch);
+
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
+  });
+
+  it('should return an error if response is not ok', async () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false,
+        statusText: MD.mockError
+      });
+    });
+
+    await thunk(mockDispatch);
+ 
+    expect(mockDispatch).toHaveBeenCalledWith(actions.setError(MD.mockError));
+  });
+
+  it('should dispatch setLoading(false)', async () => {
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(actions.setLoading(false));
+  });
+
+  it('should dispatch addPart with the correct params', async () => {
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(actions.addPart(MD.mockPostPartResponse));
+  }); 
 }); 

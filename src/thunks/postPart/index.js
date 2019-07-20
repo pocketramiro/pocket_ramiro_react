@@ -28,4 +28,3 @@ export const postPart = (part, resourceId) => {
   };
 };
 
-//partid

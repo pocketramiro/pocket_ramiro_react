@@ -82,8 +82,8 @@ export const mockResourceTypes = [
 ];
 
 export const mockPart = {
-  name: 'Tank patch',
-  inventory: 51,
+  'name': 'Tank patch',
+  'inventory': 51,
 };
 
 export const mockPostPartResponse = {
