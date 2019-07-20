@@ -3,6 +3,8 @@
   border-bottom: 1px #00000026 solid;
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,0,255,1) 0%, rgba(0,212,255,1) 82%);
+  display: fixed;
+  width: 100%;
 }
 
 .nav-wrapper {
@@ -102,7 +104,7 @@ h3 span {
 }
 
 .mobile-menu {
-  position: absolute;
-  z-index: 1;
+  position: fixed;
+  top: 59px;
 }
 
