@@ -17,4 +17,14 @@ describe('resourceTypesReducer', () => {
 
     expect(result).toEqual(expected);
   });
+
+  // it('should add a ticket on the state tree when the case is ADD_TICKET', () => {
+  //   const newTicket = {'name': 'test ticket'};
+  //   const currentState = ['ticket1', 'ticket2'];
+  //   const expected = [...currentState, newTicket];
+  //   const action = addTicket(newTicket);
+  //   const result = ticketsReducer(currentState, action);
+
+  //   expect(result).toEqual(expected);
+  // });
 }); 
