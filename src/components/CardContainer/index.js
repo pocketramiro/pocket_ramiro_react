@@ -26,13 +26,19 @@ export class CardContainer extends Component {
   }
 
   render () {
+    const { dataKey } = this.props
 
     return (
-      <section className='card-container' >
+      <div>
         <div className='image-container'>
+         {/* <h1 className={`{${(this.props.dataKey === 'resources') '.res' || null}`} >{this.props.dataKey}</h1> */}
+         {dataKey === 'resources' && <h1 className='res'>Resources</h1> }
         </div>
-        {this.makeDynamicCard()}
-      </section>
+        <section className='card-container' >
+          {this.makeDynamicCard()}
+        </section>
+      </div>
+        
     );
   }
 }

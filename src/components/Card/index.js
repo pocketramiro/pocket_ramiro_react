@@ -9,7 +9,7 @@ export const Card = (props) => {
   const days = calcDaysSinceCreation(Math.abs(new Date() - new Date(created_at)));
 
   return (
-    <section className='card' >
+    <section className='' >
       <header>
         { 
           priority && <p className="header-icon-container">
