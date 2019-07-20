@@ -45,7 +45,7 @@ export const setError = (error) => ({
 export const setResourceParts = (parts) => ({
   type: 'SET_RESOURCE_PARTS',
   parts 
-})
+});
 
 export const addPart = (partId) => ({
   type: 'ADD_PART',

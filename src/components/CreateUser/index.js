@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 
 export class CreateUser extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       email: '',
       password: '',
       name: ''
-    }
+    };
   }
 
   handleChange = e => {
     const { name, value } = e.target;
-    this.setState({[name]: value})
+    this.setState({[name]: value});
   }
 
   handleSubmit = e => {
-    e.preventDefault()
+    e.preventDefault();
   }
 
   render() {
@@ -55,7 +55,7 @@ export class CreateUser extends Component {
           <input type='submit'/>
         </form>
       </div>
-    )
+    );
   }
 }
 

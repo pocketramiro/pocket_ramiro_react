@@ -33,7 +33,7 @@ export const Card = (props) => {
         { 
           cost && <p className="header-icon-container">
             <i className={`material-icons header-icon ${name}`}>
-            business
+            attach_money
             </i>Cost: {cost}
           </p> 
         }
@@ -66,7 +66,7 @@ export const Card = (props) => {
 
       </header>
       { notes && <p className='card-notes' >
-        <i class="material-icons header-icon">
+        <i className="material-icons header-icon">
           notes
         </i>
         Notes: {notes} </p>}

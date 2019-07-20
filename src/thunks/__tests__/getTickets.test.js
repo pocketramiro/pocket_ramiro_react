@@ -8,7 +8,7 @@ describe('getTickets', () => {
     url = `${process.env.REACT_APP_BASEURL}/api/v1/tickets`;
     mockDispatch = jest.fn();
     thunk = getTickets();
-    mockTickets = ['ticket1', 'ticket2']
+    mockTickets = ['ticket1', 'ticket2'];
 
     window.fetch = jest.fn().mockImplementation(()=> {
       return Promise.resolve({

@@ -6,7 +6,7 @@ const CreateItem = () => {
     <section>
       <button>Create Item</button>
     </section>
-  )
-}
+  );
+};
  
 export default CreateItem;

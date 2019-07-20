@@ -11,7 +11,7 @@ describe('postTicket', () => {
       method: 'POST',
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(mockTicket)
-    }
+    };
 
     thunk = postTicket(mockTicket);
     mockDispatch = jest.fn();

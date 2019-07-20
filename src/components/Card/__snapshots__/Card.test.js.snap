@@ -46,7 +46,7 @@ exports[`Card should match the snapshot 1`] = `
     className="card-notes"
   >
     <i
-      class="material-icons header-icon"
+      className="material-icons header-icon"
     >
       notes
     </i>
@@ -83,7 +83,7 @@ exports[`Card should match the snapshot if a resource is passed as props 1`] = `
       <i
         className="material-icons header-icon Bright Tank 1"
       >
-        business
+        attach_money
       </i>
       Cost: 
       5000

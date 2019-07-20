@@ -17,7 +17,7 @@ export const getResources = () => {
       dispatch(setLoading(false));
       dispatch(setResources(resources));
     } catch (error) {
-      dispatch(setError(error.message))
+      dispatch(setError(error.message));
     }
-  }
-}
+  };
+};

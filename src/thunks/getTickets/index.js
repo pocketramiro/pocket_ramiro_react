@@ -18,7 +18,7 @@ export const getTickets = () => {
       dispatch(setLoading(false));
       dispatch(setTickets(activeTickets));
     } catch (error) {
-      dispatch(setError(error.message))
+      dispatch(setError(error.message));
     }
-  }
-}
+  };
+};
