@@ -1,4 +1,5 @@
 import * as actions from './';
+import * as MD from '../Utility/MockData'
 
 describe('actions', () => {
 
@@ -109,4 +110,17 @@ describe('actions', () => {
       expect(result).toEqual(expected);
     });
   });
-});
+
+  describe('setResourceTypes', () => {
+    it('should return a type of SET_RESOURCES_Types with a resources array', () => {
+      const resourceTypes = MD.mockResouceTypes;
+
+      const expected = {type: 'SET_RESOURCES_TYPES', resourceTypes};
+
+      const result = actions.setResourceTypes(MD.mockResouceTypes);
+
+      expect(result).toEqual(expected);
+    });
+  });
+
+}); 

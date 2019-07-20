@@ -1,4 +1,4 @@
-import { setResourceType, setLoading, setError } from '../../actions';
+import { setResourceTypes, setLoading, setError } from '../../actions';
 
 export const getTickets = () => {
   return async (dispatch) => {
