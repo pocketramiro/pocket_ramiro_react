@@ -1,4 +1,4 @@
-import { postResource } from '.';
+import { postResource } from '../postResource';
 import * as actions from '../../actions';
 
 describe('postResource', () => {

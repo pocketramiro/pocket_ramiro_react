@@ -1,24 +1,19 @@
-import { postLoginUser } from '.';
+import { getTickets } from '../getTickets';
 import * as actions from '../../actions';
 
-describe('postLoginUser', () => {
-  let url, options, mockDispatch, thunk, mockUser;
+describe('getTickets', () => {
+  let url, mockDispatch, thunk, mockTickets;
 
   beforeEach(() => {
-    url = `${process.env.REACT_APP_BASEURL}/api/v1/users`;
-    mockUser = {"name": "Jennica", "id": 4};
-    options = {
-      method: "POST",
-      headers: { 'Content-type': 'application/json' },
-      body: JSON.stringify(mockUser)
-    };
+    url = `${process.env.REACT_APP_BASEURL}/api/v1/tickets`;
     mockDispatch = jest.fn();
-    thunk = postLoginUser(mockUser);
+    thunk = getTickets();
+    mockTickets = ['ticket1', 'ticket2']
 
     window.fetch = jest.fn().mockImplementation(()=> {
       return Promise.resolve({
         ok: true,
-        json: () => Promise.resolve(mockUser)
+        json: () => Promise.resolve(mockTickets)
       });
     });
   });
@@ -32,7 +27,7 @@ describe('postLoginUser', () => {
   it('should call fetch with the correct params', async () => {
     await thunk(mockDispatch);
 
-    expect(window.fetch).toHaveBeenCalledWith(url, options);
+    expect(window.fetch).toHaveBeenCalledWith(url);
   });
 
   it('should return an error if response is not ok', async () => {
@@ -54,9 +49,9 @@ describe('postLoginUser', () => {
     expect(mockDispatch).toHaveBeenCalledWith(actions.setLoading(false));
   });
 
-  it('should dispatch setUser with the correct params', async () => {
+  it('should dispatch setTickets with the correct params', async () => {
     await thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(actions.setUser(mockUser));
+    expect(mockDispatch).toHaveBeenCalledWith(actions.setTickets(mockTickets));
   });
 });

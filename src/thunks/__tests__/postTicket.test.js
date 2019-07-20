@@ -1,4 +1,4 @@
-import { postTicket } from '.';
+import { postTicket } from '../postTicket';
 import * as actions from '../../actions';
 
 describe('postTicket', () => {

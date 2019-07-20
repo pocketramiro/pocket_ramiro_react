@@ -1,4 +1,4 @@
-import { getResources } from './';
+import { getResources } from '../getResources';
 import * as actions from '../../actions';
 import * as MD from '../../Utility/MockData'
 
