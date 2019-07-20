@@ -2,7 +2,7 @@
 
 exports[`Card should match the snapshot 1`] = `
 <section
-  className="card"
+  className=""
 >
   <header>
     <p
@@ -38,18 +38,31 @@ exports[`Card should match the snapshot 1`] = `
       33 days since ticket opened
     </p>
   </header>
-  <p>
+  <p
+    className="card-notes"
+  >
     Notes: 
     Ut enim
   </p>
 </section>
 `;
 
-exports[`Card should match the snapshot if a resouce is passed as props 1`] = `
+exports[`Card should match the snapshot if a resource is passed as props 1`] = `
 <section
-  className="card"
+  className=""
 >
   <header>
+    <p
+      className="header-icon-container"
+    >
+      <i
+        className="material-icons header-icon Bright Tank 1"
+      >
+        business
+      </i>
+      Name: 
+      Bright Tank 1
+    </p>
     <p
       className="header-icon-container"
     >
@@ -82,6 +95,22 @@ exports[`Card should match the snapshot if a resouce is passed as props 1`] = `
       </i>
       3 days since ticket opened
     </p>
+    <Link
+      to={
+        Object {
+          "pathname": "/resources/parts",
+          "state": Object {
+            "resourceId": 1,
+          },
+        }
+      }
+    >
+      <i
+        className="material-icons"
+      >
+        more_horiz
+      </i>
+    </Link>
   </header>
 </section>
 `;

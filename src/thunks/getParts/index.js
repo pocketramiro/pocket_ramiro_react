@@ -2,7 +2,7 @@ import { setResourceParts, setLoading, setError} from '../../actions';
 
 export const getParts = (resourceId) => {
   return async (dispatch) => {
-    const url = `${process.env.REACT_APP_BASEURL}/api/v1/${resourceId}/parts`;
+    const url = `${process.env.REACT_APP_BASEURL}/api/v1/resources/${resourceId}/parts`;
 
     try {
       dispatch(setLoading(true));
