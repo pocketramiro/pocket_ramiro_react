@@ -8,7 +8,7 @@ export const postResource = (resource) => {
       method: "POST",
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(resource)
-    }
+    };
 
     try {
       dispatch(setLoading(true));
@@ -19,12 +19,12 @@ export const postResource = (resource) => {
         throw Error(response.statusText);
       }
 
-      resource = await response.json();
+      const resource = await response.json();
 
       dispatch(setLoading(false));
       dispatch(addResource(resource));
     } catch (error) {
       dispatch(setError(error.message));
     }
-  }
-}
+  };
+};

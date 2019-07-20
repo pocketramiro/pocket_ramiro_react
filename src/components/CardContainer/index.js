@@ -19,20 +19,20 @@ export class CardContainer extends Component {
 
   makeDynamicCard = () => {
     const { dataKey } = this.props;
-    //Needs to be refactored so different items can be accepted
+    
     return dataKey.length && this.props[dataKey].map(item => {
       return <Card key={item.id} item={item}/>;
     });
   }
 
   render () {
-    const { dataKey } = this.props
+    const { dataKey } = this.props;
 
     return (
       <div>
         <div className='image-container'>
-         {/* <h1 className={`{${(this.props.dataKey === 'resources') '.res' || null}`} >{this.props.dataKey}</h1> */}
-         {dataKey === 'resources' && <h1 className='res'>Resources</h1> }
+          { dataKey === 'resources' && <h1 className='res'>Resources</h1> }
+          { dataKey === 'tickets' && <h1 className='tickets'>Tickets</h1> }
         </div>
         <section className='card-container' >
           {this.makeDynamicCard()}

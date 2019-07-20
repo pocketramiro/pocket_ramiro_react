@@ -1,16 +1,19 @@
 import React from 'react';
-import Item from '../../components/Item';
 import { Link } from 'react-router-dom';
 
 
 export const Card = (props) => {
-  const {notes, priority, created_at, resource_type_id, name, cost} = props.item;
+  const {notes, priority, created_at, resource_type_id, name, cost, id} = props.item;
   const calcDaysSinceCreation = (t) => Math.floor(t / (24 * 60 * 60 * 1000));
   const days = calcDaysSinceCreation(Math.abs(new Date() - new Date(created_at)));
 
   return (
     <section className='' >
       <header>
+        {
+          <p> #{id}</p>
+        }
+
         { 
           priority && <p className="header-icon-container">
             <i className={`material-icons header-icon ${priority}`}>
@@ -30,7 +33,7 @@ export const Card = (props) => {
         { 
           cost && <p className="header-icon-container">
             <i className={`material-icons header-icon ${name}`}>
-            business
+            attach_money
             </i>Cost: {cost}
           </p> 
         }
@@ -62,7 +65,11 @@ export const Card = (props) => {
         }
 
       </header>
-      { notes && <p className='card-notes' >Notes: {notes}</p>}
+      { notes && <p className='card-notes' >
+        <i className="material-icons header-icon">
+          notes
+        </i>
+        Notes: {notes} </p>}
     </section>
   );
 };

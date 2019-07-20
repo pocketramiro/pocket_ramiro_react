@@ -85,6 +85,7 @@ input[type=checkbox]:checked + label {
 
 h3 span {
   font-weight: 400;
+  font-size: 18px;
 }
 
 .nav-login {
@@ -92,9 +93,11 @@ h3 span {
   margin-right: 12px;
   text-decoration: none;
   color: #fff;
+  display: flex;
+  align-items: center;
 
   &:hover {
-    border: 2px solid black;
+    cursor: pointer;
   }
 }
 

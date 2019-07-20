@@ -8,6 +8,12 @@
 @import '../components/NotFound/NotFound';
 @import '../components/UserLogin/UserLogin';
 
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+html {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;

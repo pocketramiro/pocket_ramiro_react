@@ -10,9 +10,6 @@ class Nav extends Component {
     };
   }
 
-  
-  
-
   handleSelected = (e) => {
     const { checked } = e.target;
     this.setState({isSelected: checked});
@@ -69,7 +66,10 @@ class Nav extends Component {
           </section>
           {title.length === 0 ? <h3> <span>Pocket</span> Ramiro</h3> : <h3>{title}</h3>}
           <NavLink to="/login" className="nav-login">
-          Log in
+            <i className="material-icons">
+              account_circle
+            </i>
+            Log in
           </NavLink>
         </div>
         <section className="mobile-menu">

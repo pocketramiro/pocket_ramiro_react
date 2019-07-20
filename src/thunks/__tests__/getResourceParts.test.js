@@ -1,4 +1,4 @@
-import { getParts } from '.';
+import { getParts } from '../getParts';
 import * as actions from '../../actions';
 import * as MD from '../../Utility/MockData';
 

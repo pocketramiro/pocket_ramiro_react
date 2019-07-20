@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme'
+import { shallow } from 'enzyme';
 import { Dashboard, mapDispatchToProps } from './';
 
 describe('Dashboard', () => {
@@ -7,8 +7,8 @@ describe('Dashboard', () => {
   let mockLocation;
 
   beforeEach(() => {
-    mockLocation = {pathname: 'tickets'}
-    wrapper = shallow(<Dashboard location={mockLocation}/>)
+    mockLocation = {pathname: 'tickets'};
+    wrapper = shallow(<Dashboard location={mockLocation}/>);
   });
 
   it('should match the snapshot', () => {

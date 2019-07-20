@@ -45,9 +45,14 @@ export const setError = (error) => ({
 export const setResourceParts = (parts) => ({
   type: 'SET_RESOURCE_PARTS',
   parts 
-})
+});
 
 export const addPart = (partId) => ({
-  type: 'ADD_TICKET',
+  type: 'ADD_PART',
   partId
+});
+
+export const setResourceTypes = (resourceTypes) => ({
+  type: 'SET_RESOURCES_TYPES',
+  resourceTypes
 });

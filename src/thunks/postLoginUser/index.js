@@ -7,7 +7,7 @@ export const postLoginUser = (user) => {
       method: "POST",
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(user)
-    }
+    };
 
     try {
       dispatch(setLoading(true));
@@ -23,7 +23,7 @@ export const postLoginUser = (user) => {
       dispatch(setLoading(false));
       dispatch(setUser(user));
     } catch (error) {
-      dispatch(setError(error.message))
+      dispatch(setError(error.message));
     }
-  }
-}
+  };
+};

@@ -1,19 +1,26 @@
-import { getTickets } from './';
+import { postPart } from '../postPart';
 import * as actions from '../../actions';
+import * as MD from '../../Utility/MockData';
 
-describe('getTickets', () => {
-  let url, mockDispatch, thunk, mockTickets;
+describe('postPart', () => {
+  let url, options, mockDispatch, thunk, mockPart, mockId;
 
   beforeEach(() => {
-    url = `${process.env.REACT_APP_BASEURL}/api/v1/tickets`;
+    mockId = 1;
+    url = `${process.env.REACT_APP_BASEURL}/api/v1/resources/${mockId}/parts`;
+    mockPart = MD.mockPart;
+    options = {
+      method: "POST",
+      headers: { 'Content-type': 'application/json' },
+      body: JSON.stringify(mockPart)
+    };
     mockDispatch = jest.fn();
-    thunk = getTickets();
-    mockTickets = ['ticket1', 'ticket2']
+    thunk = postPart(mockPart, mockId);
 
     window.fetch = jest.fn().mockImplementation(()=> {
       return Promise.resolve({
         ok: true,
-        json: () => Promise.resolve(mockTickets)
+        json: () => Promise.resolve(MD.mockPostPartResponse)
       });
     });
   });
@@ -27,20 +34,20 @@ describe('getTickets', () => {
   it('should call fetch with the correct params', async () => {
     await thunk(mockDispatch);
 
-    expect(window.fetch).toHaveBeenCalledWith(url);
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
   });
 
   it('should return an error if response is not ok', async () => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         ok: false,
-        statusText: 'Something went wrong'
+        statusText: MD.mockError
       });
     });
 
     await thunk(mockDispatch);
-
-    expect(mockDispatch).toHaveBeenCalledWith(actions.setError('Something went wrong'));
+ 
+    expect(mockDispatch).toHaveBeenCalledWith(actions.setError(MD.mockError));
   });
 
   it('should dispatch setLoading(false)', async () => {
@@ -49,9 +56,9 @@ describe('getTickets', () => {
     expect(mockDispatch).toHaveBeenCalledWith(actions.setLoading(false));
   });
 
-  it('should dispatch setTickets with the correct params', async () => {
+  it('should dispatch addPart with the correct params', async () => {
     await thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(actions.setTickets(mockTickets));
-  });
-});
+    expect(mockDispatch).toHaveBeenCalledWith(actions.addPart(MD.mockPostPartResponse));
+  }); 
+}); 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Parts = (props) => {
   
@@ -6,6 +6,6 @@ const Parts = (props) => {
     <div>
       
     </div>
-  )
-}
+  );
+};
 export default Parts;

@@ -1,6 +1,6 @@
-import { getResources } from './';
+import { getResources } from '../getResources';
 import * as actions from '../../actions';
-import * as MD from '../../Utility/MockData'
+import * as MD from '../../Utility/MockData';
 
 describe('getResources', () => {
   let url, mockDispatch, thunk, mockResources;
@@ -9,7 +9,7 @@ describe('getResources', () => {
     url = `${process.env.REACT_APP_BASEURL}/api/v1/resources`;
     mockDispatch = jest.fn();
     thunk = getResources();
-    mockResources = MD.mockResouces
+    mockResources = MD.mockResouces;
 
     window.fetch = jest.fn().mockImplementation(()=> {
       return Promise.resolve({

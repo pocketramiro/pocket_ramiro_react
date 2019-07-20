@@ -40,6 +40,11 @@ exports[`Nav should match the snapshot 1`] = `
       className="nav-login"
       to="/login"
     >
+      <i
+        className="material-icons"
+      >
+        account_circle
+      </i>
       Log in
     </NavLink>
   </div>
@@ -95,6 +100,11 @@ exports[`Nav should render a Nav component if isSelected is true 1`] = `
       className="nav-login"
       to="/login"
     >
+      <i
+        className="material-icons"
+      >
+        account_circle
+      </i>
       Log in
     </NavLink>
   </div>

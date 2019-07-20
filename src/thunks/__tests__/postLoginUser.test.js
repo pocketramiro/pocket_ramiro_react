@@ -1,29 +1,29 @@
-import { postResource } from '.';
+import { postLoginUser } from '../postLoginUser';
 import * as actions from '../../actions';
 
-describe('postResource', () => {
-  let mockResource, url, options, thunk, mockDispatch;
+describe('postLoginUser', () => {
+  let url, options, mockDispatch, thunk, mockUser;
 
   beforeEach(() => {
-    mockResource = {'name': 'test resource'};
-    url = `${process.env.REACT_APP_BASEURL}/api/v1/resources`;
+    url = `${process.env.REACT_APP_BASEURL}/api/v1/users`;
+    mockUser = {"name": "Jennica", "id": 4};
     options = {
-      method: 'POST',
+      method: "POST",
       headers: { 'Content-type': 'application/json' },
-      body: JSON.stringify(mockResource)
+      body: JSON.stringify(mockUser)
     };
-
-    thunk = postResource(mockResource);
     mockDispatch = jest.fn();
-    window.fetch = jest.fn().mockImplementation(() => {
+    thunk = postLoginUser(mockUser);
+
+    window.fetch = jest.fn().mockImplementation(()=> {
       return Promise.resolve({
         ok: true,
-        json: () => Promise.resolve(mockResource)
+        json: () => Promise.resolve(mockUser)
       });
     });
   });
-      
-  it('should call dispatch with setLoading(true)', async () => {
+
+  it('should dispatch setLoading(true)', async () => {
     await thunk(mockDispatch);
 
     expect(mockDispatch).toHaveBeenCalledWith(actions.setLoading(true));
@@ -35,7 +35,7 @@ describe('postResource', () => {
     expect(window.fetch).toHaveBeenCalledWith(url, options);
   });
 
-  it('should dispatch error if response is not ok', async () => {
+  it('should return an error if response is not ok', async () => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         ok: false,
@@ -48,17 +48,15 @@ describe('postResource', () => {
     expect(mockDispatch).toHaveBeenCalledWith(actions.setError('Something went wrong'));
   });
 
-  it('should dispatch setLoading(false) if response is ok', async () => {
+  it('should dispatch setLoading(false)', async () => {
     await thunk(mockDispatch);
 
     expect(mockDispatch).toHaveBeenCalledWith(actions.setLoading(false));
   });
 
-  it('should dispatch Palette with the correct params', async () => {
-    mockDispatch.mockImplementation(() => mockResource);
-
+  it('should dispatch setUser with the correct params', async () => {
     await thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(actions.addResource(mockResource));
+    expect(mockDispatch).toHaveBeenCalledWith(actions.setUser(mockUser));
   });
 });

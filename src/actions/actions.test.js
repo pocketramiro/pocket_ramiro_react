@@ -1,4 +1,5 @@
 import * as actions from './';
+import * as MD from '../Utility/MockData';
 
 describe('actions', () => {
 
@@ -6,7 +7,7 @@ describe('actions', () => {
     it('should return a type of SET_RESOURCES with a resources array', () => {
       const resources = [
         {
-          name:'Test Resource',
+          name: 'Test Resource',
           id: 1
         }
       ];
@@ -23,7 +24,7 @@ describe('actions', () => {
     it('should return a type of SET_TICKETS with a tickets array', () => {
       const tickets = [
         {
-          name:'Test Ticket',
+          name: 'Test Ticket',
           id: 1
         }
       ];
@@ -38,7 +39,7 @@ describe('actions', () => {
 
   describe('addTicket', () => {
     it('should return a type of ADD_TICKET with a ticket object', () => {
-      const ticket = {name:'Test Ticket', id: 1};
+      const ticket = {name: 'Test Ticket', id: 1};
       
       const expected = {type: 'ADD_TICKET', ticket};
 
@@ -50,7 +51,7 @@ describe('actions', () => {
 
   describe('addResource', () => {
     it('should return a type of ADD_RESOURCE with a resource object', () => {
-      const resource = {name:'Test Resource', id: 1};
+      const resource = {name: 'Test Resource', id: 1};
       
       const expected = {type: 'ADD_RESOURCE', resource};
 
@@ -88,7 +89,7 @@ describe('actions', () => {
       const expected = {
         type: 'SET_LOADING',
         isLoading: bool
-      }
+      };
 
       const result = actions.setLoading(bool);
 
@@ -109,4 +110,17 @@ describe('actions', () => {
       expect(result).toEqual(expected);
     });
   });
-});
+
+  describe('setResourceTypes', () => {
+    it('should return a type of SET_RESOURCES_Types with a resources array', () => {
+      const resourceTypes = MD.mockResouceTypes;
+
+      const expected = {type: 'SET_RESOURCES_TYPES', resourceTypes};
+
+      const result = actions.setResourceTypes(MD.mockResouceTypes);
+
+      expect(result).toEqual(expected);
+    });
+  });
+
+}); 

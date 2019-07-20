@@ -57,3 +57,40 @@ export const mockTicket = {
   updated_at: "2019-06-26T08:25:55.000Z",
   user_id: 1
 };
+
+export const mockResourceTypes = [
+  {
+    id: 1,
+    category: 'Bright Tank',
+    company: 'Tanks.com',
+    contact_number: 444 - 444 - 4444,
+    contact_name: 'John Johnson',
+    active: true,
+    created_at: '2019-07-16T21:52:00.823Z',
+    updated_at: '2019-07-16T21:52:00.823Z'
+  },
+  {
+    id: 2,
+    category: 'Van',
+    company: 'Chevrolet',
+    contact_number: 333 - 333 - 3333,
+    contact_name: 'John Johnsonite',
+    active: true,
+    created_at: '2019-07-16T21:52:00.823Z',
+    updated_at: '2019-07-16T21:52:00.823Z'
+  }
+];
+
+export const mockPart = {
+  'name': 'Tank patch',
+  'inventory': 51,
+};
+
+export const mockPostPartResponse = {
+  id: 2,
+  name: 'Tank patch',
+  inventory: 1,
+  active: true,
+  created_at: '2019-07-16T13:18:09.048Z',
+  updated_at: '2019-07-16T13:18:09.048Z'
+};
