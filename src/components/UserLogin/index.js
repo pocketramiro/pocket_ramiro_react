@@ -24,7 +24,7 @@ export default class UserSignIn extends Component {
     const { email, password } = this.state;
 
     return (
-      <div className='user-login-container'>
+      <div id='login-form' className='user-container'>
         <form onSubmit={this.handleSubmit}>
           <h1>Login</h1>
           <label htmlFor='email' className='login-label'>

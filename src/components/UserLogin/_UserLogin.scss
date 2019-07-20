@@ -1,6 +1,9 @@
-.user-login-container {
-  @include displayFlex(center, center, center, null);
+#login-form {
   background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) ),url('../assets/login.jpg');
+}
+
+.user-container {
+  @include displayFlex(center, center, center, null);
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: center;

@@ -47,7 +47,7 @@ export class CreateUser extends Component {
 
   render() {
     return (
-      <div className='create-user-container'>
+      <div id='create-user-form' className='user-container'>
         <form onSubmit={this.handleSubmit}>
           <h1>Create New User Account</h1>
           <label htmlFor='name' className='login-label'>

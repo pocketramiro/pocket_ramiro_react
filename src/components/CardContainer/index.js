@@ -5,7 +5,6 @@ import { getResources } from '../../thunks/getResources';
 import { getParts } from '../../thunks/getParts';
 import { Card } from '../Card';
 import startCase from 'lodash/startCase';
-import resources from '../../assets/resources.jpg';
 
 
 export class CardContainer extends Component {
