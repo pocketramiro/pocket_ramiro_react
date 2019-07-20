@@ -1,21 +1,23 @@
 .image-container {
   display: grid;
   grid-gap: 10px;
+  grid-template-rows: 163px;
 }
 
 .res {
   @include displaySection(relative, 400px, #fff, center, cover, -1);
     background: url('https://images.pexels.com/photos/159298/gears-cogs-machine-machinery-159298.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center;
-
-    &:after {
-  @include afterDisplaySection(absolute, '', 0, 0, 100%, 100%, -1);
-    }
+    background-position-y: -341px;
+  &:after {
+    @include afterDisplaySection(absolute, '', 0, 0, 100%, 100%, -1);
+  }
 }
 
 .tickets {
   @include displaySection(relative, 400px, #fff, center, cover, -1);
   background: url('https://images.pexels.com/photos/1043506/pexels-photo-1043506.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500') no-repeat center center;
   background-color: #e9e7e7;
+  background-position-y: -224px;
 
   &:after {
     @include afterDisplaySection(absolute, '', 0, 0, 100%, 100%, -1);
@@ -24,9 +26,20 @@
 
 .card-container {
   display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) ) ;
+  grid-gap: 25px;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
   background-color: #fff;
   color: #444;
-
 }
+
+@media (max-width: 760px) {
+  .card-container {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+ }
+
+ @media (max-width: 614px) {
+  .card-container {
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+  }
+ }
