@@ -1,42 +1,78 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { postLoginUser } from '../../thunks/postLoginUser';
+import { setError } from '../../actions';
 
 export class CreateUser extends Component {
-  constructor() {
-    super();
-    this.state = {
-      email: '',
-      password: '',
-      name: ''
-    };
+
+  passwordsMatch = (pass1, pass2) => {
+    return pass1 === pass2 ? true : false;
   }
 
-  handleChange = e => {
-    const { name, value } = e.target;
-    this.setState({[name]: value});
+  arePasswordsLongEnough = (pass1, pass2) => {
+    return pass1.length > 7 && pass2.length > 7 ? true : false;
   }
+
+  checkPasswords = (pass1, pass2) => {
+    let error = '';
+
+    if (!this.passwordsMatch(pass1, pass2)) {
+      error = 'The passwords do not match'
+    }
+
+    if (!this.arePasswordsLongEnough(pass1, pass2)) {
+      error = 'Your password must have at least 8 characters';
+    }
+
+    this.setError(error);
+    return error ? false : true;
+  }
+
+
 
   handleSubmit = e => {
     e.preventDefault();
+    const inputs = e.target.querySelectorAll('.create-user-input');
+    const values = Array.from(inputs).map(input => input.value);
+    
+    const user = {
+     name: values[0],
+     email: values[1],
+     password_digest: values[2],
+     "role": "admin"
+    }
+
+    this.checkPasswords(values[2], values[3]) && this.props.postLoginUser(user);
   }
 
   render() {
-    const { email, password } = this.state;
-
     return (
       <div className='create-user-container'>
         <form onSubmit={this.handleSubmit}>
           <h1>Create New User Account</h1>
+          <label htmlFor='name' className='login-label'>
+            <i className="material-icons">
+              account_circle
+            </i>
+            <input 
+              id='name'
+              className='create-user-input'
+              type='text' 
+              name='user-name' 
+              placeholder='Enter Name'
+            />
+          </label>
           <label htmlFor='email' className='login-label'>
             <i className="material-icons">
               account_circle
             </i>
             <input 
               id='email'
+              className='create-user-input'
               type='text' 
               name='email' 
-              placeholder='Enter Username'
-              onChange={this.handleChange}
-              value={email}/>
+              placeholder='Enter Email'
+            />
           </label>
           <label htmlFor='password' className='login-label'>
             <i className="material-icons">
@@ -44,14 +80,25 @@ export class CreateUser extends Component {
             </i>
             <input 
               id='password'
-              type='password' 
-              name='password'
+              className='create-user-input'
+              type='password'
               placeholder='Password'
-              pattern=".{8,}"
-              required title="8 characters minimum"
-              onChange={this.handleChange}
-              value={password}/>
+              required 
+            />
           </label>
+          <label htmlFor='confirmation_password' className='login-label'>
+            <i className="material-icons">
+              lock
+            </i>
+            <input 
+              id='confirmation_password'
+              className='create-user-input'
+              type='password' 
+              placeholder='Confirm Your Password'
+              required 
+            />
+          </label>
+          <p>{this.props.error}</p>
           <input type='submit'/>
         </form>
       </div>
@@ -59,4 +106,13 @@ export class CreateUser extends Component {
   }
 }
 
-export default CreateUser;
+const mapStateToProps = state => ({
+  error: state.error
+})
+
+const mapDispatchToProps = dispatch => ({
+  postLoginUser: (user) => dispatch(postLoginUser(user)),
+  setError: (error) => dispatch(setError(error))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateUser);
