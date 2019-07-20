@@ -1,5 +1,4 @@
 import React from 'react';
-import Item from '../../components/Item';
 import { Link } from 'react-router-dom';
 
 
@@ -66,7 +65,11 @@ export const Card = (props) => {
         }
 
       </header>
-      { notes && <p className='card-notes' >Notes: {notes}</p>}
+      { notes && <p className='card-notes' >
+        <i class="material-icons header-icon">
+          notes
+        </i>
+        Notes: {notes} </p>}
     </section>
   );
 };

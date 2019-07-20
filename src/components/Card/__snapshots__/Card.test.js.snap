@@ -45,8 +45,14 @@ exports[`Card should match the snapshot 1`] = `
   <p
     className="card-notes"
   >
+    <i
+      class="material-icons header-icon"
+    >
+      notes
+    </i>
     Notes: 
     Ut enim
+     
   </p>
 </section>
 `;
