@@ -12,33 +12,30 @@
 }
 
 form {
-  @include displayFlex(space-around, center, center, column);
+  @include displayFlex(space-between, center, center, column);
   background-color: #fff;
-  display: flex;
-  width: 73vw;
-  height: 41vh;
   max-width: 477px;
   max-height: 19rem;
-
+  
   input {
     border: 2px solid #000000;
     border-radius: 6px;
     padding: 0 15px;
+    margin-bottom: 25px;
     height: 48px;
     font-size: 16px;
     font-weight: 300;
   }
-  #submit-btn{
-    background-color: #000000;
+  .sign-in-btn {
+    background-color: #9c9797;
     border: 1px solid #000000;
     border-radius: 6px;
     color: #fff;
     display: inline-block;
-    font-family: 'Graphik', 'Helvetica', 'Arial', sans-serif;
     font-size: 15px;
     font-weight: 600;
-    height: 50px;
-    overflow: hidden;
+    max-width: 477px;
+    width: 140px;
     text-align: center;
     text-decoration: none;
     transition: background-color 0.2s ease;

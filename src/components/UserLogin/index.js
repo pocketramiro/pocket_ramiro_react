@@ -53,7 +53,7 @@ export default class UserSignIn extends Component {
               onChange={this.handleChange}
               value={password}/>
           </label>
-          <input type='submit' id='submit-btn'/>
+          <button className='sign-in-btn'>Sign In</button>
           <p>Don't have an account? <Link to="/create-user">Create a new account</Link></p>
         </form>
       </div>

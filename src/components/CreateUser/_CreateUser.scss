@@ -1,3 +1,15 @@
-#create-user-form {
-  //border
+#submit-btn {
+    background-color: #000000;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    color: #fff;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    height: 50px;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    vertical-align: middle;
 }

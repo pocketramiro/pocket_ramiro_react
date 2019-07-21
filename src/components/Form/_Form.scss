@@ -1,5 +1,4 @@
   
   form {
-    @include displayFlex(center, center, center, null);
-
+    @include displayFlex(space-between, center, center, null);
   }
