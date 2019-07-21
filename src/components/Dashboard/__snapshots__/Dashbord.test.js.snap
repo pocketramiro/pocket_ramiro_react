@@ -2,38 +2,14 @@
 
 exports[`Dashboard should match the snapshot 1`] = `
 <main>
-  <Connect(CardContainer)
-    dataKey="tickets"
-  />
-  <Link
-    className="create-btn-container"
-    to="/create-tickets"
-  >
-    <button
-      className="create-btn"
-    >
-      Create 
-      tickets
-    </button>
-  </Link>
+  <withRouter(Connect(CardContainer)) />
+  }
 </main>
 `;
 
 exports[`Dashboard should match the snapshot if location is resources 1`] = `
 <main>
-  <Connect(CardContainer)
-    dataKey="resources"
-  />
-  <Link
-    className="create-btn-container"
-    to="/create-resources"
-  >
-    <button
-      className="create-btn"
-    >
-      Create 
-      resources
-    </button>
-  </Link>
+  <withRouter(Connect(CardContainer)) />
+  }
 </main>
 `;

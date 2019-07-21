@@ -3,11 +3,6 @@ export const setPath = (path) => ({
   path
 });
 
-export const setTickets = (tickets) => ({
-  type: 'SET_TICKETS',
-  tickets
-});
-
 export const addTicket = (ticket) => ({
   type: 'ADD_TICKET',
   ticket
@@ -27,11 +22,6 @@ export const clearUser = () => ({
   type: 'CLEAR_USER'
 });
 
-export const setResources = (resources) => ({
-  type: 'SET_RESOURCES',
-  resources
-});
-
 export const setLoading = (bool) => ({
   type: 'SET_LOADING',
   isLoading: bool
@@ -42,11 +32,6 @@ export const setError = (error) => ({
   error
 });
 
-export const setResourceParts = (parts) => ({
-  type: 'SET_RESOURCE_PARTS',
-  parts 
-});
-
 export const addPart = (partId) => ({
   type: 'ADD_PART',
   partId
@@ -55,4 +40,20 @@ export const addPart = (partId) => ({
 export const setResourceTypes = (resourceTypes) => ({
   type: 'SET_RESOURCES_TYPES',
   resourceTypes
+});
+
+// ------
+export const setResources = (resources) => ({
+  type: 'SET_RESOURCES',
+  resources
+});
+
+export const setTickets = (tickets) => ({
+  type: 'SET_TICKETS',
+  tickets
+});
+
+export const setParts = (parts) => ({
+  type: 'SET_RESOURCE_PARTS',
+  parts 
 });

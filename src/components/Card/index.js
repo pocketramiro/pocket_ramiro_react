@@ -57,39 +57,53 @@ export const Card = (props) => {
           </p> 
         }
         
-        { 
+        {/* { 
           cost && <p className="header-icon-container">
             <i className={`material-icons header-icon ${name}`}>
             attach_money
             </i>Cost: {cost}
           </p> 
-        }
+        } */}
 
-        <p className="header-icon-container">
+        {/* <p className="header-icon-container">
           <i className={`material-icons header-icon`}>
             drafts
           </i>Opened: {created_at.substr(0, 10)}
-        </p>
+        </p> */}
 
-        <p className="header-icon-container">
+        {/* <p className="header-icon-container">
           <i className={`material-icons header-icon`}>
             access_time
-          </i>{`${days} days since ticket opened`}
-        </p>
+          </i>{`${days} Days Open`}
+        </p> */}
 
         { 
           resource_type_id &&
             <Link to={{
-              pathname: '/resources/parts',
-              state: {
-                resourceId: resource_type_id,
-              }
+              pathname: `/resources/${resource_type_id}/parts`, 
             }}>
-              <i className="material-icons">
-                more_horiz
-              </i>
+              <label htmlFor='parts'>
+                <i className="material-icons" id='parts'>
+                  build
+                </i>
+                Parts
+              </label>
             </Link>
         }
+
+        { 
+          resource_type_id &&
+            <Link to={{
+              pathname: `/resources/${resource_type_id}/tickets`
+            }}>
+              <label htmlFor='parts'>
+                <i className="material-icons" id='tickets'>
+                  notes
+                </i>
+                Tickets
+              </label>
+            </Link>
+        } 
 
         { notes && <p className='card-notes' >
           <i id='single-note' className="material-icons header-icon">

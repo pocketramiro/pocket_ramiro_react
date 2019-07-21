@@ -22,6 +22,7 @@ class App extends Component {
           <Route path='/login' component={UserLogin} />
           <Route path='/create-user' component={CreateUser}/>
           <Route path='/create-tickets' component={Form} />
+          
           {/* <Route path='./tickets/:id'render */}
           <Route component={NotFound}/>
         </Switch>
@@ -31,3 +32,20 @@ class App extends Component {
 }
 
 export default App;
+
+// const FORM_CONFIG = {
+//   tickets : [
+//     {
+//       label: 'Title',
+//       name: 'title',
+//     },
+//     {
+//       label: 'Description',
+//       name: 'description',
+//     }
+//   ]
+// }
+//
+// FORM_CONFIG[dataKey].map((fieldProps) => {
+//   <Field {...fieldProps} />
+// })

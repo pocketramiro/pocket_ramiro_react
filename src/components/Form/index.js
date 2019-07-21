@@ -29,6 +29,7 @@ class Form extends Component {
       notes,
       priority,
     };
+    
 
     //need to make resource second parameter dynamic
     postTicket(newTicket, 1);
@@ -37,11 +38,10 @@ class Form extends Component {
   
 
   render() {
-    const { dataKey } = this.props
+
     return (
       <section className='form-container'>
         <form className="ticket-form" onSubmit={this.handleSubmit} onChange={this.handleChange} >
-          <h1></h1>
           <section className="priority-btns">
             <input type="radio" id="low" name="priority" value="low" defaultChecked />
             <label htmlFor="low">Low</label>
@@ -64,13 +64,10 @@ class Form extends Component {
   }
 }
 
-export const mapStateToProps = (state, otherProps) => {
- const { dataKey } = otherProps;
-
-  return {
-    [dataKey]: state[dataKey]
-  };
-};
+export const mapStateToProps = (state) => ({
+  user: state.user,
+  resources: state.resources
+});
 
 export const mapDispatchToProps = (dispatch) => ({
   postTicket: (ticket, id) => dispatch(postTicket(ticket, id))

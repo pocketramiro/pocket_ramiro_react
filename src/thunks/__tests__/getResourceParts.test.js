@@ -54,7 +54,7 @@ describe('getResouceParts', () => {
   it('should dispatch ResouceParts with the correct params', async () => {
     await thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(actions.setResourceParts(mockParts));
+    expect(mockDispatch).toHaveBeenCalledWith(actions.setParts(mockParts));
   });
 
 });

@@ -26,27 +26,6 @@ exports[`Card should match the snapshot 1`] = `
       medium
     </p>
     <p
-      className="header-icon-container"
-    >
-      <i
-        className="material-icons header-icon"
-      >
-        drafts
-      </i>
-      Opened: 
-      2019-06-16
-    </p>
-    <p
-      className="header-icon-container"
-    >
-      <i
-        className="material-icons header-icon"
-      >
-        access_time
-      </i>
-      35 days since ticket opened
-    </p>
-    <p
       className="card-notes"
     >
       <i
@@ -88,53 +67,43 @@ exports[`Card should match the snapshot if a resource is passed as props 1`] = `
       Name: 
       Bright Tank 1
     </p>
-    <p
-      className="header-icon-container"
-    >
-      <i
-        className="material-icons header-icon Bright Tank 1"
-      >
-        attach_money
-      </i>
-      Cost: 
-      5000
-    </p>
-    <p
-      className="header-icon-container"
-    >
-      <i
-        className="material-icons header-icon"
-      >
-        drafts
-      </i>
-      Opened: 
-      2019-07-16
-    </p>
-    <p
-      className="header-icon-container"
-    >
-      <i
-        className="material-icons header-icon"
-      >
-        access_time
-      </i>
-      4 days since ticket opened
-    </p>
     <Link
       to={
         Object {
-          "pathname": "/resources/parts",
-          "state": Object {
-            "resourceId": 1,
-          },
+          "pathname": "/resources/1/parts",
         }
       }
     >
-      <i
-        className="material-icons"
+      <label
+        htmlFor="parts"
       >
-        more_horiz
-      </i>
+        <i
+          className="material-icons"
+          id="parts"
+        >
+          build
+        </i>
+        Parts
+      </label>
+    </Link>
+    <Link
+      to={
+        Object {
+          "pathname": "/resources/1/tickets",
+        }
+      }
+    >
+      <label
+        htmlFor="parts"
+      >
+        <i
+          className="material-icons"
+          id="tickets"
+        >
+          notes
+        </i>
+        Tickets
+      </label>
     </Link>
   </header>
 </section>
