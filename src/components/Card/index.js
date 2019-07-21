@@ -7,6 +7,27 @@ export const Card = (props) => {
   const calcDaysSinceCreation = (t) => Math.floor(t / (24 * 60 * 60 * 1000));
   const days = calcDaysSinceCreation(Math.abs(new Date() - new Date(created_at)));
 
+  const config = {
+    priority: {
+      icon: 'flag',
+      label: 'Priority'
+    },
+    name: {
+      icon: 'business',
+      label: 'Priority'
+    }
+  };
+
+  const nodes = Object.keys(props.item).map((keyName) => (
+    config[keyName] && (
+      <p className="header-icon-container">
+        <i className={`material-icons header-icon ${config[keyName]}`}>
+          {config[keyName].icon}
+        </i>{`${config[keyName].label}: ${props.item[keyName]}`}
+      </p> 
+    )
+  ));
+
   return (
     <section className='card' >
       <Link to={`/tickets/${id}`} >more
@@ -15,22 +36,22 @@ export const Card = (props) => {
         {
           <p>Card #:{id}</p>
         }
-
-        { 
+        {nodes}
+        {/* { 
           priority && <p className="header-icon-container">
             <i className={`material-icons header-icon ${priority}`}>
             flag
             </i>Priority: {priority}
           </p> 
-        } 
+        }  */}
  
-        { 
+        {/* { 
           resource_type_id && <p className="header-icon-container">
             <i className={`material-icons header-icon ${name}`}>
             business
             </i>Name: {name}
           </p> 
-        }
+        } */}
         
         { 
           cost && <p className="header-icon-container">

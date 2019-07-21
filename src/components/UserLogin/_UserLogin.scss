@@ -1,5 +1,5 @@
 #login-form {
-  background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) ),url('../assets/login.jpg');
+  // background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) ),url('../assets/login.jpg');
 }
 
 .user-container {
@@ -21,11 +21,28 @@ form {
   max-height: 19rem;
 
   input {
-    border: none;
-    border-bottom: 1px solid #afa5a559;
-    padding-bottom: 4px;
-    padding-left: 7px;
-    font-size: 18px;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    padding: 0 15px;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 300;
+  }
+  #submit-btn{
+    background-color: #000000;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    color: #fff;
+    display: inline-block;
+    font-family: 'Graphik', 'Helvetica', 'Arial', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    height: 50px;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    vertical-align: middle;
   }
 }
 

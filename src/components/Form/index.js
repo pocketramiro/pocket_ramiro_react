@@ -38,29 +38,27 @@ class Form extends Component {
   render() {
 
     return (
-      <div className=''>
-        <form className="ticket-form" onSubmit={this.handleSubmit} onChange={this.handleChange} >
-          <section className="priority-btns">
-            <input type="radio" id="low" name="priority" value="low" defaultChecked />
-            <label htmlFor="low">Low</label>
-            <input type="radio" id="medium" name="priority" value="medium" />
-            <label htmlFor="medium">Medium</label>
-            <input type="radio" id="high" name="priority" value="high" />
-            <label htmlFor="high">High</label>
-            <input type="radio" id="urgent" name="priority" value="urgent" />
-            <label htmlFor="urgent">Urgent</label>
-            <input type="radio" name="priority" value="safety" />
-            <label htmlFor="safety">Safety</label>
-          </section>
-          <label htmlFor="Notes">Notes
-            <textarea name="notes" placeholder="Ticket Description"></textarea>
-          </label>
-          <select>
-            <option></option>
-          </select>
-          <input type="submit" value="Create New Ticket"/>
-        </form>
-      </div>
+      <form className="ticket-form" onSubmit={this.handleSubmit} onChange={this.handleChange} >
+        <section className="priority-btns">
+          <input type="radio" id="low" name="priority" value="low" defaultChecked />
+          <label htmlFor="low">Low</label>
+          <input type="radio" id="medium" name="priority" value="medium" />
+          <label htmlFor="medium">Medium</label>
+          <input type="radio" id="high" name="priority" value="high" />
+          <label htmlFor="high">High</label>
+          <input type="radio" id="urgent" name="priority" value="urgent" />
+          <label htmlFor="urgent">Urgent</label>
+          <input type="radio" name="priority" value="safety" />
+          <label htmlFor="safety">Safety</label>
+        </section>
+        <label htmlFor="Notes">Notes
+          <textarea name="notes" placeholder="Ticket Description"></textarea>
+        </label>
+        <select>
+          <option></option>
+        </select>
+        <input type="submit" value="Create New Ticket"/>
+      </form>
     );
   }
 }

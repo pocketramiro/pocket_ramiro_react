@@ -1,8 +1,5 @@
-form {
-  @include displayFlex(center, center, center, null);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-x: center;
-  height: 100vh;
-  width: 100vw;
-}
+  
+  form {
+    @include displayFlex(center, center, center, null);
+
+  }
