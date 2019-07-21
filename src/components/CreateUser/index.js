@@ -99,7 +99,7 @@ export class CreateUser extends Component {
             />
           </label>
           <p>{this.props.error}</p>
-          <input type='submit' id="submit-btn"/>
+          <input type='submit' className="sign-in-btn"/>
         </form>
       </div>
     );

@@ -15,6 +15,8 @@ export const Card = (props) => {
     name: {
       icon: 'business',
       label: 'Priority'
+    },
+    cost: {
     }
   };
 
