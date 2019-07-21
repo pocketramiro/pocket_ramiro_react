@@ -3,7 +3,7 @@ import { setUser, clearUser } from '../../actions';
 
 describe('userReducer', () => {
   it('should return default state', () => {
-    const expected = 0;
+    const expected = {};
     const result = userReducer(undefined, {});
 
     expect(result).toEqual(expected);
@@ -22,7 +22,7 @@ describe('userReducer', () => {
   describe('clearUser case', () => {
     it('should clear the user from state', () => {
       const currentState = 3;
-      const expected = 0;
+      const expected = {};
       const action = clearUser();
       const result = userReducer(currentState, action);
 

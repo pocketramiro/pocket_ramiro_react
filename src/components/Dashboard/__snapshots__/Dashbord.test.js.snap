@@ -1,15 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dashboard should match the snapshot 1`] = `
-<main>
+<section>
   <withRouter(Connect(CardContainer)) />
-  }
-</main>
+</section>
 `;
 
 exports[`Dashboard should match the snapshot if location is resources 1`] = `
-<main>
+<section>
   <withRouter(Connect(CardContainer)) />
-  }
-</main>
+</section>
 `;

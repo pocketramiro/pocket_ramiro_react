@@ -26,7 +26,7 @@ const CreateUser = ({formConfig, postUser}) => (
     <Formik
       initialValues={
         {
-          name: '',
+          name: '', 
           email: '',
           password: '',
           password_confirmation: ''
