@@ -21,6 +21,7 @@ export const postUser = (user) => {
       const user = await response.json();
       dispatch(setLoading(false));
       dispatch(setUser(user));
+      return user;
     } catch (error) {
       dispatch(setError(error.message));
     }

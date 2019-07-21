@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { postUser } from '../../thunks/postUser';
 import { Formik } from 'formik';
+import { withRouter } from 'react-router';
 import * as Yup from 'yup';
 
 const SignupSchema = Yup.object().shape({
@@ -20,7 +21,7 @@ const SignupSchema = Yup.object().shape({
     .oneOf([Yup.ref('password'), null], 'Passwords must match')
 });
 
-const CreateUser = ({formConfig, postUser}) => (
+const CreateUser = ({formConfig, postUser, history}) => (
   <div id='form-container'>
     <h1>My Form</h1>
     <Formik
@@ -32,12 +33,17 @@ const CreateUser = ({formConfig, postUser}) => (
           password_confirmation: ''
         }
       }
-      onSubmit={(values, actions) => {
+      onSubmit={ async (values, actions) => {
        
-        const user = {...values, role: 'admin'};
+        const newUser = {...values, role: 'admin'};
 
-        postUser(user);
+        const result =  await postUser(newUser);
+ 
         actions.setSubmitting(false);
+        if (result) {
+          history.push('/login')
+        }
+        
       }}
 
       validationSchema={SignupSchema}
@@ -95,8 +101,14 @@ CreateUser.defaultProps = {
   ]
 };
 
+export const mapStateToProps = state => ({
+  user: state.user
+});
+
 export const mapDispatchToProps = dispatch => ({
   postUser: (user) => dispatch(postUser(user))
 });
 
-export default connect(null, mapDispatchToProps)(CreateUser);
+export default withRouter(
+  connect(null, mapDispatchToProps)(CreateUser)
+);
