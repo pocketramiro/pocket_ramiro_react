@@ -86,6 +86,7 @@ exports[`Card should match the snapshot if a resource is passed as props 1`] = `
         Parts
       </label>
     </Link>
+
     <Link
       to={
         Object {
