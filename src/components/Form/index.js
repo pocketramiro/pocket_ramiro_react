@@ -36,6 +36,7 @@ class Form extends Component {
   render() {
 
     return (
+     
       <form className="ticket-form" onSubmit={this.handleSubmit} onChange={this.handleChange} >
         <section className="priority-btns">
           <input type="radio" id="low" name="priority" value="low" defaultChecked />
@@ -52,9 +53,6 @@ class Form extends Component {
         <label htmlFor="Notes">Notes
           <textarea name="notes" placeholder="Ticket Description"></textarea>
         </label>
-        <select>
-          <option></option>
-        </select>
         <input type="submit" value="Create New Ticket"/>
       </form>
     );

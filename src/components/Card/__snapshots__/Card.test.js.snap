@@ -44,7 +44,7 @@ exports[`Card should match the snapshot 1`] = `
       >
         access_time
       </i>
-      34 days since ticket opened
+      35 days since ticket opened
     </p>
     <p
       className="card-notes"

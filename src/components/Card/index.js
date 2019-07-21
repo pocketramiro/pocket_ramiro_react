@@ -10,20 +10,22 @@ export const Card = (props) => {
   const config = {
     priority: {
       icon: 'flag',
-      label: 'Priority'
+      label: 'Priority',
     },
     name: {
       icon: 'business',
       label: 'Priority'
     },
     cost: {
+      icon: 'attach_money',
+      label: 'Cost'
     }
   };
-
+  //This is breaking other Cards info
   const nodes = Object.keys(props.item).map((keyName) => (
     config[keyName] && (
       <p className="header-icon-container">
-        <i className={`material-icons header-icon ${config[keyName]}`}>
+        <i className={`material-icons header-icon ${props.item.priority}`}>
           {config[keyName].icon}
         </i>{`${config[keyName].label}: ${props.item[keyName]}`}
       </p> 
@@ -38,22 +40,22 @@ export const Card = (props) => {
         {
           <p>Card #:{id}</p>
         }
-        {nodes}
-        {/* { 
+        {/* {nodes} */}
+        { 
           priority && <p className="header-icon-container">
             <i className={`material-icons header-icon ${priority}`}>
             flag
             </i>Priority: {priority}
           </p> 
-        }  */}
+        } 
  
-        {/* { 
+        { 
           resource_type_id && <p className="header-icon-container">
             <i className={`material-icons header-icon ${name}`}>
             business
             </i>Name: {name}
           </p> 
-        } */}
+        }
         
         { 
           cost && <p className="header-icon-container">
@@ -80,7 +82,7 @@ export const Card = (props) => {
             <Link to={{
               pathname: '/resources/parts',
               state: {
-                resourceId: resource_type_id
+                resourceId: resource_type_id,
               }
             }}>
               <i className="material-icons">

@@ -16,7 +16,7 @@ class App extends Component {
       <main className="route-main">
         <Nav />
         <Switch>
-          <Route exact path='/' render={() => <Redirect to="/tickets"/>} />
+          <Route exact path='/' render={() => <Redirect to="/resources"/>} />
           <Route path='/tickets' component={Dashboard}/>
           <Route path='/resources' component={Dashboard}/>
           <Route path='/login' component={UserLogin} />
