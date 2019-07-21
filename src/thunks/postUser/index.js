@@ -1,6 +1,6 @@
 import { setUser, setLoading, setError } from '../../actions';
 
-export const postLoginUser = (user) => {
+export const postUser = (user) => {
   return async (dispatch) => {
     const url = `${process.env.REACT_APP_BASEURL}/api/v1/users`;
     const options = {
@@ -19,7 +19,6 @@ export const postLoginUser = (user) => {
       }
 
       const user = await response.json();
-
       dispatch(setLoading(false));
       dispatch(setUser(user));
     } catch (error) {

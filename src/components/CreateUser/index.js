@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { postLoginUser } from '../../thunks/postLoginUser';
-import { setError } from '../../actions';
+import { postUser } from '../../thunks/postUser';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
@@ -13,11 +12,6 @@ const SignupSchema = Yup.object().shape({
   email: Yup.string()
     .email('Invalid email')
     .required('Required'),
-  number: Yup.string()
-    .number()
-    .required('Number is Required')
-    .positive()
-    .integer(),
   password: Yup.string()
     .required("Password is Required.")
     .max(13, "Too long")
@@ -26,7 +20,7 @@ const SignupSchema = Yup.object().shape({
     .oneOf([Yup.ref('password'), null], 'Passwords must match')
 });
 
-const CreateUser = ({formConfig}) => (
+const CreateUser = ({formConfig, postUser}) => (
   <div id='form-container'>
     <h1>My Form</h1>
     <Formik
@@ -34,16 +28,16 @@ const CreateUser = ({formConfig}) => (
         {
           name: '',
           email: '',
-          phone_number: 0,
           password: '',
           password_confirmation: ''
         }
       }
       onSubmit={(values, actions) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          actions.setSubmitting(false);
-        }, 250);
+       
+        const user = {...values, role: 'admin'};
+
+        postUser(user);
+        actions.setSubmitting(false);
       }}
 
       validationSchema={SignupSchema}
@@ -89,11 +83,6 @@ CreateUser.defaultProps = {
       placeholder: 'Email'
     },
     {
-      type: 'tel',
-      name: 'phone',
-      placeholder: '3034044567'
-    },
-    {
       type: 'password',
       name: 'password',
       placeholder: 'Password'
@@ -105,4 +94,9 @@ CreateUser.defaultProps = {
     }
   ]
 };
-export default CreateUser;
+
+export const mapDispatchToProps = dispatch => ({
+  postUser: (user) => dispatch(postUser(user))
+});
+
+export default connect(null, mapDispatchToProps)(CreateUser);
