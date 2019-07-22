@@ -40,6 +40,9 @@ export const Card = (props) => {
           <p>Card #:{id}</p>
         }
         {/* {nodes} */}
+        {
+
+        }
         { 
           priority && <p className="header-icon-container">
             <i className={`material-icons header-icon ${priority}`}>
@@ -96,9 +99,9 @@ export const Card = (props) => {
               pathname: `/resources/${resource_type_id}/tickets`
             }}>
            
-                <i className="material-icons" id='tickets'>
+              <i className="material-icons" id='tickets'>
                   notes
-                </i>
+              </i>
                 Tickets
 
             </Link>
