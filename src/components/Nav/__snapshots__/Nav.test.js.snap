@@ -153,15 +153,15 @@ exports[`Nav should render a Nav component if isSelected is true 1`] = `
       </NavLink>
       <NavLink
         className="nav-link"
-        name="Companies"
-        to="/companies"
+        name="Resource-Types"
+        to="/resource_types"
       >
         <i
           className="material-icons menu-icons"
         >
            business 
         </i>
-        Companies
+        Resource-Types
       </NavLink>
     </section>
   </section>

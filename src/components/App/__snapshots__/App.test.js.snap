@@ -5,6 +5,7 @@ exports[`App should match the snapshot 1`] = `
   className="route-main"
 >
   <Nav />
+  <Loading />
   <Switch>
     <Route
       exact={true}
@@ -28,6 +29,10 @@ exports[`App should match the snapshot 1`] = `
       path="/create-user"
     />
     <Route
+      component={[Function]}
+      path="/resource_types"
+    />
+    <Route
       component={
         Object {
           "$$typeof": Symbol(react.memo),
@@ -41,7 +46,11 @@ exports[`App should match the snapshot 1`] = `
     />
     <Route
       component={[Function]}
-      path="/dynamic-ticket-form"
+      path="/create-tickets"
+    />
+    <Route
+      component={[Function]}
+      path="/create-parts"
     />
     <Route
       component={[Function]}

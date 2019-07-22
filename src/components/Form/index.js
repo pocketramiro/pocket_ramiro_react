@@ -64,13 +64,13 @@ class Form extends Component {
   }
 }
 
-export const mapStateToProps = (state) => ({
-  user: state.user,
-  resources: state.resources
-});
+// export const mapStateToProps = (state) => ({
+//   user: state.user,
+//   resources: state.resources
+// });
 
-export const mapDispatchToProps = (dispatch) => ({
-  postTicket: (ticket, id) => dispatch(postTicket(ticket, id))
-});
+// export const mapDispatchToProps = (dispatch) => ({
+//   postTicket: (ticket, id) => dispatch(postTicket(ticket, id))
+// });
 
-export default connect(null, mapDispatchToProps)(Form);
+export default connect(null, null)(Form);

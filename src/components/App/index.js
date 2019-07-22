@@ -7,6 +7,7 @@ import Form from '../Form';
 import UserLogin from '../UserLogin/';
 import CreateUser from '../CreateUser';
 import DynamicForm from '../DynamicForm';
+import Loading from '../Loading/Loading';
 
 class App extends Component {
 
@@ -16,18 +17,20 @@ class App extends Component {
     return (
       <main className="route-main">
         <Nav />
+        <Loading/>
         <Switch>
           <Route exact path='/' render={() => <Redirect to="/resources"/>} />
           <Route path='/tickets' component={Dashboard}/>
           <Route path='/resources' component={Dashboard}/>
           <Route path='/login' component={UserLogin} />
           <Route path='/create-user' component={CreateUser}/>
+          <Route path='/resource_types' component={Dashboard} />
           <Route path='/create-tickets' component={Form} />
-          <Route path='/dynamic-ticket-form' component={DynamicForm} />
+          <Route path='/create-tickets' component={DynamicForm} />
+          <Route path='/create-parts' component={DynamicForm}/>
           
-          {/* <Route path='./tickets/:id'render */}
           <Route component={NotFound}/>
-        </Switch>
+        </Switch>  
       </main>
     );
   }

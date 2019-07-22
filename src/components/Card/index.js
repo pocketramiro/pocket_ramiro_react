@@ -34,13 +34,15 @@ export const Card = (props) => {
 
   return (
     <section className='card' >
-      <Link to={`/tickets/${id}`} >more
-      </Link>
+   
       <header>
         {
           <p>Card #:{id}</p>
         }
         {/* {nodes} */}
+        {
+
+        }
         { 
           priority && <p className="header-icon-container">
             <i className={`material-icons header-icon ${priority}`}>
@@ -57,25 +59,25 @@ export const Card = (props) => {
           </p> 
         }
         
-        {/* { 
+        { 
           cost && <p className="header-icon-container">
             <i className={`material-icons header-icon ${name}`}>
             attach_money
             </i>Cost: {cost}
           </p> 
-        } */}
+        }
 
-        {/* <p className="header-icon-container">
+        <p className="header-icon-container">
           <i className={`material-icons header-icon`}>
             drafts
           </i>Opened: {created_at.substr(0, 10)}
-        </p> */}
+        </p>
 
-        {/* <p className="header-icon-container">
+        <p className="header-icon-container">
           <i className={`material-icons header-icon`}>
             access_time
           </i>{`${days} Days Open`}
-        </p> */}
+        </p>
 
         { 
           resource_type_id &&
@@ -96,12 +98,12 @@ export const Card = (props) => {
             <Link to={{
               pathname: `/resources/${resource_type_id}/tickets`
             }}>
-              <label htmlFor='parts'>
-                <i className="material-icons" id='tickets'>
+           
+              <i className="material-icons" id='tickets'>
                   notes
-                </i>
+              </i>
                 Tickets
-              </label>
+
             </Link>
         } 
 

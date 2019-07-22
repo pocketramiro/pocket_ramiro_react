@@ -40,9 +40,9 @@ class Nav extends Component {
           <i className="material-icons menu-icons"> business_center</i>
             Parts
         </NavLink>
-        <NavLink to='/companies' name='Companies' className='nav-link'>
+        <NavLink to='/resource_types' name='Resource-Types' className='nav-link'>
           <i className="material-icons menu-icons"> business </i>
-          Companies
+          Resource-Types
         </NavLink>
       </section>
     );
