@@ -6,6 +6,7 @@ import Dashboard from '../Dashboard';
 import Form from '../Form';
 import UserLogin from '../UserLogin/';
 import CreateUser from '../CreateUser';
+import DynamicForm from '../DynamicForm';
 
 class App extends Component {
 
@@ -22,6 +23,7 @@ class App extends Component {
           <Route path='/login' component={UserLogin} />
           <Route path='/create-user' component={CreateUser}/>
           <Route path='/create-tickets' component={Form} />
+          <Route path='/dynamic-ticket-form' component={DynamicForm} />
           
           {/* <Route path='./tickets/:id'render */}
           <Route component={NotFound}/>

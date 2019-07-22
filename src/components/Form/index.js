@@ -19,7 +19,7 @@ class Form extends Component {
   handleSubmit = (e) => {
     const { notes, priority } = this.state;
     //Will connect later
-    const { user, postTicket } = this.props;
+    const { postTicket } = this.props;
     e.preventDefault();
 
     const newTicket = {
