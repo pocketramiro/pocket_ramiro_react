@@ -7,13 +7,40 @@ export const Card = (props) => {
   const calcDaysSinceCreation = (t) => Math.floor(t / (24 * 60 * 60 * 1000));
   const days = calcDaysSinceCreation(Math.abs(new Date() - new Date(created_at)));
 
+  const config = {
+    priority: {
+      icon: 'flag',
+      label: 'Priority',
+    },
+    name: {
+      icon: 'business',
+      label: 'Priority'
+    },
+    cost: {
+      icon: 'attach_money',
+      label: 'Cost'
+    }
+  };
+  //This is breaking other Cards info
+  const nodes = Object.keys(props.item).map((keyName) => (
+    config[keyName] && (
+      <p className="header-icon-container">
+        <i className={`material-icons header-icon ${props.item.priority}`}>
+          {config[keyName].icon}
+        </i>{`${config[keyName].label}: ${props.item[keyName]}`}
+      </p> 
+    )
+  ));
+
   return (
     <section className='card' >
+      <Link to={`/tickets/${id}`} >more
+      </Link>
       <header>
         {
           <p>Card #:{id}</p>
         }
-
+        {/* {nodes} */}
         { 
           priority && <p className="header-icon-container">
             <i className={`material-icons header-icon ${priority}`}>
@@ -30,39 +57,53 @@ export const Card = (props) => {
           </p> 
         }
         
-        { 
+        {/* { 
           cost && <p className="header-icon-container">
             <i className={`material-icons header-icon ${name}`}>
             attach_money
             </i>Cost: {cost}
           </p> 
-        }
+        } */}
 
-        <p className="header-icon-container">
+        {/* <p className="header-icon-container">
           <i className={`material-icons header-icon`}>
             drafts
           </i>Opened: {created_at.substr(0, 10)}
-        </p>
+        </p> */}
 
-        <p className="header-icon-container">
+        {/* <p className="header-icon-container">
           <i className={`material-icons header-icon`}>
             access_time
-          </i>{`${days} days since ticket opened`}
-        </p>
+          </i>{`${days} Days Open`}
+        </p> */}
 
         { 
           resource_type_id &&
             <Link to={{
-              pathname: '/resources/parts',
-              state: {
-                resourceId: resource_type_id
-              }
+              pathname: `/resources/${resource_type_id}/parts`, 
             }}>
-              <i className="material-icons">
-                more_horiz
-              </i>
+              <label htmlFor='parts'>
+                <i className="material-icons" id='parts'>
+                  build
+                </i>
+                Parts
+              </label>
             </Link>
         }
+
+        { 
+          resource_type_id &&
+            <Link to={{
+              pathname: `/resources/${resource_type_id}/tickets`
+            }}>
+              <label htmlFor='parts'>
+                <i className="material-icons" id='tickets'>
+                  notes
+                </i>
+                Tickets
+              </label>
+            </Link>
+        } 
 
         { notes && <p className='card-notes' >
           <i id='single-note' className="material-icons header-icon">

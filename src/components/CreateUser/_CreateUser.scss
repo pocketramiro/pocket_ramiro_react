@@ -1,3 +1,23 @@
-#create-user-form {
-  background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) ),url('../assets/create-user-background.jpg');
+#form-container {
+  position: fixed;
+  right: 39%;
+  top: 54%;
+}
+
+
+.sign-in-btn {
+  background-color: #9c9797;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  color: #fff;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  max-width: 477px;
+  width: 140px;
+  height: 130px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  vertical-align: middle;
 }

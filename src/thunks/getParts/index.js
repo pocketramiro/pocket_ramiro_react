@@ -1,4 +1,4 @@
-import { setResourceParts, setLoading, setError} from '../../actions';
+import { setParts, setLoading, setError} from '../../actions';
 
 export const getParts = (resourceId) => {
   return async (dispatch) => {
@@ -14,7 +14,7 @@ export const getParts = (resourceId) => {
 
       const parts = await response.json();
       dispatch(setLoading(false));
-      dispatch(setResourceParts(parts));
+      dispatch(setParts(parts));
     } catch (error) {
       dispatch(setError(error.message));
     }

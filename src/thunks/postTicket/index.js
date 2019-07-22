@@ -1,8 +1,8 @@
 import { addTicket, setLoading, setError } from '../../actions';
 
-export const postTicket = (ticket) => {
+export const postTicket = (ticket, id) => {
   return async (dispatch) => {
-    const url = `${process.env.REACT_APP_BASEURL}/api/v1/tickets`;
+    const url = `${process.env.REACT_APP_BASEURL}/api/v1/resources/${id}/tickets`;
     const options = {
       method: "POST",
       headers: { 'Content-type': 'application/json' },

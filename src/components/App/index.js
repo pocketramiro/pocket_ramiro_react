@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import NotFound from '../NotFound';
 import Nav from '../Nav';
 import Dashboard from '../Dashboard';
-import TicketForm from '../TicketForm';
+import Form from '../Form';
 import UserLogin from '../UserLogin/';
 import CreateUser from '../CreateUser';
 
@@ -16,12 +16,14 @@ class App extends Component {
       <main className="route-main">
         <Nav />
         <Switch>
-          <Route exact path='/' render={() => <Redirect to="/tickets"/>} />
+          <Route exact path='/' render={() => <Redirect to="/resources"/>} />
           <Route path='/tickets' component={Dashboard}/>
           <Route path='/resources' component={Dashboard}/>
           <Route path='/login' component={UserLogin} />
           <Route path='/create-user' component={CreateUser}/>
-          <Route path='/create-ticket' component={TicketForm} />
+          <Route path='/create-tickets' component={Form} />
+          
+          {/* <Route path='./tickets/:id'render */}
           <Route component={NotFound}/>
         </Switch>
       </main>
@@ -30,3 +32,20 @@ class App extends Component {
 }
 
 export default App;
+
+// const FORM_CONFIG = {
+//   tickets : [
+//     {
+//       label: 'Title',
+//       name: 'title',
+//     },
+//     {
+//       label: 'Description',
+//       name: 'description',
+//     }
+//   ]
+// }
+//
+// FORM_CONFIG[dataKey].map((fieldProps) => {
+//   <Field {...fieldProps} />
+// })

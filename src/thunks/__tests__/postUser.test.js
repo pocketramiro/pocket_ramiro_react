@@ -1,7 +1,7 @@
-import { postLoginUser } from '../postLoginUser';
+import { postUser } from '../postUser';
 import * as actions from '../../actions';
 
-describe('postLoginUser', () => {
+describe('postUser', () => {
   let url, options, mockDispatch, thunk, mockUser;
 
   beforeEach(() => {
@@ -13,7 +13,7 @@ describe('postLoginUser', () => {
       body: JSON.stringify(mockUser)
     };
     mockDispatch = jest.fn();
-    thunk = postLoginUser(mockUser);
+    thunk = postUser(mockUser);
 
     window.fetch = jest.fn().mockImplementation(()=> {
       return Promise.resolve({

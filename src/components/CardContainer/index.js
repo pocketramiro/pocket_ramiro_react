@@ -1,27 +1,32 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getTickets } from '../../thunks/getTickets';
-import { getResources } from '../../thunks/getResources';
-import { getParts } from '../../thunks/getParts';
+import { fetchCollection } from '../../thunks/fetchCollection';
 import { Card } from '../Card';
-import startCase from 'lodash/startCase';
-
-
+import { withRouter } from 'react-router';
+import startCase from 'lodash/startCase'
+const getDataKey = (pathname) => pathname.split('/').slice(-1)[0];
 export class CardContainer extends Component {
-
+  
   componentDidMount() {
-    const { dataKey, id } = this.props;
-    const actionName = `get${startCase(dataKey)}`;
-    
-    this.props.id ? this.props[actionName](id) : this.props[actionName] && this.props[actionName]();
+    this.props.fetchCollection();
   }
 
   makeDynamicCard = () => {
     const { dataKey } = this.props;
+    const data = this.props[dataKey];
     
-    return dataKey.length && this.props[dataKey].map(item => {
+    return Array.isArray(data) && data.map(item => {
       return <Card key={item.id} item={item}/>;
     });
+  }
+
+  componentDidUpdate(prevProps) {
+    const {pathname: prevPathname} = prevProps.location;
+    const {pathname} = this.props.location;
+    
+    if (prevPathname && prevPathname !== pathname) {
+      this.props.fetchCollection();
+    }
   }
 
   render () {
@@ -30,30 +35,31 @@ export class CardContainer extends Component {
     return (
       <div>
         <div className='image-container'>
-          { dataKey === 'resources' && <h1 className='res'>Resources</h1> }
-          { dataKey === 'tickets' && <h1 className='tickets'>Tickets</h1> }
+          <h1 className={dataKey}>{startCase(dataKey)}</h1>
         </div>
         <section className='card-container' >
           {this.makeDynamicCard()}
         </section>
-      </div>
-        
+      </div>  
     );
   }
 }
 
 export const mapStateToProps = (state, otherProps) => {
-  const { dataKey } = otherProps;
-  
+  const dataKey = getDataKey(otherProps.location.pathname);
+
   return {
+    dataKey,
     [dataKey]: state[dataKey]  
   };
 };
 
-export const mapDispatchToProps = dispatch => ({
-  getTickets: () => dispatch(getTickets()),
-  getResources: () => dispatch(getResources()),
-  getParts: (id) => dispatch(getParts(id))
-});
+export const mapDispatchToProps = (dispatch, props) => {
+  return {
+    fetchCollection: () => dispatch(fetchCollection(props.location.pathname))
+  }
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(CardContainer);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(CardContainer)
+);

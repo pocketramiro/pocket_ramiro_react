@@ -1,5 +1,5 @@
 import { resourcePartsReducer } from './';
-import { setResourceParts } from '../../actions';
+import { setParts } from '../../actions';
 import * as MD from '../../Utility/MockData';
 
 describe('resoucePartsReducer', () => {
@@ -13,7 +13,7 @@ describe('resoucePartsReducer', () => {
 
   it('should put all resouce parts into state', () => {
     const expected = MD.mockPartsResouce;
-    const action = setResourceParts(expected);
+    const action = setParts(expected);
     const result = resourcePartsReducer([], action);
 
     expect(result).toEqual(expected);

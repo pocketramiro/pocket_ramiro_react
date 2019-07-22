@@ -18,6 +18,7 @@ export default class UserSignIn extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    
   }
 
   render() {
@@ -53,7 +54,7 @@ export default class UserSignIn extends Component {
               onChange={this.handleChange}
               value={password}/>
           </label>
-          <input type='submit'/>
+          <button className='sign-in-btn'>Sign In</button>
           <p>Don't have an account? <Link to="/create-user">Create a new account</Link></p>
         </form>
       </div>
