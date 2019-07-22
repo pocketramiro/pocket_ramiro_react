@@ -22,8 +22,8 @@ class App extends Component {
           <Route path='/resources' component={Dashboard}/>
           <Route path='/login' component={UserLogin} />
           <Route path='/create-user' component={CreateUser}/>
-          <Route path='/create-tickets' component={Form} />
-          <Route path='/dynamic-ticket-form' component={DynamicForm} />
+          {/* <Route path='/create-tickets' component={Form} /> */}
+          <Route path='/create-tickets' component={DynamicForm} />
           
           {/* <Route path='./tickets/:id'render */}
           <Route component={NotFound}/>

@@ -38,7 +38,8 @@ class Form extends Component {
   
 
   render() {
-
+console.log(this.props.location.location)
+console.log(this.props.location.pat)
     return (
       <section className='form-container'>
         <form className="ticket-form" onSubmit={this.handleSubmit} onChange={this.handleChange} >
@@ -64,13 +65,13 @@ class Form extends Component {
   }
 }
 
-export const mapStateToProps = (state) => ({
-  user: state.user,
-  resources: state.resources
-});
+// export const mapStateToProps = (state) => ({
+//   user: state.user,
+//   resources: state.resources
+// });
 
-export const mapDispatchToProps = (dispatch) => ({
-  postTicket: (ticket, id) => dispatch(postTicket(ticket, id))
-});
+// export const mapDispatchToProps = (dispatch) => ({
+//   postTicket: (ticket, id) => dispatch(postTicket(ticket, id))
+// });
 
-export default connect(null, mapDispatchToProps)(Form);
+export default connect(null, null)(Form);

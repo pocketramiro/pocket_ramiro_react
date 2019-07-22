@@ -43,7 +43,10 @@ export class CardContainer extends Component {
         <section className='card-container' >
           {this.makeDynamicCard()}
         </section>
-        <Link to={`/create-${dataKey}`} className="create-btn-container">
+        <Link to={{
+          pathname: `/create-${dataKey}`,
+          formProp: dataKey
+      }} className="create-btn-container">
           <button className="create-btn">Create {dataKey}</button>
         </Link>
       </div>  
@@ -63,7 +66,7 @@ export const mapStateToProps = (state, otherProps) => {
 export const mapDispatchToProps = (dispatch, props) => {
   return {
     fetchCollection: () => dispatch(fetchCollection(props.location.pathname))
-  }
+  };
 };
 
 export default withRouter(
