@@ -16,10 +16,10 @@ export class CardContainer extends Component {
 
   makeDynamicCard = () => {
     const { dataKey } = this.props;
-    const data = this.props[dataKey];
+    const dataObject = this.props[dataKey];
     
-    return Array.isArray(data) && data.map(item => {
-      return <Card key={item.id} item={item}/>;
+    return Array.isArray(dataObject.data) && dataObject.data.map(item => {
+      return <Card key={item.id} type={item.type} item={item.attributes}/>;
     });
   }
 

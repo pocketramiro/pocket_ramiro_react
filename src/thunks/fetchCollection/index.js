@@ -21,17 +21,14 @@ export const fetchCollection = (pathname) => {
     const url = `${process.env.REACT_APP_BASEURL}/api/v1${pathname}`;
     const dataKey = url.split('/').slice(-1)[0];
     const actionName = `set${startCase(dataKey)}`;
-console.log('url', url)
     try {
       dispatch(setLoading(true));
       const response = await fetch(url);
-console.log('response', response)
       if (!response.ok) {
         dispatch(setError(response.statusText));
       }
 
       const data = await response.json();
-      console.log('data', data)
       dispatch(setLoading(false));
       dispatch(ACTION_MAP[actionName] && ACTION_MAP[actionName](data));
     } catch (error) {
