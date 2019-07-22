@@ -41,6 +41,10 @@ exports[`App should match the snapshot 1`] = `
     />
     <Route
       component={[Function]}
+      path="/dynamic-ticket-form"
+    />
+    <Route
+      component={[Function]}
     />
   </Switch>
 </main>
