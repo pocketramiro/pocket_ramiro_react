@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import NotFound from '../NotFound';
 import Nav from '../Nav';
 import Dashboard from '../Dashboard';
@@ -9,15 +10,16 @@ import CreateUser from '../CreateUser';
 import DynamicForm from '../DynamicForm';
 import Loading from '../Loading/Loading';
 
-class App extends Component {
+export class App extends Component {
 
 
   render() {
+    const {isLoading} = this.props
   
     return (
       <main className="route-main">
         <Nav />
-        <Loading/>
+        {isLoading && <Loading/>}
         <Switch>
           <Route exact path='/' render={() => <Redirect to="/resources"/>} />
           <Route path='/tickets' component={Dashboard}/>
@@ -36,21 +38,8 @@ class App extends Component {
   }
 }
 
-export default App;
+export const mapStateToProps = state => ({
+  isLoading: state.isLoading
+});
 
-// const FORM_CONFIG = {
-//   tickets : [
-//     {
-//       label: 'Title',
-//       name: 'title',
-//     },
-//     {
-//       label: 'Description',
-//       name: 'description',
-//     }
-//   ]
-// }
-//
-// FORM_CONFIG[dataKey].map((fieldProps) => {
-//   <Field {...fieldProps} />
-// })
+export default connect(mapStateToProps)(App);
