@@ -5,10 +5,12 @@ exports[`Card should match the snapshot 1`] = `
   className="card"
 >
   <header>
-    <p>
+    <h3
+      className="title"
+    >
       Card #:
       11
-    </p>
+    </h3>
     <p
       className="header-icon-container"
     >
@@ -41,6 +43,9 @@ exports[`Card should match the snapshot 1`] = `
       </i>
       36 Days Open
     </p>
+    <div
+      className="links-container"
+    />
     <p
       className="card-notes"
     >
@@ -63,10 +68,12 @@ exports[`Card should match the snapshot if a resource is passed as props 1`] = `
   className="card"
 >
   <header>
-    <p>
+    <h3
+      className="title"
+    >
       Card #:
       1
-    </p>
+    </h3>
     <p
       className="header-icon-container"
     >
@@ -110,40 +117,48 @@ exports[`Card should match the snapshot if a resource is passed as props 1`] = `
       </i>
       5 Days Open
     </p>
-    <Link
-      to={
-        Object {
-          "pathname": "/resources/1/parts",
-        }
-      }
+    <div
+      className="links-container"
     >
-      <label
-        htmlFor="parts"
+      <Link
+        to={
+          Object {
+            "pathname": "/resources/1/parts",
+          }
+        }
       >
         <i
           className="material-icons"
-          id="parts"
+          id="parts-icon"
         >
           build
         </i>
-        Parts
-      </label>
-    </Link>
-    <Link
-      to={
-        Object {
-          "pathname": "/resources/1/tickets",
+        <label
+          htmlFor="parts-icon"
+        >
+          Parts
+        </label>
+      </Link>
+      <Link
+        to={
+          Object {
+            "pathname": "/resources/1/tickets",
+          }
         }
-      }
-    >
-      <i
-        className="material-icons"
-        id="tickets"
       >
-        notes
-      </i>
-      Tickets
-    </Link>
+        <i
+          className="material-icons"
+          id="tickets-icon"
+        >
+          notes
+        </i>
+        <label
+          htmlFor="tickets-icon"
+        >
+          Tickets
+        </label>
+      </Link>
+    </div>
   </header>
 </section>
 `;
