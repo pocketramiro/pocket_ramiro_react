@@ -38,8 +38,7 @@ class Form extends Component {
   
 
   render() {
-console.log(this.props.location.location)
-console.log(this.props.location.pat)
+
     return (
       <section className='form-container'>
         <form className="ticket-form" onSubmit={this.handleSubmit} onChange={this.handleChange} >

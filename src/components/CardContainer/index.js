@@ -34,6 +34,7 @@ export class CardContainer extends Component {
 
   render () {
     const { dataKey } = this.props;
+    const resourceId = parseInt(this.props.location.pathname.split('/').splice(-2, 1))
 
     return (
       <div>
@@ -45,7 +46,8 @@ export class CardContainer extends Component {
         </section>
         <Link to={{
           pathname: `/create-${dataKey}`,
-          formProp: dataKey
+          formProp: dataKey,
+          itemId: resourceId
       }} className="create-btn-container">
           <button className="create-btn">Create {dataKey}</button>
         </Link>

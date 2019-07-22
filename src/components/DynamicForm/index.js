@@ -1,16 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { postUser } from '../../thunks/postUser';
+import { postPart } from '../../thunks/postPart';
 import { Formik, Field } from 'formik';
 import { withRouter } from 'react-router';
 import * as Yup from 'yup';
-import { directive } from '@babel/types';
 
 const SignupSchema = Yup.object().shape({
   notes: Yup.string()
     .min(1, 'Too Short!')
     .required('Required'),
 });
+
+const partSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(1, 'Too Short!')
+    .required('Required'),
+  inventory: Yup.string()
+    .required('Required')
+});
+
+
 
 const CreateTicket = ({formConfig, postTicket, location, history}) => (
   
@@ -23,20 +33,29 @@ const CreateTicket = ({formConfig, postTicket, location, history}) => (
         }
       onSubmit={ async (values, actions) => {
        
-        // const newUser = {...values, role: 'admin'};
+        const newUser = {...values, role: 'admin'};
 
+        console.log(values);
+        console.log(history)
+        
         // const result =  await postUser(newUser);
 
         const formType = location.formProp;
-
+        
         switch (formType) {
         case 'tickets':
-          postTicket({
-            ...values, table_key: 1,
-            table_name: 'Resources',
-            user_id: this.props.user.id
-          }, 'id');
-          history.push('/resources')
+          await postTicket(
+            {
+              ...values, table_key: 1,
+              table_name: 'Resources',
+              user_id: this.props.user.id
+            }, 'id');
+          history.push('/resources');
+          break;
+        case 'parts':
+          await postPart({
+            ...values, 
+          }, location.itemId);
           break;
         default:  
         }
@@ -44,37 +63,17 @@ const CreateTicket = ({formConfig, postTicket, location, history}) => (
         
       }}
 
-      validationSchema={SignupSchema}
+      validationSchema={partSchema}
       render={(props) => {
         const BASE_PROPS = {
           onChange: props.handleChange,
           onBlur: props.handleBlur
         };
         const inputNodes = location.formProp && formConfig[location.formProp].map(({html_tag, type, name, placeholder, value, label}, inputIx) => {
-          // const textArea = (
-          //   <textarea
-          //     {...BASE_PROPS}
-          //     value={props.values.notes}
-          //     name={name}
-          //     placeholder={placeholder}
-          //   ></textarea>
-          // );
-          // const inputArea = (
-          //   <div>
-          //     <input
-          //       {...BASE_PROPS}
-          //       id={value}
-          //       type={type}
-          //       value={props.values[name]}
-          //       name={name}
-          //       placeholder={placeholder}
-          //     />
-          //     <label htmlFor={value}>{value}</label>
-          //   </div>
-          // );
+          console.log(location)
           return (  
             <div key={inputIx} id='radio-wrapper'>
-              { html_tag === 'input' && 
+              { type === 'radio' && 
               <>
                   <Field 
                     {...BASE_PROPS}
@@ -89,14 +88,33 @@ const CreateTicket = ({formConfig, postTicket, location, history}) => (
                   <label htmlFor={label} className='label-radio'>{label}</label>
                 </>
               }
-              {html_tag === 'textarea' && <Field 
-                {...BASE_PROPS}
-                component={html_tag}
-                id={value}
-                name={name}
-                value={props.values.notes}
-                placeholder={placeholder}
-              />}
+              { 
+                html_tag === 'textarea' && <Field 
+                  {...BASE_PROPS}
+                  component={html_tag}
+                  id={value}
+                  name={name}
+                  value={props.values.notes}
+                  placeholder={placeholder}
+                />}
+              { 
+                type === 'text' && <Field 
+                  {...BASE_PROPS}
+                  type={type}
+                  name={name}
+                  placeholder={placeholder}
+                  value={props.values.name}
+                />
+              }
+              { 
+                type === 'number' && <Field 
+                  {...BASE_PROPS}
+                  type={type}
+                  name={name}
+                  placeholder={placeholder}
+                  value={props.values.inventory}
+                />
+              }
               {props.errors[name] && <div id="feedback">{props.errors[name]}</div>}
             </div>
           );
@@ -134,7 +152,7 @@ const formValues = {
   },
   parts: {
     name: '',
-    inventory: 0
+    inventory: ''
   },
   resources: {
     cost: '',
@@ -198,12 +216,14 @@ CreateTicket.defaultProps = {
       {
         html_tag: 'input',
         name: 'name',
+        type: 'text',
         placeholder: 'Enter Part Name'
       },
       {
         html_tag: 'input',
         type: 'number',
-        name: 'inventory'
+        name: 'inventory',
+        placeholder: 'Enter Number'
       }
     ],
     resources: [
