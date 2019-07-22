@@ -51,7 +51,7 @@ export const mapStateToProps = (state, otherProps) => {
   return {
     dataKey,
     [dataKey]: state[dataKey]  
-  }
+  };
 };
 
 export const mapDispatchToProps = (dispatch, props) => {
