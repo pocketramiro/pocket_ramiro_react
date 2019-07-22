@@ -29,6 +29,7 @@ export const Card = (props) => {
         {
           <p>Card #:{id}</p>
         }
+        
         { 
           priority && <p className="header-icon-container">
             <i className={`material-icons header-icon ${priority}`}>
