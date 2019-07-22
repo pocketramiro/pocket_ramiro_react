@@ -10,7 +10,7 @@ import CreateUser from '../CreateUser';
 import DynamicForm from '../DynamicForm';
 import Loading from '../Loading/Loading';
 
-class App extends Component {
+export class App extends Component {
 
 
   render() {
