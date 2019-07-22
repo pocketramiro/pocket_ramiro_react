@@ -36,7 +36,7 @@ const CreateUser = ({formConfig, postUser, history}) => (
       onSubmit={ async (values, actions) => {
        
         const newUser = {...values, role: 'admin'};
-
+        
         const result =  await postUser(newUser);
  
         actions.setSubmitting(false);
