@@ -41,7 +41,7 @@ const CreateUser = ({formConfig, postUser, history}) => (
  
         actions.setSubmitting(false);
         if (result) {
-          history.push('/login')
+          history.push('/resources')
         }
         
       }}
@@ -68,7 +68,7 @@ const CreateUser = ({formConfig, postUser, history}) => (
         return (
           <form onSubmit={props.handleSubmit}>            
             {inputNodes}
-            <button type="submit">Submit</button>
+            <button type="submit" disabled={props.isSubmitting}>Submit</button>
           </form>
         );
       }}

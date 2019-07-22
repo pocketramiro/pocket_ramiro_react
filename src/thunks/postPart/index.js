@@ -1,7 +1,10 @@
 import { addPart, setLoading, setError } from '../../actions';
 
 export const postPart = (part, resourceId) => {
+  debugger
   return async (dispatch) => {
+    try {
+  
     const url = `${process.env.REACT_APP_BASEURL}/api/v1/resources/${resourceId}/parts`;
     const options = {
       method: "POST",
@@ -9,7 +12,6 @@ export const postPart = (part, resourceId) => {
       body: JSON.stringify(part)
     };
 
-    try {
       dispatch(setLoading(true));
 
       const response = await fetch(url, options);
@@ -19,7 +21,6 @@ export const postPart = (part, resourceId) => {
       }
       
       const partId = await response.json();
-
       dispatch(setLoading(false));
       dispatch(addPart(partId));
     } catch (error) {
