@@ -5,14 +5,12 @@ export const postPart = (part, resourceId) => {
   return async (dispatch) => {
     try {
   
-console.log(part, resourceId)
     const url = `${process.env.REACT_APP_BASEURL}/api/v1/resources/${resourceId}/parts`;
     const options = {
       method: "POST",
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(part)
     };
-    console.log('url', url)
 
       dispatch(setLoading(true));
 
@@ -23,7 +21,6 @@ console.log(part, resourceId)
       }
       
       const partId = await response.json();
-console.log(partId,'yes')
       dispatch(setLoading(false));
       dispatch(addPart(partId));
     } catch (error) {

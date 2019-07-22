@@ -18,19 +18,19 @@ class App extends Component {
       <main className="route-main">
         <Nav />
         <Loading/>
-        {/* <Switch>
+        <Switch>
           <Route exact path='/' render={() => <Redirect to="/resources"/>} />
           <Route path='/tickets' component={Dashboard}/>
           <Route path='/resources' component={Dashboard}/>
           <Route path='/login' component={UserLogin} />
           <Route path='/create-user' component={CreateUser}/>
           <Route path='/resource_types' component={Dashboard} />
-          {/* <Route path='/create-tickets' component={Form} /> */}
-          {/* <Route path='/create-tickets' component={DynamicForm} /> */}
-          {/* <Route path='/create-parts' component={DynamicForm}/> */}
+          <Route path='/create-tickets' component={Form} />
+          <Route path='/create-tickets' component={DynamicForm} />
+          <Route path='/create-parts' component={DynamicForm}/>
           
-          {/* <Route component={NotFound}/> */}
-        {/* </Switch> */} */}
+          <Route component={NotFound}/>
+        </Switch>  
       </main>
     );
   }
