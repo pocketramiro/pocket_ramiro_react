@@ -32,6 +32,30 @@
   color: #444;
 }
 
+.create-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.create-btn {
+  position: fixed;
+  bottom: 50px;
+  background-color: #000000;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  padding: 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #fff;
+    border: 2px solid #000;
+    color: #000;
+  }
+}
+
 @media (max-width: 760px) {
   .card-container {
     grid-template-columns: repeat(2, minmax(200px, 1fr));
