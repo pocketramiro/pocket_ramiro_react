@@ -4,6 +4,7 @@ import { postUser } from '../../thunks/postUser';
 import { Formik, Field } from 'formik';
 import { withRouter } from 'react-router';
 import * as Yup from 'yup';
+import { directive } from '@babel/types';
 
 const SignupSchema = Yup.object().shape({
   notes: Yup.string()
@@ -15,15 +16,19 @@ const SignupSchema = Yup.object().shape({
 
 const CreateTicket = ({formConfig, postTicket, history, location}) => (
   
-  <div className='form-container'>
+  <section className='form-container'>
     <h1>Form</h1>
     <Formik
-      initialValues={
-        {
-          notes: '', 
-          priority: 'low'
-        }
+      initialValues=
+      {
+       location.formProp && formValues[location.formProp]
       }
+      // {
+      //   {
+      //     notes: '', 
+      //     priority: 'low'
+      //   }
+      // }
       onSubmit={ async (values, actions) => {
        
         const newUser = {...values, role: 'admin'};
@@ -44,7 +49,7 @@ const CreateTicket = ({formConfig, postTicket, history, location}) => (
           onBlur: props.handleBlur
         };
 
-        console.log(formConfig[location.formProp])
+        console.log(formConfig[location.formProp]);
         const inputNodes = location.formProp && formConfig[location.formProp].map(({html_tag, type, name, placeholder, value, label}, inputIx) => {
           // const textArea = (
           //   <textarea
@@ -67,26 +72,29 @@ const CreateTicket = ({formConfig, postTicket, history, location}) => (
           //     <label htmlFor={value}>{value}</label>
           //   </div>
           // );
-          console.log(props)
           return (  
             <div key={inputIx}>
-              {html_tag === 'input' && <Field 
-              type={type}
-              name={name}
-              // value={props.setValues(props.values.notes)}
-              value={ticketValues.priority}
-              placeholder={placeholder}
-              id={value}
-              /> &&
-              <label htmlFor={label}>{label}</label>
+              { html_tag === 'input' && 
+              <div>
+                <Field 
+                  {...BASE_PROPS}
+                  type={type}
+                  name={name}
+                  value={props.values.priority}
+                  placeholder={placeholder}
+                  id={value}
+                  checked={value === value}
+                /> 
+                <label htmlFor={label}>{label}</label>
+              </div>
               }
-
               {html_tag === 'textarea' && <Field 
-              component={html_tag}
-              id={value}
-              name={name}
-              value={props.values.notes}
-              placeholder={placeholder}
+                {...BASE_PROPS}
+                component={html_tag}
+                id={value}
+                name={name}
+                value={props.values.notes}
+                placeholder={placeholder}
               />}
               {props.errors[name] && <div id="feedback">{props.errors[name]}</div>}
             </div>
@@ -96,14 +104,12 @@ const CreateTicket = ({formConfig, postTicket, history, location}) => (
         return (
           <form onSubmit={props.handleSubmit}>
             {inputNodes}
-            <p>hiakls;df</p>
             <button type="submit">Submit</button>
-            }
           </form>
         );
       }}
     />
-  </div>
+  </section>
 );
     
 // CreateTicket.defaultProps = {
@@ -164,27 +170,39 @@ export default withRouter(
   connect(null, mapDispatchToProps)(CreateTicket)
 );
 
-const ticketValues = 
-  {
-    notes: '', 
+
+const formValues = {
+  tickets: {
+    notes: 'We did it!', 
     priority: ''
+  },
+  parts: {
+    name: '',
+    inventory: 0
+  },
+  resources: {
+    cost: '',
+    name: ''
+  },
+  resourceTypes: {
+    category: '',
+    company: '',
+    contact_number: 0,
+    contract_name: ''
+  }
+
+}
+const tickets = 
+  {
   };
 
-const partValues = {
-  name: '',
-  inventory: 0
+const parts = {
 };
 
 const resourceValue = {
-  cost: '',
-  name: ''
 };
 
 const resourceTypeValue = {
-  category: '',
-  company: '',
-  contact_number: 0,
-  contract_name: ''
 };
 
 CreateTicket.defaultProps = {
@@ -207,24 +225,28 @@ CreateTicket.defaultProps = {
         type: 'radio',
         name: 'priority',
         value: 'medium',
+        label: 'medium'
       },
       {
         html_tag: 'input',
         type: 'radio',
         name: 'priority',
         value: 'high',
+        label: 'high'
       },
       {
         html_tag: 'input',
         type: 'radio',
         name: 'priority',
         value: 'urgent',
+        label: 'urgent'
       },
       {
         html_tag: 'input',
         type: 'radio',
         name: 'priority',
         value: 'safety',
+        label: 'safety'
       }
     ],
     parts: [
