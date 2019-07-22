@@ -31,6 +31,18 @@ header p:nth-child(1) {
 
 .card {
   margin: 30px;
+  border: 1px solid #c8c8c8;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 0 #c8c8c8;
+
+  .title {
+    background-color: #d0d0d0;
+    margin: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 5px 15px;
+    color: #2f2f2f;
+  }
   
   &:hover {
     cursor: pointer;

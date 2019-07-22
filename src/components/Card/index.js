@@ -27,7 +27,7 @@ export const Card = (props) => {
    
       <header>
         {
-          <p>Card #:{id}</p>
+          <h3 className='title'>Card #:{id}</h3>
         }
         
         { 
