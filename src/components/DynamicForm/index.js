@@ -10,35 +10,37 @@ const SignupSchema = Yup.object().shape({
   notes: Yup.string()
     .min(1, 'Too Short!')
     .required('Required'),
-  priority: Yup.string()
-    .required('Required')
 });
 
-const CreateTicket = ({formConfig, postTicket, history, location}) => (
+const CreateTicket = ({formConfig, postTicket, location, history}) => (
   
   <section className='form-container'>
     <h1>Form</h1>
     <Formik
       initialValues=
-      {
-       location.formProp && formValues[location.formProp]
-      }
-      // {
-      //   {
-      //     notes: '', 
-      //     priority: 'low'
-      //   }
-      // }
+        {
+          location.formProp && formValues[location.formProp]
+        }
       onSubmit={ async (values, actions) => {
        
-        const newUser = {...values, role: 'admin'};
+        // const newUser = {...values, role: 'admin'};
 
-        const result =  await postUser(newUser);
- 
-        actions.setSubmitting(false);
-        if (result) {
-          history.push('/login');
+        // const result =  await postUser(newUser);
+
+        const formType = location.formProp;
+
+        switch (formType) {
+        case 'tickets':
+          postTicket({
+            ...values, table_key: 1,
+            table_name: 'Resources',
+            user_id: this.props.user.id
+          }, 'id');
+          history.push('/resources')
+          break;
+        default:  
         }
+        actions.setSubmitting(false);
         
       }}
 
@@ -48,8 +50,6 @@ const CreateTicket = ({formConfig, postTicket, history, location}) => (
           onChange: props.handleChange,
           onBlur: props.handleBlur
         };
-
-        console.log(formConfig[location.formProp]);
         const inputNodes = location.formProp && formConfig[location.formProp].map(({html_tag, type, name, placeholder, value, label}, inputIx) => {
           // const textArea = (
           //   <textarea
@@ -73,20 +73,21 @@ const CreateTicket = ({formConfig, postTicket, history, location}) => (
           //   </div>
           // );
           return (  
-            <div key={inputIx}>
+            <div key={inputIx} id='radio-wrapper'>
               { html_tag === 'input' && 
-              <div>
-                <Field 
-                  {...BASE_PROPS}
-                  type={type}
-                  name={name}
-                  value={props.values.priority}
-                  placeholder={placeholder}
-                  id={value}
-                  checked={value === value}
-                /> 
-                <label htmlFor={label}>{label}</label>
-              </div>
+              <>
+                  <Field 
+                    {...BASE_PROPS}
+                    type={type}
+                    name={name}
+                    checked={null}
+                    value={label}
+                    placeholder={placeholder}
+                    id={value}
+                    className='label-radio-btn'
+                  /> 
+                  <label htmlFor={label} className='label-radio'>{label}</label>
+                </>
               }
               {html_tag === 'textarea' && <Field 
                 {...BASE_PROPS}
@@ -102,7 +103,7 @@ const CreateTicket = ({formConfig, postTicket, history, location}) => (
         });
 
         return (
-          <form onSubmit={props.handleSubmit}>
+          <form onSubmit={props.handleSubmit} id='form-wrapper'>
             {inputNodes}
             <button type="submit">Submit</button>
           </form>
@@ -112,51 +113,6 @@ const CreateTicket = ({formConfig, postTicket, history, location}) => (
   </section>
 );
     
-// CreateTicket.defaultProps = {
-//   formConfig: [
-//     {
-//       html_tag: 'textarea',
-//       name: 'notes',
-//       placeholder: 'Enter Ticket Notes'
-//     },
-//     {
-//       html_tag: 'input',
-//       type: 'text',
-//       name: 'name',
-//       placeholder: 'Name'
-//     },
-//     {
-//       html_tag: 'input',
-//       type: 'radio',
-//       name: 'priority',
-//       value: 'low',
-//     },
-//     {
-//       html_tag: 'input',
-//       type: 'radio',
-//       name: 'priority',
-//       value: 'medium',
-//     },
-//     {
-//       html_tag: 'input',
-//       type: 'radio',
-//       name: 'priority',
-//       value: 'high',
-//     },
-//     {
-//       html_tag: 'input',
-//       type: 'radio',
-//       name: 'priority',
-//       value: 'urgent',
-//     },
-//     {
-//       html_tag: 'input',
-//       type: 'radio',
-//       name: 'priority',
-//       value: 'safety',
-//     }
-//   ]
-// };
 
 export const mapStateToProps = state => ({
   user: state.user
@@ -173,7 +129,7 @@ export default withRouter(
 
 const formValues = {
   tickets: {
-    notes: 'We did it!', 
+    notes: '', 
     priority: ''
   },
   parts: {
@@ -191,28 +147,12 @@ const formValues = {
     contract_name: ''
   }
 
-}
-const tickets = 
-  {
-  };
-
-const parts = {
 };
 
-const resourceValue = {
-};
-
-const resourceTypeValue = {
-};
 
 CreateTicket.defaultProps = {
   formConfig: {
     tickets: [
-      {
-        html_tag: 'textarea',
-        name: 'notes',
-        placeholder: 'Enter Ticket Notes'
-      },
       {
         html_tag: 'input',
         type: 'radio',
@@ -247,6 +187,11 @@ CreateTicket.defaultProps = {
         name: 'priority',
         value: 'safety',
         label: 'safety'
+      },
+      {
+        html_tag: 'textarea',
+        name: 'notes',
+        placeholder: 'Enter Ticket Notes'
       }
     ],
     parts: [
