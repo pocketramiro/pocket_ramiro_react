@@ -21,16 +21,6 @@ export const Card = (props) => {
       label: 'Cost'
     }
   };
-  //This is breaking other Cards info
-  const nodes = Object.keys(props.item).map((keyName) => (
-    config[keyName] && (
-      <p className="header-icon-container">
-        <i className={`material-icons header-icon ${props.item.priority}`}>
-          {config[keyName].icon}
-        </i>{`${config[keyName].label}: ${props.item[keyName]}`}
-      </p> 
-    )
-  ));
 
   return (
     <section className='card' >
@@ -38,10 +28,6 @@ export const Card = (props) => {
       <header>
         {
           <p>Card #:{id}</p>
-        }
-        {/* {nodes} */}
-        {
-
         }
         { 
           priority && <p className="header-icon-container">
