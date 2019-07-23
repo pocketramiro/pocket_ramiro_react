@@ -33,7 +33,7 @@ export class ResourceType extends Component {
       contact_name: '',
       contact_number: 0,
       company: ''
-    })
+    });
   }
  
 
