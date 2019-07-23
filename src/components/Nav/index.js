@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { deleteSession } from '../../thunks/deleteSession';
 import { NavLink } from 'react-router-dom';
 
-class Nav extends Component {
+export class Nav extends Component {
   constructor() {
     super();
     this.state = {
@@ -15,12 +17,17 @@ class Nav extends Component {
     this.setState({isSelected: checked});
   }
 
-  handleClick = (event) => {
-    if (!event.target.closest('.nav-link')) {
+  handleClick = (e) => {
+    if (!e.target.closest('.nav-link')) {
       return;
     }
-    const { name } = event.target.closest('.nav-link');
+    const { name } = e.target.closest('.nav-link');
     this.setState({title: name, isSelected: false });
+  }
+
+  handleLogout = (e) => {
+    e.preventDefault();
+    this.props.deleteSession();
   }
 
   render() {
@@ -69,7 +76,7 @@ class Nav extends Component {
             <i className="material-icons">
               account_circle
             </i>
-            Log in
+            {!this.props.session ? <p>Login</p> : <p onClick={this.handleLogout}>Logout</p>}
           </NavLink>
         </div>
         <section className="mobile-menu">
@@ -80,4 +87,12 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+export const mapStateToProps = state => ({
+  session: state.session
+});
+
+export const mapDispatchToProps = dispatch => ({
+  deleteSession: () => dispatch(deleteSession())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);
