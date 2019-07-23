@@ -61,13 +61,13 @@ describe('actions', () => {
     });
   });
 
-  describe('setMessage', () => {
+  describe('setUser', () => {
     it('should return a type of SET_USER with a user object', () => {
       const user_id = 1;
       
       const expected = {type: 'SET_USER', user_id};
 
-      const result = actions.setMessage(user_id);
+      const result = actions.setUser(user_id);
 
       expect(result).toEqual(expected);
     });
