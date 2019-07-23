@@ -35,13 +35,13 @@ describe('ResourceType', () => {
  
   it('should change category in state when handle is invoked', () => {
     wrapper.find('input').at(2).simulate('change', { target: { name: 'contact_name', value: 'Michael'}});
-    expect(wrapper.state('category')).toBe('Michael;');
+    expect(wrapper.state('contact_name')).toBe('Michael');
   });
 
   it('should change category in state when handle is invoked', () => {
     wrapper.find('input').at(3).simulate('change', { target: { name: 'contact_number', value: 3034567654}});
-    expect(wrapper.state('category')).toBe(3034567654);
+    expect(wrapper.state('contact_number')).toBe(3034567654);
   });
-
+ 
 
 });
