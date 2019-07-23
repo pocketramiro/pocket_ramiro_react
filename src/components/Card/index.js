@@ -7,37 +7,37 @@ export const Card = (props) => {
   const calcDaysSinceCreation = (t) => Math.floor(t / (24 * 60 * 60 * 1000));
   const days = calcDaysSinceCreation(Math.abs(new Date() - new Date(created_at)));
 
-  
+
   return (
-    <section className='card' >
-   
+    <section className={`card card-${priority}`}>
+
       <header>
         {
-          <h3 className='title'>Card #:{id}</h3>
+          <h3 className={`${priority}-title title`}>Card #:{id}</h3>
         }
-        
-        { 
+
+        {
           priority && <p className="header-icon-container">
             <i className={`material-icons header-icon ${priority}`}>
             flag
             </i>Priority: {priority}
-          </p> 
-        } 
- 
-        { 
+          </p>
+        }
+
+        {
           resource_type_id && <p className="header-icon-container">
             <i className={`material-icons header-icon ${name}`}>
             business
             </i>Name: {name}
-          </p> 
+          </p>
         }
-        
-        { 
+
+        {
           cost && <p className="header-icon-container">
             <i className={`material-icons header-icon ${name}`}>
             attach_money
             </i>Cost: {cost}
-          </p> 
+          </p>
         }
 
         <p className="header-icon-container">
@@ -52,10 +52,10 @@ export const Card = (props) => {
           </i>{`${days} Days Open`}
         </p>
         <div className='links-container'>
-        { 
+        {
           resource_type_id &&
             <Link to={{
-              pathname: `/resources/${resource_type_id}/parts`, 
+              pathname: `/resources/${resource_type_id}/parts`,
             }}>
               <i className="material-icons" id='parts-icon'>
                 build
@@ -64,19 +64,19 @@ export const Card = (props) => {
             </Link>
         }
 
-        { 
+        {
           resource_type_id &&
             <Link to={{
               pathname: `/resources/${resource_type_id}/tickets`
             }}>
-           
+
               <i className="material-icons" id='tickets-icon'>
                   notes
               </i>
               <label htmlFor='tickets-icon'>Tickets</label>
             </Link>
         }
-        </div> 
+        </div>
 
         { notes && <p className='card-notes' >
           <i id='single-note' className="material-icons header-icon">
