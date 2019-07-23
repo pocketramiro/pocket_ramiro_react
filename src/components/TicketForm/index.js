@@ -30,7 +30,7 @@ const TicketForm = ({formConfig, postTicket, history, location}) => (
           table_name: 'Resources',
           user_id: this.props.user.id
         };
-//will make possible with session login 
+        //will make possible with session login 
         // postTicket(newTicket)
         // const newUser = {...values, role: 'admin'};       
         // actions.setSubmitting(false);
@@ -48,9 +48,10 @@ const TicketForm = ({formConfig, postTicket, history, location}) => (
         };
         
         const inputNodes = location.formProp && formConfig[location.formProp].map(({html_tag, type, name, placeholder, value, label}, inputIx) => (
-          <div key={inputIx} className='ticket-input'>
+          <div key={inputIx} id={`ticket-input-${inputIx + 1}`}>
             { type === 'radio' && 
             <>
+              <label htmlFor={label} className='label-radio'>{label}</label>
             <Field
               {...BASE_PROPS}
               type={type}
@@ -58,34 +59,44 @@ const TicketForm = ({formConfig, postTicket, history, location}) => (
               checked={null}
               value={label}
               placeholder={placeholder}
-              id={value}
+              id={`${type}-${inputIx}`}
               className='label-radio-btn'
             /> 
-            <label htmlFor={label} className='label-radio'>{label}</label>
               </>
             }
             {
               html_tag === 'textarea' && 
-              <div>
+              <div id='text-area-1'>
                 <Field
                   {...BASE_PROPS}
                   component={html_tag}
-                  id={value}
+                  id='ticket-form-text-area'
                   name={name}
                   value={props.values.notes}
                   placeholder={placeholder}
                 />
               </div>
             }
-            
-            { props.errors[name] && <div id="feedback">{props.errors[name]}</div>}
+            { props.errors[name]  && <div id="feedback">{props.errors[name]}</div>}
+            {
+              type === 'button' && 
+              <div>
+                { props.errors[name] && <div id="feedback">{props.errors[name]}</div>}
+                <Field
+                  {...BASE_PROPS}
+                  component={html_tag}
+                  id={`submit-ticket-${inputIx}`}
+                  name={name}
+                  value='Submit'
+                />
+              </div>
+            }
           </div>
         ));
 
         return (
           <form onSubmit={props.handleSubmit} className='ticket-form'>            
             {inputNodes}
-            <button type="submit" disabled={props.isSubmitting} id='submit-user'>Submit</button>
           </form>
         );
       }}

@@ -10,6 +10,7 @@ import CreateUser from '../CreateUser';
 import DynamicForm from '../../components/DynamicForm';
 import Loading from '../../components/Loading/Loading';
 import ResourceType from '../../components/ResourceType/index';
+import TicketForm from '../../components/TicketForm'
 
 export class App extends Component {
 
@@ -32,7 +33,7 @@ export class App extends Component {
           <Route path='/login' component={UserLogin} />
           <Route path='/create-user' component={CreateUser}/>
           <Route path='/resourcetypes' component={Dashboard} />
-          <Route path='/create-tickets' component={Form} />
+          <Route path='/create-tickets' component={TicketForm} />
           <Route path='/create-parts' component={DynamicForm}/> 
           <Route path='/create-resources' component={''}/>
           <Route path='/create-resourcetypes' component={ResourceType}/>
