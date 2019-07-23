@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { postSession } from '../../thunks/postSession';
 
-export default class UserSignIn extends Component {
+class UserSignIn extends Component {
   constructor() {
     super();
     this.state = {
@@ -18,7 +20,8 @@ export default class UserSignIn extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    
+    const {email, password} = this.state;
+    this.props.postSession({email, password});
   }
 
   render() {
@@ -61,3 +64,9 @@ export default class UserSignIn extends Component {
     );
   }
 }
+
+export const mapDispatchToProps = dispatch => ({
+  postSession: (login_info) => dispatch(postSession(login_info))
+});
+
+export default connect(null, mapDispatchToProps)(UserSignIn)
