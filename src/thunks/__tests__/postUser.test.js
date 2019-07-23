@@ -59,4 +59,4 @@ describe('postUser', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(actions.setUser(mockUser));
   });
-});
+}); 

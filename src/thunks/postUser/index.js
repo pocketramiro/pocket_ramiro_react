@@ -18,10 +18,10 @@ export const postUser = (user) => {
         throw Error(response.statusText);
       }
 
-      const user = await response.json();
+      const message = await response.json();
+      
       dispatch(setLoading(false));
-      dispatch(setUser(user));
-      return user;
+      dispatch(setUser(message));
     } catch (error) {
       dispatch(setError(error.message));
     }

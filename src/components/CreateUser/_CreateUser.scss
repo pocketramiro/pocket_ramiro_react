@@ -6,8 +6,8 @@
   margin-left: -100px;
 }
 
-.sign-in-btn {
-  background-color: #9c9797;
+#submit-user {
+  background-color: #000;
   border: 1px solid #000000;
   border-radius: 6px;
   color: #fff;
@@ -16,9 +16,15 @@
   font-weight: 600;
   max-width: 477px;
   width: 140px;
-  height: 130px;
+  min-height: 2.3rem;
   text-align: center;
   text-decoration: none;
   transition: background-color 0.2s ease;
   vertical-align: middle;
+
+  &:hover {
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+  }
 }

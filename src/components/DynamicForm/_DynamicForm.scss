@@ -1,25 +1,16 @@
-// #form-wrapper {
-//   text-align: center;
-
-//   #radio-wrapper {
-//     text-align: center;
-//     flex-direction: row;
-//   }
-
-// //   .radio-wrapper {
-// //     display: flex;
-// //     align-items: center;
-// //     justify-content: center;
-// //     flex-direction: column;
-// //   }
-// }
-// .label-radio-btn {
-//   display: inline-block;
-//     vertical-align: top;
-// }
-
-// .label-radio {
-//   display: inline-block;
-//     vertical-align: top;
-//     margin-right: 3%;
-// }
+button[type=submit] {
+  border: 2px solid #000;
+  border-radius: 6px;
+  color: #fff;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  max-width: 477px;
+  width: 140px;
+  min-height: 4rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  vertical-align: middle;
+  background-color: #000;
+}
