@@ -9,13 +9,13 @@ import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import {rootReducer} from './reducers/index';
-
-const persistedState = localStorage.getItem('reduxState') ? JSON.parse(localStorage.getItem('reduxState')) : {}
+import { loadState, saveState } from './Utility/localStorage'; 
+const persistedState = loadState();
 
 const store = createStore(rootReducer, persistedState, composeWithDevTools(applyMiddleware(thunk)))
 
 store.subscribe(() => {
-  localStorage.setItem('reduxState', JSON.stringify(store.getState()))
+  saveState(store.getState())
 })
 
 const router = (
