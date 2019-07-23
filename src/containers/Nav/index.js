@@ -26,8 +26,7 @@ export class Nav extends Component {
   }
 
   handleLogout = (e) => {
-    e.preventDefault();
-    this.props.deleteSession();
+    this.props.deleteSession(this.props.session.user_id);
   }
 
   render() {
@@ -92,7 +91,7 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  deleteSession: () => dispatch(deleteSession())
+  deleteSession: (id) => dispatch(deleteSession(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);
