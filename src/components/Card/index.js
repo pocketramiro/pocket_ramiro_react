@@ -52,8 +52,8 @@ export const Card = (props) => {
           </i>{`${days} Days Open`}
         </p>
         <div className='links-container'>
-        { 
-          resource_type_id &&
+          { 
+            resource_type_id &&
             <Link to={{
               pathname: `/resources/${resource_type_id}/parts`, 
             }}>
@@ -62,10 +62,10 @@ export const Card = (props) => {
               </i>
               <label htmlFor='parts-icon'>Parts</label>
             </Link>
-        }
+          }
 
-        { 
-          resource_type_id &&
+          { 
+            resource_type_id &&
             <Link to={{
               pathname: `/resources/${resource_type_id}/tickets`
             }}>
@@ -75,7 +75,7 @@ export const Card = (props) => {
               </i>
               <label htmlFor='tickets-icon'>Tickets</label>
             </Link>
-        }
+          }
         </div> 
 
         { notes && <p className='card-notes' >
