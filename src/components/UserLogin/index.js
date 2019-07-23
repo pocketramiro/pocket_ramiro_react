@@ -3,13 +3,12 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { postSession } from '../../thunks/postSession';
 
-class UserSignIn extends Component {
+class UserLogin extends Component {
   constructor() {
     super();
     this.state = {
       email: '',
-      password: '',
-      name: ''
+      password: ''
     };
   }
 
@@ -29,7 +28,7 @@ class UserSignIn extends Component {
 
     return (
       <div id='login-form' className='user-container'>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} onChange={this.handleChange}>
           <h1>Login</h1>
           <label htmlFor='email' className='login-label'>
             <i className="material-icons">
@@ -40,8 +39,8 @@ class UserSignIn extends Component {
               type='text' 
               name='email' 
               placeholder='Enter Username'
-              onChange={this.handleChange}
-              value={email}/>
+              value={email}
+            />
           </label>
           <label htmlFor='password' className='login-label'>
             <i className="material-icons">
@@ -54,11 +53,11 @@ class UserSignIn extends Component {
               placeholder='Password'
               pattern=".{8,}"
               required title="8 characters minimum"
-              onChange={this.handleChange}
-              value={password}/>
+              value={password}
+            />
           </label>
           <button className='sign-in-btn'>Sign In</button>
-          <p>Don't have an account? <Link to="/create-user">Create a new account</Link></p>
+          <p>Want to create a new account? <Link to="/create-user">Create a new account</Link></p>
         </form>
       </div>
     );
@@ -69,4 +68,4 @@ export const mapDispatchToProps = dispatch => ({
   postSession: (login_info) => dispatch(postSession(login_info))
 });
 
-export default connect(null, mapDispatchToProps)(UserSignIn)
+export default connect(null, mapDispatchToProps)(UserLogin)
