@@ -23,7 +23,10 @@ export class App extends Component {
         { isLoading && <Loading/> } 
         <ResourceType/>
         <Switch>
-          { <Route exact path='/' render={() => <Redirect to="/resources"/>} /> }
+          {this.props.session.user_id ? 
+            <Route exact path='/' render={() => <Redirect to="/resources"/>} /> : 
+            <Route exact path='/' render={() => <Redirect to="/login"/>} />
+          }
           <Route path='/tickets' component={Dashboard}/>
           <Route path='/resources' component={Dashboard}/>
           <Route path='/login' component={UserLogin} />
@@ -41,7 +44,8 @@ export class App extends Component {
 }
 
 export const mapStateToProps = state => ({
-  isLoading: state.isLoading
+  isLoading: state.isLoading,
+  session: state.session
 });
 
 export default connect(mapStateToProps)(App);
