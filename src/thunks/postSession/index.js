@@ -1,12 +1,12 @@
 import { setSession, setLoading, setError } from '../../actions';
 
-export const postTicket = (ticket, id) => {
+export const postSession = (login_info) => {
   return async (dispatch) => {
-    const url = `${process.env.REACT_APP_BASEURL}/api/v1/resources/${id}/tickets`;
+    const url = `${process.env.REACT_APP_BASEURL}/api/v1/sessions`;
     const options = {
       method: "POST",
       headers: { 'Content-type': 'application/json' },
-      body: JSON.stringify(ticket)
+      body: JSON.stringify(login_info)
     };
 
     try {
@@ -15,13 +15,12 @@ export const postTicket = (ticket, id) => {
       const response = await fetch(url, options);
 
       if (!response.ok) {
-        throw Error(response.statusText);
+        dispatch(setError(response.statusText));
       }
-      
-      ticket = await response.json();
 
+      const session = await response.json();
       dispatch(setLoading(false));
-      dispatch(postSession(ticket));
+      dispatch(setSession(session));
     } catch (error) {
       dispatch(setError(error.message));
     }

@@ -8,7 +8,16 @@ export const addResource = (resource) => ({
   resource
 });
 
-export const setMessage = (user_id) => ({
+export const setSession = (session) => ({
+  type: 'SET_SESSION',
+  session
+});
+
+export const clearSession = () => ({
+  type: 'CLEAR_SESSION'
+});
+
+export const setUser = (user_id) => ({
   type: 'SET_USER',
   user_id
 });
