@@ -1,5 +1,5 @@
 import { userReducer } from '.';
-import { setMessage, clearUser } from '../../actions';
+import { setUser, clearUser } from '../../actions';
 
 describe('userReducer', () => {
   it('should return default state', () => {
@@ -9,10 +9,10 @@ describe('userReducer', () => {
     expect(result).toEqual(expected);
   });
 
-  describe('setMessage case', () => {
+  describe('setUser case', () => {
     it('should set the user in state', () => {
       const expected = 2;
-      const action = setMessage(expected);
+      const action = setUser(expected);
       const result = userReducer(0, action);
 
       expect(result).toEqual(expected);

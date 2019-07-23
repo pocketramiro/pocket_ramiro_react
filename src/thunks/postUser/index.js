@@ -1,4 +1,4 @@
-import { setMessage, setLoading, setError } from '../../actions';
+import { setUser, setLoading, setError } from '../../actions';
 
 export const postUser = (user) => {
   return async (dispatch) => {
@@ -21,7 +21,7 @@ export const postUser = (user) => {
       const message = await response.json();
       
       dispatch(setLoading(false));
-      dispatch(setMessage(message));
+      dispatch(setUser(message));
     } catch (error) {
       dispatch(setError(error.message));
     }
