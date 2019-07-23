@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 class Nav extends Component {
@@ -46,7 +47,7 @@ class Nav extends Component {
         </NavLink>
       </section>
     );
-
+    
     return (
       <div>
         <div className='nav'>
@@ -69,7 +70,7 @@ class Nav extends Component {
             <i className="material-icons">
               account_circle
             </i>
-            Log in
+            {!this.props.session.session ? <p>Login</p> : <p>Logout</p>}
           </NavLink>
         </div>
         <section className="mobile-menu">
@@ -80,4 +81,8 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+export const mapStateToProps = state => ({
+  session: state.session
+});
+
+export default connect(mapStateToProps)(Nav);
