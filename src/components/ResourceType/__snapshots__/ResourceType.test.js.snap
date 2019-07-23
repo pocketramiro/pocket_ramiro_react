@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResourceType should match the snapshot 1`] = `
+<div>
+  <section
+    className="nav-wrapper"
+  >
+    <input
+      className="part-inputs"
+      id="category"
+      name="category"
+      onChange={[Function]}
+      placeholder="Enter Category"
+      type="text"
+      value=""
+    />
+    <input
+      className="part-inputs"
+      id="company"
+      name="company"
+      onChange={[Function]}
+      placeholder="Enter Company"
+      type="text"
+      value=""
+    />
+    <input
+      className="part-inputs"
+      id="contact-name"
+      name="contact_name"
+      onChange={[Function]}
+      placeholder="Enter contact name"
+      type="text"
+      value=""
+    />
+    <input
+      className="part-inputs"
+      id="contact-number"
+      name="contact_number"
+      onChange={[Function]}
+      placeholder="Enter Number 3034567890"
+      type="number"
+      value={0}
+    />
+    <button
+      onSubmit={[Function]}
+    >
+      Submit
+    </button>
+  </section>
+</div>
+`;

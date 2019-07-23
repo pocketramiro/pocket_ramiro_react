@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-export class PartsForm extends Component {
+export class ResourceType extends Component {
   constructor() {
     super();
     this.state = {
@@ -54,7 +54,7 @@ export class PartsForm extends Component {
             placeholder='Enter Category'
           />
           <input
-            id=''
+            id='company'
             type='text' 
             className='part-inputs'
             onChange={this.handleChange}
@@ -87,12 +87,10 @@ export class PartsForm extends Component {
   }
 }
 
-export const mapStateToProps = state => ({
-  session: state.session
-});
+
 
 export const mapDispatchToProps = dispatch => ({
   deleteSession: () => dispatch(deleteSession())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(PartsForm);
+export default connect(null, mapDispatchToProps)(ResourceType);
