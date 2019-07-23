@@ -45,7 +45,9 @@ exports[`Nav should match the snapshot 1`] = `
       >
         account_circle
       </i>
-      Log in
+      <p>
+        Login
+      </p>
     </NavLink>
   </div>
   <section
@@ -105,7 +107,9 @@ exports[`Nav should render a Nav component if isSelected is true 1`] = `
       >
         account_circle
       </i>
-      Log in
+      <p>
+        Login
+      </p>
     </NavLink>
   </div>
   <section

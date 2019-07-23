@@ -46,7 +46,6 @@ export const setResourceTypes = (resourceTypes) => ({
   resourceTypes
 });
 
-// ------
 export const setResources = (resources) => ({
   type: 'SET_RESOURCES',
   resources
