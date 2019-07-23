@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteSession } from '../../thunks/deleteSession';
 import { NavLink } from 'react-router-dom';
-import { clearState } from '../../Utility/localStorage.js';
 
 class Nav extends Component {
   constructor() {
@@ -27,7 +26,8 @@ class Nav extends Component {
   }
 
   handleLogout = (e) => {
-    
+    // e.preventDefault()
+    // this.props.deleteSession()
   }
 
   render() {
@@ -95,4 +95,4 @@ export const mapDispatchToProps = dispatch => ({
   deleteSession: () => dispatch(deleteSession())
 });
 
-export default connect(mapStateToProps)(Nav);
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);
