@@ -4,12 +4,12 @@
   width: 100vw;
 }
 
-form {
+.user-login-form  {
   @include displayFlex(space-between, center, center, column);
   background-color: #fff;
   max-width: 477px;
   max-height: 19rem;
-  
+}
   input {
     border: 2px solid #000000;
     border-radius: 6px;
@@ -18,22 +18,32 @@ form {
     height: 48px;
     font-size: 16px;
     font-weight: 300;
-  }
+    
+    &:hover {
+      cursor: pointer;
+    }
+  
   .sign-in-btn {
-    background-color: #9c9797;
-    border: 1px solid #000000;
-    border-radius: 6px;
-    color: #fff;
-    display: inline-block;
-    font-size: 15px;
-    font-weight: 600;
-    max-width: 477px;
-    width: 140px;
-    height: 130px;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-    vertical-align: middle;
+      border: 2px solid #000;
+      border-radius: 6px;
+      color: #fff;
+      display: inline-block;
+      font-size: 15px;
+      font-weight: 600;
+      max-width: 477px;
+      width: 140px;
+      min-height: 2.3rem;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+      vertical-align: middle;
+      background-color: #000;
+ 
+      &:hover {
+        background-color: white;
+        color: black;
+        cursor: pointer;
+      }
   }
 }
 

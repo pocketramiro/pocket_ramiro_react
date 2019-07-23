@@ -1,16 +1,15 @@
 import { addPart, setLoading, setError } from '../../actions';
 
 export const postPart = (part, resourceId) => {
-  debugger
   return async (dispatch) => {
     try {
-  
-    const url = `${process.env.REACT_APP_BASEURL}/api/v1/resources/${resourceId}/parts`;
-    const options = {
-      method: "POST",
-      headers: { 'Content-type': 'application/json' },
-      body: JSON.stringify(part)
-    };
+
+      const url = `${process.env.REACT_APP_BASEURL}/api/v1/resources/${resourceId}/parts`;
+      const options = {
+        method: "POST",
+        headers: { 'Content-type': 'application/json' },
+        body: JSON.stringify(part)
+      };
 
       dispatch(setLoading(true));
 

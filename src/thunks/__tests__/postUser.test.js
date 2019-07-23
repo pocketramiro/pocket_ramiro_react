@@ -54,9 +54,9 @@ describe('postUser', () => {
     expect(mockDispatch).toHaveBeenCalledWith(actions.setLoading(false));
   });
 
-  it('should dispatch setUser with the correct params', async () => {
+  it('should dispatch setMessage with the correct params', async () => {
     await thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(actions.setUser(mockUser));
+    expect(mockDispatch).toHaveBeenCalledWith(actions.setMessage(mockUser));
   });
 });

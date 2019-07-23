@@ -26,7 +26,7 @@ export default class UserSignIn extends Component {
 
     return (
       <div id='login-form' className='user-container'>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className='user-login-form'>
           <h1>Login</h1>
           <label htmlFor='email' className='login-label'>
             <i className="material-icons">

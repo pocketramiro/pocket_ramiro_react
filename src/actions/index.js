@@ -8,7 +8,7 @@ export const addResource = (resource) => ({
   resource
 });
 
-export const setUser = (user_id) => ({
+export const setMessage = (user_id) => ({
   type: 'SET_USER',
   user_id
 });

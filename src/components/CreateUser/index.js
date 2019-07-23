@@ -33,12 +33,10 @@ const CreateUser = ({formConfig, postUser, history}) => (
           password_confirmation: ''
         }
       }
-      onSubmit={ async (values, actions) => {
-       
-        const newUser = {...values, role: 'admin'};
-        
+      onSubmit={ async (values, actions) => {   
+        const newUser = {...values, role: 'admin'};       
         const result =  await postUser(newUser);
- 
+
         actions.setSubmitting(false);
         if (result) {
           history.push('/resources')
@@ -68,7 +66,7 @@ const CreateUser = ({formConfig, postUser, history}) => (
         return (
           <form onSubmit={props.handleSubmit}>            
             {inputNodes}
-            <button type="submit" disabled={props.isSubmitting}>Submit</button>
+            <button type="submit" disabled={props.isSubmitting} id='submit-user'>Submit</button>
           </form>
         );
       }}

@@ -7,21 +7,7 @@ export const Card = (props) => {
   const calcDaysSinceCreation = (t) => Math.floor(t / (24 * 60 * 60 * 1000));
   const days = calcDaysSinceCreation(Math.abs(new Date() - new Date(created_at)));
 
-  const config = {
-    priority: {
-      icon: 'flag',
-      label: 'Priority',
-    },
-    name: {
-      icon: 'business',
-      label: 'Priority'
-    },
-    cost: {
-      icon: 'attach_money',
-      label: 'Cost'
-    }
-  };
-
+  
   return (
     <section className='card' >
    

@@ -7,23 +7,7 @@ import { formValues, formConfig, selectSchema } from '../../Utility/Config/FormC
 import { withRouter } from 'react-router';
 import * as Yup from 'yup';
 
-// const SignupSchema = Yup.object().shape({
-//   notes: Yup.string()
-//     .min(1, 'Too Short!')
-//     .required('Required'),
-// });
-
-// const partSchema = Yup.object().shape({
-//   name: Yup.string()
-//     .min(1, 'Too Short!')
-//     .required('Required'),
-//   inventory: Yup.string()
-//     .required('Required')
-// });
-
-
-
-const CreateTicket = ({formConfig, postTicket, location, history}) => (
+const DynamicForm = ({formConfig, postTicket, location, history}) => (
   
   <section className='form-container'>
     <h1>Form</h1>
@@ -31,10 +15,9 @@ const CreateTicket = ({formConfig, postTicket, location, history}) => (
       initialValues=
         {
           location.formProp && formValues[location.formProp]
+        
         }
       onSubmit={(values, actions) => {
-       
-
         const formType = location.formProp;
         
         switch (formType) {
@@ -56,9 +39,11 @@ const CreateTicket = ({formConfig, postTicket, location, history}) => (
         }
         actions.setSubmitting(false);
         
-      }}
-      // validationSchema={}
+      }} 
+
+      // validationSchema={selectSchema(location.formProp)}
       render={(props) => {
+       
         const BASE_PROPS = {
           onChange: props.handleChange,
           onBlur: props.handleBlur
@@ -125,7 +110,7 @@ const CreateTicket = ({formConfig, postTicket, location, history}) => (
   </section>
 );
     
-CreateTicket.defaultProps = {
+DynamicForm.defaultProps = {
   formConfig
 };
 
@@ -138,5 +123,5 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default withRouter(
-  connect(null, mapDispatchToProps)(CreateTicket)
+  connect(null, mapDispatchToProps)(DynamicForm)
 );

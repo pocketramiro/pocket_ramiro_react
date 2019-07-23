@@ -118,10 +118,10 @@ const formValues = {
 export {
   formConfig,
   formValues,
-  selectSchema
 };
 
-const schemaFormValidation = [
+const formValidation = 
+[
   {
     parts: {
       name: Yup.string()
@@ -129,7 +129,9 @@ const schemaFormValidation = [
         .required('Required'),
       inventory: Yup.string()
         .required('Required')
-    },
+    }
+  },
+  {
     tickets: {
       notes: Yup.string()
         .min(1, 'Too Short!')
@@ -138,10 +140,3 @@ const schemaFormValidation = [
   }
 ];
 
-const selectSchema = (schema) => {
-  console.log(schema)
-  console.log(schemaFormValidation)
-  console.log(schema[schemaFormValidation])
-  console.log(Object.keys(schemaFormValidation[0]).find(sum => schemaFormValidation[sum]=== schema))
- return schemaFormValidation.find(validation => validation[schema] === schema);
-};

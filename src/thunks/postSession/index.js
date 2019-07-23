@@ -1,12 +1,12 @@
-import { setMessage, setLoading, setError } from '../../actions';
+import { setSession, setLoading, setError } from '../../actions';
 
-export const postUser = (user) => {
+export const postTicket = (ticket, id) => {
   return async (dispatch) => {
-    const url = `${process.env.REACT_APP_BASEURL}/api/v1/users`;
+    const url = `${process.env.REACT_APP_BASEURL}/api/v1/resources/${id}/tickets`;
     const options = {
       method: "POST",
       headers: { 'Content-type': 'application/json' },
-      body: JSON.stringify(user)
+      body: JSON.stringify(ticket)
     };
 
     try {
@@ -17,11 +17,11 @@ export const postUser = (user) => {
       if (!response.ok) {
         throw Error(response.statusText);
       }
-
-      const message = await response.json();
       
+      ticket = await response.json();
+
       dispatch(setLoading(false));
-      dispatch(setMessage(message));
+      dispatch(postSession(ticket));
     } catch (error) {
       dispatch(setError(error.message));
     }
