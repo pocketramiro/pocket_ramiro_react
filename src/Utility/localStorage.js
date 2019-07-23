@@ -8,5 +8,5 @@ export const saveState = (state) => {
 };
 
 export const clearState = () => {
-  localStorage.setItem('reduxState', {});
+  localStorage.removeItem('reduxState');
 };
