@@ -1,11 +1,16 @@
-import { clearSession, setLoading, setError } from '../../actions';
-import { clearState } from '../../Utility/localStorage';
+import { 
+  clearSession,
+  setLoading, 
+  setError, 
+  clearTickets, 
+  clearResources,
+  clearParts} from '../../actions';
 
-export const deleteSession = () => {
+export const deleteSession = (id) => {
   return async (dispatch) => {
-    const url = `${process.env.REACT_APP_BASEURL}/api/v1/sessions`;
+    const url = `${process.env.REACT_APP_BASEURL}/api/v1/sessions/${id}`;
     const options = {
-      method: "POST"
+      method: "DELETE"
     };
 
     try {
@@ -20,7 +25,9 @@ export const deleteSession = () => {
       await response.json();
       dispatch(setLoading(false));
       dispatch(clearSession());
-      dispatch(clearState());
+      dispatch(clearTickets());
+      dispatch(clearResources());
+      dispatch(clearParts());
     } catch (error) {
       dispatch(setError(error.message));
     }

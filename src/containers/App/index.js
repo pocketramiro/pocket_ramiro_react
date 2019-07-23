@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import NotFound from '../NotFound';
+import NotFound from '../../components/NotFound';
 import Nav from '../Nav';
-import Dashboard from '../Dashboard';
-import Form from '../Form';
-import UserLogin from '../UserLogin/';
+import Dashboard from '../../components/Dashboard';
+import UserLogin from '../UserLogin';
 import CreateUser from '../CreateUser';
-import DynamicForm from '../DynamicForm';
-import Loading from '../Loading/Loading';
-import TicketForm from '../TicketForm/index'
+import DynamicForm from '../../components/DynamicForm';
+import Loading from '../../components/Loading/Loading';
+import ResourceType from '../../components/ResourceType/index';
+import TicketForm from '../../components/TicketForm'
 
 export class App extends Component {
 
@@ -21,17 +21,22 @@ export class App extends Component {
       <main className="route-main">
         <Nav />
         { isLoading && <Loading/> }
+        <ResourceType/>
         <Switch>
-          { <Route exact path='/' render={() => <Redirect to="/resources"/>} /> }
+          {this.props.session.user_id ?
+            <Route exact path='/' render={() => <Redirect to="/resources"/>} /> :
+            <Route exact path='/' render={() => <Redirect to="/login"/>} />
+          }
           <Route path='/tickets' component={Dashboard}/>
           <Route path='/tickets_list' component={Dashboard}/>
           <Route path='/resources' component={Dashboard}/>
           <Route path='/login' component={UserLogin} />
           <Route path='/create-user' component={CreateUser}/>
-          <Route path='/resource_types' component={Dashboard} />
+          <Route path='/resourcetypes' component={Dashboard} />
           <Route path='/create-tickets' component={TicketForm} />
-          <Route path='/create-parts' component={DynamicForm}/> */}
-
+          <Route path='/create-parts' component={DynamicForm}/>
+          <Route path='/create-resources' component={''}/>
+          <Route path='/create-resourcetypes' component={ResourceType}/>
           <Route component={NotFound}/>
         </Switch>
       </main>
@@ -40,7 +45,8 @@ export class App extends Component {
 }
 
 export const mapStateToProps = state => ({
-  isLoading: state.isLoading
+  isLoading: state.isLoading,
+  session: state.session
 });
 
 export default connect(mapStateToProps)(App);

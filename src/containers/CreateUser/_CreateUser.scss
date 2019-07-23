@@ -1,0 +1,53 @@
+#form-container {
+  @include displayFlex(center, null, center, column);
+  margin: 10rem;
+}
+
+#submit-user {
+  background-color: #000;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  color: #fff;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  min-width: 12.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  vertical-align: middle;
+  margin-top: 26px;
+  min-height: 3rem;
+
+  &:hover {
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+  }
+}
+
+#messages0{
+  display: none;
+}
+
+#messages1{
+  display: none;
+}
+#messages2{
+  display: none;
+}
+#messages3{
+  @include displayFlex(center, center, center, null);
+
+  font-size: 18px;
+  align-items: center;
+  justify-content: center;
+
+  #message-check {
+    color: gold;
+    font-size: 20px;
+  }
+}
+
+
+

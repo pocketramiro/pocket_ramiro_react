@@ -5,6 +5,7 @@ exports[`App should match the snapshot 1`] = `
   className="route-main"
 >
   <Connect(Nav) />
+  <ResourceType />
   <Switch>
     <Route
       exact={true}
@@ -37,7 +38,7 @@ exports[`App should match the snapshot 1`] = `
     />
     <Route
       component={[Function]}
-      path="/resource_types"
+      path="/resourcetypes"
     />
     <Route
       component={[Function]}
@@ -47,7 +48,14 @@ exports[`App should match the snapshot 1`] = `
       component={[Function]}
       path="/create-parts"
     />
-     */}
+    <Route
+      component=""
+      path="/create-resources"
+    />
+    <Route
+      component={[Function]}
+      path="/create-resourcetypes"
+    />
     <Route
       component={[Function]}
     />

@@ -23,6 +23,7 @@ export const fetchCollection = (pathname) => {
     const actionName = `set${startCase(dataKey)}`;
     try {
       dispatch(setLoading(true));
+      
       const response = await fetch(url);
       if (!response.ok) {
         dispatch(setError(response.statusText));

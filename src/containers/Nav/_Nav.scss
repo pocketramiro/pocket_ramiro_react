@@ -103,6 +103,7 @@ h3 {
   color: #FDF8DE;
   display: flex;
   align-items: center;
+  grid-row: 1;
 
   &:hover {
     cursor: pointer;
@@ -112,4 +113,22 @@ h3 {
 .mobile-menu {
   position: fixed;
   top: 59px;
+}
+
+#login-wrapper {
+  display: grid;
+  grid-template-rows: 3;
+}
+
+#login-icon {
+  color: gold;
+  padding-right: 5px;
+  padding-left: 3px;
+  pointer-events: none;
+  font-size: 24px;
+
+}
+
+#logout {
+  padding-left: 7px;
 }

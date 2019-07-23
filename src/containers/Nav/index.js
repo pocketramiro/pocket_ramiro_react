@@ -26,12 +26,12 @@ export class Nav extends Component {
   }
 
   handleLogout = (e) => {
-    e.preventDefault();
-    this.props.deleteSession();
+    this.props.deleteSession(this.props.session.user_id);
   }
 
   render() {
     const {isSelected, title} = this.state;
+    const { name } = this.props.session;
 
     const hamburgerNav = (
       <section id='menu' onClick={this.handleClick}>
@@ -41,13 +41,13 @@ export class Nav extends Component {
         </NavLink>
         <NavLink to='/resources' name='resources' className='nav-link'>
           <i className="material-icons menu-icons"> insert_chart</i>
-            Assets
+            Resources
         </NavLink>
         <NavLink to='/parts' name='Parts' className='nav-link'> 
           <i className="material-icons menu-icons"> business_center</i>
             Parts
         </NavLink>
-        <NavLink to='/resource_types' name='Resource-Types' className='nav-link'>
+        <NavLink to='/resourcetypes' name='Resource-Types' className='nav-link'>
           <i className="material-icons menu-icons"> business </i>
           Resource-Types
         </NavLink>
@@ -72,12 +72,21 @@ export class Nav extends Component {
             </label>
           </section>
           {title.length === 0 ? <h3> <span>Pocket</span> Ramiro</h3> : <h3>{title}</h3>}
-          <NavLink to="/login" className="nav-login">
-            <i className="material-icons">
-              account_circle
-            </i>
-            {!this.props.session ? <p>Login</p> : <p onClick={this.handleLogout}>Logout</p>}
-          </NavLink>
+          <div id='login-wrapper'>
+            <NavLink to="/login" className="nav-login">
+              { !this.props.session.user_id ? 
+              <>
+                <i className="material-icons">account_circle </i>
+                <p id='logout'>Login</p> 
+              </> 
+                : 
+              <>
+                <i class="material-icons" id='login-icon'> how_to_reg</i>
+                <p onClick={this.handleLogout } >Logout</p>
+              </>
+              }
+            </NavLink>
+          </div>
         </div>
         <section className="mobile-menu">
           {isSelected && hamburgerNav}
@@ -92,7 +101,7 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  deleteSession: () => dispatch(deleteSession())
+  deleteSession: (id) => dispatch(deleteSession(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);

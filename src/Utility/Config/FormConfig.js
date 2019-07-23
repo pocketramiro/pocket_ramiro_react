@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import * as Yup from 'yup';
+
 const formConfig = {
   tickets: [
     {
@@ -7,40 +7,45 @@ const formConfig = {
       type: 'radio',
       name: 'priority',
       value: 'low',
-      label: 'low'
+      label: 'Low'
     },
     {
       html_tag: 'input',
       type: 'radio',
       name: 'priority',
       value: 'medium',
-      label: 'medium'
+      label: 'Medium'
     },
     {
       html_tag: 'input',
       type: 'radio',
       name: 'priority',
       value: 'high',
-      label: 'high'
+      label: 'High'
     },
     {
       html_tag: 'input',
       type: 'radio',
       name: 'priority',
       value: 'urgent',
-      label: 'urgent'
+      label: 'Urgent'
     },
     {
       html_tag: 'input',
       type: 'radio',
       name: 'priority',
       value: 'safety',
-      label: 'safety'
+      label: 'Safety'
     },
     {
       html_tag: 'textarea',
       name: 'notes',
       placeholder: 'Enter Ticket Notes'
+    },
+    {
+      html_tag: 'input',
+      type: 'button',
+      name: 'create-ticket',
     }
   ],
   parts: [
@@ -54,7 +59,7 @@ const formConfig = {
       html_tag: 'input',
       type: 'number',
       name: 'inventory',
-      placeholder: 'Enter Number'
+      placeholder: 1
     }
   ],
   resources: [
@@ -120,23 +125,4 @@ export {
   formValues,
 };
 
-const formValidation = 
-[
-  {
-    parts: {
-      name: Yup.string()
-        .min(1, 'Too Short!')
-        .required('Required'),
-      inventory: Yup.string()
-        .required('Required')
-    }
-  },
-  {
-    tickets: {
-      notes: Yup.string()
-        .min(1, 'Too Short!')
-        .required('Required'),
-    }
-  }
-];
 

@@ -8,6 +8,10 @@
   background-size: cover;
 }
 
+#login-form {
+  text-align: center;
+}
+
 .user-login-form  {
   @include displayFlex(space-between, center, center, column);
   background-color: #fff;
@@ -67,7 +71,30 @@
         cursor: pointer;
       }
   }
-}
+
+
+#sign-in-btn {
+    border: 2px solid #000;
+    border-radius: 6px;
+    color: #fff;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    max-width: 477px;
+    width: 140px;
+    min-height: 2.3rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    vertical-align: middle;
+    background-color: #000;
+
+    &:hover {
+      background-color: white;
+      color: black;
+      cursor: pointer;
+    }
+  }
 
 .login-label {
   @include displayFlex(center, center, center, row);

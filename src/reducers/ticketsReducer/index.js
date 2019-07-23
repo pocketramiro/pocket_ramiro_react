@@ -4,6 +4,8 @@ export const ticketsReducer = (state = [], action) => {
     return action.tickets;
   case 'ADD_TICKET':
     return [...state, action.ticket];
+  case 'CLEAR_TICKETS':
+    return [];
   default:
     return state;
   }

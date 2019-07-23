@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCollection } from '../../thunks/fetchCollection';
-import { Card } from '../Card';
+import { Card } from '../../components/Card';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import startCase from 'lodash/startCase';
@@ -18,15 +18,23 @@ export class CardContainer extends Component {
     const { dataKey } = this.props;
     const dataObject = this.props[dataKey];
     
-    return Array.isArray(dataObject.data) && dataObject.data.map(item => {
-      return <Card key={item.id} type={item.type} item={item.attributes}/>;
-    });
+    if (!dataObject.data) {
+      // For a non serialized response 
+      return dataObject.map(item => {
+        return <Card key={item.id} item={item}/>;
+      });
+      // For a serialized response 
+    } else {
+      return Array.isArray(dataObject.data) && dataObject.data.map(item => {
+        return <Card key={item.id} type={item.type} item={item.attributes}/>;
+      });
+    }
   }
 
   componentDidUpdate(prevProps) {
     const {pathname: prevPathname} = prevProps.location;
     const {pathname} = this.props.location;
-    
+
     if (prevPathname && prevPathname !== pathname) {
       this.props.fetchCollection();
     }
@@ -34,7 +42,7 @@ export class CardContainer extends Component {
 
   render () {
     const { dataKey } = this.props;
-    const resourceId = parseInt(this.props.location.pathname.split('/').splice(-2, 1))
+    const resourceId = parseInt(this.props.location.pathname.split('/').splice(-2, 1));
 
     return (
       <div>
@@ -48,7 +56,7 @@ export class CardContainer extends Component {
           pathname: `/create-${dataKey}`,
           formProp: dataKey,
           itemId: resourceId
-      }} className="create-btn-container">
+        }} className="create-btn-container">
           <button className="create-btn">Create {dataKey}</button>
         </Link>
       </div>  
