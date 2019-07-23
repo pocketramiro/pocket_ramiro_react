@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCollection } from '../../thunks/fetchCollection';
-import { Card } from '../Card';
+import { Card } from '../../components/Card';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import startCase from 'lodash/startCase';

@@ -1,12 +1,12 @@
 import { resourceTypesReducer } from './';
-import { setResourceTypes } from '../../actions';
-import * as MD from 'react-router-dom';
+import { addResourceType, setResourceTypes } from '../../actions';
+import * as MD from '../../Utility/MockData';
 
 describe('resourceTypesReducer', () => {
   it('should return default state', () => {
     const expected = [];
     const result = resourceTypesReducer(undefined, {});
-
+ 
     expect(result).toEqual(expected);
   });
 
@@ -18,13 +18,13 @@ describe('resourceTypesReducer', () => {
     expect(result).toEqual(expected);
   });
 
-  // it('should add a ticket on the state tree when the case is ADD_TICKET', () => {
-  //   const newTicket = {'name': 'test ticket'};
-  //   const currentState = ['ticket1', 'ticket2'];
-  //   const expected = [...currentState, newTicket];
-  //   const action = addTicket(newTicket);
-  //   const result = ticketsReducer(currentState, action);
+  it('should add a resource on the state tree when the case is ADD_RESOURCE_TYPE', () => {
 
-  //   expect(result).toEqual(expected);
-  // });
+    const currentState = [];
+    const expected = [...currentState, MD.mockResourceTypes[0]];
+    const action = addResourceType(MD.mockResourceTypes[0]);
+    const result = resourceTypesReducer(currentState, action);
+
+    expect(result).toEqual(expected);
+  });
 }); 

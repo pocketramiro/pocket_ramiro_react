@@ -40,8 +40,9 @@ class UserLogin extends Component {
               id='email'
               type='text' 
               name='email' 
-              placeholder='Enter Username'
+              placeholder='Enter Email'
               value={email}
+              required title='Enter email'
             />
           </label>
           <label htmlFor='password' className='login-label'>
@@ -58,7 +59,7 @@ class UserLogin extends Component {
               value={password}
             />
           </label>
-          <button className='sign-in-btn'>Sign In</button>
+          <button id='sign-in-btn'>Sign In</button>
           <p>Want to create a new account? <Link to="/create-user">Create a new account</Link></p>
         </form>
       </div>

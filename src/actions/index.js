@@ -36,6 +36,11 @@ export const setError = (error) => ({
   error
 });
 
+export const addResourceType = (resourceType) => ({
+  type: 'ADD_RESOURCE_TYPE',
+  resourceType
+});
+
 export const addPart = (partId) => ({
   type: 'ADD_PART',
   partId

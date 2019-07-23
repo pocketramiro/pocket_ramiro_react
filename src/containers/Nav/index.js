@@ -41,13 +41,13 @@ export class Nav extends Component {
         </NavLink>
         <NavLink to='/resources' name='resources' className='nav-link'>
           <i className="material-icons menu-icons"> insert_chart</i>
-            Assets
+            Resources
         </NavLink>
         <NavLink to='/parts' name='Parts' className='nav-link'> 
           <i className="material-icons menu-icons"> business_center</i>
             Parts
         </NavLink>
-        <NavLink to='/resource_types' name='Resource-Types' className='nav-link'>
+        <NavLink to='/resourcetypes' name='Resource-Types' className='nav-link'>
           <i className="material-icons menu-icons"> business </i>
           Resource-Types
         </NavLink>
@@ -76,7 +76,7 @@ export class Nav extends Component {
             <i className="material-icons">
               account_circle
             </i>
-            {!this.props.session ? <p>Login</p> : <p onClick={this.handleLogout}>Logout</p>}
+            {!this.props.session.user_id ? <p>Login</p> : <p onClick={this.handleLogout}>Logout</p>}
           </NavLink>
         </div>
         <section className="mobile-menu">
