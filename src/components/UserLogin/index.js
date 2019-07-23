@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { postSession } from '../../thunks/postSession';
+import { withRouter } from "react-router-dom";
 
 class UserLogin extends Component {
   constructor() {
@@ -21,6 +22,7 @@ class UserLogin extends Component {
     e.preventDefault();
     const {email, password} = this.state;
     this.props.postSession({email, password});
+    this.props.history.push("/resources");
   }
 
   render() {
@@ -68,4 +70,4 @@ export const mapDispatchToProps = dispatch => ({
   postSession: (login_info) => dispatch(postSession(login_info))
 });
 
-export default connect(null, mapDispatchToProps)(UserLogin)
+export default connect(null, mapDispatchToProps)(withRouter(UserLogin))
