@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { deleteSession } from '../../thunks/deleteSession';
 import { NavLink } from 'react-router-dom';
+import { clearState } from '../../Utility/localStorage.js';
 
 class Nav extends Component {
   constructor() {
@@ -16,12 +18,16 @@ class Nav extends Component {
     this.setState({isSelected: checked});
   }
 
-  handleClick = (event) => {
-    if (!event.target.closest('.nav-link')) {
+  handleClick = (e) => {
+    if (!e.target.closest('.nav-link')) {
       return;
     }
-    const { name } = event.target.closest('.nav-link');
+    const { name } = e.target.closest('.nav-link');
     this.setState({title: name, isSelected: false });
+  }
+
+  handleLogout = (e) => {
+    
   }
 
   render() {
@@ -47,7 +53,7 @@ class Nav extends Component {
         </NavLink>
       </section>
     );
-    
+
     return (
       <div>
         <div className='nav'>
@@ -70,7 +76,7 @@ class Nav extends Component {
             <i className="material-icons">
               account_circle
             </i>
-            {!this.props.session.session ? <p>Login</p> : <p>Logout</p>}
+            {!this.props.session.user_id ? <p>Login</p> : <p onClick={this.handleLogout}>Logout</p>}
           </NavLink>
         </div>
         <section className="mobile-menu">
@@ -83,6 +89,10 @@ class Nav extends Component {
 
 export const mapStateToProps = state => ({
   session: state.session
+});
+
+export const mapDispatchToProps = dispatch => ({
+  deleteSession: () => dispatch(deleteSession())
 });
 
 export default connect(mapStateToProps)(Nav);
