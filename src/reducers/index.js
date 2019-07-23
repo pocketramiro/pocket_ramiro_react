@@ -6,6 +6,7 @@ import { isLoadingReducer } from './isLoadingReducer';
 import { errorReducer } from './errorReducer';
 import { resourcePartsReducer } from './resourcePartsReducer';
 import { resourceTypesReducer } from './resourceTypesReducer';
+import { sessionReducer } from './sessionReducer';
 
 export const rootReducer = combineReducers({
   user: userReducer,
@@ -14,5 +15,6 @@ export const rootReducer = combineReducers({
   isLoading: isLoadingReducer,
   error: errorReducer,
   parts: resourcePartsReducer,
-  resouceTypes: resourceTypesReducer
+  resouceTypes: resourceTypesReducer,
+  session: sessionReducer
 });
