@@ -63,7 +63,7 @@ export const mockResourceTypes = [
     id: 1,
     category: 'Bright Tank',
     company: 'Tanks.com',
-    contact_number: 444 - 444 - 4444,
+    contact_number: 4444444444,
     contact_name: 'John Johnson',
     active: true,
     created_at: '2019-07-16T21:52:00.823Z',
@@ -94,3 +94,4 @@ export const mockPostPartResponse = {
   created_at: '2019-07-16T13:18:09.048Z',
   updated_at: '2019-07-16T13:18:09.048Z'
 };
+

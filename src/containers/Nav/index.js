@@ -40,13 +40,13 @@ export class Nav extends Component {
         </NavLink>
         <NavLink to='/resources' name='resources' className='nav-link'>
           <i className="material-icons menu-icons"> insert_chart</i>
-            Assets
+            Resources
         </NavLink>
         <NavLink to='/parts' name='Parts' className='nav-link'> 
           <i className="material-icons menu-icons"> business_center</i>
             Parts
         </NavLink>
-        <NavLink to='/resource_types' name='Resource-Types' className='nav-link'>
+        <NavLink to='/resourcetypes' name='Resource-Types' className='nav-link'>
           <i className="material-icons menu-icons"> business </i>
           Resource-Types
         </NavLink>

@@ -1,15 +1,15 @@
 @import './normalize';
 @import './variables';
-@import '../components/App/_App.scss';
+@import '../containers/App/App';
 @import '../components/Dashboard/_Dashboard.scss';
-@import '../components/CardContainer/_CardContainer.scss';
+@import '../containers/CardContainer/_CardContainer.scss';
 @import '../components/Card/_Card.scss';
-@import '../components/Nav/Nav';
+@import '../containers/Nav/Nav';
 @import '../components/NotFound/NotFound';
-@import '../components/UserLogin/UserLogin';
-@import '../components/CreateUser/CreateUser';
-@import '../components/TicketForm/Ticket';
-@import '../components/DynamicForm/DynamicForm';
+@import '../containers/UserLogin/UserLogin';
+@import '../containers/CreateUser/CreateUser';
+// @import '../components/TicketForm/Ticket';
+// @import '../components/DynamicForm/DynamicForm';
 @import '../components/Loading/Loading';
 
 
