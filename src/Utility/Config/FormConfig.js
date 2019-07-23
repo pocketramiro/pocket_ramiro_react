@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import * as Yup from 'yup';
+
 const formConfig = {
   tickets: [
     {
@@ -120,23 +120,4 @@ export {
   formValues,
 };
 
-const formValidation = 
-[
-  {
-    parts: {
-      name: Yup.string()
-        .min(1, 'Too Short!')
-        .required('Required'),
-      inventory: Yup.string()
-        .required('Required')
-    }
-  },
-  {
-    tickets: {
-      notes: Yup.string()
-        .min(1, 'Too Short!')
-        .required('Required'),
-    }
-  }
-];
 

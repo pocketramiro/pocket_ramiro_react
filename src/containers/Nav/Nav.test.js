@@ -3,10 +3,18 @@ import { shallow } from 'enzyme';
 import { Nav } from './';
 
 describe('Nav', () => {
-  let wrapper;
+  let wrapper, mocksession;
 
   beforeEach(() => {
-    wrapper = shallow(<Nav/>);
+    mocksession = {
+      user_id: 6,
+      name: 'Yennica Stout',
+      role: 'admin'
+    };
+
+    wrapper = shallow(<Nav
+      session={mocksession}
+    />);
   });
 
   it('should match the snapshot', () => {

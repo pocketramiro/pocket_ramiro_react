@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import NotFound from '../NotFound';
+import NotFound from '../../components/NotFound';
 import Nav from '../Nav';
-import Dashboard from '../Dashboard';
+import Dashboard from '../../components/Dashboard';
 import Form from '../Form';
-import UserLogin from '../UserLogin/';
+import UserLogin from '../UserLogin';
 import CreateUser from '../CreateUser';
-import DynamicForm from '../DynamicForm';
-import Loading from '../Loading/Loading';
+import DynamicForm from '../../components/DynamicForm';
+import Loading from '../../components/Loading/Loading';
 
 export class App extends Component {
 
@@ -28,7 +28,9 @@ export class App extends Component {
           <Route path='/create-user' component={CreateUser}/>
           <Route path='/resourcetypes' component={Dashboard} />
           <Route path='/create-tickets' component={Form} />
-          <Route path='/create-parts' component={DynamicForm}/> */}
+          <Route path='/create-parts' component={DynamicForm}/> 
+          <Route path='/create-resources' component={''}/>
+          <Route path='/create-resourcetypes' component={''}/>
           <Route component={NotFound}/>
         </Switch>  
       </main>

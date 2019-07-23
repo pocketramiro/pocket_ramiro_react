@@ -45,8 +45,10 @@ exports[`Nav should match the snapshot 1`] = `
       >
         account_circle
       </i>
-      <p>
-        Login
+      <p
+        onClick={[Function]}
+      >
+        Logout
       </p>
     </NavLink>
   </div>
@@ -107,8 +109,10 @@ exports[`Nav should render a Nav component if isSelected is true 1`] = `
       >
         account_circle
       </i>
-      <p>
-        Login
+      <p
+        onClick={[Function]}
+      >
+        Logout
       </p>
     </NavLink>
   </div>
@@ -141,7 +145,7 @@ exports[`Nav should render a Nav component if isSelected is true 1`] = `
         >
            insert_chart
         </i>
-        Assets
+        Resources
       </NavLink>
       <NavLink
         className="nav-link"
@@ -158,7 +162,7 @@ exports[`Nav should render a Nav component if isSelected is true 1`] = `
       <NavLink
         className="nav-link"
         name="Resource-Types"
-        to="/resource_types"
+        to="/resourcetypes"
       >
         <i
           className="material-icons menu-icons"
