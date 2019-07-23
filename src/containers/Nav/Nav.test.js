@@ -13,7 +13,7 @@ describe('Nav', () => {
     };
 
     wrapper = shallow(<Nav
-      session={mocksession}
+    session={mocksession}
     />);
   });
 

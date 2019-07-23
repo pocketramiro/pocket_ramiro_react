@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 
-export class ResourceType extends Component {
+class ResourceType extends Component {
   constructor() {
     super();
     this.state = {
@@ -19,15 +17,12 @@ export class ResourceType extends Component {
     this.setState({[name]: value});
   }
 
-  handleSubmit =(e) => {
+  handleSubmit = (e) => {
     e.preventDefault()
-
-
     const newResource = {
       ...this.state
     };
 
-    
     this.setState({
       category: '',
       contact_name: '',
@@ -89,8 +84,6 @@ export class ResourceType extends Component {
 
 
 
-export const mapDispatchToProps = dispatch => ({
-  deleteSession: () => dispatch(deleteSession())
-});
 
-export default connect(null, mapDispatchToProps)(ResourceType);
+
+export default ResourceType;

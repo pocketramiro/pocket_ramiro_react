@@ -9,6 +9,7 @@ import UserLogin from '../UserLogin';
 import CreateUser from '../CreateUser';
 import DynamicForm from '../../components/DynamicForm';
 import Loading from '../../components/Loading/Loading';
+import ResourceType from '../../components/ResourceType/index';
 
 export class App extends Component {
 
@@ -20,6 +21,7 @@ export class App extends Component {
       <main className="route-main">
         <Nav />
         { isLoading && <Loading/> } 
+        <ResourceType/>
         <Switch>
           { <Route exact path='/' render={() => <Redirect to="/resources"/>} /> }
           <Route path='/tickets' component={Dashboard}/>
@@ -30,7 +32,7 @@ export class App extends Component {
           <Route path='/create-tickets' component={Form} />
           <Route path='/create-parts' component={DynamicForm}/> 
           <Route path='/create-resources' component={''}/>
-          <Route path='/create-resourcetypes' component={''}/>
+          <Route path='/create-resourcetypes' component={ResourceType}/>
           <Route component={NotFound}/>
         </Switch>  
       </main>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { ResourceType } from './';
+import ResourceType  from './';  
 
 describe('ResourceType', () => {
   let wrapper;
