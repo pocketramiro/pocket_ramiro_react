@@ -3,22 +3,29 @@
   grid-gap: 10px;
   grid-template-rows: 163px;
   
+  h1 {
+    margin: 0;
+    padding: 50px 0 0 0;
+  }
 }
 
 .resources {
-  @include displaySection(relative, 400px, #fff, center, cover, -1);
-    background: url('https://images.pexels.com/photos/159298/gears-cogs-machine-machinery-159298.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center;
-    background-position-y: -341px;
+  @include displaySection(relative, 100vh, #fff, center, cover, -1);
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('https://images.pexels.com/photos/159298/gears-cogs-machine-machinery-159298.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-position-y: -341px;
+  background-repeat: no-repeat;
+
   &:after {
     @include afterDisplaySection(absolute, '', 0, 0, 100%, 100%, -1);
   }
 }
 
 .tickets {
-  @include displaySection(relative, 400px, #fff, center, cover, -1);
-  background: url('https://images.pexels.com/photos/1043506/pexels-photo-1043506.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500') no-repeat center center;
+  @include displaySection(relative, 100vh, #fff, center, cover, -1);
+  background:linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('https://images.pexels.com/photos/1043506/pexels-photo-1043506.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
   background-color: #e9e7e7;
   background-position-y: -224px;
+  background-repeat: no-repeat;
 
   &:after {
     @include afterDisplaySection(absolute, '', 0, 0, 100%, 100%, -1);
