@@ -32,10 +32,10 @@ const TicketForm = ({formConfig, postTicket, history, location, user}) => (
           table_name: 'Resources',
           user_id: user
         };
-   const result =  await postTicket(newTicket, itemId);
+        const result =  await postTicket(newTicket, itemId);
         actions.setSubmitting(false);
         if (result) {
-      
+          
         }        
       }}
 

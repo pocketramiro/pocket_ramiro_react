@@ -1,9 +1,9 @@
 #form-container {
-  position: fixed;
-  top: 40%;
-  left: 50%;
-  margin-top: -50px;
-  margin-left: -100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10rem;
 }
 
 #submit-user {
@@ -14,13 +14,15 @@
   display: inline-block;
   font-size: 15px;
   font-weight: 600;
-  max-width: 477px;
-  width: 140px;
+  min-width: 15rem;
+  width: 15rem;
   min-height: 2.3rem;
   text-align: center;
   text-decoration: none;
   transition: background-color 0.2s ease;
   vertical-align: middle;
+  margin-top: 26px;
+  min-height: 4rem;
 
   &:hover {
     background-color: #fff;
@@ -28,3 +30,4 @@
     cursor: pointer;
   }
 }
+
