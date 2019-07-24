@@ -19,9 +19,6 @@ class ResourceType extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    const newResource = {
-      ...this.state
-    };
 
     this.setState({
       category: '',
