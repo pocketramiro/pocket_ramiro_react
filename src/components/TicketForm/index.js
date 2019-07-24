@@ -14,8 +14,8 @@ const SignupSchema = Yup.object().shape({
     .required('Required')
 });
 
-const TicketForm = ({formConfig, postTicket, history, location}) => (
-  <div id='form-container'>
+const TicketForm = ({formConfig, postTicket, history, location, user}) => (
+  <div id='form-container-ticket'>
     <Formik
       initialValues={
         {
@@ -23,20 +23,19 @@ const TicketForm = ({formConfig, postTicket, history, location}) => (
           priority: ''
         }
       }
-      onSubmit={ async (values, actions) => {   
+      onSubmit={ async (values, actions) => { 
+        const { itemId } = location;
         const newTicket = {
           ...values, 
           table_key: 1,
           table_name: 'Resources',
-          user_id: this.props.user.id
+          user_id: user
         };
-        //will make possible with session login 
-        // postTicket(newTicket)
-        // const newUser = {...values, role: 'admin'};       
-        // actions.setSubmitting(false);
-        // if (result) {
-        //   history.push('/resources');
-        // }
+   const result =  await postTicket(newTicket, itemId);
+        actions.setSubmitting(false);
+        if (result) {
+         
+        }
         
       }}
 
@@ -66,37 +65,23 @@ const TicketForm = ({formConfig, postTicket, history, location}) => (
             }
             {
               html_tag === 'textarea' && 
-              <div id='text-area-1'>
                 <Field
                   {...BASE_PROPS}
                   component={html_tag}
-                  id='ticket-form-text-area'
+                  id='ticket-text-area'
                   name={name}
                   value={props.values.notes}
                   placeholder={placeholder}
                 />
-              </div>
             }
             { props.errors[name]  && <div id="feedback">{props.errors[name]}</div>}
-            {
-              type === 'button' && 
-              <div>
-                { props.errors[name] && <div id="feedback">{props.errors[name]}</div>}
-                <Field
-                  {...BASE_PROPS}
-                  component={html_tag}
-                  id={`submit-ticket-${inputIx}`}
-                  name={name}
-                  value='Submit'
-                />
-              </div>
-            }
           </div>
         ));
 
         return (
           <form onSubmit={props.handleSubmit} className='ticket-form'>            
             {inputNodes}
+            <button type='submit' id='submit-ticket-7'>Submit</button>
           </form>
         );
       }}
@@ -109,13 +94,13 @@ TicketForm.defaultProps = {
 };
 
 export const mapStateToProps = state => ({
-  user: state.user
+  user: state.session.user_id
 });
 
 export const mapDispatchToProps = dispatch => ({
-  postTicket: (ticket) => dispatch(postTicket(ticket))
+  postTicket: (ticket, id) => dispatch(postTicket(ticket, id))
 });
 
 export default withRouter(
-  connect(null, mapDispatchToProps)(TicketForm)
+  connect(mapStateToProps, mapDispatchToProps)(TicketForm)
 );
