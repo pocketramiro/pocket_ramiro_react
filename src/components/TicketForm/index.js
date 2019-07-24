@@ -18,7 +18,7 @@ const TicketForm = ({formConfig, postTicket, history, location, user}) => (
       initialValues={
         {
           notes: '', 
-          priority: ''
+          priority: 'low'
         }
       }
 
@@ -31,6 +31,9 @@ const TicketForm = ({formConfig, postTicket, history, location, user}) => (
           user_id: user
         };
         const result =  await postTicket(newTicket, itemId);
+        console.log(result)
+
+  
         actions.setSubmitting(false);
         if (result) {
           actions.resetForm();

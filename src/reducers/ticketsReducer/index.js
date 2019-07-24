@@ -3,7 +3,7 @@ export const ticketsReducer = (state = [], action) => {
   case 'SET_TICKETS':
     return action.tickets;
   case 'ADD_TICKET':
-    return [...state, action.ticket];
+    return [...state.data, {...action.tickets}];
   default:
     return state;
   }

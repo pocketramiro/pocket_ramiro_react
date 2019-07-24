@@ -13,15 +13,16 @@ export const postTicket = (ticket, id) => {
       dispatch(setLoading(true));
 
       const response = await fetch(url, options);
+ 
       if (!response.ok) {
         throw Error(response.statusText);
       }
       
-      const  ticket = await response.json();
-
+    const  result = await response.json();
+    console.log(result)
       dispatch(setLoading(false));
-      dispatch(addTicket(ticket));
-      return ticket;
+      dispatch(addTicket(result));
+      return result;
     } catch (error) {
       dispatch(setError(error.message));
     }
