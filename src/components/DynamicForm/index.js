@@ -48,7 +48,7 @@ const DynamicForm = ({formConfig, postTicket, location, history}) => (
           return (  
             <div key={inputIx} id='radio-wrapper'>
               { type === 'radio' && 
-              <>
+                <div>
                   <Field 
                     {...BASE_PROPS}
                     type={type}
@@ -60,7 +60,7 @@ const DynamicForm = ({formConfig, postTicket, location, history}) => (
                     className='label-radio-btn'
                   /> 
                   <label htmlFor={label} className='label-radio'>{label}</label>
-                </>
+                </div>
               }
               { 
                 html_tag === 'textarea' && <Field 
