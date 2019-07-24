@@ -10,6 +10,8 @@ export const resourcesReducer = (state = [], action) => {
     });
   case 'DELETE_RESOURCE':
     return state.filter(resource => resource.id !== action.id);
+  case 'CLEAR_RESOURCES':
+    return [];
   default:
     return state;
   }

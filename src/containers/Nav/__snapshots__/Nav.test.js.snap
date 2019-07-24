@@ -36,21 +36,26 @@ exports[`Nav should match the snapshot 1`] = `
       </span>
        Ramiro
     </h3>
-    <NavLink
-      className="nav-login"
-      to="/login"
+    <div
+      id="login-wrapper"
     >
-      <i
-        className="material-icons"
+      <NavLink
+        className="nav-login"
+        to="/login"
       >
-        account_circle
-      </i>
-      <p
-        onClick={[Function]}
-      >
-        Logout
-      </p>
-    </NavLink>
+        <i
+          class="material-icons"
+          id="login-icon"
+        >
+           how_to_reg
+        </i>
+        <p
+          onClick={[Function]}
+        >
+          Logout
+        </p>
+      </NavLink>
+    </div>
   </div>
   <section
     className="mobile-menu"
@@ -100,21 +105,26 @@ exports[`Nav should render a Nav component if isSelected is true 1`] = `
       </span>
        Ramiro
     </h3>
-    <NavLink
-      className="nav-login"
-      to="/login"
+    <div
+      id="login-wrapper"
     >
-      <i
-        className="material-icons"
+      <NavLink
+        className="nav-login"
+        to="/login"
       >
-        account_circle
-      </i>
-      <p
-        onClick={[Function]}
-      >
-        Logout
-      </p>
-    </NavLink>
+        <i
+          class="material-icons"
+          id="login-icon"
+        >
+           how_to_reg
+        </i>
+        <p
+          onClick={[Function]}
+        >
+          Logout
+        </p>
+      </NavLink>
+    </div>
   </div>
   <section
     className="mobile-menu"

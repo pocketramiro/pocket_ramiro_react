@@ -23,7 +23,7 @@ const SignupSchema = Yup.object().shape({
 
 const CreateUser = ({formConfig, postUser, history}) => (
   <div id='form-container'>
-    <h1>My Form</h1>
+    <h1>Create User</h1>
     <Formik
       initialValues={
         {
@@ -34,16 +34,16 @@ const CreateUser = ({formConfig, postUser, history}) => (
         }
       }
       onSubmit={ async (values, actions) => {   
-        const newUser = {...values, role: 'admin'};       
-        const result =  await postUser(newUser);
-
         actions.setSubmitting(false);
-        if (result) {
-          history.push('/resources')
-        }
-        
-      }}
+        const newUser = {...values, role: 'admin'};       
+        const response =  await postUser(newUser);
 
+        if (response.message) {
+          actions.resetForm();
+          actions.setStatus({ success: "User created" });
+        } 
+      }}
+      
       validationSchema={SignupSchema}
       render={(props) => {
         const BASE_PROPS = {
@@ -60,16 +60,22 @@ const CreateUser = ({formConfig, postUser, history}) => (
               placeholder={placeholder}
             />
             {props.errors[name] && <div id="feedback">{props.errors[name]}</div>}
+            {props.status && props.status.success && 
+            <div id={`${'messages' + inputIx}`}>{props.status.success}
+              <i className="material-icons" id='message-check'>
+                check
+              </i>
+            </div>}
           </div>
         ));
-
+        
         return (
           <form onSubmit={props.handleSubmit}>            
             {inputNodes}
             <button type="submit" disabled={props.isSubmitting} id='submit-user'>Submit</button>
           </form>
         );
-      }}
+      }} 
     />
   </div>
 );

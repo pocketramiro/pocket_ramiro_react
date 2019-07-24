@@ -31,6 +31,7 @@ export class Nav extends Component {
 
   render() {
     const {isSelected, title} = this.state;
+    const { name } = this.props.session;
 
     const hamburgerNav = (
       <section id='menu' onClick={this.handleClick}>
@@ -71,12 +72,21 @@ export class Nav extends Component {
             </label>
           </section>
           {title.length === 0 ? <h3> <span>Pocket</span> Ramiro</h3> : <h3>{title}</h3>}
-          <NavLink to="/login" className="nav-login">
-            <i className="material-icons">
-              account_circle
-            </i>
-            {!this.props.session.user_id ? <p>Login</p> : <p onClick={this.handleLogout}>Logout</p>}
-          </NavLink>
+          <div id='login-wrapper'>
+            <NavLink to="/login" className="nav-login">
+              { !this.props.session.user_id ? 
+              <>
+                <i className="material-icons">account_circle </i>
+                <p id='logout'>Login</p> 
+              </> 
+                : 
+              <>
+                <i class="material-icons" id='login-icon'> how_to_reg</i>
+                <p onClick={this.handleLogout } >Logout</p>
+              </>
+              }
+            </NavLink>
+          </div>
         </div>
         <section className="mobile-menu">
           {isSelected && hamburgerNav}
