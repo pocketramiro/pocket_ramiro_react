@@ -76,7 +76,6 @@ export const Card = (props) => {
             <Link to={{
               pathname: `/resources/${resource_type_id}/tickets`
             }}>
-           
               <i className="material-icons" id='tickets-icon'>
                   notes
               </i>

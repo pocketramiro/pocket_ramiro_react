@@ -34,7 +34,7 @@ export class CardContainer extends Component {
   componentDidUpdate(prevProps) {
     const {pathname: prevPathname} = prevProps.location;
     const {pathname} = this.props.location;
-    
+
     if (prevPathname && prevPathname !== pathname) {
       this.props.fetchCollection();
     }
@@ -43,7 +43,7 @@ export class CardContainer extends Component {
   render () {
     const { dataKey } = this.props;
     const resourceId = parseInt(this.props.location.pathname.split('/').splice(-2, 1));
-    
+
     return (
       <div>
         <div className='image-container'>
@@ -56,7 +56,7 @@ export class CardContainer extends Component {
           pathname: `/create-${dataKey}`,
           formProp: dataKey,
           itemId: resourceId
-      }} className="create-btn-container">
+        }} className="create-btn-container">
           <button className="create-btn">Create {dataKey}</button>
         </Link>
       </div>  
