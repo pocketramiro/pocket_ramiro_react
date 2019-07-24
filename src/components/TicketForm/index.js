@@ -10,8 +10,6 @@ const SignupSchema = Yup.object().shape({
   notes: Yup.string()
     .min(1, 'Too Short!')
     .required('Required'),
-  priority: Yup.string()
-    .required('Required')
 });
 
 const TicketForm = ({formConfig, postTicket, history, location, user}) => (
@@ -35,7 +33,8 @@ const TicketForm = ({formConfig, postTicket, history, location, user}) => (
         const result =  await postTicket(newTicket, itemId);
         actions.setSubmitting(false);
         if (result) {
-          
+          actions.resetForm();
+          actions.setStatus({ success: "Ticket Posted" });
         }        
       }}
 
@@ -43,7 +42,7 @@ const TicketForm = ({formConfig, postTicket, history, location, user}) => (
       render={(props) => {
         const BASE_PROPS = {
           onChange: props.handleChange,
-          onBlur: props.handleBlur
+          onBlur: props.handleBlur,
         };
         
         const inputNodes = location.formProp && formConfig[location.formProp].map(({html_tag, type, name, placeholder, value, label}, inputIx) => (
@@ -55,7 +54,7 @@ const TicketForm = ({formConfig, postTicket, history, location, user}) => (
               {...BASE_PROPS}
               type={type}
               name={name}
-              checked={null}
+              checked={inputIx === 0 ? 'checked' : null}
               value={label}
               placeholder={placeholder}
               id={`${type}-${inputIx}`}
@@ -65,16 +64,24 @@ const TicketForm = ({formConfig, postTicket, history, location, user}) => (
             }
             {
               html_tag === 'textarea' && 
-                <Field
-                  {...BASE_PROPS}
-                  component={html_tag}
-                  id='ticket-text-area'
-                  name={name}
-                  value={props.values.notes}
-                  placeholder={placeholder}
-                />
+              <>
+               {props.errors[name]  && <div id="feedback-">{props.errors[name]}</div>}
+               <Field
+                 {...BASE_PROPS}
+                 component={html_tag}
+                 id='ticket-text-area'
+                 name={name}
+                 value={props.values.notes}
+                 placeholder={placeholder}
+               />
+                </>
             }
-            { props.errors[name]  && <div id="feedback">{props.errors[name]}</div>}
+            {props.status && props.status.success && 
+            <div id={`${'messages' + inputIx}`}>{props.status.success}
+              <i className="material-icons" id='message-check'>
+                check
+              </i>
+            </div>}
           </div>
         ));
 

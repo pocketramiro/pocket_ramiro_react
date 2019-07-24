@@ -48,8 +48,7 @@ const CreateUser = ({formConfig, postUser, history}) => (
       render={(props) => {
         const BASE_PROPS = {
           onChange: props.handleChange,
-          onBlur: props.handleBlur,
-          status: props.status
+          onBlur: props.handleBlur
         };
         const inputNodes = formConfig.map(({type, name, placeholder}, inputIx) => (
           <div key={inputIx}>
@@ -63,7 +62,7 @@ const CreateUser = ({formConfig, postUser, history}) => (
             {props.errors[name] && <div id="feedback">{props.errors[name]}</div>}
             {props.status && props.status.success && 
             <div id={`${'messages' + inputIx}`}>{props.status.success}
-              <i class="material-icons" id='message-check'>
+              <i className="material-icons" id='message-check'>
                 check
               </i>
             </div>}
