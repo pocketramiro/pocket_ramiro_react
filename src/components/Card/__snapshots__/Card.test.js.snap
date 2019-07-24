@@ -2,7 +2,7 @@
 
 exports[`Card should match the snapshot 1`] = `
 <section
-  className="card"
+  className="card card-medium"
 >
   <header>
     <h3
@@ -64,7 +64,7 @@ exports[`Card should match the snapshot 1`] = `
 
 exports[`Card should match the snapshot if a resource is passed as props 1`] = `
 <section
-  className="card"
+  className="card card-undefined"
 >
   <header>
     <h3

@@ -6,37 +6,37 @@ export const Card = (props) => {
   const {notes, priority, created_at, resource_type_id, name, cost, id, inventory} = props.item;
   const calcDaysSinceCreation = (t) => Math.floor(t / (24 * 60 * 60 * 1000));
   const days = calcDaysSinceCreation(Math.abs(new Date() - new Date(created_at)));
-  
+
   return (
-    <section className='card' >
-   
+    <section className={`card card-${priority}`}>
+
       <header>
         {
           <h3 className='title'>{name ? name : `Ticket Id: ${id}`}</h3>
         }
-        
-        { 
+
+        {
           priority && <p className="header-icon-container">
             <i className={`material-icons header-icon ${priority}`}>
             flag
             </i>Priority: {priority}
-          </p> 
-        } 
- 
-        { 
+          </p>
+        }
+
+        {
           resource_type_id && <p className="header-icon-container">
             <i className={`material-icons header-icon ${name}`}>
             business
             </i>Name: {name}
-          </p> 
+          </p>
         }
-        
-        { 
+
+        {
           cost && <p className="header-icon-container">
             <i className={`material-icons header-icon ${name}`}>
             attach_money
             </i>Cost: {cost}
-          </p> 
+          </p>
         }
 
         {
@@ -59,10 +59,10 @@ export const Card = (props) => {
           </i>{`${days} Days Open`}
         </p>
         <div className='links-container'>
-          { 
+          {
             resource_type_id &&
             <Link to={{
-              pathname: `/resources/${resource_type_id}/parts`, 
+              pathname: `/resources/${resource_type_id}/parts`,
             }}>
               <i className="material-icons" id='parts-icon'>
                 build
@@ -71,7 +71,7 @@ export const Card = (props) => {
             </Link>
           }
 
-          { 
+          {
             resource_type_id &&
             <Link to={{
               pathname: `/resources/${resource_type_id}/tickets`
@@ -82,7 +82,7 @@ export const Card = (props) => {
               <label htmlFor='tickets-icon'>Tickets</label>
             </Link>
           }
-        </div> 
+        </div>
 
         { notes && <p className='card-notes' >
           <i id='single-note' className="material-icons header-icon">
