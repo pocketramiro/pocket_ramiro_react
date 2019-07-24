@@ -12,7 +12,7 @@ const SignupSchema = Yup.object().shape({
     .required('Required'),
 });
 
-const TicketForm = ({formConfig, postTicket, history, location, user}) => (
+const TicketForm = ({formConfig, postTicket, history, location, user_id}) => (
   <div id='form-container-ticket'>
     <Formik
       initialValues={
@@ -28,10 +28,9 @@ const TicketForm = ({formConfig, postTicket, history, location, user}) => (
           ...values, 
           table_key: 1,
           table_name: 'Resources',
-          user_id: user
+          user_id
         };
-        const result =  await postTicket(newTicket, itemId);
-        console.log(result)
+        const result = await postTicket(newTicket, itemId);
 
   
         actions.setSubmitting(false);
@@ -51,33 +50,33 @@ const TicketForm = ({formConfig, postTicket, history, location, user}) => (
         const inputNodes = location.formProp && formConfig[location.formProp].map(({html_tag, type, name, placeholder, value, label}, inputIx) => (
           <div key={inputIx} id={`ticket-input-${inputIx + 1}`}>
             { type === 'radio' && 
-            <>
+            <div>
               <label htmlFor={label} className='label-radio'>{label}</label>
-            <Field
-              {...BASE_PROPS}
-              type={type}
-              name={name}
-              checked={inputIx === 0 ? 'checked' : null}
-              value={label}
-              placeholder={placeholder}
-              id={`${type}-${inputIx}`}
-              className='label-radio-btn'
-            /> 
-              </>
+              <Field
+                {...BASE_PROPS}
+                type={type}
+                name={name}
+                checked={inputIx === 0 ? 'checked' : null}
+                value={label}
+                placeholder={placeholder}
+                id={`${type}-${inputIx}`}
+                className='label-radio-btn'
+              /> 
+            </div>
             }
             {
               html_tag === 'textarea' && 
-              <>
+              <div>
                {props.errors[name]  && <div id="feedback-">{props.errors[name]}</div>}
-               <Field
-                 {...BASE_PROPS}
-                 component={html_tag}
-                 id='ticket-text-area'
-                 name={name}
-                 value={props.values.notes}
-                 placeholder={placeholder}
-               />
-                </>
+                <Field
+                  {...BASE_PROPS}
+                  component={html_tag}
+                  id='ticket-text-area'
+                  name={name}
+                  value={props.values.notes}
+                  placeholder={placeholder}
+                />
+              </div>
             }
             {props.status && props.status.success && 
             <div id={`${'messages' + inputIx}`}>{props.status.success}
@@ -104,7 +103,7 @@ TicketForm.defaultProps = {
 };
 
 export const mapStateToProps = state => ({
-  user: state.session.user_id
+  user_id: state.session.user_id
 });
 
 export const mapDispatchToProps = dispatch => ({
