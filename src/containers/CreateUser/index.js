@@ -38,14 +38,11 @@ const CreateUser = ({formConfig, postUser, history}) => (
         const newUser = {...values, role: 'admin'};       
         const response =  await postUser(newUser);
 
-     
-        
         if (response.message) {
           actions.resetForm();
-          actions.setStatus({ success: "User created !" })
-          
-        }}
-      }
+          actions.setStatus({ success: "User created" });
+        } 
+      }}
       
       validationSchema={SignupSchema}
       render={(props) => {
@@ -62,9 +59,14 @@ const CreateUser = ({formConfig, postUser, history}) => (
               value={props.values[name]}
               name={name}
               placeholder={placeholder}
-              />
+            />
             {props.errors[name] && <div id="feedback">{props.errors[name]}</div>}
-            {props.status && props.status.success && <div id={inputIx}>{props.status.success}</div>}
+            {props.status && props.status.success && 
+            <div id={`${'messages' + inputIx}`}>{props.status.success}
+              <i class="material-icons" id='message-check'>
+                check
+              </i>
+            </div>}
           </div>
         ));
         
