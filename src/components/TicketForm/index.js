@@ -50,7 +50,7 @@ const TicketForm = ({formConfig, postTicket, history, location, user_id}) => (
         const inputNodes = location.formProp && formConfig[location.formProp].map(({html_tag, type, name, placeholder, value, label}, inputIx) => (
           <div key={inputIx} id={`ticket-input-${inputIx + 1}`}>
             { type === 'radio' && 
-            <div>
+            <>
               <label htmlFor={label} className='label-radio'>{label}</label>
               <Field
                 {...BASE_PROPS}
@@ -62,12 +62,12 @@ const TicketForm = ({formConfig, postTicket, history, location, user_id}) => (
                 id={`${type}-${inputIx}`}
                 className='label-radio-btn'
               /> 
-            </div>
+            </>
             }
             {
               html_tag === 'textarea' && 
-              <div>
-               {props.errors[name]  && <div id="feedback-">{props.errors[name]}</div>}
+              <>
+               {props.errors[name] ? <div id="feedback">{props.errors[name]}</div> : <div id="feedback"></div>}
                 <Field
                   {...BASE_PROPS}
                   component={html_tag}
@@ -76,14 +76,15 @@ const TicketForm = ({formConfig, postTicket, history, location, user_id}) => (
                   value={props.values.notes}
                   placeholder={placeholder}
                 />
-              </div>
+                {props.status && props.status.success && 
+                  <div id={`${'messages' + inputIx}`}>{props.status.success}
+                    <i className="material-icons" id='message-check'>
+                      check
+                    </i>
+                  </div>
+                }
+              </>
             }
-            {props.status && props.status.success && 
-            <div id={`${'messages' + inputIx}`}>{props.status.success}
-              <i className="material-icons" id='message-check'>
-                check
-              </i>
-            </div>}
           </div>
         ));
 
