@@ -10,46 +10,69 @@
 
 #login-form {
   text-align: center;
-}
 
-.user-login-form  {
-  @include displayFlex(space-between, center, center, column);
-  background-color: #fff;
-  max-width: 477px;
-  max-height: 19rem;
-}
-  h1 {
-    text-align: center;
-    color: #17222a;
+  .user-login-form  {
+    @include displayFlex(space-between, center, center, column);
+    background-color: #fff;
+    max-width: 477px;
+    max-height: 19rem;
   }
-
-  form {
-    background: rgba(253, 248, 222, 0.7);
-    padding: 50px;
-  }
-
-  input {
-    border: 2px solid #000000;
-    border-radius: 6px;
-    padding: 0 15px;
-    margin-bottom: 25px;
-    height: 48px;
-    font-size: 16px;
-    font-weight: 300;
-
-    &:hover {
-      cursor: pointer;
+    h1 {
+      text-align: center;
+      color: #17222a;
     }
 
-  .input-login {
-    width: 250px;
-  }
+    form {
+      background: rgba(253, 248, 222, 0.7);
+      padding: 50px;
+    }
 
-  button {
-    border: none;
-  }
+    input {
+      border: 2px solid #000000;
+      border-radius: 6px;
+      padding: 0 15px;
+      margin-bottom: 25px;
+      height: 48px;
+      font-size: 16px;
+      font-weight: 300;
 
-  .sign-in-btn {
+      &:hover {
+        cursor: pointer;
+      }
+
+    .input-login {
+      width: 250px;
+    }
+
+    button {
+      border: none;
+    }
+
+    .sign-in-btn {
+        border: 2px solid #000;
+        border-radius: 6px;
+        color: #fff;
+        display: inline-block;
+        font-size: 15px;
+        font-weight: 600;
+        max-width: 477px;
+        width: 140px;
+        min-height: 2.3rem;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+        vertical-align: middle;
+        background-color: #000;
+
+        &:hover {
+          background-color: white;
+          color: black;
+          cursor: pointer;
+        }
+    }
+
+
+  #sign-in-btn {
       border: 2px solid #000;
       border-radius: 6px;
       color: #fff;
@@ -70,33 +93,10 @@
         color: black;
         cursor: pointer;
       }
-  }
-
-
-#sign-in-btn {
-    border: 2px solid #000;
-    border-radius: 6px;
-    color: #fff;
-    display: inline-block;
-    font-size: 15px;
-    font-weight: 600;
-    max-width: 477px;
-    width: 140px;
-    min-height: 2.3rem;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-    vertical-align: middle;
-    background-color: #000;
-
-    &:hover {
-      background-color: white;
-      color: black;
-      cursor: pointer;
     }
+
+  .login-label {
+    @include displayFlex(center, center, center, row);
+
   }
-
-.login-label {
-  @include displayFlex(center, center, center, row);
-
 }
