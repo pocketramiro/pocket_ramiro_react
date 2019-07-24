@@ -18,8 +18,8 @@ export const postTicket = (ticket, id) => {
         throw Error(response.statusText);
       }
       
-    const  result = await response.json();
-    console.log(result)
+      const  result = await response.json();
+
       dispatch(setLoading(false));
       dispatch(addTicket(result));
       return result;

@@ -1,4 +1,10 @@
-import { clearSession, setLoading, setError } from '../../actions';
+import { 
+  clearSession,
+  setLoading, 
+  setError, 
+  clearTickets, 
+  clearResources,
+  clearParts} from '../../actions';
 
 export const deleteSession = (id) => {
   return async (dispatch) => {
@@ -19,6 +25,9 @@ export const deleteSession = (id) => {
       await response.json();
       dispatch(setLoading(false));
       dispatch(clearSession());
+      dispatch(clearTickets());
+      dispatch(clearResources());
+      dispatch(clearParts());
     } catch (error) {
       dispatch(setError(error.message));
     }

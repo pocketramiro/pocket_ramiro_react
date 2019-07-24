@@ -5,6 +5,8 @@ export const resourcePartsReducer = (state = [], action) => {
     return action.parts;
   case 'ADD_PART':
     return [...state, action.partId];
+  case 'CLEAR_PARTS':
+    return [];
   default:
     return state;
   }
