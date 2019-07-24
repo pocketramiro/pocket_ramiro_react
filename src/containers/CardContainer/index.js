@@ -18,9 +18,17 @@ export class CardContainer extends Component {
     const { dataKey } = this.props;
     const dataObject = this.props[dataKey];
     
-    return Array.isArray(dataObject.data) && dataObject.data.map(item => {
-      return <Card key={item.id} type={item.type} item={item.attributes}/>;
-    });
+    if (!dataObject.data) {
+      // For a non serialized response 
+      return dataObject.map(item => {
+        return <Card key={item.id} item={item}/>;
+      });
+      // For a serialized response 
+    } else {
+      return Array.isArray(dataObject.data) && dataObject.data.map(item => {
+        return <Card key={item.id} type={item.type} item={item.attributes}/>;
+      });
+    }
   }
 
   componentDidUpdate(prevProps) {
