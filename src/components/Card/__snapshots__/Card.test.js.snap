@@ -8,8 +8,7 @@ exports[`Card should match the snapshot 1`] = `
     <h3
       className="title"
     >
-      Card #:
-      11
+      Ticket Id: 11
     </h3>
     <p
       className="header-icon-container"
@@ -71,8 +70,7 @@ exports[`Card should match the snapshot if a resource is passed as props 1`] = `
     <h3
       className="title"
     >
-      Card #:
-      1
+      Bright Tank 1
     </h3>
     <p
       className="header-icon-container"
