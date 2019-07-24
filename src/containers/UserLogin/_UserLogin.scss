@@ -4,6 +4,10 @@
   width: 100vw;
 }
 
+#login-form {
+  text-align: center;
+}
+
 .user-login-form  {
   @include displayFlex(space-between, center, center, column);
   background-color: #fff;
