@@ -25,13 +25,11 @@ class ResourceType extends Component {
       contact_name: '',
       contact_number: 0,
       company: ''
-    });
+    });   
   }
- 
 
   render() {
     const {category, company, contact_name, contact_number} = this.state;
-
 
     return (
       <div>
