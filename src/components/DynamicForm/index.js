@@ -3,20 +3,15 @@ import { connect } from 'react-redux';
 import { postUser } from '../../thunks/postUser';
 import { postPart } from '../../thunks/postPart';
 import { Formik, Field } from 'formik';
-import { formValues, formConfig, selectSchema } from '../../Utility/Config/FormConfig';
+import { formValues, formConfig } from '../../Utility/Config/FormConfig';
 import { withRouter } from 'react-router';
-import * as Yup from 'yup';
 
 const DynamicForm = ({formConfig, postTicket, location, history}) => (
   
   <section className='form-container'>
     <h1>Form</h1>
     <Formik
-      initialValues=
-        {
-          location.formProp && formValues[location.formProp]
-        
-        }
+      initialValues={location.formProp && formValues[location.formProp]}
       onSubmit={(values, actions) => {
         const formType = location.formProp;
         
@@ -53,7 +48,7 @@ const DynamicForm = ({formConfig, postTicket, location, history}) => (
           return (  
             <div key={inputIx} id='radio-wrapper'>
               { type === 'radio' && 
-              <>
+                <div>
                   <Field 
                     {...BASE_PROPS}
                     type={type}
@@ -65,7 +60,7 @@ const DynamicForm = ({formConfig, postTicket, location, history}) => (
                     className='label-radio-btn'
                   /> 
                   <label htmlFor={label} className='label-radio'>{label}</label>
-                </>
+                </div>
               }
               { 
                 html_tag === 'textarea' && <Field 

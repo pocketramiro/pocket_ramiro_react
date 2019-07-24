@@ -59,7 +59,7 @@ const formConfig = {
       html_tag: 'input',
       type: 'number',
       name: 'inventory',
-      placeholder: 'Enter Number'
+      placeholder: 1
     }
   ],
   resources: [

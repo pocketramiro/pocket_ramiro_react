@@ -23,6 +23,7 @@ const TicketForm = ({formConfig, postTicket, history, location, user}) => (
           priority: ''
         }
       }
+
       onSubmit={ async (values, actions) => { 
         const { itemId } = location;
         const newTicket = {
@@ -34,9 +35,8 @@ const TicketForm = ({formConfig, postTicket, history, location, user}) => (
    const result =  await postTicket(newTicket, itemId);
         actions.setSubmitting(false);
         if (result) {
-         
-        }
-        
+      
+        }        
       }}
 
       validationSchema={SignupSchema}

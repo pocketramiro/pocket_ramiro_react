@@ -1,5 +1,4 @@
 import { clearSession, setLoading, setError } from '../../actions';
-import { clearState } from '../../Utility/localStorage';
 
 export const deleteSession = (id) => {
   return async (dispatch) => {
