@@ -24,12 +24,12 @@ const TicketForm = ({formConfig, postTicket, history, location}) => (
         }
       }
       onSubmit={ async (values, actions) => {   
-        const newTicket = {
-          ...values, 
-          table_key: 1,
-          table_name: 'Resources',
-          user_id: this.props.user.id
-        };
+        // const newTicket = {
+        //   ...values, 
+        //   table_key: 1,
+        //   table_name: 'Resources',
+        //   user_id: this.props.user.id
+        // };
         //will make possible with session login 
         // postTicket(newTicket)
         // const newUser = {...values, role: 'admin'};       
