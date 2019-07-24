@@ -22,6 +22,7 @@ export const postUser = (user) => {
       
       dispatch(setLoading(false));
       dispatch(setUser(message));
+      return message
     } catch (error) {
       dispatch(setError(error.message));
     }

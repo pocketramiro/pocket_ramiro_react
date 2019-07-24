@@ -34,21 +34,25 @@ const CreateUser = ({formConfig, postUser, history}) => (
         }
       }
       onSubmit={ async (values, actions) => {   
-        const newUser = {...values, role: 'admin'};       
-        const result =  await postUser(newUser);
-
         actions.setSubmitting(false);
-        if (result) {
-          history.push('/resources')
-        }
-        
-      }}
+        const newUser = {...values, role: 'admin'};       
+        const response =  await postUser(newUser);
 
+     
+        
+        if (response.message) {
+          actions.resetForm();
+          actions.setStatus({ success: "User created !" })
+          
+        }}
+      }
+      
       validationSchema={SignupSchema}
       render={(props) => {
         const BASE_PROPS = {
           onChange: props.handleChange,
-          onBlur: props.handleBlur
+          onBlur: props.handleBlur,
+          status: props.status
         };
         const inputNodes = formConfig.map(({type, name, placeholder}, inputIx) => (
           <div key={inputIx}>
@@ -58,11 +62,12 @@ const CreateUser = ({formConfig, postUser, history}) => (
               value={props.values[name]}
               name={name}
               placeholder={placeholder}
-            />
+              />
             {props.errors[name] && <div id="feedback">{props.errors[name]}</div>}
+            {props.status && props.status.success && <div id={inputIx}>{props.status.success}</div>}
           </div>
         ));
-
+        
         return (
           <form onSubmit={props.handleSubmit}>            
             {inputNodes}
