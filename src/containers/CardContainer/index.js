@@ -11,14 +11,15 @@ const getDataKey = (pathname) => pathname.split('/').slice(-1)[0];
 export class CardContainer extends Component {
   
   componentDidMount() {
-   
-    this.props.fetchCollection();
+    this.props.fetchCollection('resources');
+    this.props.fetchCollection('tickets');
+    this.props.fetchCollection('parts');
+    this.props.fetchCollection('resource_types');
   }
 
   makeDynamicCard = () => {
     const { dataKey } = this.props;
     const dataObject = this.props[dataKey];
-    
     if (!dataObject.data) {
       // For a non serialized response 
       return dataObject.map(item => {
@@ -32,14 +33,14 @@ export class CardContainer extends Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
-    const {pathname: prevPathname} = prevProps.location;
-    const {pathname} = this.props.location;
+  // componentDidUpdate(prevProps) {
+  //   const {pathname: prevPathname} = prevProps.location;
+  //   const {pathname} = this.props.location;
 
-    if (prevPathname && prevPathname !== pathname) {
-      this.props.fetchCollection();
-    }
-  }
+  //   if (prevPathname && prevPathname !== pathname) {
+  //     this.props.fetchCollection();
+  //   }
+  // }
 
   render () {
     const { dataKey } = this.props;
@@ -75,7 +76,7 @@ export const mapStateToProps = (state, otherProps) => {
 
 export const mapDispatchToProps = (dispatch, props) => {
   return {
-    fetchCollection: () => dispatch(fetchCollection(props.location.pathname))
+    fetchCollection: (path) => dispatch(fetchCollection(path))
   };
 };
 
