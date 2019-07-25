@@ -21,6 +21,7 @@ export const postSession = (login_info) => {
       const session = await response.json();
       dispatch(setLoading(false));
       dispatch(setSession(session));
+      return session;
     } catch (error) {
       dispatch(setError(error.message));
     }
