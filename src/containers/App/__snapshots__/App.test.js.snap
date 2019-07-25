@@ -52,7 +52,7 @@ exports[`App should match the snapshot 1`] = `
       path="/create-parts"
     />
     <Route
-      component=""
+      component={[Function]}
       path="/create-resources"
     />
     <Route
