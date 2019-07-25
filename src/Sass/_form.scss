@@ -62,5 +62,22 @@
       font-size: 14px;
       height: 25px;
     }
+
+    .form-inputs-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .radio-btns-container {
+      display: flex;
+      justify-content: space-between;
+
+      .radio-btn-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
   }
 }
