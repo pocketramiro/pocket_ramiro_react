@@ -22,8 +22,7 @@ export const Card = (props) => {
   const days = calcDaysSinceCreation(Math.abs(new Date() - new Date(created_at)));
 
   return (
-    <section className={`card card-${priority}`}>
-
+    <section className={priority ? `card card-${priority}` : 'card other-cards'}>
       <header>
         {
           <h3 className='title'>{name ? name : `Ticket Id: ${id}`}</h3>
@@ -85,19 +84,19 @@ export const Card = (props) => {
 
         {
           contact_name  && <p className="header-icon-container">
-          <i className={`material-icons header-icon`}>
+            <i className={`material-icons header-icon`}>
           import_contacts
-          </i>Contact: {contact_name}
-        </p>
+            </i>Contact: {contact_name}
+          </p>
         }
 
-          {
-            manual_url && <p className="header-icon-container">
-              <i className={`material-icons header-icon`}>
+        {
+          manual_url && <p className="header-icon-container">
+            <i className={`material-icons header-icon`}>
                 book
-              </i><a href={manual_url}>Manual</a>
-            </p>
-          }
+            </i><a href={manual_url}>Manual</a>
+          </p>
+        }
         <p className="header-icon-container">
           <i className={`material-icons header-icon`}>
             access_time

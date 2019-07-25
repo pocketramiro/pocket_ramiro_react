@@ -13,7 +13,7 @@ const SignupSchema = Yup.object().shape({
 });
 
 const TicketForm = ({formConfig, postTicket, history, location, user_id}) => (
-  <div id='form-container-ticket'>
+  <div id='form-ticket-container' className='form-container'>
     <Formik
       initialValues={
         {
@@ -46,52 +46,45 @@ const TicketForm = ({formConfig, postTicket, history, location, user_id}) => (
           onChange: props.handleChange,
           onBlur: props.handleBlur,
         };
-        
-        const inputNodes = location.formProp && formConfig[location.formProp].map(({html_tag, type, name, placeholder, value, label}, inputIx) => (
-          <div key={inputIx} id={`ticket-input-${inputIx + 1}`}>
-            { type === 'radio' && 
-            <>
-              <label htmlFor={label} className='label-radio'>{label}</label>
-              <Field
-                {...BASE_PROPS}
-                type={type}
-                name={name}
-                checked={inputIx === 0 ? 'checked' : null}
-                value={label}
-                placeholder={placeholder}
-                id={`${type}-${inputIx}`}
-                className='label-radio-btn'
-              /> 
-            </>
-            }
-            {
-              html_tag === 'textarea' && 
-              <>
-               {props.errors[name] ? <div id="feedback">{props.errors[name]}</div> : <div id="feedback"></div>}
-                <Field
-                  {...BASE_PROPS}
-                  component={html_tag}
-                  id='ticket-text-area'
-                  name={name}
-                  value={props.values.notes}
-                  placeholder={placeholder}
-                />
-                {props.status && props.status.success && 
-                  <div id={`${'messages' + inputIx}`}>{props.status.success}
-                    <i className="material-icons" id='message-check'>
-                      check
-                    </i>
-                  </div>
-                }
-              </>
-            }
+        const priorityLevels = ['low', 'medium', 'high', 'urgent', 'safety'];
+        const radioBtns = priorityLevels.map((level, i) => (
+          <div key={i} className='radio-btn-container'>
+            <label htmlFor={`${level}-radio-btn`} className='radio-label'>{level}</label>
+            <Field
+              {...BASE_PROPS}
+              type='radio'
+              name='priority'
+              defaultChecked={level === 'low' ? true : false}
+              value={props.values[level]}
+              className='radio-btn'
+              id={`${level}-radio-btn`}
+            /> 
           </div>
         ));
 
         return (
-          <form onSubmit={props.handleSubmit} className='ticket-form'>            
-            {inputNodes}
-            <button type='submit' id='submit-ticket-7'>Submit</button>
+          <form onSubmit={props.handleSubmit} className='ticket-form'>
+            <h1>Create a New Ticket</h1>
+            <h2>Ticket Priority</h2><br/>          
+            <div className='radio-btns-container'>
+              {radioBtns}
+            </div>
+            <Field
+              {...BASE_PROPS}
+              component='textarea'
+              name='notes'
+              value={props.values.notes}
+              placeholder='Enter Ticket Notes'
+            />
+            {props.errors.notes ? <div className="feedback">{props.errors.notes}</div> : <div className="feedback"></div>}
+            {props.status && props.status.success && 
+              <div>{props.status.success}
+                <i className="material-icons" id='message-check'>
+                  check
+                </i>
+              </div>
+            }
+            <button type='submit'>Submit</button>
           </form>
         );
       }}

@@ -68,7 +68,7 @@ describe('actions', () => {
       const expected = {type: 'SET_USER', user_id};
 
       const result = actions.setUser(user_id);
-
+   
       expect(result).toEqual(expected);
     });
   });

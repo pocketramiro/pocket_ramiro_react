@@ -6,6 +6,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+  max-height: 3.7rem;
 }
 
 .nav-wrapper {
@@ -65,11 +66,11 @@ input[type=checkbox]:checked + label {
   @include displayFlex(null, null, null, column);
   background: $nav-background-color;
   font-size: 20px;
-  height: 100vh;
+  height: 83vh;
   padding: 15px;
-  width: 93vw;
+  width: 100vw;
 
-  a {
+  .nav-link {
     @include displayFlex(null, null, center, null);
     text-decoration: none;
     color: #FDF8DE;
@@ -78,24 +79,26 @@ input[type=checkbox]:checked + label {
     padding-top: 15px;
     font-size: 36px;
 
+    &:hover {
+      cursor: pointer;
+    }
+
   }
 
   .menu-icons {
     padding-right: 19px;
     font-size: 40px;
   }
+
+  
 }
 
-h3 span {
+h3  {
   font-weight: 400;
-  font-size: 4.5vh;
+  font-size: 26px;
   margin: 10px 0px;
 }
 
-h3 {
-  font-size: 4.5vh;
-  margin: 10px 0px;
-}
 
 .nav-login {
   font-size: 4.5vh;
