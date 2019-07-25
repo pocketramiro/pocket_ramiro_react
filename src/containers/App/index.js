@@ -16,28 +16,29 @@ export class App extends Component {
 
   render() {
     const {isLoading} = this.props;
-  
+
     return (
       <main className="route-main">
         <Nav />
-        { isLoading && <Loading/> } 
+        { isLoading && <Loading/> }
         <ResourceType/>
         <Switch>
-          {this.props.session.user_id ? 
-            <Route exact path='/' render={() => <Redirect to="/resources"/>} /> : 
+          {this.props.session.user_id ?
+            <Route exact path='/' render={() => <Redirect to="/resources"/>} /> :
             <Route exact path='/' render={() => <Redirect to="/login"/>} />
           }
           <Route path='/tickets' component={Dashboard}/>
+          <Route path='/tickets_list' component={Dashboard}/>
           <Route path='/resources' component={Dashboard}/>
           <Route path='/login' component={UserLogin} />
           <Route path='/create-user' component={CreateUser}/>
           <Route path='/resourcetypes' component={Dashboard} />
           <Route path='/create-tickets' component={TicketForm} />
-          <Route path='/create-parts' component={DynamicForm}/> 
+          <Route path='/create-parts' component={DynamicForm}/>
           <Route path='/create-resources' component={''}/>
           <Route path='/create-resourcetypes' component={ResourceType}/>
           <Route component={NotFound}/>
-        </Switch>  
+        </Switch>
       </main>
     );
   }

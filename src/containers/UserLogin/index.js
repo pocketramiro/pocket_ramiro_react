@@ -36,10 +36,11 @@ class UserLogin extends Component {
             <i className="material-icons">
               account_circle
             </i>
-            <input 
+            <input
               id='email'
-              type='text' 
-              name='email' 
+              type='text'
+              name='email'
+              class='input-login'
               placeholder='Enter Email'
               value={email}
               required title='Enter email'
@@ -49,10 +50,11 @@ class UserLogin extends Component {
             <i className="material-icons">
               lock
             </i>
-            <input 
+            <input
               id='password'
-              type='password' 
+              type='password'
               name='password'
+              class='input-login'
               placeholder='Password'
               pattern=".{8,}"
               required title="8 characters minimum"

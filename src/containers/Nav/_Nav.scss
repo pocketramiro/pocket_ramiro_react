@@ -1,8 +1,8 @@
 .nav {
   @include displayFlex(space-between, center, center, row);
   border-bottom: 1px #00000026 solid;
-  color: #fff;
-  background-color: #000;
+  color: #FDF8DE;
+  background-color: #17222a;
   position: fixed;
   width: 100%;
 }
@@ -19,13 +19,13 @@
 
 input[type=checkbox] + label {
   .bar {
-    background-color: #fff;
+    background-color: #FDF8DE;
     display: block;
     height: 4px;
     transition: all 0.3s;
     margin: 3px;
     width: 36px;
-    
+
     &:hover {
       cursor: $nav-cursor;
     }
@@ -71,12 +71,12 @@ input[type=checkbox]:checked + label {
   a {
     @include displayFlex(null, null, center, null);
     text-decoration: none;
-    color: white;
-    border-bottom: 2px solid white;
+    color: #FDF8DE;
+    border-bottom: 2px solid #FDF8DE;
     padding-bottom: 20px;
-    padding-top: 15px; 
+    padding-top: 15px;
     font-size: 36px;
-    
+
   }
 
   .menu-icons {
@@ -87,14 +87,20 @@ input[type=checkbox]:checked + label {
 
 h3 span {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 4.5vh;
+  margin: 10px 0px;
+}
+
+h3 {
+  font-size: 4.5vh;
+  margin: 10px 0px;
 }
 
 .nav-login {
-  font-size: 18px;
+  font-size: 4.5vh;
   margin-right: 12px;
   text-decoration: none;
-  color: #fff;
+  color: #FDF8DE;
   display: flex;
   align-items: center;
   grid-row: 1;
@@ -113,14 +119,14 @@ h3 span {
   display: grid;
   grid-template-rows: 3;
 }
- 
+
 #login-icon {
   color: gold;
   padding-right: 5px;
   padding-left: 3px;
   pointer-events: none;
   font-size: 24px;
-   
+
 }
 
 #logout {

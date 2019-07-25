@@ -2,23 +2,32 @@
   display: grid;
   grid-gap: 10px;
   grid-template-rows: 163px;
-  
+
 }
 
 .resources {
-  @include displaySection(relative, 400px, #fff, center, cover, -1);
-    background: url('https://images.pexels.com/photos/159298/gears-cogs-machine-machinery-159298.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center;
-    background-position-y: -341px;
+  @include displaySection(relative, 250px, #fff, center, cover, -1);
+    background: url('../assets/resources_banner.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    // background: url('../assets/resources_banner.jpg') no-repeat center center fixed;
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    background-position-y: 80px;
   &:after {
     @include afterDisplaySection(absolute, '', 0, 0, 100%, 100%, -1);
   }
 }
 
 .tickets {
-  @include displaySection(relative, 400px, #fff, center, cover, -1);
-  background: url('https://images.pexels.com/photos/1043506/pexels-photo-1043506.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500') no-repeat center center;
-  background-color: #e9e7e7;
-  background-position-y: -224px;
+  @include displaySection(relative, 250px, #fff, center, cover, -1);
+  background: url('../assets/tickets_banner.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  background-position-y: -100px;
 
   &:after {
     @include afterDisplaySection(absolute, '', 0, 0, 100%, 100%, -1);
@@ -28,8 +37,8 @@
 .card-container {
   display: grid;
   grid-template-columns: repeat(3, minmax(200px, 1fr));
-  background-color: #fff;
-  color: #444;
+  margin-top: 1vh;
+  color: #111;
 }
 
 .create-btn-container {
@@ -39,20 +48,20 @@
 
 .create-btn {
   position: fixed;
-  bottom: 50px;
-  background-color: #000000;
-  border: 2px solid #fff;
-  border-radius: 25px;
+  bottom: 30px;
+  background-color: #ee3123;
+  border: 2px solid#FDF8DE;
+  // border-radius: 15px;
   padding: 15px;
-  color: white;
+  color: #FDF8DE;
   font-weight: bold;
   font-size: 25px;
 
   &:hover {
     cursor: pointer;
-    background-color: #fff;
-    border: 2px solid #000;
-    color: #000;
+    background-color: #FDF8DE;
+    border: 2px solid #17222a;
+    color: #17222a;
   }
 }
 
