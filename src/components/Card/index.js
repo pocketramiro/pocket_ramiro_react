@@ -3,7 +3,21 @@ import { Link } from 'react-router-dom';
 
 
 export const Card = (props) => {
-  const {notes, priority, created_at, resource_type_id, name, cost, id, inventory} = props.item;
+  const {
+    notes, 
+    priority, 
+    created_at, 
+    resource_type_id, 
+    name, 
+    cost, 
+    id, 
+    inventory, 
+    company,
+    category,
+    manual_url,
+    contact_name
+  } = props.item;
+
   const calcDaysSinceCreation = (t) => Math.floor(t / (24 * 60 * 60 * 1000));
   const days = calcDaysSinceCreation(Math.abs(new Date() - new Date(created_at)));
 
@@ -14,6 +28,22 @@ export const Card = (props) => {
         {
           <h3 className='title'>{name ? name : `Ticket Id: ${id}`}</h3>
         }
+        {
+          company && <p className="header-icon-container">
+            <i className={`material-icons header-icon ${company}`}>
+            store
+            </i>Company: {company}
+          </p>
+        }
+
+        {
+          category && <p className="header-icon-container">
+            <i className={`material-icons header-icon ${category}`}>
+            category
+            </i>Category: {category}
+          </p>
+        }
+
 
         {
           priority && <p className="header-icon-container">
@@ -40,8 +70,8 @@ export const Card = (props) => {
         }
 
         {
-          inventory && <p className="header-icon-container">
-            <i className={`material-icons header-icon`}>
+          inventory && <p className="header-icon-container" >
+            <i className='material-icons'>
               drafts
             </i>Inventory: {inventory}
           </p>
@@ -53,6 +83,21 @@ export const Card = (props) => {
           </i>Opened: {created_at.substr(0, 10)}
         </p>
 
+        {
+          contact_name  && <p className="header-icon-container">
+          <i className={`material-icons header-icon`}>
+          import_contacts
+          </i>Contact: {contact_name}
+        </p>
+        }
+
+          {
+            manual_url && <p className="header-icon-container">
+              <i className={`material-icons header-icon`}>
+                book
+              </i><a href={manual_url}>Manual</a>
+            </p>
+          }
         <p className="header-icon-container">
           <i className={`material-icons header-icon`}>
             access_time

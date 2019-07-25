@@ -15,6 +15,6 @@ export const rootReducer = combineReducers({
   isLoading: isLoadingReducer,
   error: errorReducer,
   parts: resourcePartsReducer,
-  resouceTypes: resourceTypesReducer,
+  resource_types: resourceTypesReducer,
   session: sessionReducer
 });

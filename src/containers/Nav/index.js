@@ -46,7 +46,7 @@ export class Nav extends Component {
           <i className="material-icons menu-icons"> business_center</i>
             Parts
         </NavLink>
-        <NavLink to='/resourcetypes' name='Resource-Types' className='nav-link'>
+        <NavLink to='/resource_types' name='Resource-Types' className='nav-link'>
           <i className="material-icons menu-icons"> business </i>
           Resource-Types
         </NavLink>
@@ -70,7 +70,7 @@ export class Nav extends Component {
               <div className='bar nav-bottom'></div>
             </label>
           </section>
-          {title.length === 0 ? <h3> <span>Pocket</span> Ramiro</h3> : <h3>{title}</h3>}
+          {<h3> <span>Pocket</span> Ramiro</h3> }
           <div id='login-wrapper'>
             <NavLink to="/login" className="nav-login">
               { !this.props.session.user_id ? 

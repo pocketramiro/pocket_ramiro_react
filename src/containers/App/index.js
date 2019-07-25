@@ -21,7 +21,7 @@ export class App extends Component {
       <main className="route-main">
         <Nav />
         { isLoading && <Loading/> }
-        <ResourceType/>
+        {/* <ResourceType/> */}
         <Switch>
           {this.props.session.user_id ?
             <Route exact path='/' render={() => <Redirect to="/resources"/>} /> :
@@ -32,7 +32,7 @@ export class App extends Component {
           <Route path='/resources' component={Dashboard}/>
           <Route path='/login' component={UserLogin} />
           <Route path='/create-user' component={CreateUser}/>
-          <Route path='/resourcetypes' component={Dashboard} />
+          <Route path='/resource_types' component={Dashboard} />
           <Route path='/create-tickets' component={TicketForm} />
           <Route path='/create-parts' component={DynamicForm}/>
           <Route path='/create-resources' component={''}/>
