@@ -81,3 +81,24 @@
     }
   }
 }
+
+#form-login-container, #form-part-container {
+  background: url('../assets/barrel-bar-at-dusk.jpg');
+  background-size: cover;
+}
+
+#create-user-form-container, #form-ticket-container {
+  background: url('../assets/p-Great-Divide-Beer-Rainbow_54_990x660.jpg');
+  background-size: cover;
+}
+
+#user-inputs-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#login-inputs-container {
+  display: flex;
+  flex-direction: column;
+}
