@@ -13,7 +13,7 @@ const SignupSchema = Yup.object().shape({
     .required('The Part must have a name')
 });
 
-const PartForm = ({formConfig, postPart, history, location, user_id}) => (
+export const PartForm = ({formConfig, postPart, history, location, user_id}) => (
   <div id='form-part-container' className='form-container'>
     <Formik
       initialValues={
