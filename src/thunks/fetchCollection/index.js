@@ -18,10 +18,9 @@ const ACTION_MAP = {
 export const fetchCollection = (pathname) => {
 
   return async (dispatch) => {
-    const url = `${process.env.REACT_APP_BASEURL}/api/v1${pathname}`;
+    const url = `${process.env.REACT_APP_BASEURL}/api/v1/${pathname}`;
     const dataKey = url.split('/').slice(-1)[0];
     let actionName = `set${startCase(dataKey).replace(/\s/g, "")}`;
-
     try {
       dispatch(setLoading(true));
       
