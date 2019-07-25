@@ -72,9 +72,13 @@ const CreateUser = ({formConfig, postUser, history}) => (
           <form onSubmit={props.handleSubmit}>
             <h1>Create User</h1>
             <div id="user-inputs-container">           
-            {inputNodes}
+              {inputNodes}
             </div>
-            <button type="submit" disabled={props.isSubmitting} id='submit-user'>Submit</button>
+            <button type="submit" 
+              disabled={props.isSubmitting} 
+              id='submit-user'>
+              Submit
+            </button>
           </form>
         );
       }} 
