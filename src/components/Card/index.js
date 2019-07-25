@@ -13,7 +13,9 @@ export const Card = (props) => {
     id, 
     inventory, 
     company,
-    category
+    category,
+    manual_url,
+    contact_name
   } = props.item;
 
   const calcDaysSinceCreation = (t) => Math.floor(t / (24 * 60 * 60 * 1000));
@@ -28,7 +30,7 @@ export const Card = (props) => {
         }
         {
           company && <p className="header-icon-container">
-             <i className={`material-icons header-icon ${company}`}>
+            <i className={`material-icons header-icon ${company}`}>
             store
             </i>Company: {company}
           </p>
@@ -36,11 +38,12 @@ export const Card = (props) => {
 
         {
           category && <p className="header-icon-container">
-             <i className={`material-icons header-icon ${category}`}>
-            store
-            </i>Company: {category}
+            <i className={`material-icons header-icon ${category}`}>
+            category
+            </i>Category: {category}
           </p>
         }
+
 
         {
           priority && <p className="header-icon-container">
@@ -67,8 +70,8 @@ export const Card = (props) => {
         }
 
         {
-          inventory && <p className="header-icon-container">
-            <i className={`material-icons header-icon`}>
+          inventory && <p className="header-icon-container inventory" >
+            <i className='material-icons'>
               drafts
             </i>Inventory: {inventory}
           </p>
@@ -80,6 +83,21 @@ export const Card = (props) => {
           </i>Opened: {created_at.substr(0, 10)}
         </p>
 
+        {
+          contact_name  && <p className="header-icon-container">
+          <i className={`material-icons header-icon`}>
+          import_contacts
+          </i>Contact: {contact_name}
+        </p>
+        }
+
+          {
+            manual_url && <p className="header-icon-container">
+              <i className={`material-icons header-icon ${manual_url}`}>
+           category
+              </i>Manual: {manual_url}
+            </p>
+          }
         <p className="header-icon-container">
           <i className={`material-icons header-icon`}>
             access_time
