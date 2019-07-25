@@ -38,7 +38,7 @@ class UserLogin extends Component {
 
     return (
       <div id='login-form' className='form-container'>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className='login-form-bg'>
           <h1>Login</h1>
           <div id="login-inputs-container">
             <label htmlFor='email' className='login-label'>
@@ -66,10 +66,10 @@ class UserLogin extends Component {
                 onChange={this.handleChange}
               />
             </label>
+            { (error.length) ? <p className='login-message'>{error}</p> : <p className='login-message'></p> }
           </div>
           <button id='sign-in-btn'>Sign In</button>
-          { (error.length) ? <p>{error}</p> : <p></p> }
-          <p>Want to create a new account? <Link to="/create-user">Create a new account</Link></p>
+          <p><Link to="/create-user">Create a new account</Link></p>
         </form>
       </div>
     );

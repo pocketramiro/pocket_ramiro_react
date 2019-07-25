@@ -8,13 +8,11 @@
 .resources {
   @include displaySection(relative, 250px, #fff, center, cover, -1);
     background: url('../assets/resources_banner.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100%;
-    // background: url('../assets/resources_banner.jpg') no-repeat center center fixed;
-    // -webkit-background-size: cover;
-    // -moz-background-size: cover;
-    // -o-background-size: cover;
+
+    // background-repeat: no-repeat;
+    // background-attachment: fixed;
+    // background-size: 100%;
+
     background-position-y: 80px;
   &:after {
     @include afterDisplaySection(absolute, '', 0, 0, 100%, 100%, -1);
@@ -23,10 +21,9 @@
 
 .tickets {
   @include displaySection(relative, 250px, #fff, center, cover, -1);
-  background: url('../assets/tickets_banner.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%;
+  background: url('../assets/tickets_banner.jpg') center center;
+  background-size: contain;
+
   background-position-y: -100px;
 
   &:after {
@@ -51,7 +48,6 @@
   bottom: 30px;
   background-color: #ee3123;
   border: 2px solid#FDF8DE;
-  // border-radius: 15px;
   padding: 15px;
   color: #FDF8DE;
   font-weight: bold;

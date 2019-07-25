@@ -33,6 +33,12 @@ form {
   height: 25px;
 }
 
+.login-form-bg {
+  background: rgba(253, 248, 222, 0.7);
+  width: calc(100% - 3em);
+  max-width: 32rem;
+}
+
 button {
   background-color: #000;
   border: 2px solid #000000;
