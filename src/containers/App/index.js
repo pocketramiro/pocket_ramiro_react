@@ -4,15 +4,15 @@ import { connect } from 'react-redux';
 import NotFound from '../../components/NotFound';
 import Nav from '../Nav';
 import Dashboard from '../../components/Dashboard';
-import UserLogin from '../UserLogin';
-import CreateUser from '../CreateUser';
-import PartForm from '../../components/PartForm';
 import Loading from '../../components/Loading/Loading';
 import ResourceType from '../../components/ResourceType/index';
+import CreateUser from '../CreateUser';
+import UserLogin from '../UserLogin';
+import PartForm from '../../components/PartForm';
 import TicketForm from '../../components/TicketForm'
+import ResourceForm from '../../containers/ResourceForm';
 
 export class App extends Component {
-
 
   render() {
     const {isLoading} = this.props;
@@ -21,7 +21,6 @@ export class App extends Component {
       <main className="route-main">
         <Nav />
         { isLoading && <Loading/> }
-        {/* <ResourceType/> */}
         <Switch>
           {this.props.session.user_id ?
             <Route exact path='/' render={() => <Redirect to="/resources"/>} /> :
@@ -35,7 +34,7 @@ export class App extends Component {
           <Route path='/resource_types' component={Dashboard} />
           <Route path='/create-tickets' component={TicketForm} />
           <Route path='/create-parts' component={PartForm}/>
-          <Route path='/create-resources' component={''}/>
+          <Route path='/create-resources' component={ResourceForm}/>
           <Route path='/create-resourcetypes' component={ResourceType}/>
           <Route component={NotFound}/>
         </Switch>

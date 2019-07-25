@@ -4,7 +4,7 @@ import { Formik } from 'formik';
 import { withRouter } from 'react-router';
 import { formConfig } from '../../Utility/Config/FormConfig';
 import { postResource } from '../../thunks/postResource';
-import Select from 'react-select'
+import Select from 'react-select';
 import * as Yup from 'yup';
 
 const SignupSchema = Yup.object().shape({
@@ -79,14 +79,14 @@ console.log(dropDownMenu)
         return (
           <form onSubmit={props.handleSubmit} className='resource-form'> 
               <label htmlFor='drop-down' className='label-drop-down'>Select Resource</label>
-            <Select
-              id="drop-down"
-              options={dropDownMenu}
-              multi={false}
-              onChange={props.handleChange}
-              onBlur={props.handleBlur}
-              value={props.value} 
-              className='drop-down-menu'
+              <Select
+                id="drop-down"
+                options={dropDownMenu}
+                multi={false}
+                onChange={props.handleChange}
+                onBlur={props.handleBlur}
+                value={props.value} 
+                className='drop-down-menu'
               />   
               {inputNodes}
             <button type='submit' id='submit-resource'>Submit</button>
