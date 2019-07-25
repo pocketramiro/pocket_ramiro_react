@@ -37,7 +37,7 @@ class UserLogin extends Component {
     const { email, password, error } = this.state;
 
     return (
-      <div id='login-form' className='form-container'>
+      <div id='form-login-container' className='form-container'>
         <form onSubmit={this.handleSubmit}>
           <h1>Login</h1>
           <div id="login-inputs-container">

@@ -6,7 +6,7 @@ import Nav from '../Nav';
 import Dashboard from '../../components/Dashboard';
 import UserLogin from '../UserLogin';
 import CreateUser from '../CreateUser';
-import DynamicForm from '../../components/DynamicForm';
+import PartForm from '../../components/PartForm';
 import Loading from '../../components/Loading/Loading';
 import ResourceType from '../../components/ResourceType/index';
 import TicketForm from '../../components/TicketForm'
@@ -34,7 +34,7 @@ export class App extends Component {
           <Route path='/create-user' component={CreateUser}/>
           <Route path='/resource_types' component={Dashboard} />
           <Route path='/create-tickets' component={TicketForm} />
-          <Route path='/create-parts' component={DynamicForm}/>
+          <Route path='/create-parts' component={PartForm}/>
           <Route path='/create-resources' component={''}/>
           <Route path='/create-resourcetypes' component={ResourceType}/>
           <Route component={NotFound}/>

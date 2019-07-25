@@ -22,7 +22,7 @@ const SignupSchema = Yup.object().shape({
 });
 
 const CreateUser = ({formConfig, postUser, history}) => (
-  <div id="create-user-form" className='form-container'>
+  <div id="create-user-form-container" className='form-container'>
     <Formik
       initialValues={
         {

@@ -13,7 +13,7 @@ const SignupSchema = Yup.object().shape({
 });
 
 const TicketForm = ({formConfig, postTicket, history, location, user_id}) => (
-  <div id='form-container-ticket' className='form-container'>
+  <div id='form-ticket-container' className='form-container'>
     <Formik
       initialValues={
         {
