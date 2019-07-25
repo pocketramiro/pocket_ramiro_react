@@ -1,29 +1,15 @@
 ## Pocket Ramiro
 
 ## Description:
-```
-The overall purpose of this application is to allow facility workers to keep track of the status of their machines by creating an online tracking service. The system allows a user to create tickets, resources, parts as well as see high priority resource tickets.
-```
 
-## Contributions:
-```
-Carrie Walsh(https://github.com/carriewalsh)
-Michael King-Stockton(https://github.com/KStockton)
-Ryan D Barnett(https://github.com/RyanDBarnett)
-Jennica Stiehl(https://github.com/stiehlrod)
-```
+The overall purpose of this application is to allow facility workers to keep track of the status of their machines by creating an online tracking service. The system allows a user to create tickets, resources, parts as well as see high priority resource tickets.
 
 ## Preview:
 
-![Start_Page]!(https://user-images.githubusercontent.com/34406483/61874541-e8cb8680-aea5-11e9-9b19-337ceaf82a25.png)
-                                                         |
-| ---------------------------------------------------------------------------------------------------------------------------- |
+![Start_Page](https://user-images.githubusercontent.com/34406483/61874541-e8cb8680-aea5-11e9-9b19-337ceaf82a25.png)
+                                                         
 ![Screen Shot 2019-07-25 at 5 46 59 AM](https://user-images.githubusercontent.com/34406483/61874551-ee28d100-aea5-11e9-8526-e29f7ce16994.png)
-) |
-
-             |
-| ---------------------------------------------------------------------------------------------------------------------------- |
-
+)
 
 ## Getting Started:
 
@@ -57,8 +43,6 @@ test all files:
 $ npm test
 ```
 
-
-
 ## Project Tools:
 
 - React.js
@@ -70,7 +54,12 @@ $ npm test
 - SCSS
 - Formik
 
+## Contributors:
 
+- Carrie Walsh(https://github.com/carriewalsh)
+- Michael King-Stockton(https://github.com/KStockton)
+- Ryan D Barnett(https://github.com/RyanDBarnett)
+- Jennica Stiehl(https://github.com/stiehlrod)
 
 ---
 
