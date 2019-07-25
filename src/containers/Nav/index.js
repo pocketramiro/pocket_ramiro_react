@@ -30,7 +30,7 @@ export class Nav extends Component {
   }
 
   render() {
-    const {isSelected, title} = this.state;
+    const {isSelected} = this.state;
 
     const hamburgerNav = (
       <section id='menu' onClick={this.handleClick}>

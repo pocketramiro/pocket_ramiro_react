@@ -1,0 +1,57 @@
+.form-container {
+  @include displayFlex(center, null, center, null);
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+input {
+  border: 2px solid #000000;
+  border-radius: 6px;
+  padding: 0 15px;
+  margin-bottom: 25px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 300;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+form {
+  text-align: center;
+  width: 500px;
+  background: rgba(253, 248, 222, 0.7);
+  padding: 50px;
+}
+
+.feedback {
+  font-size: 14px;
+  height: 25px;
+}
+
+button {
+  background-color: #000;
+  border: 2px solid #000000;
+  border-radius: 6px;
+  color: #fff;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  min-width: 12.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  vertical-align: middle;
+  margin-top: 26px;
+  min-height: 3rem;
+
+  &:hover {
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+  }
+}

@@ -37,40 +37,36 @@ class UserLogin extends Component {
     const { email, password, error } = this.state;
 
     return (
-      <div id='login-form' className='user-container'>
+      <div id='login-form' className='form-container'>
         <form onSubmit={this.handleSubmit}>
           <h1>Login</h1>
-          <label htmlFor='email' className='login-label'>
-            <i className="material-icons">
-              account_circle
-            </i>
-            <input
-              id='email'
-              type='text'
-              name='email'
-              className='input-login'
-              placeholder='Enter Email'
-              value={email}
-              required title='Enter email'
-              onChange={this.handleChange}
-            />
-          </label>
-          <label htmlFor='password' className='login-label'>
-            <i className="material-icons">
-              lock
-            </i>
-            <input
-              id='password'
-              type='password'
-              name='password'
-              className='input-login'
-              placeholder='Password'
-              pattern=".{8,}"
-              required title="8 characters minimum"
-              value={password}
-              onChange={this.handleChange}
-            />
-          </label>
+          <div id="login-inputs-container">
+            <label htmlFor='email' className='login-label'>
+              <input
+                id='email'
+                type='text'
+                name='email'
+                className='input-login'
+                placeholder='Enter Email'
+                value={email}
+                required title='Enter email'
+                onChange={this.handleChange}
+              />
+            </label>
+            <label htmlFor='password' className='login-label'>
+              <input
+                id='password'
+                type='password'
+                name='password'
+                className='input-login'
+                placeholder='Password'
+                pattern=".{8,}"
+                required title="8 characters minimum"
+                value={password}
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
           <button id='sign-in-btn'>Sign In</button>
           { (error.length) ? <p>{error}</p> : <p></p> }
           <p>Want to create a new account? <Link to="/create-user">Create a new account</Link></p>
