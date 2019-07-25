@@ -11,12 +11,14 @@ const getDataKey = (pathname) => pathname.split('/').slice(-1)[0];
 export class CardContainer extends Component {
   
   componentDidMount() {
+   
     this.props.fetchCollection();
   }
 
   makeDynamicCard = () => {
     const { dataKey } = this.props;
     const dataObject = this.props[dataKey];
+    console.log(dataKey)
     
     if (!dataObject.data) {
       // For a non serialized response 
@@ -66,7 +68,7 @@ export class CardContainer extends Component {
 
 export const mapStateToProps = (state, otherProps) => {
   const dataKey = getDataKey(otherProps.location.pathname);
-
+console.log('dataKeyadsfa', otherProps)
   return {
     dataKey,
     [dataKey]: state[dataKey]  

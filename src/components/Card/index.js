@@ -3,7 +3,19 @@ import { Link } from 'react-router-dom';
 
 
 export const Card = (props) => {
-  const {notes, priority, created_at, resource_type_id, name, cost, id, inventory} = props.item;
+  const {
+    notes, 
+    priority, 
+    created_at, 
+    resource_type_id, 
+    name, 
+    cost, 
+    id, 
+    inventory, 
+    company,
+    category
+  } = props.item;
+
   const calcDaysSinceCreation = (t) => Math.floor(t / (24 * 60 * 60 * 1000));
   const days = calcDaysSinceCreation(Math.abs(new Date() - new Date(created_at)));
 
@@ -13,6 +25,21 @@ export const Card = (props) => {
       <header>
         {
           <h3 className='title'>{name ? name : `Ticket Id: ${id}`}</h3>
+        }
+        {
+          company && <p className="header-icon-container">
+             <i className={`material-icons header-icon ${company}`}>
+            store
+            </i>Company: {company}
+          </p>
+        }
+
+        {
+          category && <p className="header-icon-container">
+             <i className={`material-icons header-icon ${category}`}>
+            store
+            </i>Company: {category}
+          </p>
         }
 
         {

@@ -31,7 +31,6 @@ export class Nav extends Component {
 
   render() {
     const {isSelected, title} = this.state;
-    const { name } = this.props.session;
 
     const hamburgerNav = (
       <section id='menu' onClick={this.handleClick}>
@@ -47,7 +46,7 @@ export class Nav extends Component {
           <i className="material-icons menu-icons"> business_center</i>
             Parts
         </NavLink>
-        <NavLink to='/resourcetypes' name='Resource-Types' className='nav-link'>
+        <NavLink to='/resource_types' name='Resource-Types' className='nav-link'>
           <i className="material-icons menu-icons"> business </i>
           Resource-Types
         </NavLink>
