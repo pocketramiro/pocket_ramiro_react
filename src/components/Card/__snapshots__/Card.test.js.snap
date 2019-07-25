@@ -40,7 +40,7 @@ exports[`Card should match the snapshot 1`] = `
       >
         access_time
       </i>
-      38 Days Open
+      39 Days Open
     </p>
     <div
       className="links-container"
