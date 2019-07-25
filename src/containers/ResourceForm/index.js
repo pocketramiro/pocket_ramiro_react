@@ -16,7 +16,7 @@ const SignupSchema = Yup.object().shape({
 });
 
 const ResourceForm = ({formConfig, postResource, history, location, user, resources}) => (
-  <div id='form-container'>
+  <div className='form-container'>
     <Formik
       initialValues={
         {
@@ -64,7 +64,8 @@ const ResourceForm = ({formConfig, postResource, history, location, user, resour
                 value={props.values[name]}
                 name={name}
                 placeholder={placeholder}
-                className='form-inputd'
+                className='form-input'
+                id='drop-menu'
               /> 
             }
             {props.status && props.status.success && 

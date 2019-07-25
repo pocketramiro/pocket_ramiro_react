@@ -47,9 +47,6 @@ launch in your browser:
 $ npm start
 ```
 
-You will also need to run the back end server, found at:
-https://github.com/KStockton/api-trapper-keeper
-
 ## Testing Project:
 
 After following the <b>Getting Started</b> instructions you may test the project by doing the following.
