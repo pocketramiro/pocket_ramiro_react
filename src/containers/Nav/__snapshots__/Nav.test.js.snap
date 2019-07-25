@@ -44,7 +44,7 @@ exports[`Nav should match the snapshot 1`] = `
         to="/login"
       >
         <i
-          class="material-icons"
+          className="material-icons"
           id="login-icon"
         >
            how_to_reg
@@ -113,7 +113,7 @@ exports[`Nav should render a Nav component if isSelected is true 1`] = `
         to="/login"
       >
         <i
-          class="material-icons"
+          className="material-icons"
           id="login-icon"
         >
            how_to_reg

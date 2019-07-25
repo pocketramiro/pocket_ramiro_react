@@ -80,7 +80,7 @@ export class Nav extends Component {
               </> 
                 : 
               <>
-                <i class="material-icons" id='login-icon'> how_to_reg</i>
+                <i className="material-icons" id='login-icon'> how_to_reg</i>
                 <p onClick={this.handleLogout } >Logout</p>
               </>
               }

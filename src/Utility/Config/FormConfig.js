@@ -7,35 +7,35 @@ const formConfig = {
       type: 'radio',
       name: 'priority',
       value: 'low',
-      label: 'Low'
+      label: 'low'
     },
     {
       html_tag: 'input',
       type: 'radio',
       name: 'priority',
       value: 'medium',
-      label: 'Medium'
+      label: 'medium'
     },
     {
       html_tag: 'input',
       type: 'radio',
       name: 'priority',
       value: 'high',
-      label: 'High'
+      label: 'high'
     },
     {
       html_tag: 'input',
       type: 'radio',
       name: 'priority',
       value: 'urgent',
-      label: 'Urgent'
+      label: 'urgent'
     },
     {
       html_tag: 'input',
       type: 'radio',
       name: 'priority',
       value: 'safety',
-      label: 'Safety'
+      label: 'safety'
     },
     {
       html_tag: 'textarea',

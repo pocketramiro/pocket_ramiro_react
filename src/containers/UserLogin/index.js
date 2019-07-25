@@ -38,7 +38,7 @@ class UserLogin extends Component {
 
     return (
       <div id='login-form' className='user-container'>
-        <form onSubmit={this.handleSubmit} >
+        <form onSubmit={this.handleSubmit}>
           <h1>Login</h1>
           <label htmlFor='email' className='login-label'>
             <i className="material-icons">
