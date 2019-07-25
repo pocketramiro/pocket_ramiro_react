@@ -36,16 +36,6 @@ const formConfig = {
       name: 'priority',
       value: 'safety',
       label: 'safety'
-    },
-    {
-      html_tag: 'textarea',
-      name: 'notes',
-      placeholder: 'Enter Ticket Notes'
-    },
-    {
-      html_tag: 'input',
-      type: 'button',
-      name: 'create-ticket',
     }
   ],
   parts: [
