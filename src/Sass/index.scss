@@ -1,5 +1,6 @@
 @import './normalize';
 @import './variables';
+@import './form';
 @import '../containers/App/App';
 @import '../components/Dashboard/_Dashboard.scss';
 @import '../containers/CardContainer/_CardContainer.scss';
@@ -9,7 +10,6 @@
 @import '../containers/UserLogin/UserLogin';
 @import '../containers/CreateUser/CreateUser';
 @import '../components/TicketForm/TicketForm';
-// @import '../components/DynamicForm/DynamicForm';
 @import '../components/Loading/Loading';
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
 
