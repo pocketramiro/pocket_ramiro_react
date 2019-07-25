@@ -22,8 +22,7 @@ const SignupSchema = Yup.object().shape({
 });
 
 const CreateUser = ({formConfig, postUser, history}) => (
-  <div id='form-container'>
-    <h1>Create User</h1>
+  <div id="create-user-form" className='form-container'>
     <Formik
       initialValues={
         {
@@ -52,6 +51,7 @@ const CreateUser = ({formConfig, postUser, history}) => (
         };
         const inputNodes = formConfig.map(({type, name, placeholder}, inputIx) => (
           <div key={inputIx}>
+            {props.errors[name] ? <div className="feedback">{props.errors[name]}</div> : <div className="feedback"></div>}
             <input
               {...BASE_PROPS}
               type={type}
@@ -59,7 +59,6 @@ const CreateUser = ({formConfig, postUser, history}) => (
               name={name}
               placeholder={placeholder}
             />
-            {props.errors[name] && <div id="feedback">{props.errors[name]}</div>}
             {props.status && props.status.success && 
             <div id={`${'messages' + inputIx}`}>{props.status.success}
               <i className="material-icons" id='message-check'>
@@ -70,8 +69,11 @@ const CreateUser = ({formConfig, postUser, history}) => (
         ));
         
         return (
-          <form onSubmit={props.handleSubmit}>            
+          <form onSubmit={props.handleSubmit}>
+            <h1>Create User</h1>
+            <div id="user-inputs-container">           
             {inputNodes}
+            </div>
             <button type="submit" disabled={props.isSubmitting} id='submit-user'>Submit</button>
           </form>
         );
