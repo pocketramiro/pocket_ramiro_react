@@ -32,7 +32,6 @@ const ResourceForm = ({formConfig, postResource, history, location, user, resour
           user_id: user
 
         };
-        console.log(newResource)
         // const result =  await postResource(newResource);
   
         // actions.setSubmitting(false);
