@@ -2,56 +2,65 @@
   @include displayFlex(center, null, center, null);
   height: 100vh;
   width: 100vw;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
 
-input {
-  border: 2px solid #000000;
-  border-radius: 6px;
-  padding: 0 15px;
-  margin-bottom: 25px;
-  height: 48px;
-  font-size: 16px;
-  font-weight: 300;
+  form {
+    text-align: center;
+    width: 500px;
+    background: rgba(253, 248, 222, 0.7);
+    padding: 50px;
 
-  &:hover {
-    cursor: pointer;
-  }
-}
+    input, textarea, button {
+      border: 2px solid #000000;
+      border-radius: 6px;
+      font-size: 16px;
+    }
 
-form {
-  text-align: center;
-  width: 500px;
-  background: rgba(253, 248, 222, 0.7);
-  padding: 50px;
-}
+    input {
+      padding: 0 15px;
+      margin-bottom: 25px;
+      height: 48px;
+      font-weight: 300;
 
-.feedback {
-  font-size: 14px;
-  height: 25px;
-}
+      &:hover {
+        cursor: pointer;
+      }
+    }
 
-button {
-  background-color: #000;
-  border: 2px solid #000000;
-  border-radius: 6px;
-  color: #fff;
-  display: inline-block;
-  font-size: 15px;
-  font-weight: 600;
-  min-width: 12.5rem;
-  text-align: center;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
-  vertical-align: middle;
-  margin-top: 26px;
-  min-height: 3rem;
+    textarea {
+      width: 100%;
+      resize: none;
+      padding: 9px 15px;
+      height: 10rem;
 
-  &:hover {
-    background-color: #fff;
-    color: #000;
-    cursor: pointer;
+      &:focus {
+        outline: none;
+        border: 2px solid gold;
+      }
+    }
+
+    button {
+      background-color: #000;
+      color: #fff;
+      display: inline-block;
+      font-weight: 600;
+      min-width: 12.5rem;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+      vertical-align: middle;
+      margin-top: 26px;
+      min-height: 3rem;
+
+      &:hover {
+        background-color: #fff;
+        color: #000;
+        cursor: pointer;
+      }
+    }
+
+    .feedback {
+      font-size: 14px;
+      height: 25px;
+    }
   }
 }
