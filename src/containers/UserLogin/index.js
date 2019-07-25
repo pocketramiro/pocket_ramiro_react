@@ -38,7 +38,7 @@ class UserLogin extends Component {
 
     return (
       <div id='login-form' className='user-container'>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className='login-form-bg'>
           <h1>Login</h1>
           <label htmlFor='email' className='login-label'>
             <i className="material-icons">
@@ -71,8 +71,8 @@ class UserLogin extends Component {
               onChange={this.handleChange}
             />
           </label>
+          { (error.length) ? <p className='login-message'>{error}</p> : <p className='login-message'></p> }
           <button id='sign-in-btn'>Sign In</button>
-          { (error.length) ? <p>{error}</p> : <p></p> }
           <p>Want to create a new account? <Link to="/create-user">Create a new account</Link></p>
         </form>
       </div>

@@ -2,7 +2,7 @@
   @include displayFlex(center, center, center, null);
   height: 100vh;
   width: 100vw;
-  background: url('https://303magazine.com/wp-content/uploads/2016/09/barrel-bar-at-dusk.jpg');
+  background: url('../assets/barrel-bar-at-dusk.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -23,9 +23,10 @@
     color: #17222a;
   }
 
-  form {
+  .login-form-bg {
     background: rgba(253, 248, 222, 0.7);
-    padding: 50px;
+    width: calc(100% - 3em);
+    max-width: 32rem;
   }
 
   input {
@@ -50,31 +51,6 @@
     }
 
     .sign-in-btn {
-        border: 2px solid #000;
-        border-radius: 6px;
-        color: #fff;
-        display: inline-block;
-        font-size: 15px;
-        font-weight: 600;
-        max-width: 477px;
-        width: 140px;
-        min-height: 2.3rem;
-        text-align: center;
-        text-decoration: none;
-        transition: background-color 0.2s ease;
-        vertical-align: middle;
-        background-color: #000;
-
-        &:hover {
-          background-color: white;
-          color: black;
-          cursor: pointer;
-        }
-    }
-  }
-
-
-  #sign-in-btn {
       border: 2px solid #000;
       border-radius: 6px;
       color: #fff;
@@ -96,8 +72,13 @@
         cursor: pointer;
       }
     }
+  }
 
   .login-label {
     @include displayFlex(center, center, center, row);
   }
+
+.login-message   {
+  min-height: 3px;
+}
 }
