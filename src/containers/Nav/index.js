@@ -35,7 +35,7 @@ export class Nav extends Component {
     const hamburgerNav = (
       <section id='menu' onClick={this.handleClick}>
         <NavLink to='/tickets' name='Tickets' className='nav-link'>
-          <i className="material-icons menu-icons"> insert_chart</i>
+          <i className="material-icons menu-icons"> description</i>
             Tickets
         </NavLink>
         <NavLink to='/resources' name='resources' className='nav-link'>

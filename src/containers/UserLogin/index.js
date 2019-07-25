@@ -73,7 +73,7 @@ class UserLogin extends Component {
           </label>
           { (error.length) ? <p className='login-message'>{error}</p> : <p className='login-message'></p> }
           <button id='sign-in-btn'>Sign In</button>
-          <p>Want to create a new account? <Link to="/create-user">Create a new account</Link></p>
+          <p><Link to="/create-user">Create a new account</Link></p>
         </form>
       </div>
     );
