@@ -37,7 +37,7 @@ const ResourceForm = ({formConfig, postResource, history, location, user, resour
         // actions.setSubmitting(false);
         // if (result) {
         //   actions.resetForm();
-          actions.setStatus({ success: "Ticket Posted" });
+        actions.setStatus({ success: "Ticket Posted" });
         // }        
       }}
 
@@ -49,12 +49,12 @@ const ResourceForm = ({formConfig, postResource, history, location, user, resour
         };
         const dropDownMenu = resources.data.reduce((acc, curr) => {
   
-          acc.push( { resource_type_id: curr.attributes.resource_type_id, label: curr.attributes.name })
+          acc.push( { resource_type_id: curr.attributes.resource_type_id, label: curr.attributes.name });
           
           return acc;
-        }, [])
+        }, []);
   
-console.log(dropDownMenu)
+       
         const inputNodes = location.formProp && formConfig[location.formProp].map(({html_tag, type, name, placeholder}, inputIx) => (
           <div key={inputIx} id={`resource-input-${inputIx + 1}`}>
             { html_tag === 'input' && 
@@ -78,17 +78,17 @@ console.log(dropDownMenu)
 
         return (
           <form onSubmit={props.handleSubmit} className='resource-form'> 
-              <label htmlFor='drop-down' className='label-drop-down'>Select Resource</label>
-              <Select
-                id="drop-down"
-                options={dropDownMenu}
-                multi={false}
-                onChange={props.handleChange}
-                onBlur={props.handleBlur}
-                value={props.value} 
-                className='drop-down-menu'
-              />   
-              {inputNodes}
+            <label htmlFor='drop-down' className='label-drop-down'>Select Resource</label>
+            <Select
+              id="drop-down"
+              options={dropDownMenu}
+              multi={false}
+              onChange={props.handleChange}
+              onBlur={props.handleBlur}
+              value={props.value} 
+              className='drop-down-menu'
+            />   
+            {inputNodes}
             <button type='submit' id='submit-resource'>Submit</button>
           </form>
         );

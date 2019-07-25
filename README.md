@@ -1,8 +1,8 @@
-## Pocket_ramiro_react
+## Pocket Ramiro
 
 ## Description:
 ```
-
+The overall purpose of this application is to allow facility workers to keep track of the status of their machines by creating an online tracking service. The system allows a user to create tickets, resources, parts as well as see high priority resource tickets.
 ```
 
 ## Contributions:
@@ -12,3 +12,71 @@ Michael King-Stockton(https://github.com/KStockton)
 Ryan D Barnett(https://github.com/RyanDBarnett)
 Jennica Stiehl(https://github.com/stiehlrod)
 ```
+
+## Preview:
+
+![Start_Page]!(https://user-images.githubusercontent.com/34406483/61874541-e8cb8680-aea5-11e9-9b19-337ceaf82a25.png)
+                                                         |
+| ---------------------------------------------------------------------------------------------------------------------------- |
+![Screen Shot 2019-07-25 at 5 46 59 AM](https://user-images.githubusercontent.com/34406483/61874551-ee28d100-aea5-11e9-8526-e29f7ce16994.png)
+) |
+
+             |
+| ---------------------------------------------------------------------------------------------------------------------------- |
+
+
+## Getting Started:
+
+These instructions will get a copy of the project up and running on your local machine for usage and testing purposes.
+
+clone down the repository:
+
+```
+$ git clone https://github.com/pocketramiro/pocket_ramiro_react
+```
+
+cd into directory and run npm install:
+
+```
+$ npm install
+```
+
+launch in your browser:
+
+```
+$ npm start
+```
+
+You will also need to run the back end server, found at:
+https://github.com/KStockton/api-trapper-keeper
+
+## Testing Project:
+
+After following the <b>Getting Started</b> instructions you may test the project by doing the following.
+
+test all files:
+
+```
+$ npm test
+```
+
+
+
+## Project Tools:
+
+- React.js
+- Node.js
+- Express.js
+- React-Router
+- Redux
+- Enzyme/Jest
+- SCSS
+- Formik
+
+
+
+---
+
+**[BACK TO TOP](https://github.com/pocketramiro/pocket_ramiro_react)**
+
+---
