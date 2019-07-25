@@ -71,7 +71,7 @@ export class Nav extends Component {
               <div className='bar nav-bottom'></div>
             </label>
           </section>
-          {title.length === 0 ? <h3> <span>Pocket</span> Ramiro</h3> : <h3>{title}</h3>}
+          {<h3> <span>Pocket</span> Ramiro</h3> }
           <div id='login-wrapper'>
             <NavLink to="/login" className="nav-login">
               { !this.props.session.user_id ? 
