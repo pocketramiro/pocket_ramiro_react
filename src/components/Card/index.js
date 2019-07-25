@@ -70,7 +70,7 @@ export const Card = (props) => {
         }
 
         {
-          inventory && <p className="header-icon-container inventory" >
+          inventory && <p className="header-icon-container" >
             <i className='material-icons'>
               drafts
             </i>Inventory: {inventory}
@@ -93,9 +93,9 @@ export const Card = (props) => {
 
           {
             manual_url && <p className="header-icon-container">
-              <i className={`material-icons header-icon ${manual_url}`}>
-           category
-              </i>Manual: {manual_url}
+              <i className={`material-icons header-icon`}>
+                book
+              </i><a href={manual_url}>Manual</a>
             </p>
           }
         <p className="header-icon-container">
