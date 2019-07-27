@@ -1,57 +1,83 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { postSession } from '../../thunks/postSession';
+// import { Link } from 'react-router-dom';
+import { postResource } from '../../thunks/postResource';
 import { withRouter } from "react-router-dom";
+const shortid = require('shortid');
 
-class UserLogin extends Component {
+
+class ResourceForm extends Component {
   constructor() {
     super();
     this.state = {
       name: '',
       cost: '',
       error: '',
-      resource_type_id: 0
+      resource_type_id: 0,
+      optionLabel: ''
     };
   }
 
   handleChange = e => {
+
+    const { data } = this.props.resources;
+    if (data.length > 0) {
+      console.log(data);
+      let result = data.find(label => label.attributes.resource_type_id == e.target.value).attributes.name;
+      console.log(result);
+      this.setState({optionLabel: result});
+    }
+    
     const { name, value } = e.target;
-    this.setState({[name]: value});
+    this.setState({ [name]: value } );
   }
 
   handleSubmit = async e => {
+  
     e.preventDefault();
-    const {, password} = this.state;
-
+    const { name, cost, resource_type_id } = this.state;
+    const { postResource, user_id } = this.props;
+    const id = parseInt(resource_type_id)
+    const newResource = {
+      cost,
+      name,
+      user_id
+    };
     
-    const response = await this.props.postSession({email, password});
 
-    if ( response.error === 'Forbidden') {
-      this.setState({error: response.message});
-    } else {
-      this.props.history.push('/resources');
-    }
+    const response = await postResource(newResource, id);
+    
+
+    // if ( response.error === 'Forbidden') {
+    //   this.setState({error: response.message});
+    // } else {
+    //   this.props.history.push('/resources');
+    // }
   }
 
   makeOptions = () => {
-    const {resources} = this.props;
-    if (resources.length > 0) {
-      return  resources.map(prop => {
-        return <option key={shortid.generate()} value={`${prop.project_title}`}>{prop.project_title}</option>;
+    const { data } = this.props.resources;
+    if (data.length > 0) {
+      return  data.map(resource => {
+        return <option key={shortid.generate()} 
+          value={`${resource.attributes.resource_type_id}`}>
+          {resource.attributes.name}
+        </option>;
       });
     }
   }
 
   render() {
-    const { name, cost, error } = this.state;
+    const { name, cost, error, optionLabel, resource_type_id} = this.state;
 
     return (
       <div id='form-login-container' className='form-container'>
         <form onSubmit={this.handleSubmit} className='resource-form-bg'>
           <h1>Create Resouce</h1>
-          <select>
-          <option defaultValue value=''>Create Resource</option>
+          <select 
+            onChange={this.handleChange}
+            name='resource_type_id'>
+            <option  value={resource_type_id}>{optionLabel}</option>
             {this.makeOptions()}
           </select>
           <div id="create-resource-inputs-container">
@@ -80,10 +106,9 @@ class UserLogin extends Component {
                 onChange={this.handleChange}
               />
             </label>
-            { (error.length) ? <p className='login-message'>{error}</p> : <p className='login-message'></p> }
+            { (error.length) ? <p className='feedback'>{error}</p> : <p className='login-message'></p> }
           </div>
-          <button id='sign-in-btn'>Sign In</button>
-          <p><Link to="/create-user">Create a new account</Link></p>
+          <button id='sign-in-btn'>Submit</button>
         </form>
       </div>
     );
@@ -92,12 +117,12 @@ class UserLogin extends Component {
 
 
 export const mapStateToProps = state => ({
-  user: state.session.user_id,
+  user_id: state.session.user_id,
   resources: state.resources
 });
 
 export const mapDispatchToProps = dispatch => ({
-  postResouce: (resource) => dispatch(postResource(resource))
+  postResource: (resource) => dispatch(postResource(resource))
 });
 
 export default withRouter(

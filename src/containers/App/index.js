@@ -10,7 +10,7 @@ import CreateUser from '../CreateUser';
 import UserLogin from '../UserLogin';
 import PartForm from '../../components/PartForm';
 import TicketForm from '../../components/TicketForm'
-import ResourceForm from '../../containers/ResourceForm';
+import ResourceForm from '../CreateResource';
 
 export class App extends Component {
 
