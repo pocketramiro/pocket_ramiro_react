@@ -16,15 +16,18 @@ class ResourceForm extends Component {
       resource_type_id: 0,
       optionLabel: ''
     };
+    this.baseState = this.state;
   }
 
   handleChange = e => {
 
     const { data } = this.props.resources;
-    if (data.length > 0) {
-      console.log(data);
+    //optionLabel displays below. The is a glitch preventing the label from showing and the value being passed to state 
+    // in the form as an id
+    //have to do this inorder for the form visual label to display on click
+  
+    if (data.length && this.state.resource_type_id === 0) {
       let result = data.find(label => label.attributes.resource_type_id == e.target.value).attributes.name;
-      console.log(result);
       this.setState({optionLabel: result});
     }
     
@@ -37,7 +40,7 @@ class ResourceForm extends Component {
     e.preventDefault();
     const { name, cost, resource_type_id } = this.state;
     const { postResource, user_id } = this.props;
-    const id = parseInt(resource_type_id)
+    const id = parseInt(resource_type_id);
     const newResource = {
       cost,
       name,
@@ -54,6 +57,19 @@ class ResourceForm extends Component {
     //   this.props.history.push('/resources');
     // }
   }
+
+  handleFormReset = () => {
+    const baseState = {
+      name: '',
+      cost: '',
+      error: '',
+      resource_type_id: 0,
+      optionLabel: ''
+    };
+    this.setState(() => baseState);
+  }
+
+
 
   makeOptions = () => {
     const { data } = this.props.resources;
@@ -72,10 +88,12 @@ class ResourceForm extends Component {
 
     return (
       <div id='form-login-container' className='form-container'>
-        <form onSubmit={this.handleSubmit} className='resource-form-bg'>
+        <form onSubmit={this.handleSubmit} className='resource-form-bg' >
           <h1>Create Resouce</h1>
           <select 
+            className='input-create-resource-dd'
             onChange={this.handleChange}
+            onClick={this.resetSelect}
             name='resource_type_id'>
             <option  value={resource_type_id}>{optionLabel}</option>
             {this.makeOptions()}
@@ -108,7 +126,8 @@ class ResourceForm extends Component {
             </label>
             { (error.length) ? <p className='feedback'>{error}</p> : <p className='login-message'></p> }
           </div>
-          <button id='sign-in-btn'>Submit</button>
+          <button id='sign-in-btn' disabled={!this.state.optionLabel}>Submit</button>
+          <button id='reset' onClick={this.handleFormReset} disabled={!this.state.optionLabel}>Reset Form</button>
         </form>
       </div>
     );
