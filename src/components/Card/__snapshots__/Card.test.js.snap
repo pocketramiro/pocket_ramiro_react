@@ -8,7 +8,7 @@ exports[`Card should match the snapshot 1`] = `
     <h3
       className="title"
     >
-      Ticket Id: 11
+      Ticket ID: 11
     </h3>
     <p
       className="header-icon-container"
@@ -45,6 +45,16 @@ exports[`Card should match the snapshot 1`] = `
     <div
       className="links-container"
     />
+    <div
+      className="note-btn-ctn"
+    >
+      <button
+        className="card-content-btn"
+        onClick={[Function]}
+      >
+        More
+      </button>
+    </div>
     <p
       className="card-notes"
     >
