@@ -1,10 +1,10 @@
 /* eslint-disable no-case-declarations */
-export const resourcesReducer = (state = [], action) => {
+export const resourcesReducer = (state = {}, action) => {
   switch (action.type) {
   case 'ADD_RESOURCE':
     const newState = state;
     const newResource = {
-      id: action.resources.resources_type_id, 
+      id: action.resource_type_id, 
       type: 'resources', 
       attributes: action.resources
     };
