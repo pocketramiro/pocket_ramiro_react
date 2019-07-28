@@ -44,12 +44,13 @@ class ResourceForm extends Component {
     const newResource = {
       cost,
       name,
-      user_id
+      user_id,
+      resource_type_id: id
     };
     
 
-    const response = await postResource(newResource, id);
-    
+    const response = await postResource(newResource);
+    console.log(response)
 
     // if ( response.error === 'Forbidden') {
     //   this.setState({error: response.message});
@@ -117,7 +118,7 @@ class ResourceForm extends Component {
                 type='number'
                 name='cost'
                 className='input-login'
-                placeholder='Password'
+                placeholder='Enter Number'
                 pattern=".{8,}"
                 required title="Enter number"
                 value={cost}

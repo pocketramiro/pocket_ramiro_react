@@ -44,7 +44,7 @@ header p:nth-child(1) {
 }
 .high-title {
   background-color: #ee3123;
-  // border: 2px solid #ee3123;
+  border: 2px solid #ee3123;
 }
 .card-urgent {
   background-color: #AE95B2;
@@ -77,8 +77,6 @@ header p:nth-child(1) {
 
   .title {
     margin: 0;
-    // border-top-left-radius: 8px;
-    // border-top-right-radius: 8px;
     padding: 5px 15px;
     color: #2f2f2f;
   }

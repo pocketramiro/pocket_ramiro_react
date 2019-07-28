@@ -10,7 +10,7 @@ describe('ticketsReducer', () => {
   });
 
   it('should is load all the tickets into state when the case is SET_TICKETS', () => {
-    const expected = {data: ['ticket1', 'ticket2'], included: []};
+    const expected = { data: ['ticket1', 'ticket2'], included: []};
     const action = setTickets(expected);
     const result = ticketsReducer({}, action);
 

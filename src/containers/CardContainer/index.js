@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCollection } from '../../thunks/fetchCollection';
-import { Card } from '../../components/Card';
+import  Card  from '../../components/Card';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import startCase from 'lodash/startCase';
@@ -11,10 +11,11 @@ const getDataKey = (pathname) => pathname.split('/').slice(-1)[0];
 export class CardContainer extends Component {
   
   componentDidMount() {
-    this.props.fetchCollection('resources');
+  
+    // this.props.fetchCollection('resources');
     this.props.fetchCollection('tickets');
-    this.props.fetchCollection('parts');
-    this.props.fetchCollection('resource_types');
+    // this.props.fetchCollection('parts');
+    // this.props.fetchCollection('resource_types');
   }
 
   makeDynamicCard = () => {

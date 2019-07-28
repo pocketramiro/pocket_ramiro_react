@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Card from './';
+import Card  from './';
 import * as MD from '../../Utility/MockData';
 
 describe('Card', () => {
