@@ -11,7 +11,6 @@ class Card extends Component {
   }
 
   handleClick = () => {
-    console.log('hi');
     const { expanded } = this.state;
     this.setState({expanded: !expanded});
   }
@@ -134,19 +133,21 @@ class Card extends Component {
             }
           </div>
 
+          { notes && 
+            <div className='note-btn-ctn'>
+              <button onClick={this.handleClick} className='card-content-btn'>
+                { expanded ? 'Less' : 'More'}
+              </button>
+            </div>
+          }
           { 
-            notes && <p className='card-notes' >
-              <i id='single-note' className="material-icons header-icon">
+            notes && <p className= { expanded ? '' : 'card-notes'} >
+              { expanded ? '' : <i id='single-note' className="material-icons header-icon">
            notes
-              </i>
+              </i>}
             Notes: {notes} </p>
           }
 
-          { notes && 
-            <button onClick={this.handleClick}>
-              { expanded ? 'Less' : 'More'}
-            </button>
-          }
         </header>
       </section>
     );

@@ -128,3 +128,26 @@ header p:nth-child(1) {
   text-decoration: none;
   color: #000;
 }
+
+.note-btn-ctn {
+  display: flex;
+  justify-content: space-evenly;
+  
+  .card-content-btn{
+    border: none;
+    color: black;
+    text-decoration: underline;
+    color: blue;
+    display: inline-block;
+    font-weight: 600;
+    min-width: 12.5rem;
+    text-align: center;
+    transition: background-color 0.2s ease;
+    background-color: #ffffff00;
+    outline: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
