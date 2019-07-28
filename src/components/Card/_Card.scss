@@ -44,7 +44,7 @@ header p:nth-child(1) {
 }
 .high-title {
   background-color: #ee3123;
-  // border: 2px solid #ee3123;
+  border: 2px solid #ee3123;
 }
 .card-urgent {
   background-color: #AE95B2;
@@ -77,8 +77,6 @@ header p:nth-child(1) {
 
   .title {
     margin: 0;
-    // border-top-left-radius: 8px;
-    // border-top-right-radius: 8px;
     padding: 5px 15px;
     color: #2f2f2f;
   }
@@ -129,4 +127,27 @@ header p:nth-child(1) {
 #parts {
   text-decoration: none;
   color: #000;
+}
+
+.note-btn-ctn {
+  display: flex;
+  justify-content: space-evenly;
+  
+  .card-content-btn{
+    border: none;
+    color: black;
+    text-decoration: underline;
+    color: blue;
+    display: inline-block;
+    font-weight: 600;
+    min-width: 12.5rem;
+    text-align: center;
+    transition: background-color 0.2s ease;
+    background-color: #ffffff00;
+    outline: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }

@@ -12,6 +12,7 @@ describe('App', () => {
     };
     wrapper = shallow(<App session={mockSession}/>);
   });
+  
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });

@@ -9,7 +9,6 @@ export const postResource = (resource) => {
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(resource)
     };
-
     try {
       dispatch(setLoading(true));
 

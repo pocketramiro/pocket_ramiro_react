@@ -81,6 +81,29 @@
     }
   }
 }
+.input-create-resource-dd {
+  border: 2px solid #000000;
+  border-radius: 6px;
+  font-size: 16px;
+  padding: 0 15px;
+  margin-bottom: 25px;
+  height: 48px;
+  font-weight: 300;
+  width: 11.2rem;
+
+}
+    #reset {
+      background-color: rgba(253, 248, 222, 0);
+      border: none;
+      color: black;
+      margin: 1rem;
+      min-height: 3rem;
+      text-decoration: underline;
+
+      &:hover {
+        color: white;
+      }
+    }
 
 #form-login-container, #form-part-container {
   background: url('../assets/barrel-bar-at-dusk.jpg');
@@ -102,8 +125,18 @@
   display: flex;
   flex-direction: column;
 }
+#create-resource-inputs-container {
+  display: flex;
+  flex-direction: column;
+}
 
-.login-form-bg {
+.login-form-bg  {
+  background: rgba(253, 248, 222, 0.7);
+  width: calc(100% - 3em);
+  max-width: 32rem;
+}
+
+.resource-form-bg {
   background: rgba(253, 248, 222, 0.7);
   width: calc(100% - 3em);
   max-width: 32rem;
