@@ -50,7 +50,7 @@ class ResourceForm extends Component {
     
 
     const response = await postResource(newResource);
-    console.log(response)
+ 
 
     // if ( response.error === 'Forbidden') {
     //   this.setState({error: response.message});
@@ -88,7 +88,7 @@ class ResourceForm extends Component {
     const { name, cost, error, optionLabel, resource_type_id} = this.state;
 
     return (
-      <div id='form-login-container' className='form-container'>
+      <div id='create-resource-form-container' className='form-container'>
         <form onSubmit={this.handleSubmit} className='resource-form-bg' >
           <h1>Create Resouce</h1>
           <select 
@@ -103,7 +103,7 @@ class ResourceForm extends Component {
             <label htmlFor='name' className='login-label'>
               <input
                 id='name'
-                type='text'
+                type='text' 
                 name='name'
                 className='input-login'
                 placeholder='Enter Name'
