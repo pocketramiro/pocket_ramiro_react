@@ -40,7 +40,7 @@ exports[`Card should match the snapshot 1`] = `
       >
         access_time
       </i>
-      41 Days Open
+      42 Days Open
     </p>
     <div
       className="links-container"
@@ -123,7 +123,7 @@ exports[`Card should match the snapshot if a resource is passed as props 1`] = `
       >
         access_time
       </i>
-      11 Days Open
+      12 Days Open
     </p>
     <div
       className="links-container"
