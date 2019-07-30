@@ -24,16 +24,15 @@ export const PartForm = ({formConfig, postPart, history, location, user_id}) => 
       }
 
       onSubmit={ async (values, actions) => { 
-        // const { itemId } = location;
-        // const newPart = {
-        //   ...values, 
-        //   table_key: 1,
-        //   table_name: 'Parts',
-        //   user_id
-        // };
-        // const result = await postPart(newPart, itemId);
+        const { itemId } = location;
+        const newPart = {
+          ...values, 
+          table_key: 1,
+          table_name: 'Parts',
+          user_id
+        };
+        const result = await postPart(newPart, itemId);
 
-  
         // actions.setSubmitting(false);
         // if (result) {
         //   actions.resetForm();

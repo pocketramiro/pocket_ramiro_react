@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { Link } from 'react-router-dom';
 import { postResource } from '../../thunks/postResource';
 import { withRouter } from "react-router-dom";
 const shortid = require('shortid');
@@ -50,7 +49,7 @@ class ResourceForm extends Component {
     
 
     const response = await postResource(newResource);
-    console.log(response)
+ 
 
     // if ( response.error === 'Forbidden') {
     //   this.setState({error: response.message});
@@ -88,9 +87,10 @@ class ResourceForm extends Component {
     const { name, cost, error, optionLabel, resource_type_id} = this.state;
 
     return (
-      <div id='form-login-container' className='form-container'>
+      <div id='create-resource-form-container' className='form-container'>
         <form onSubmit={this.handleSubmit} className='resource-form-bg' >
-          <h1>Create Resouce</h1>
+          <h1>Create Resouce</h1> 
+      { (error.length) ? <p className='feedback'>{error}</p> : <p className='login-message'></p> }
           <select 
             className='input-create-resource-dd'
             onChange={this.handleChange}
@@ -103,7 +103,7 @@ class ResourceForm extends Component {
             <label htmlFor='name' className='login-label'>
               <input
                 id='name'
-                type='text'
+                type='text' 
                 name='name'
                 className='input-login'
                 placeholder='Enter Name'
@@ -125,7 +125,6 @@ class ResourceForm extends Component {
                 onChange={this.handleChange}
               />
             </label>
-            { (error.length) ? <p className='feedback'>{error}</p> : <p className='login-message'></p> }
           </div>
           <button id='sign-in-btn' disabled={!this.state.optionLabel}>Submit</button>
           <button id='reset' onClick={this.handleFormReset} disabled={!this.state.optionLabel}>Reset Form</button>
