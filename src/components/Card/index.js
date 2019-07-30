@@ -25,6 +25,8 @@ class Card extends Component {
 
     const calcDaysSinceCreation = (t) => Math.floor(t / (24 * 60 * 60 * 1000));
     const days = calcDaysSinceCreation(Math.abs(new Date() - new Date(created_at)));
+
+
     return (
       <section className={priority ? `card card-${priority}` : 'card other-cards'}>
         <header>
@@ -80,12 +82,14 @@ class Card extends Component {
             </p>
           }
 
-          <p className="header-icon-container">
-            <i className={`material-icons header-icon`}>
-            drafts
-            </i>Opened: {created_at.substr(0, 10)}
-          </p>
-
+          { notes &&
+            <p className="header-icon-container">
+              <i className={`material-icons header-icon`}>
+              drafts
+              </i>Opened: {created_at.substr(0, 10) }
+            </p>
+          }
+  
           {
             contact_name  && <p className="header-icon-container">
               <i className={`material-icons header-icon`}>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { Link } from 'react-router-dom';
 import { postResource } from '../../thunks/postResource';
 import { withRouter } from "react-router-dom";
 const shortid = require('shortid');
@@ -91,6 +90,7 @@ class ResourceForm extends Component {
       <div id='create-resource-form-container' className='form-container'>
         <form onSubmit={this.handleSubmit} className='resource-form-bg' >
           <h1>Create Resouce</h1> 
+      { (error.length) ? <p className='feedback'>{error}</p> : <p className='login-message'></p> }
           <select 
             className='input-create-resource-dd'
             onChange={this.handleChange}
@@ -125,7 +125,6 @@ class ResourceForm extends Component {
                 onChange={this.handleChange}
               />
             </label>
-            { (error.length) ? <p className='feedback'>{error}</p> : <p className='login-message'></p> }
           </div>
           <button id='sign-in-btn' disabled={!this.state.optionLabel}>Submit</button>
           <button id='reset' onClick={this.handleFormReset} disabled={!this.state.optionLabel}>Reset Form</button>
