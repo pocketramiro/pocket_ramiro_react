@@ -117,6 +117,12 @@
 
 #create-resource-form-container {
   background: url('../assets/resources-form-bg.jpg');
+  background-position-y: center;
+  background-size: cover;
+}
+
+#form-part-container {
+  background: url('../assets/parts.jpg');
   background-size: cover;
 }
 

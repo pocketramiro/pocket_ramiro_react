@@ -14,7 +14,6 @@ export const postPart = (part, resourceId) => {
       dispatch(setLoading(true));
 
       const response = await fetch(url, options);
-
       if (!response.ok) {
         throw Error(response.statusText);
       }
@@ -22,6 +21,8 @@ export const postPart = (part, resourceId) => {
       const partId = await response.json();
       dispatch(setLoading(false));
       dispatch(addPart(partId));
+      return partId;
+
     } catch (error) {
       dispatch(setError(error.message));
     }

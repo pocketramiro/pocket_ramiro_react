@@ -90,7 +90,7 @@ class ResourceForm extends Component {
     return (
       <div id='create-resource-form-container' className='form-container'>
         <form onSubmit={this.handleSubmit} className='resource-form-bg' >
-          <h1>Create Resouce</h1>
+          <h1>Create Resouce</h1> 
           <select 
             className='input-create-resource-dd'
             onChange={this.handleChange}
