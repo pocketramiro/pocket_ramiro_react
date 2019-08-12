@@ -146,10 +146,10 @@ class Card extends Component {
           }
           { 
             notes && <p className= { expanded ? '' : 'card-notes'} >
-              { expanded ? '' : <i id='single-note' className="material-icons header-icon">
-           notes
+              { expanded ? 'expanded' : <i id='single-note' className="material-icons header-icon">
+           create
               </i>}
-            Notes: {notes} </p>
+          {notes} </p>
           }
 
         </header>
