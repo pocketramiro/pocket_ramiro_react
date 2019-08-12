@@ -4,6 +4,12 @@
 
 The overall purpose of this application is to allow facility workers to keep track of the status of their machines by creating an online tracking service. The system allows a user to create tickets, resources, parts as well as see high priority resource tickets.
 
+## Wireframe: 
+![Page_1](https://user-images.githubusercontent.com/34406483/62841583-1fa3e980-bc67-11e9-9c05-1be00fe37436.png)
+
+![Page_2](https://user-images.githubusercontent.com/34406483/62841581-1d418f80-bc67-11e9-91b9-807ac940cdde.png)
+
+
 ## Preview:
 
 ![Start_Page](https://user-images.githubusercontent.com/34406483/61874541-e8cb8680-aea5-11e9-9b19-337ceaf82a25.png)
