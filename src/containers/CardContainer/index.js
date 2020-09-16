@@ -29,7 +29,6 @@ export class CardContainer extends Component {
       });
     }
   }
-
   componentDidUpdate(prevProps) {
     const {pathname: prevPathname} = prevProps.location;
     const {pathname} = this.props.location;
@@ -38,7 +37,7 @@ export class CardContainer extends Component {
       this.props.fetchCollection(pathname);
     }
   }
-
+ 
   render () {
     const { dataKey } = this.props;
     const resourceId = parseInt(this.props.location.pathname.split('/').splice(-2, 1));

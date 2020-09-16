@@ -4,7 +4,7 @@ export const ticketsReducer = (state = {}, action) => {
   case 'SET_TICKETS':
     return action.tickets;
   case 'ADD_TICKET':
-     const newState = state;
+    const newState = state;
     const newTicket = {
       id: action.ticket.id, 
       type: 'ticket', 
