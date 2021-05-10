@@ -5,7 +5,7 @@
   "dependencies": {
     "eslint": "6.6.0",
     "formik": "^1.5.8",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "node-sass": "^4.14.1",
     "normalize-scss": "^7.0.1",
     "prop-types": "^15.7.2",
